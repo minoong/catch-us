@@ -1,3 +1,3 @@
-import { reactInternalConfig } from "@repo/eslint-config/react-internal";
+import { reactConfig } from "@repo/eslint-config/react";
 
-export default reactInternalConfig;
+export default reactConfig;

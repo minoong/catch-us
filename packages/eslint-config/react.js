@@ -1,8 +1,12 @@
+import { defineConfig } from "eslint/config";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
+
+import { tailwindConfig } from "./tailwind.js";
 import { typescriptConfig } from "./typescript.js";
 
-export const reactInternalConfig = [
+export const reactConfig = defineConfig([
   ...typescriptConfig,
   {
     languageOptions: {
@@ -12,10 +16,7 @@ export const reactInternalConfig = [
       },
     },
   },
-  {
-    plugins: { "react-hooks": reactHooks },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
-    },
-  },
-];
+  jsxA11y.flatConfigs.recommended,
+  reactHooks.configs.flat.recommended,
+  ...tailwindConfig,
+]);
