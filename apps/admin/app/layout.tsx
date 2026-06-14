@@ -4,10 +4,12 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Catch Us Admin",
-  description: "Catch Us administration"
+  description: "Catch Us administration",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ko">
       <body>{children}</body>

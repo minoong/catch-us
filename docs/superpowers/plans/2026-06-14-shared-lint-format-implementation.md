@@ -351,12 +351,7 @@ export const nextConfig = defineConfig([
   ...reactConfig,
   ...nextVitals,
   ...nextTypeScript,
-  globalIgnores([
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 ]);
 ```
 
@@ -832,7 +827,7 @@ rm packages/ui/src/__tailwind-fixture__.tsx
 Create `packages/ui/src/__format-fixture__.tsx` with:
 
 ```tsx
-export const Fixture = () => <div className="p-4 flex" />;
+export const Fixture = () => <div className="flex p-4" />;
 ```
 
 Run:

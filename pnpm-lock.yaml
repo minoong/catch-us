@@ -8,6 +8,12 @@ importers:
 
   .:
     devDependencies:
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:packages/prettier-config
+      prettier:
+        specifier: 3.8.4
+        version: 3.8.4
       turbo:
         specifier: ^2.9.18
         version: 2.9.18

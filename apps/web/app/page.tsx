@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <p className="text-sm text-muted-foreground">{packages.join(" · ")}</p>
+      <p className="text-muted-foreground text-sm">{packages.join(" · ")}</p>
       <h1 className="text-4xl font-semibold tracking-tight">Catch Us</h1>
       <Button>사진 서비스 준비 완료</Button>
     </main>

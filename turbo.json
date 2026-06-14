@@ -11,6 +11,36 @@
     "lint": {
       "dependsOn": ["transit"]
     },
+    "lint:fix": {
+      "dependsOn": ["transit"],
+      "cache": false
+    },
+    "//#format:root": {
+      "inputs": [
+        "*.{json,md,yaml,yml}",
+        "!pnpm-lock.yaml",
+        "!skills-lock.json",
+        "docs/**/*.{json,md,yaml,yml}",
+        ".prettierignore"
+      ],
+      "cache": false
+    },
+    "//#format:root:check": {
+      "inputs": [
+        "*.{json,md,yaml,yml}",
+        "!pnpm-lock.yaml",
+        "!skills-lock.json",
+        "docs/**/*.{json,md,yaml,yml}",
+        ".prettierignore"
+      ]
+    },
+    "format": {
+      "dependsOn": ["transit", "//#format:root"],
+      "cache": false
+    },
+    "format:check": {
+      "dependsOn": ["transit", "//#format:root:check"]
+    },
     "check-types": {
       "dependsOn": ["transit"]
     },
