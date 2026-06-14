@@ -1,9 +1,9 @@
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
-import { baseConfig } from "./base.js";
+import { typescriptConfig } from "./typescript.js";
 
 export const reactInternalConfig = [
-  ...baseConfig,
+  ...typescriptConfig,
   {
     languageOptions: {
       globals: {

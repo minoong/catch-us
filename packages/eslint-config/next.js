@@ -1,10 +1,10 @@
 import nextPlugin from "@next/eslint-plugin-next";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
-import { baseConfig } from "./base.js";
+import { typescriptConfig } from "./typescript.js";
 
 export const nextJsConfig = [
-  ...baseConfig,
+  ...typescriptConfig,
   {
     languageOptions: {
       globals: {
