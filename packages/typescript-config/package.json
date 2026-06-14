@@ -2,10 +2,21 @@
   "name": "@repo/typescript-config",
   "version": "0.0.0",
   "private": true,
-  "files": ["*.json"],
+  "files": [
+    "*.json"
+  ],
   "exports": {
     "./base.json": "./base.json",
     "./nextjs.json": "./nextjs.json",
     "./react-library.json": "./react-library.json"
-  }
+  },
+  "scripts": {
+    "format": "prettier . --write --ignore-path ../../.prettierignore",
+    "format:check": "prettier . --check --ignore-path ../../.prettierignore"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*",
+    "prettier": "^3.8.4"
+  },
+  "prettier": "@repo/prettier-config"
 }

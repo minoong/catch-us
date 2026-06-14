@@ -39,6 +39,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -57,6 +60,9 @@ importers:
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       tailwindcss:
         specifier: ^4.3.1
         version: 4.3.1
@@ -91,6 +97,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -109,6 +118,9 @@ importers:
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       tailwindcss:
         specifier: ^4.3.1
         version: 4.3.1
@@ -121,12 +133,18 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -136,12 +154,18 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -151,12 +175,18 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -194,9 +224,15 @@ importers:
         specifier: 8.61.0
         version: 8.61.0(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3)
     devDependencies:
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
       eslint:
         specifier: 10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -207,17 +243,27 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0(prettier@3.8.4)
     devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
+      '@eslint/js':
+        specifier: 10.0.1
+        version: 10.0.1(eslint@10.5.0(jiti@2.7.0))
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      eslint-config-prettier:
+        specifier: 10.1.8
+        version: 10.1.8(eslint@10.5.0(jiti@2.7.0))
       prettier:
         specifier: ^3.8.4
         version: 3.8.4
 
-  packages/typescript-config: {}
+  packages/typescript-config:
+    devDependencies:
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
 
   packages/ui:
     dependencies:
@@ -246,6 +292,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -258,6 +307,9 @@ importers:
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       react:
         specifier: ^19.2.7
         version: 19.2.7
