@@ -3,5 +3,9 @@ if (process.env.HUSKY === "0" || process.env.NODE_ENV === "production") {
 }
 
 const husky = (await import("husky")).default;
+const error = husky();
 
-console.log(husky());
+if (error) {
+  console.error(error);
+  process.exitCode = 1;
+}
