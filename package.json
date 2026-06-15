@@ -11,12 +11,22 @@
     "format:check": "turbo run format:check",
     "format:root": "prettier \"*.{json,md,yaml,yml}\" \"docs/**/*.{json,md,yaml,yml}\" --write --ignore-path .prettierignore",
     "format:root:check": "prettier \"*.{json,md,yaml,yml}\" \"docs/**/*.{json,md,yaml,yml}\" --check --ignore-path .prettierignore",
-    "check-types": "turbo run check-types"
+    "check-types": "turbo run check-types",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@repo/prettier-config": "workspace:*",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
     "prettier": "3.8.4",
     "turbo": "^2.9.18"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write --ignore-path .prettierignore"
+    ],
+    "**/!(*-lock|pnpm-lock).{json,json5,yaml,yml,css,md,mdx,html}": "prettier --write --ignore-path .prettierignore"
   },
   "prettier": "@repo/prettier-config",
   "packageManager": "pnpm@9.0.0",
