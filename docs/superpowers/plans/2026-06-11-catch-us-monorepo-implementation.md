@@ -1277,7 +1277,6 @@ pnpm lint
 pnpm check-types
 pnpm build
 ```
-````
 
 개별 앱만 실행하려면 Turbo filter를 사용합니다.
 
@@ -1291,7 +1290,6 @@ pnpm turbo run dev --filter=@repo/admin
 현재 저장소는 애플리케이션과 공유 패키지의 기본 구조만 제공합니다.
 Supabase, 지도, 이미지 분석, 임베딩, 검색 기능은 후속 단계에서 설계하고
 구현합니다.
-
 ````
 
 - [ ] **3단계: 개발 서버를 실행한다**
@@ -1300,7 +1298,7 @@ Supabase, 지도, 이미지 분석, 임베딩, 검색 기능은 후속 단계에
 
 ```bash
 pnpm dev
-````
+```
 
 예상 결과: `web`은 `http://localhost:3000`, `admin`은
 `http://localhost:3001`에서 실행된다. 검증이 끝나면 개발 서버를 정상
