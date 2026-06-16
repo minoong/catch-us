@@ -33,6 +33,8 @@ pnpm dev
 pnpm lint
 pnpm check-types
 pnpm build
+pnpm storybook
+pnpm build-storybook
 ```
 
 개별 애플리케이션만 실행하려면 다음 명령을 사용합니다.
@@ -40,6 +42,12 @@ pnpm build
 ```bash
 pnpm turbo run dev --filter=@repo/web
 pnpm turbo run dev --filter=@repo/admin
+```
+
+공유 UI 컴포넌트는 Storybook으로 확인합니다.
+
+```bash
+pnpm storybook
 ```
 
 ## 현재 범위

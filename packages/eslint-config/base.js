@@ -11,6 +11,7 @@ export const baseConfig = defineConfig([
     "**/coverage/**",
     "**/dist/**",
     "**/node_modules/**",
+    "**/storybook-static/**",
   ]),
   eslint.configs.recommended,
   importXFlatConfigs.recommended,
