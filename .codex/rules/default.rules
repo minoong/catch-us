@@ -1,0 +1,43 @@
+# Catch Us local Codex command rules.
+#
+# These rules are intentionally narrow. They reduce approval friction for
+# repeatable verification commands while keeping network, mutation, and
+# destructive operations reviewable.
+
+prefix_rule(
+    pattern = ["pnpm", "format:check"],
+    match = ["pnpm format:check"],
+)
+
+prefix_rule(
+    pattern = ["pnpm", "lint"],
+    match = ["pnpm lint"],
+)
+
+prefix_rule(
+    pattern = ["pnpm", "check-types"],
+    match = ["pnpm check-types"],
+)
+
+prefix_rule(
+    pattern = ["pnpm", "build"],
+    match = ["pnpm build"],
+)
+
+prefix_rule(
+    pattern = ["pnpm", "build-storybook"],
+    match = ["pnpm build-storybook"],
+)
+
+prefix_rule(
+    pattern = ["git", "status"],
+    match = ["git status --short --branch"],
+)
+
+prefix_rule(
+    pattern = ["git", "diff"],
+    match = [
+        "git diff --check",
+        "git diff --stat",
+    ],
+)
