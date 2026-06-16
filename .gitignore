@@ -4,6 +4,7 @@ node_modules
 **/next-env.d.ts
 .turbo
 dist
+storybook-static
 coverage
 *.tsbuildinfo
 .env

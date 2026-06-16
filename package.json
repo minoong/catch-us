@@ -12,6 +12,8 @@
     "format:root": "prettier \"*.{json,md,yaml,yml}\" \"docs/**/*.{json,md,yaml,yml}\" --write --ignore-path .prettierignore",
     "format:root:check": "prettier \"*.{json,md,yaml,yml}\" \"docs/**/*.{json,md,yaml,yml}\" --check --ignore-path .prettierignore",
     "check-types": "turbo run check-types",
+    "storybook": "turbo run storybook --filter=@repo/ui",
+    "build-storybook": "turbo run build-storybook --filter=@repo/ui",
     "prepare": "node .husky/install.mjs"
   },
   "devDependencies": {
@@ -19,6 +21,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "prettier": "3.8.4",
+    "tailwindcss": "4.3.1",
     "turbo": "^2.9.18"
   },
   "lint-staged": {
