@@ -353,12 +353,12 @@ export const baseConfig = [
   {
     plugins: { turbo: turboPlugin },
     rules: {
-      "turbo/no-undeclared-env-vars": "warn"
-    }
+      "turbo/no-undeclared-env-vars": "warn",
+    },
   },
   {
-    ignores: ["dist/**", ".next/**", "node_modules/**"]
-  }
+    ignores: ["dist/**", ".next/**", "node_modules/**"],
+  },
 ];
 ```
 
@@ -374,9 +374,9 @@ export const nextJsConfig = [
     plugins: { "@next/next": nextPlugin },
     rules: {
       ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules
-    }
-  }
+      ...nextPlugin.configs["core-web-vitals"].rules,
+    },
+  },
 ];
 ```
 
@@ -390,8 +390,8 @@ export const reactInternalConfig = [
   ...baseConfig,
   {
     plugins: { "react-hooks": reactHooks },
-    rules: reactHooks.configs.recommended.rules
-  }
+    rules: reactHooks.configs.recommended.rules,
+  },
 ];
 ```
 
@@ -941,7 +941,7 @@ node -e "for(const n of ['web','admin']) require('./apps/'+n+'/package.json')"
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@repo/ui", "@repo/auth", "@repo/core", "@repo/db"]
+  transpilePackages: ["@repo/ui", "@repo/auth", "@repo/core", "@repo/db"],
 };
 
 export default nextConfig;
@@ -958,12 +958,7 @@ export default nextConfig;
       "@/*": ["./*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
 ```
@@ -981,8 +976,8 @@ export default nextJsConfig;
 ```js
 export default {
   plugins: {
-    "@tailwindcss/postcss": {}
-  }
+    "@tailwindcss/postcss": {},
+  },
 };
 ```
 
@@ -1024,10 +1019,12 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Catch Us",
-  description: "Catch Us photo service"
+  description: "Catch Us photo service",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ko">
       <body>{children}</body>
@@ -1045,10 +1042,12 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Catch Us Admin",
-  description: "Catch Us administration"
+  description: "Catch Us administration",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ko">
       <body>{children}</body>
@@ -1070,7 +1069,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <p className="text-sm text-muted-foreground">{packages.join(" · ")}</p>
+      <p className="text-muted-foreground text-sm">{packages.join(" · ")}</p>
       <h1 className="text-4xl font-semibold tracking-tight">Catch Us</h1>
       <Button>사진 서비스 준비 완료</Button>
     </main>
@@ -1091,7 +1090,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <p className="text-sm text-muted-foreground">{packages.join(" · ")}</p>
+      <p className="text-muted-foreground text-sm">{packages.join(" · ")}</p>
       <h1 className="text-4xl font-semibold tracking-tight">Catch Us Admin</h1>
       <Button>관리자 대시보드 준비 완료</Button>
     </main>
@@ -1253,7 +1252,7 @@ test ! -e README.md
 
 `README.md`:
 
-```md
+````md
 # Catch Us
 
 사진 서비스와 관리자 대시보드를 위한 pnpm Turborepo입니다.
@@ -1291,7 +1290,7 @@ pnpm turbo run dev --filter=@repo/admin
 현재 저장소는 애플리케이션과 공유 패키지의 기본 구조만 제공합니다.
 Supabase, 지도, 이미지 분석, 임베딩, 검색 기능은 후속 단계에서 설계하고
 구현합니다.
-```
+````
 
 - [ ] **3단계: 개발 서버를 실행한다**
 
