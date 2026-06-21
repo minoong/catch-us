@@ -69,5 +69,9 @@ export const adminNavigation = [
 ] as const satisfies readonly AdminNavigationItem[];
 
 export function getNavigationItem(pathname: string) {
-  return adminNavigation.find(({ href }) => href === pathname);
+  return adminNavigation.find(({ href }) =>
+    href === "/"
+      ? pathname === href
+      : pathname === href || pathname.startsWith(`${href}/`),
+  );
 }
