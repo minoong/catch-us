@@ -14,10 +14,10 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/components",
+    "components": "@/shared/ui",
     "utils": "@repo/ui/lib/utils",
     "ui": "@repo/ui/components",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "lib": "@/shared/lib",
+    "hooks": "@/shared/lib/hooks"
   }
 }
