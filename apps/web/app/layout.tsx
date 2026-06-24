@@ -5,6 +5,9 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Catch Us",
   description: "Catch Us photo service",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
