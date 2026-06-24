@@ -60,22 +60,32 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel>관리</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
-              {adminNavigation.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={currentItem?.href === item.href}
-                    tooltip={item.title}
-                  >
-                    <Link href={item.href} onClick={() => setOpenMobile(false)}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
+            <nav aria-label="관리자 메뉴">
+              <SidebarMenu>
+                {adminNavigation.map((item) => {
+                  const isCurrent = currentItem?.href === item.href;
+
+                  return (
+                    <SidebarMenuItem key={item.href}>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={isCurrent}
+                        tooltip={item.title}
+                      >
+                        <Link
+                          aria-current={isCurrent ? "page" : undefined}
+                          href={item.href}
+                          onClick={() => setOpenMobile(false)}
+                        >
+                          <item.icon />
+                          <span>{item.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
+              </SidebarMenu>
+            </nav>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
