@@ -5,7 +5,7 @@ import { VisibilityChart } from "./visibility-chart";
 
 export function OverviewDashboard() {
   return (
-    <main className="@container/main flex flex-1 flex-col">
+    <div className="@container/main flex flex-1 flex-col">
       <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
         <header className="flex flex-col gap-1 px-4 lg:px-6">
           <h1 className="text-2xl font-semibold tracking-tight">개요</h1>
@@ -31,6 +31,6 @@ export function OverviewDashboard() {
           <RecentPhotos />
         </section>
       </div>
-    </main>
+    </div>
   );
 }
