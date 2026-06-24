@@ -12,6 +12,9 @@ short. Put durable detail in `docs/` and link to it from here.
 - Do not run destructive commands such as `git reset --hard`, force push, or
   recursive delete without explicit user approval.
 - Prefer small, reviewable branches and commits.
+- When a change adds a durable tool, dependency, verification step, or project
+  convention, update the relevant `docs/` page or add a decision record in the
+  same branch.
 
 ## Repository Map
 
@@ -63,6 +66,12 @@ when the exact package path is needed.
 Shared UI components should have stories when it helps reviewers or future
 agents understand variants. Run `pnpm storybook` for local inspection and
 `pnpm build-storybook` before shipping Storybook changes.
+
+## Motion And Visual Effects
+
+App-specific hero or marketing effects can live in the owning app. Shared,
+reusable primitives should move to `packages/ui` with Storybook coverage. See
+`docs/frontend/README.md` and decision records for current motion guidance.
 
 ## Planned Harness Growth
 

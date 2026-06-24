@@ -27,6 +27,22 @@ For local visual inspection of shared UI:
 pnpm storybook
 ```
 
+For app screens with responsive or animated UI, also do a browser pass on the
+changed route. At minimum check:
+
+- the route loads without current console errors
+- mobile and desktop widths do not create horizontal overflow
+- essential headings and controls are readable in the DOM
+- decorative animation does not block the page when reduced motion is preferred
+
+For admin dashboard navigation work, verify at least one dashboard route and
+one nested section route. Check that:
+
+- the sidebar navigation is present
+- the active menu item exposes `aria-current="page"`
+- the header breadcrumb/title follows the current route
+- mobile sidebar interactions still close after route navigation
+
 ## Existing Tooling
 
 - ESLint shared configs live in `packages/eslint-config`.
@@ -34,6 +50,8 @@ pnpm storybook
 - Husky runs lint-staged on pre-commit.
 - Husky runs `pnpm lint` and `pnpm check-types` on pre-push.
 - Storybook documents shared UI components in `packages/ui`.
+- Playwright MCP may be used for local browser verification, but it is not yet
+  an enforced E2E test suite.
 
 ## Planned Tooling
 

@@ -13,6 +13,24 @@ boring and explicit as features are added.
 Both apps use Next.js App Router and should consume shared code through
 workspace packages instead of reaching across app directories.
 
+### Admin App Shape
+
+`apps/admin` uses a route group for dashboard pages:
+
+- `app/(dashboard)/layout.tsx` wraps dashboard routes with `AdminShell`.
+- `src/widgets/admin-shell` owns the sidebar, header, theme toggle, and shell
+  composition.
+- `src/shared/config/navigation.ts` is the source of truth for admin menu
+  labels, paths, descriptions, and active-route matching.
+- Current dashboard routes are `/`, `/photos`, `/people`, `/map`, `/search`,
+  `/guests`, `/jobs`, and `/settings`.
+- Non-overview pages intentionally use placeholders until their feature slices
+  are implemented.
+
+Keep this structure boring: new admin pages should add a route under
+`app/(dashboard)`, add or update navigation in `src/shared/config/navigation.ts`,
+and place reusable page composition in an appropriate `src/widgets/*` module.
+
 ## Packages
 
 - `packages/ui`: shared shadcn/ui-style components, Tailwind styles, and
