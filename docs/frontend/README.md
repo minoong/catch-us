@@ -14,6 +14,8 @@ This directory is the map for frontend, UI, and design-system decisions.
   right fit
 - React Bits can be used as a shadcn registry source for app-level visual
   effects
+- Magic UI can be used as a shadcn registry source for shared visual components
+  and landing-page effects
 
 ## Working Rules
 
@@ -30,6 +32,8 @@ This directory is the map for frontend, UI, and design-system decisions.
 - When importing visual effects from React Bits, add them through the configured
   shadcn registry and then adapt the generated code to this repo's ESLint,
   accessibility, and package-boundary rules.
+- When importing Magic UI components, use the configured `@magicui` shadcn
+  registry and review generated shared components before use.
 - Prefer `motion/react` imports for Motion usage.
 - Respect reduced-motion preferences for continuous animation. If an effect is
   decorative, the page must still read correctly without it.
@@ -62,17 +66,22 @@ When adding an admin menu item:
 
 ## Registries And MCP
 
-`apps/web/components.json` includes the React Bits registry:
+`apps/web/components.json` includes app-level third-party component registries:
 
 ```json
 "registries": {
-  "@react-bits": "https://reactbits.dev/r/{name}.json"
+  "@react-bits": "https://reactbits.dev/r/{name}.json",
+  "@magicui": "https://magicui.design/r/{name}"
 }
 ```
 
 Use shadcn MCP or CLI for registry-backed additions. After adding generated
 components, verify where dependencies were installed in the monorepo and move
 app-only dependencies to the owning app if needed.
+
+Magic UI's official MCP installer currently documents Cursor, Windsurf, Claude,
+Cline, and Roo-Cline clients. For Codex, use the shadcn registry path unless a
+Codex-specific Magic UI MCP installer becomes available.
 
 ## Design System
 

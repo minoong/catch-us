@@ -321,6 +321,9 @@ importers:
       recharts:
         specifier: 3.8.0
         version: 3.8.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@17.0.2)(react@19.2.7)(redux@5.0.1)
+      svg-dotted-map:
+        specifier: ^2.1.0
+        version: 2.1.0
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -4212,6 +4215,10 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  svg-dotted-map@2.1.0:
+    resolution: {integrity: sha512-4RnunTLPFMyQGnkeqL7BfFT+M/9disoFfDVZBq2eOfRrMgBQBmYbu09QcH/SAxez4JRmqM0UYSgo9u/cpkeykA==}
+    deprecated: This package has been renamed to piri. Please install that instead.
 
   synckit@0.11.13:
     resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
@@ -8403,6 +8410,8 @@ snapshots:
       react: 19.2.7
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  svg-dotted-map@2.1.0: {}
 
   synckit@0.11.13:
     dependencies:
