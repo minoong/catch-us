@@ -3,6 +3,13 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": [
+        "NEXT_PUBLIC_SUPABASE_*",
+        "SUPABASE_PROJECT_REF",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "DATABASE_URL"
+      ],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "transit": {
@@ -46,6 +53,12 @@
     },
     "dev": {
       "cache": false,
+      "env": [
+        "NEXT_PUBLIC_SUPABASE_*",
+        "SUPABASE_PROJECT_REF",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "DATABASE_URL"
+      ],
       "persistent": true
     },
     "storybook": {

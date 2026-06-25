@@ -27,6 +27,28 @@ For local visual inspection of shared UI:
 pnpm storybook
 ```
 
+## Environment Variables
+
+Keep runtime env files in the application that consumes them:
+
+- `apps/web/.env.local`
+- `apps/admin/.env.local`
+
+Do not use a repo-root `.env` file for app runtime configuration. Keep committed
+examples in each app's `.env.example` file.
+
+Supabase client variables currently expected by both apps:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_PROJECT_REF=
+```
+
+`turbo.json` declares Supabase-related variables for `build` and `dev`, and
+adds package-local `.env*` files to `build.inputs` so environment changes
+invalidate the correct package cache.
+
 For app screens with responsive or animated UI, also do a browser pass on the
 changed route. At minimum check:
 
