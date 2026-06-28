@@ -91,7 +91,7 @@ export function TripMapPanel({
         </span>
       </div>
       <div
-        className="bg-background relative mx-4 mb-4 h-52 overflow-hidden rounded-3xl border"
+        className="bg-background relative mx-4 mb-3 h-44 overflow-hidden rounded-3xl border"
         ref={mapRef}
       >
         {mapStatus !== "ready" ? (

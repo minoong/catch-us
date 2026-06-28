@@ -4,7 +4,9 @@ export function TripTicketCard({ item }: { item: ItineraryItem }) {
   if (!item.train) return null;
 
   return (
-    <article className="text-background relative overflow-hidden rounded-[2rem] bg-white p-5 shadow-2xl">
+    <article className="relative overflow-hidden rounded-[2rem] bg-white p-5 text-neutral-950 shadow-2xl">
+      <div className="absolute top-1/2 -left-4 size-8 -translate-y-1/2 rounded-full bg-[var(--card)]" />
+      <div className="absolute top-1/2 -right-4 size-8 -translate-y-1/2 rounded-full bg-[var(--card)]" />
       <div className="flex items-start justify-between border-b border-dashed border-neutral-300 pb-4">
         <div>
           <p className="text-xs font-bold tracking-[0.18em] text-neutral-500 uppercase">
