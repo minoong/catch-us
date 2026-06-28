@@ -1,7 +1,9 @@
+import * as prettierPluginTailwindcss from "prettier-plugin-tailwindcss";
+
 /** @type {import("prettier").Config} */
 const config = {
   endOfLine: "lf",
-  plugins: ["prettier-plugin-tailwindcss"],
+  plugins: [prettierPluginTailwindcss],
 };
 
 export default config;
