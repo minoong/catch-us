@@ -7,6 +7,8 @@ short. Put durable detail in `docs/` and link to it from here.
 
 - Write user-facing summaries, PR titles, and PR bodies in Korean.
 - Use `pnpm` only. Do not introduce npm, yarn, or bun lockfiles.
+- Use the pinned toolchain from `package.json`: pnpm 11.9.0 on Node 22.13+
+  or Node 24+.
 - Treat untracked user files as user-owned. Do not remove or stage them unless
   the user explicitly asks.
 - Do not run destructive commands such as `git reset --hard`, force push, or

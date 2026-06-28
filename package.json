@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@repo/prettier-config": "workspace:*",
+    "eslint": "10.5.0",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "prettier": "3.8.4",
@@ -36,8 +37,8 @@
     "**/!(*-lock|pnpm-lock).{json,json5,yaml,yml,css,md,mdx,html}": "prettier --write --ignore-path .prettierignore"
   },
   "prettier": "@repo/prettier-config",
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
-    "node": "^20.19.0 || ^22.13.0 || >=24"
+    "node": "^22.13.0 || >=24"
   }
 }

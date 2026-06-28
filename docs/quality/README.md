@@ -2,6 +2,23 @@
 
 This directory maps verification rules for agents and humans.
 
+## Toolchain
+
+Use the package manager pinned in the repository root:
+
+```bash
+pnpm --version # 11.9.0
+node --version # 22.13+ or 24+
+```
+
+The root `package.json` declares `packageManager: pnpm@11.9.0` and requires
+Node `^22.13.0 || >=24`. pnpm 11 is the project standard; do not downgrade the
+workspace to pnpm 9 or 10 when updating dependencies or lockfiles.
+
+In non-interactive agent or CI environments, prefix verification commands with
+`CI=true` so pnpm does not wait for terminal confirmation while validating or
+recreating `node_modules`.
+
 ## Current Gates
 
 Use these commands before opening a PR that changes code or tooling:
@@ -68,6 +85,8 @@ one nested section route. Check that:
 ## Existing Tooling
 
 - ESLint shared configs live in `packages/eslint-config`.
+- The repo root keeps `eslint` as a dev dependency because lint-staged runs
+  from the root and needs a root-level `eslint` binary for staged JS/TS files.
 - Prettier shared config lives in `packages/prettier-config`.
 - Husky runs lint-staged on pre-commit.
 - Husky runs `pnpm lint` and `pnpm check-types` on pre-push.
