@@ -25,6 +25,9 @@ export function TripMapPanel({
   trip: Trip;
 }) {
   const mapRef = React.useRef<HTMLDivElement>(null);
+  const [mapStatus, setMapStatus] = React.useState<
+    "fallback" | "loading" | "ready"
+  >("fallback");
   const activeItem =
     trip.itinerary.find((item) => item.id === activeItemId) ??
     trip.itinerary[0];
@@ -33,15 +36,22 @@ export function TripMapPanel({
   const hasCoordinates = trip.places.some(
     (place) => typeof place.lat === "number" && typeof place.lng === "number",
   );
+  const shouldUseSdk = Boolean(appKey && hasCoordinates);
 
   React.useEffect(() => {
-    if (!appKey || !hasCoordinates || !mapRef.current) return;
+    if (!shouldUseSdk || !mapRef.current) {
+      setMapStatus("fallback");
+      return;
+    }
 
     let markers: { setMap: (map: object | null) => void }[] = [];
+    let cancelled = false;
+
+    setMapStatus("loading");
 
     loadKakaoMaps(appKey)
       .then((kakao) => {
-        if (!mapRef.current) return;
+        if (cancelled || !mapRef.current) return;
         const firstPlace = trip.places.find(hasCoordinatePlace);
         if (!firstPlace) return;
 
@@ -54,15 +64,18 @@ export function TripMapPanel({
           marker.setMap(map);
           return marker;
         });
+        setMapStatus("ready");
       })
       .catch(() => {
         markers = [];
+        setMapStatus("fallback");
       });
 
     return () => {
+      cancelled = true;
       markers.forEach((marker) => marker.setMap(null));
     };
-  }, [appKey, hasCoordinates, trip.places]);
+  }, [appKey, shouldUseSdk, trip.places]);
 
   return (
     <section className="bg-card mt-3 overflow-hidden rounded-[1.75rem] border shadow-sm">
@@ -74,14 +87,14 @@ export function TripMapPanel({
           </p>
         </div>
         <span className="bg-muted rounded-full px-2 py-1 text-xs font-semibold">
-          {appKey && hasCoordinates ? "SDK" : "fallback"}
+          {mapStatus === "ready" ? "SDK" : "fallback"}
         </span>
       </div>
       <div
         className="bg-background relative mx-4 mb-4 h-52 overflow-hidden rounded-3xl border"
         ref={mapRef}
       >
-        {!appKey || !hasCoordinates ? (
+        {mapStatus !== "ready" ? (
           <FallbackMap activePlaceId={activePlace?.id} trip={trip} />
         ) : null}
       </div>

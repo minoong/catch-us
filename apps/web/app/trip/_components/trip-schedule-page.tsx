@@ -40,6 +40,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
         <div className="bg-background/95 sticky top-0 z-30 -mx-4 px-4 pt-4 pb-3 backdrop-blur">
           <header className="flex items-center gap-3">
             <Link
+              aria-label="여행 소개로 돌아가기"
               className="grid size-10 place-items-center rounded-2xl border"
               href={`/trip/${trip.slug}`}
             >
@@ -68,7 +69,10 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
               <button
                 className="bg-muted h-9 shrink-0 rounded-full px-3 text-xs font-semibold"
                 key={item.id}
-                onClick={() => scrollToItem(item.id)}
+                onClick={() => {
+                  setActiveDay("all");
+                  requestAnimationFrame(() => scrollToItem(item.id));
+                }}
                 type="button"
               >
                 {item.train?.number ?? item.title}

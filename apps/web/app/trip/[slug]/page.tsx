@@ -3,6 +3,13 @@ import { notFound } from "next/navigation";
 import { TripIntroPage } from "../_components/trip-intro-page";
 import { generateTripStaticParams, getTrip } from "../_lib/itinerary";
 
+export const metadata = {
+  robots: {
+    follow: false,
+    index: false,
+  },
+};
+
 export function generateStaticParams() {
   return generateTripStaticParams();
 }

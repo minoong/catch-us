@@ -20,15 +20,17 @@ export function TripTimeline({
         const place = getPlace(trip, item.placeId);
 
         return (
-          <button
-            className="data-[active=true]:border-primary bg-card rounded-3xl border p-4 text-left shadow-sm transition"
+          <article
+            className="data-[active=true]:border-primary bg-card rounded-3xl border p-4 shadow-sm transition"
             data-active={activeItemId === item.id}
             id={item.id}
             key={item.id}
-            onClick={() => onActiveItemChange(item.id)}
-            type="button"
           >
-            <div className="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3">
+            <button
+              className="grid w-full grid-cols-[4.5rem_minmax(0,1fr)] gap-3 text-left"
+              onClick={() => onActiveItemChange(item.id)}
+              type="button"
+            >
               <div>
                 <p className="text-primary text-xs font-semibold">
                   {item.day.slice(5)}
@@ -52,19 +54,19 @@ export function TripTimeline({
                     </span>
                   ))}
                 </div>
-                {place?.kakaoPlaceUrl ? (
-                  <a
-                    className="mt-3 inline-flex text-sm font-semibold underline"
-                    href={place.kakaoPlaceUrl}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Kakao Place 열기
-                  </a>
-                ) : null}
               </div>
-            </div>
-          </button>
+            </button>
+            {place?.kakaoPlaceUrl ? (
+              <a
+                className="mt-3 ml-[5.25rem] inline-flex text-sm font-semibold underline"
+                href={place.kakaoPlaceUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Kakao Place 열기
+              </a>
+            ) : null}
+          </article>
         );
       })}
     </div>
