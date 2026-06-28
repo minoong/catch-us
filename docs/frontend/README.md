@@ -109,6 +109,20 @@ overlays. Country badges should behave as compact map labels:
 consumers can calculate collision-aware overlays without duplicating map
 projection logic.
 
+## Trip Pages
+
+`apps/web/app/trip` owns static trip intro and schedule pages. The first trip is
+`/trip/jeonju-2026`.
+
+- Keep trip data in route-local `_data/trips.ts`.
+- Do not add user-facing itinerary creation UI for this slice.
+- Use Magic UI and ReactBits effects aggressively on the 1-depth intro page, but
+  preserve reduced-motion access.
+- Use a 2-depth schedule explorer for itinerary navigation: sticky map, sticky
+  date PillNav, quick rail, and scrollable timeline.
+- Kakao Maps uses `NEXT_PUBLIC_KAKAO_MAP_APP_KEY`; when the key or coordinates
+  are missing, show the fallback map card.
+
 ## Design System
 
 The design system is intentionally light right now. When the visual language

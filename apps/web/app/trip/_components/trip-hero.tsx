@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useReducedMotion } from "motion/react";
 
 import Noise from "@/components/Noise";
 import SplitText from "@/components/SplitText";
@@ -9,13 +12,16 @@ import type { Trip } from "../_data/trips";
 import { TripTicketCard } from "./trip-ticket-card";
 
 export function TripHero({ trip }: { trip: Trip }) {
+  const prefersReducedMotion = useReducedMotion() ?? false;
   const outbound = trip.itinerary.find(
     (item) => item.id === "ktx-521-yongsan-to-jeonju",
   );
 
   return (
     <section className="relative min-h-[42rem] overflow-hidden rounded-[2.5rem] border bg-[radial-gradient(circle_at_20%_0%,rgba(248,113,113,0.36),transparent_38%),radial-gradient(circle_at_80%_12%,rgba(59,130,246,0.28),transparent_35%),linear-gradient(180deg,var(--card),var(--background))] p-5 shadow-2xl">
-      <Noise patternAlpha={10} patternRefreshInterval={4} />
+      {prefersReducedMotion ? null : (
+        <Noise patternAlpha={10} patternRefreshInterval={4} />
+      )}
       <div className="absolute inset-x-8 top-6 h-40 rounded-full bg-white/30 blur-3xl" />
 
       <div className="relative z-10">
@@ -23,15 +29,19 @@ export function TripHero({ trip }: { trip: Trip }) {
           Jeonju 2026
         </p>
         <h1 className="mt-5 min-h-36 text-6xl font-semibold tracking-[-0.09em] text-balance">
-          <SplitText
-            className="leading-[0.9]"
-            delay={55}
-            duration={0.7}
-            ease="power3.out"
-            splitType="chars"
-            tag="span"
-            text={trip.title}
-          />
+          {prefersReducedMotion ? (
+            <span className="leading-[0.9]">{trip.title}</span>
+          ) : (
+            <SplitText
+              className="leading-[0.9]"
+              delay={55}
+              duration={0.7}
+              ease="power3.out"
+              splitType="chars"
+              tag="span"
+              text={trip.title}
+            />
+          )}
         </h1>
         <p className="text-muted-foreground mt-4 max-w-xs text-sm leading-6">
           {trip.subtitle}
@@ -59,9 +69,13 @@ export function TripHero({ trip }: { trip: Trip }) {
       </div>
 
       <div className="absolute right-5 bottom-72 z-10 rounded-full border border-white/40 bg-white/70 px-3 py-1 text-xs font-bold text-neutral-900 shadow-sm backdrop-blur">
-        <AnimatedGradientText colorFrom="#ef4444" colorTo="#2563eb">
-          용산에서 전주까지
-        </AnimatedGradientText>
+        {prefersReducedMotion ? (
+          "용산에서 전주까지"
+        ) : (
+          <AnimatedGradientText colorFrom="#ef4444" colorTo="#2563eb">
+            용산에서 전주까지
+          </AnimatedGradientText>
+        )}
       </div>
     </section>
   );

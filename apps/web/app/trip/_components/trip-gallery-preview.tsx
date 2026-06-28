@@ -11,22 +11,32 @@ const previewItems = [
   "맛집",
 ] as const;
 
-export function TripGalleryPreview() {
+export function TripGalleryPreview({
+  reducedMotion = false,
+}: {
+  reducedMotion?: boolean;
+}) {
+  const badges = previewItems.map((item) => (
+    <span
+      className="rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-white"
+      key={item}
+    >
+      {item}
+    </span>
+  ));
+
   return (
     <div className="absolute inset-0 flex flex-col justify-end overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),transparent_42%)] p-4">
       <div className="mb-5 grid size-12 place-items-center rounded-2xl bg-white/80 shadow-lg">
         <CameraIcon className="size-5 text-neutral-800" />
       </div>
-      <Marquee className="-mx-4 [--duration:18s]" repeat={3}>
-        {previewItems.map((item) => (
-          <span
-            className="rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-white"
-            key={item}
-          >
-            {item}
-          </span>
-        ))}
-      </Marquee>
+      {reducedMotion ? (
+        <div className="flex flex-wrap gap-2">{badges}</div>
+      ) : (
+        <Marquee className="-mx-4 [--duration:18s]" repeat={3}>
+          {badges}
+        </Marquee>
+      )}
     </div>
   );
 }

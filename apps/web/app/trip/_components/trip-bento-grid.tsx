@@ -1,9 +1,12 @@
+"use client";
+
 import {
   BackpackIcon,
   CalendarIcon,
   DrawingPinIcon,
   RocketIcon,
 } from "@radix-ui/react-icons";
+import { useReducedMotion } from "motion/react";
 
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Marquee } from "@/components/magicui/marquee";
@@ -12,6 +15,7 @@ import type { Trip } from "../_data/trips";
 import { TripGalleryPreview } from "./trip-gallery-preview";
 
 export function TripBentoGrid({ trip }: { trip: Trip }) {
+  const prefersReducedMotion = useReducedMotion() ?? false;
   const hotel = trip.places.find(
     (place) => place.id === "jeonju-tourist-hotel",
   );
@@ -22,6 +26,14 @@ export function TripBentoGrid({ trip }: { trip: Trip }) {
     (item) => item.id === "ktx-510-jeonju-to-yongsan",
   );
   const hotelHref = hotel?.kakaoPlaceUrl ?? `/trip/${trip.slug}/schedule`;
+  const trainFacts = [outbound, inbound].filter(Boolean).map((item) => (
+    <span
+      className="rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-neutral-900 shadow-sm"
+      key={item?.id}
+    >
+      {item?.train?.number} · {item?.startsAt} → {item?.endsAt}
+    </span>
+  ));
 
   return (
     <BentoGrid className="auto-rows-[14rem] grid-cols-2 gap-3">
@@ -36,16 +48,15 @@ export function TripBentoGrid({ trip }: { trip: Trip }) {
             <div className="absolute top-15 right-5 rounded-full bg-red-500 px-3 py-1 text-xs font-black text-white">
               전주
             </div>
-            <Marquee className="absolute inset-x-0 bottom-4 [--duration:16s]">
-              {[outbound, inbound].filter(Boolean).map((item) => (
-                <span
-                  className="rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-neutral-900 shadow-sm"
-                  key={item?.id}
-                >
-                  {item?.train?.number} · {item?.startsAt} → {item?.endsAt}
-                </span>
-              ))}
-            </Marquee>
+            {prefersReducedMotion ? (
+              <div className="absolute inset-x-4 bottom-4 flex flex-wrap gap-2">
+                {trainFacts}
+              </div>
+            ) : (
+              <Marquee className="absolute inset-x-0 bottom-4 [--duration:16s]">
+                {trainFacts}
+              </Marquee>
+            )}
           </div>
         }
         className="col-span-2 rounded-[2rem]"
@@ -104,7 +115,7 @@ export function TripBentoGrid({ trip }: { trip: Trip }) {
       />
       <BentoCard
         Icon={BackpackIcon}
-        background={<TripGalleryPreview />}
+        background={<TripGalleryPreview reducedMotion={prefersReducedMotion} />}
         className="col-span-2 rounded-[2rem]"
         cta="사진은 여행 후"
         description="여행 후 사진과 장소를 붙일 수 있는 프리뷰 영역."
