@@ -32,6 +32,10 @@ This directory is the map for frontend, UI, and design-system decisions.
 - When importing visual effects from React Bits, add them through the configured
   shadcn registry and then adapt the generated code to this repo's ESLint,
   accessibility, and package-boundary rules.
+- If a React Bits or Magic UI registry file needs to stay close to generated
+  source, keep any lint exceptions scoped to exact generated filenames in the
+  owning app's ESLint config. Do not loosen shared package or app-authored code
+  rules for generated visual effects.
 - When importing Magic UI components, use the configured `@magicui` shadcn
   registry and review generated shared components before use.
 - Prefer `motion/react` imports for Motion usage.
