@@ -16,6 +16,10 @@ type MapMarker<M extends Marker> = Omit<M, "lat" | "lng"> & {
   y: number;
 };
 
+type RenderedMapMarker<M extends Marker> = MapMarker<M> & {
+  r: number;
+};
+
 interface DottedPoint {
   x: number;
   y: number;
@@ -61,6 +65,7 @@ export interface DottedMapProps<
 
   renderMarkerOverlay?: (args: {
     marker: MapMarker<M>;
+    markers: RenderedMapMarker<M>[];
     index: number;
     x: number;
     y: number;
@@ -91,6 +96,17 @@ export function DottedMap<M extends Marker = Marker>({
   const processedMarkers = addMarkers(markers);
 
   const { xStep, yToRowIndex } = getStaggerHelpers(points);
+  const renderedMarkers = processedMarkers.map((marker) => {
+    const rowIndex = yToRowIndex.get(marker.y) ?? 0;
+    const offsetX = stagger && rowIndex % 2 === 1 ? xStep / 2 : 0;
+
+    return {
+      ...marker,
+      x: marker.x + offsetX,
+      y: marker.y,
+      r: marker.size ?? dotRadius,
+    };
+  });
 
   return (
     <svg
@@ -113,13 +129,8 @@ export function DottedMap<M extends Marker = Marker>({
         );
       })}
 
-      {processedMarkers.map((marker, index) => {
-        const rowIndex = yToRowIndex.get(marker.y) ?? 0;
-        const offsetX = stagger && rowIndex % 2 === 1 ? xStep / 2 : 0;
-
-        const x = marker.x + offsetX;
-        const y = marker.y;
-        const r = marker.size ?? dotRadius;
+      {renderedMarkers.map((marker, index) => {
+        const { x, y, r } = marker;
         const shouldPulse = pulse
           ? marker.pulse !== false
           : marker.pulse === true;
@@ -182,6 +193,7 @@ export function DottedMap<M extends Marker = Marker>({
 
             {renderMarkerOverlay?.({
               marker: { ...marker, x, y },
+              markers: renderedMarkers,
               index,
               x,
               y,

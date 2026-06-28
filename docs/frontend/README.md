@@ -83,6 +83,28 @@ Magic UI's official MCP installer currently documents Cursor, Windsurf, Claude,
 Cline, and Roo-Cline clients. For Codex, use the shadcn registry path unless a
 Codex-specific Magic UI MCP installer becomes available.
 
+## Web Landing Page
+
+`apps/web` owns the current landing-page composition and app-specific visual
+copy. Shared primitives still belong in `packages/ui`, but product-specific
+data such as highlighted countries, cities, and hero copy should stay in the
+owning app until the service model exists.
+
+The hero memory map uses the shared `DottedMap` primitive with app-level marker
+overlays. Country badges should behave as compact map labels:
+
+- group cities under one country marker instead of creating one marker per city
+- keep the country icon and badge visually attached
+- avoid marker, badge, and map-edge collisions with layout calculation rather
+  than fixed pixel offsets
+- collapse long city lists as `외 N곳` so future city additions do not make the
+  marker overflow
+- prefer Storybook coverage when changing shared map overlay behavior
+
+`DottedMap` passes rendered marker positions to `renderMarkerOverlay` so
+consumers can calculate collision-aware overlays without duplicating map
+projection logic.
+
 ## Design System
 
 The design system is intentionally light right now. When the visual language
