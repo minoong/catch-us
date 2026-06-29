@@ -48,6 +48,7 @@ export function TripMapPanel({
     }
 
     let markers: { setMap: (map: object | null) => void }[] = [];
+    let overlays: { setMap: (map: object | null) => void }[] = [];
     let cancelled = false;
 
     setMapStatus("loading");
@@ -59,14 +60,39 @@ export function TripMapPanel({
         if (!firstPlace) return;
 
         const center = new kakao.maps.LatLng(firstPlace.lat, firstPlace.lng);
-        const map = new kakao.maps.Map(mapRef.current, { center, level: 7 });
+        const map = new kakao.maps.Map(mapRef.current, { center, level: 12 });
+        const bounds = new kakao.maps.LatLngBounds();
 
         markers = trip.places.filter(hasCoordinatePlace).map((place) => {
           const position = new kakao.maps.LatLng(place.lat, place.lng);
+          bounds.extend(position);
           const marker = new kakao.maps.Marker({ position });
           marker.setMap(map);
           return marker;
         });
+
+        overlays = trip.places.filter(hasCoordinatePlace).map((place) => {
+          const position = new kakao.maps.LatLng(place.lat, place.lng);
+          const active = activePlace?.id === place.id;
+          const overlay = new kakao.maps.CustomOverlay({
+            content: `<div style="transform:translateY(-44px);white-space:nowrap;border-radius:999px;padding:7px 10px;background:${
+              active ? "#111827" : "rgba(255,255,255,.92)"
+            };color:${active ? "#fff" : "#111827"};font-size:11px;font-weight:900;box-shadow:0 10px 24px rgba(15,23,42,.18);border:1px solid rgba(15,23,42,.08)">${place.name}</div>`,
+            position,
+            yAnchor: 1,
+          });
+          overlay.setMap(map);
+          return overlay;
+        });
+
+        if (trip.places.filter(hasCoordinatePlace).length > 1) {
+          map.setBounds(bounds);
+        }
+
+        if (activePlace && hasCoordinatePlace(activePlace)) {
+          map.panTo(new kakao.maps.LatLng(activePlace.lat, activePlace.lng));
+        }
+
         setMapStatus("ready");
       })
       .catch(() => {
@@ -77,8 +103,9 @@ export function TripMapPanel({
     return () => {
       cancelled = true;
       markers.forEach((marker) => marker.setMap(null));
+      overlays.forEach((overlay) => overlay.setMap(null));
     };
-  }, [appKey, shouldUseSdk, trip.places]);
+  }, [activePlace, appKey, shouldUseSdk, trip.places]);
 
   return (
     <section className="bg-card relative mt-3 overflow-hidden rounded-[1.9rem] border shadow-xl">

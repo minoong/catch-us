@@ -19,7 +19,7 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
   React.useEffect(() => {
     if (prefersReducedMotion) return;
 
-    const timer = window.setTimeout(() => setIntroComplete(true), 1180);
+    const timer = window.setTimeout(() => setIntroComplete(true), 2150);
     return () => window.clearTimeout(timer);
   }, [prefersReducedMotion]);
 

@@ -9,8 +9,8 @@ import {
   getQuickLinks,
   tripDayOptions,
 } from "../_lib/itinerary";
+import { TripDateSegmentedNav } from "./trip-date-segmented-nav";
 import { TripMapPanel } from "./trip-map-panel";
-import { TripPillNav } from "./trip-pill-nav";
 import { TripTimeline } from "./trip-timeline";
 
 export function TripSchedulePage({ trip }: { trip: Trip }) {
@@ -57,7 +57,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
           <TripMapPanel activeItemId={activeItemId} trip={trip} />
 
           <div className="mt-3">
-            <TripPillNav
+            <TripDateSegmentedNav
               activeDay={activeDay}
               onChange={setActiveDay}
               options={tripDayOptions}

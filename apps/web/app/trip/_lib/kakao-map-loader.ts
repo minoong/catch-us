@@ -4,11 +4,21 @@ declare global {
       maps: {
         load: (callback: () => void) => void;
         LatLng: new (lat: number, lng: number) => object;
+        LatLngBounds: new () => {
+          extend: (latlng: object) => void;
+        };
         Map: new (
           container: HTMLElement,
           options: Record<string, unknown>,
-        ) => object;
+        ) => {
+          panTo: (latlng: object) => void;
+          setBounds: (bounds: object) => void;
+          setCenter: (latlng: object) => void;
+        };
         Marker: new (options: Record<string, unknown>) => {
+          setMap: (map: object | null) => void;
+        };
+        CustomOverlay: new (options: Record<string, unknown>) => {
           setMap: (map: object | null) => void;
         };
       };

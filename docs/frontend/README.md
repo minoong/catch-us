@@ -120,13 +120,15 @@ projection logic.
   preserve reduced-motion access.
 - For this trip slice, "aggressively" means the route should visibly compose
   registry components, not only keep them installed. The current baseline uses
-  Magic UI `BentoCard`, `BorderBeam`, `AnimatedBeam`, `Iphone`,
-  `AnimatedGradientText`, `AnimatedGridPattern`, and ReactBits `PillNav`,
-  `ScrollStack`, `ScrollFloat`, `CircularGallery`, `Aurora`/`Silk`, and
-  `Noise`.
+  Magic UI `PixelImage`, `BorderBeam`, `AnimatedBeam`, `Iphone`,
+  `AnimatedGradientText`, `AnimatedGridPattern`, and ReactBits `ScrollStack`,
+  `ScrollFloat`, `CircularGallery`, `Aurora`/`Silk`, and `Noise`.
 - Trip motion is mobile-first. Do not rely on hover-only reveals for primary
   information or CTAs. Wrap registry components when needed so actions are
-  visible by default on touch devices.
+  visible by default on touch devices. Do not use ReactBits `PillNav` for trip
+  schedule tabs because its generated implementation is mouse-hover oriented.
+- Trip intro photo effects should use optimized public assets, not original
+  camera files. Keep intro photos under `apps/web/public/trips/<slug>/intro/`.
 - Lenis usage on trip pages should stay route-local. Use `autoRaf`, clean up
   with `destroy()`, and mark nested custom scrollers such as ReactBits
   `ScrollStack` with `data-lenis-prevent` instead of enabling broad nested
@@ -134,9 +136,10 @@ projection logic.
 - Parallax should use lightweight transform/opacity motion and must respect
   reduced-motion preferences.
 - Use a 2-depth schedule explorer for itinerary navigation: sticky map, sticky
-  date PillNav, quick rail, and scrollable timeline.
+  date segmented nav, quick rail, and scrollable timeline.
 - Kakao Maps uses `NEXT_PUBLIC_KAKAO_MAP_APP_KEY`; when the key or coordinates
-  are missing, show the fallback map card.
+  are missing, show the fallback map card. Static trip places must include
+  `lat` and `lng` for SDK rendering.
 
 ## Design System
 

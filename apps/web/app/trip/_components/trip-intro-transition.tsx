@@ -3,9 +3,31 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 import Noise from "@/components/Noise";
-import Silk from "@/components/Silk";
 
 import type { Trip } from "../_data/trips";
+import {
+  TripIntroPhotoFlash,
+  type TripIntroFlashImage,
+} from "./trip-intro-photo-flash";
+
+const introImages = [
+  {
+    alt: "성산일출봉과 바다가 내려다보이는 여행 풍경",
+    src: "/trips/jeonju-2026/intro/01-sea.jpg",
+  },
+  {
+    alt: "밤하늘을 가르는 불꽃 공연",
+    src: "/trips/jeonju-2026/intro/02-fireworks.jpg",
+  },
+  {
+    alt: "별이 촘촘한 밤하늘",
+    src: "/trips/jeonju-2026/intro/03-stars.jpg",
+  },
+  {
+    alt: "들판에서 풀을 뜯는 양들",
+    src: "/trips/jeonju-2026/intro/04-field.jpg",
+  },
+] satisfies TripIntroFlashImage[];
 
 export function TripIntroTransition({
   introComplete,
@@ -16,8 +38,6 @@ export function TripIntroTransition({
 }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
 
-  if (prefersReducedMotion) return null;
-
   return (
     <AnimatePresence mode="popLayout">
       {!introComplete ? (
@@ -27,9 +47,11 @@ export function TripIntroTransition({
           initial={{ opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="absolute inset-0 opacity-85">
-            <Silk color="#ef4444" noiseIntensity={0.7} rotation={0.35} />
-          </div>
+          <TripIntroPhotoFlash
+            active={!introComplete}
+            images={introImages}
+            reducedMotion={prefersReducedMotion}
+          />
           <Noise patternAlpha={18} patternRefreshInterval={3} />
           <motion.div
             className="relative z-10 text-center"
