@@ -124,6 +124,15 @@ projection logic.
   `AnimatedGradientText`, `AnimatedGridPattern`, and ReactBits `PillNav`,
   `ScrollStack`, `ScrollFloat`, `CircularGallery`, `Aurora`/`Silk`, and
   `Noise`.
+- Trip motion is mobile-first. Do not rely on hover-only reveals for primary
+  information or CTAs. Wrap registry components when needed so actions are
+  visible by default on touch devices.
+- Lenis usage on trip pages should stay route-local. Use `autoRaf`, clean up
+  with `destroy()`, and mark nested custom scrollers such as ReactBits
+  `ScrollStack` with `data-lenis-prevent` instead of enabling broad nested
+  scrolling.
+- Parallax should use lightweight transform/opacity motion and must respect
+  reduced-motion preferences.
 - Use a 2-depth schedule explorer for itinerary navigation: sticky map, sticky
   date PillNav, quick rail, and scrollable timeline.
 - Kakao Maps uses `NEXT_PUBLIC_KAKAO_MAP_APP_KEY`; when the key or coordinates

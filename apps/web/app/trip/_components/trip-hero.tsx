@@ -7,7 +7,6 @@ import { motion, useReducedMotion } from "motion/react";
 import Aurora from "@/components/Aurora";
 import Noise from "@/components/Noise";
 import SplitText from "@/components/SplitText";
-import Silk from "@/components/Silk";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { Backlight } from "@/components/magicui/backlight";
@@ -15,12 +14,11 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { Iphone } from "@/components/magicui/iphone";
 
 import type { Trip } from "../_data/trips";
+import { TripParallaxLayer } from "./trip-parallax-layer";
 import { TripTicketCard } from "./trip-ticket-card";
 
 export function TripHero({ trip }: { trip: Trip }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
-  const [introDismissed, setIntroDismissed] = React.useState(false);
-  const introVisible = !prefersReducedMotion && !introDismissed;
   const beamContainerRef = React.useRef<HTMLDivElement>(null);
   const fromRef = React.useRef<HTMLDivElement>(null);
   const toRef = React.useRef<HTMLDivElement>(null);
@@ -31,38 +29,8 @@ export function TripHero({ trip }: { trip: Trip }) {
     (place) => place.id === "jeonju-tourist-hotel",
   );
 
-  React.useEffect(() => {
-    if (prefersReducedMotion) return;
-
-    const timer = window.setTimeout(() => setIntroDismissed(true), 1100);
-    return () => window.clearTimeout(timer);
-  }, [prefersReducedMotion]);
-
   return (
     <section className="relative">
-      {introVisible ? (
-        <motion.div
-          animate={{ opacity: 0, scale: 1.04, filter: "blur(12px)" }}
-          className="fixed inset-0 z-50 grid place-items-center overflow-hidden bg-neutral-950 text-white"
-          exit={{ opacity: 0 }}
-          initial={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ delay: 0.72, duration: 0.36, ease: "easeInOut" }}
-        >
-          <div className="absolute inset-0 opacity-80">
-            <Silk color="#ef4444" noiseIntensity={0.7} rotation={0.35} />
-          </div>
-          <Noise patternAlpha={18} patternRefreshInterval={3} />
-          <div className="relative z-10 text-center">
-            <p className="text-xs font-bold tracking-[0.42em] text-white/60 uppercase">
-              Catch Us Trip
-            </p>
-            <p className="mt-4 text-5xl font-black tracking-[-0.08em]">
-              Jeonju
-            </p>
-          </div>
-        </motion.div>
-      ) : null}
-
       <motion.div
         animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         className="relative min-h-[44rem] overflow-hidden rounded-[2.75rem] border border-white/50 bg-[radial-gradient(circle_at_15%_0%,rgba(248,113,113,0.36),transparent_36%),radial-gradient(circle_at_85%_12%,rgba(59,130,246,0.32),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.84))] p-5 shadow-2xl"
@@ -90,7 +58,7 @@ export function TripHero({ trip }: { trip: Trip }) {
           </>
         )}
 
-        <div className="relative z-10">
+        <TripParallaxLayer className="relative z-10" speed={12}>
           <p className="text-muted-foreground text-xs font-semibold tracking-[0.28em] uppercase">
             Jeonju 2026
           </p>
@@ -137,70 +105,74 @@ export function TripHero({ trip }: { trip: Trip }) {
               )}
             </span>
           </div>
-        </div>
+        </TripParallaxLayer>
 
-        <div
-          className="relative z-10 mt-8 h-48 overflow-hidden rounded-[2rem] border border-white/65 bg-white/58 p-4 shadow-inner backdrop-blur"
-          ref={beamContainerRef}
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.92),transparent_58%)]" />
+        <TripParallaxLayer speed={-14}>
           <div
-            className="absolute top-9 left-5 grid size-14 place-items-center rounded-3xl bg-neutral-950 text-[11px] font-black text-white shadow-xl"
-            ref={fromRef}
+            className="relative z-10 mt-8 h-48 overflow-hidden rounded-[2rem] border border-white/65 bg-white/58 p-4 shadow-inner backdrop-blur"
+            ref={beamContainerRef}
           >
-            용산
-          </div>
-          <div
-            className="absolute right-5 bottom-9 grid size-14 place-items-center rounded-3xl bg-red-500 text-[11px] font-black text-white shadow-xl"
-            ref={toRef}
-          >
-            전주
-          </div>
-          {prefersReducedMotion ? null : (
-            <AnimatedBeam
-              containerRef={beamContainerRef}
-              curvature={-46}
-              duration={4}
-              fromRef={fromRef}
-              gradientStartColor="#ef4444"
-              gradientStopColor="#2563eb"
-              pathColor="#111827"
-              pathOpacity={0.15}
-              pathWidth={3}
-              toRef={toRef}
-            />
-          )}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 px-3 py-1 text-[11px] font-black text-neutral-950 shadow">
-            {outbound?.train?.number ?? "KTX"}
-          </div>
-        </div>
-
-        <motion.div
-          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-          className="relative z-10 mx-auto mt-6 w-[15.5rem]"
-          initial={prefersReducedMotion ? undefined : { opacity: 0, y: 34 }}
-          transition={{ delay: 0.28, duration: 0.7, ease: "easeOut" }}
-        >
-          <Iphone className="drop-shadow-2xl">
-            <div className="relative h-full w-full overflow-hidden bg-[linear-gradient(180deg,#171717,#020617)] p-6 pt-16 text-white">
-              <div className="absolute inset-x-8 top-8 h-24 rounded-full bg-red-500/35 blur-3xl" />
-              <p className="relative text-[10px] font-bold tracking-[0.22em] text-white/50 uppercase">
-                trip pass
-              </p>
-              <h2 className="relative mt-2 text-3xl font-black tracking-[-0.08em]">
-                전주행
-              </h2>
-              <div className="relative mt-6 rounded-[1.6rem] bg-white p-4 text-neutral-950 shadow-2xl">
-                {outbound ? <TripTicketCard item={outbound} compact /> : null}
-              </div>
-              <div className="relative mt-4 rounded-3xl bg-white/10 p-4 text-xs font-semibold text-white/78">
-                {hotel?.name ?? "전주 숙소"}
-                <br />
-                07.10 체크인 · 07.12 체크아웃
-              </div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.92),transparent_58%)]" />
+            <div
+              className="absolute top-9 left-5 grid size-14 place-items-center rounded-3xl bg-neutral-950 text-[11px] font-black text-white shadow-xl"
+              ref={fromRef}
+            >
+              용산
             </div>
-          </Iphone>
-        </motion.div>
+            <div
+              className="absolute right-5 bottom-9 grid size-14 place-items-center rounded-3xl bg-red-500 text-[11px] font-black text-white shadow-xl"
+              ref={toRef}
+            >
+              전주
+            </div>
+            {prefersReducedMotion ? null : (
+              <AnimatedBeam
+                containerRef={beamContainerRef}
+                curvature={-46}
+                duration={4}
+                fromRef={fromRef}
+                gradientStartColor="#ef4444"
+                gradientStopColor="#2563eb"
+                pathColor="#111827"
+                pathOpacity={0.15}
+                pathWidth={3}
+                toRef={toRef}
+              />
+            )}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 px-3 py-1 text-[11px] font-black text-neutral-950 shadow">
+              {outbound?.train?.number ?? "KTX"}
+            </div>
+          </div>
+        </TripParallaxLayer>
+
+        <TripParallaxLayer speed={18}>
+          <motion.div
+            animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+            className="relative z-10 mx-auto mt-6 w-[15.5rem]"
+            initial={prefersReducedMotion ? undefined : { opacity: 0, y: 34 }}
+            transition={{ delay: 0.28, duration: 0.7, ease: "easeOut" }}
+          >
+            <Iphone className="drop-shadow-2xl">
+              <div className="relative h-full w-full overflow-hidden bg-[linear-gradient(180deg,#171717,#020617)] p-6 pt-16 text-white">
+                <div className="absolute inset-x-8 top-8 h-24 rounded-full bg-red-500/35 blur-3xl" />
+                <p className="relative text-[10px] font-bold tracking-[0.22em] text-white/50 uppercase">
+                  trip pass
+                </p>
+                <h2 className="relative mt-2 text-3xl font-black tracking-[-0.08em]">
+                  전주행
+                </h2>
+                <div className="relative mt-6 rounded-[1.6rem] bg-white p-4 text-neutral-950 shadow-2xl">
+                  {outbound ? <TripTicketCard item={outbound} compact /> : null}
+                </div>
+                <div className="relative mt-4 rounded-3xl bg-white/10 p-4 text-xs font-semibold text-white/78">
+                  {hotel?.name ?? "전주 숙소"}
+                  <br />
+                  07.10 체크인 · 07.12 체크아웃
+                </div>
+              </div>
+            </Iphone>
+          </motion.div>
+        </TripParallaxLayer>
 
         <div className="absolute inset-x-5 bottom-5 z-0">
           <Backlight blur={18}>

@@ -45,7 +45,10 @@ export function TripStoryStack({ trip }: { trip: Trip }) {
         </p>
       </div>
 
-      <div className="relative z-10 mt-4 h-[28rem] overflow-hidden rounded-[2rem] bg-white/6">
+      <div
+        className="relative z-10 mt-4 h-[28rem] overflow-hidden rounded-[2rem] bg-white/6"
+        data-lenis-prevent
+      >
         <ScrollStack
           baseScale={0.86}
           blurAmount={0}
