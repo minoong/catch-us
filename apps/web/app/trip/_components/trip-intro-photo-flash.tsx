@@ -62,6 +62,7 @@ export function TripIntroPhotoFlash({
             imageClassName="scale-105"
             maxAnimationDelay={180}
             pixelFadeInDuration={260}
+            priority={index === 0}
             src={image.src}
           />
         </motion.div>

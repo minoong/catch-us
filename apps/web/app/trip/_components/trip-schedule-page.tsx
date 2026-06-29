@@ -3,6 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 
+import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
+
 import type { Trip, TripDayId } from "../_data/trips";
 import {
   getItineraryByDay,
@@ -23,6 +25,10 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
     trip.itinerary[0]?.id ?? "",
   );
   const quickLinks = getQuickLinks(trip);
+  const activeDayIndex = Math.max(
+    0,
+    tripDayOptions.findIndex((option) => option.id === activeDay),
+  );
   const activeItemId = items.some((item) => item.id === selectedItemId)
     ? selectedItemId
     : (items[0]?.id ?? "");
@@ -81,13 +87,30 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
           </div>
         </div>
 
-        <div className="py-4">
-          <TripTimeline
-            activeItemId={activeItemId}
-            items={items}
-            onActiveItemChange={setSelectedItemId}
-            trip={trip}
-          />
+        <div className="overflow-hidden py-4">
+          <TransitionPanel
+            activeIndex={activeDayIndex}
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            variants={{
+              enter: { opacity: 0, y: -28, filter: "blur(4px)" },
+              center: { opacity: 1, y: 0, filter: "blur(0px)" },
+              exit: { opacity: 0, y: 28, filter: "blur(4px)" },
+            }}
+          >
+            {tripDayOptions.map((option) => (
+              <TripTimeline
+                activeItemId={activeItemId}
+                items={
+                  option.id === activeDay
+                    ? items
+                    : getItineraryByDay(trip, option.id)
+                }
+                key={option.id}
+                onActiveItemChange={setSelectedItemId}
+                trip={trip}
+              />
+            ))}
+          </TransitionPanel>
         </div>
       </section>
     </main>

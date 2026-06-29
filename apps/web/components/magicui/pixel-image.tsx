@@ -26,6 +26,7 @@ export interface PixelImageProps {
   grayscaleAnimation?: boolean;
   imageClassName?: string;
   maxAnimationDelay?: number;
+  priority?: boolean;
   pixelFadeInDuration?: number;
   src: string;
 }
@@ -56,6 +57,7 @@ export function PixelImage({
   grayscaleAnimation = true,
   imageClassName,
   maxAnimationDelay = 260,
+  priority = false,
   pixelFadeInDuration = 360,
   src,
 }: PixelImageProps) {
@@ -78,10 +80,29 @@ export function PixelImage({
         className,
       )}
     >
+      <Image
+        alt={alt}
+        className={cn(
+          "object-cover transition-all ease-out",
+          grayscaleAnimation && "transition-[filter,opacity]",
+          grayscaleAnimation && isVisible ? "grayscale-0" : "grayscale",
+          imageClassName,
+        )}
+        draggable={false}
+        fill
+        priority={priority}
+        sizes="100vw"
+        src={src}
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transitionDuration: `${pixelFadeInDuration}ms`,
+        }}
+      />
       {pieces.map((piece, index) => (
         <div
+          aria-hidden
           className={cn(
-            "absolute inset-0 transition-all ease-out",
+            "pointer-events-none absolute inset-0 transition-all ease-out",
             isVisible ? "opacity-100" : "opacity-0",
           )}
           key={`${src}-${index}`}
@@ -91,19 +112,8 @@ export function PixelImage({
             transitionDuration: `${pixelFadeInDuration}ms`,
           }}
         >
-          <Image
-            alt={index === 0 ? alt : ""}
-            aria-hidden={index === 0 ? undefined : true}
-            className={cn(
-              "size-full object-cover",
-              grayscaleAnimation && "transition-[filter]",
-              grayscaleAnimation && isVisible ? "grayscale-0" : "grayscale",
-              imageClassName,
-            )}
-            draggable={false}
-            fill
-            sizes="100vw"
-            src={src}
+          <div
+            className="size-full bg-white/12 mix-blend-screen"
             style={{
               transitionDuration: `${pixelFadeInDuration}ms`,
             }}
