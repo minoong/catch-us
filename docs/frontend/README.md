@@ -118,6 +118,12 @@ projection logic.
 - Do not add user-facing itinerary creation UI for this slice.
 - Use Magic UI and ReactBits effects aggressively on the 1-depth intro page, but
   preserve reduced-motion access.
+- For this trip slice, "aggressively" means the route should visibly compose
+  registry components, not only keep them installed. The current baseline uses
+  Magic UI `BentoCard`, `BorderBeam`, `AnimatedBeam`, `Iphone`,
+  `AnimatedGradientText`, `AnimatedGridPattern`, and ReactBits `PillNav`,
+  `ScrollStack`, `ScrollFloat`, `CircularGallery`, `Aurora`/`Silk`, and
+  `Noise`.
 - Use a 2-depth schedule explorer for itinerary navigation: sticky map, sticky
   date PillNav, quick rail, and scrollable timeline.
 - Kakao Maps uses `NEXT_PUBLIC_KAKAO_MAP_APP_KEY`; when the key or coordinates

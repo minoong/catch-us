@@ -2,6 +2,9 @@
 
 import * as React from "react";
 
+import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
+import { BorderBeam } from "@/components/magicui/border-beam";
+
 import type { Trip } from "../_data/trips";
 import { getPlace } from "../_lib/itinerary";
 import { loadKakaoMaps } from "../_lib/kakao-map-loader";
@@ -78,10 +81,17 @@ export function TripMapPanel({
   }, [appKey, shouldUseSdk, trip.places]);
 
   return (
-    <section className="bg-card mt-3 overflow-hidden rounded-[1.75rem] border shadow-sm">
-      <div className="flex items-start justify-between gap-3 p-4">
+    <section className="bg-card relative mt-3 overflow-hidden rounded-[1.9rem] border shadow-xl">
+      <BorderBeam
+        borderWidth={1}
+        colorFrom="#ef4444"
+        colorTo="#2563eb"
+        duration={9}
+        size={120}
+      />
+      <div className="relative z-10 flex items-start justify-between gap-3 p-4">
         <div>
-          <h2 className="font-semibold">Kakao Map</h2>
+          <h2 className="font-black tracking-[-0.04em]">Kakao Map</h2>
           <p className="text-muted-foreground mt-1 text-xs">
             {activePlace?.name ?? "현재 선택된 장소 없음"}
           </p>
@@ -110,11 +120,17 @@ function FallbackMap({
   trip: Trip;
 }) {
   return (
-    <div className="relative h-full w-full bg-[linear-gradient(90deg,var(--border)_1px,transparent_1px),linear-gradient(var(--border)_1px,transparent_1px)] bg-size-[28px_28px]">
-      <div className="absolute top-1/2 right-[22%] left-[18%] border-t-2 border-dashed" />
+    <div className="relative h-full w-full overflow-hidden bg-[radial-gradient(circle_at_70%_25%,rgba(239,68,68,0.22),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.98),rgba(241,245,249,0.9))]">
+      <AnimatedGridPattern
+        className="opacity-40"
+        duration={3}
+        maxOpacity={0.35}
+        numSquares={22}
+      />
+      <div className="absolute top-1/2 right-[22%] left-[18%] border-t-2 border-dashed border-neutral-400/70" />
       {trip.places.map((place) => (
         <div
-          className="data-[active=true]:bg-primary data-[active=true]:text-primary-foreground bg-background absolute grid h-9 min-w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border px-2 text-[10px] font-black shadow"
+          className="data-[active=true]:bg-primary data-[active=true]:text-primary-foreground bg-background absolute grid h-9 min-w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border px-2 text-[10px] font-black shadow-lg transition data-[active=true]:scale-110"
           data-active={activePlaceId === place.id}
           key={place.id}
           style={{

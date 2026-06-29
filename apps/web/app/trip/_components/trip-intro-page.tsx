@@ -1,6 +1,7 @@
 import type { Trip } from "../_data/trips";
 import { TripBentoGrid } from "./trip-bento-grid";
 import { TripHero } from "./trip-hero";
+import { TripStoryStack } from "./trip-story-stack";
 
 export function TripIntroPage({ trip }: { trip: Trip }) {
   return (
@@ -8,6 +9,7 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
       <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-4 sm:max-w-lg">
         <TripHero trip={trip} />
         <TripBentoGrid trip={trip} />
+        <TripStoryStack trip={trip} />
       </section>
     </main>
   );

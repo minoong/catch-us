@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
 const PHONE_WIDTH = 433;
 const PHONE_HEIGHT = 882;
@@ -19,17 +19,19 @@ const RADIUS_V = (SCREEN_RADIUS / SCREEN_HEIGHT) * 100;
 export interface IphoneProps extends HTMLAttributes<HTMLDivElement> {
   src?: string;
   videoSrc?: string;
+  children?: ReactNode;
 }
 
 export function Iphone({
   src,
   videoSrc,
+  children,
   className,
   style,
   ...props
 }: IphoneProps) {
   const hasVideo = !!videoSrc;
-  const hasMedia = hasVideo || !!src;
+  const hasMedia = hasVideo || !!src || !!children;
 
   return (
     <div
@@ -82,11 +84,26 @@ export function Iphone({
         </div>
       )}
 
+      {!hasVideo && !src && children && (
+        <div
+          className="absolute z-0 overflow-hidden bg-neutral-950"
+          style={{
+            left: `${LEFT_PCT}%`,
+            top: `${TOP_PCT}%`,
+            width: `${WIDTH_PCT}%`,
+            height: `${HEIGHT_PCT}%`,
+            borderRadius: `${RADIUS_H}% / ${RADIUS_V}%`,
+          }}
+        >
+          {children}
+        </div>
+      )}
+
       <svg
         viewBox={`0 0 ${PHONE_WIDTH} ${PHONE_HEIGHT}`}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute inset-0 size-full"
+        className="absolute inset-0 z-10 size-full"
         style={{ transform: "translateZ(0)" }}
       >
         <g mask={hasMedia ? "url(#screenPunch)" : undefined}>

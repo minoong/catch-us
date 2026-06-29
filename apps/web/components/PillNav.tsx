@@ -23,6 +23,7 @@ export interface PillNavProps {
   pillTextColor?: string;
   onMobileMenuClick?: () => void;
   initialLoadAnimation?: boolean;
+  inlineOnMobile?: boolean;
 }
 
 const PillNav: React.FC<PillNavProps> = ({
@@ -38,6 +39,7 @@ const PillNav: React.FC<PillNavProps> = ({
   pillTextColor,
   onMobileMenuClick,
   initialLoadAnimation = true,
+  inlineOnMobile = false,
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -317,7 +319,9 @@ const PillNav: React.FC<PillNavProps> = ({
 
         <div
           ref={navItemsRef}
-          className="relative ml-2 hidden items-center rounded-full md:flex"
+          className={`relative ml-2 items-center rounded-full ${
+            inlineOnMobile ? "flex" : "hidden md:flex"
+          }`}
           style={{
             height: "var(--nav-h)",
             background: "var(--base, #000)",
@@ -420,7 +424,9 @@ const PillNav: React.FC<PillNavProps> = ({
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
-          className="relative flex cursor-pointer flex-col items-center justify-center gap-1 rounded-full border-0 p-0 md:hidden"
+          className={`relative cursor-pointer flex-col items-center justify-center gap-1 rounded-full border-0 p-0 md:hidden ${
+            inlineOnMobile ? "hidden" : "flex"
+          }`}
           style={{
             width: "var(--nav-h)",
             height: "var(--nav-h)",

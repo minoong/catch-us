@@ -64,7 +64,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
             />
           </div>
 
-          <div className="mt-3 flex gap-2 overflow-x-auto">
+          <div className="mt-3 flex [scrollbar-width:none] gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
             {quickLinks.map((item) => (
               <button
                 className="bg-muted h-9 shrink-0 rounded-full px-3 text-xs font-semibold"
