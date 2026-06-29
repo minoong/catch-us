@@ -120,10 +120,10 @@ projection logic.
   preserve reduced-motion access.
 - For this trip slice, "aggressively" means the route should visibly compose
   registry components, not only keep them installed. The current baseline uses
-  Magic UI `PixelImage`, `BorderBeam`, `AnimatedBeam`, `Iphone`,
-  `AnimatedGradientText`, `AnimatedGridPattern`, ReactBits `ScrollStack`,
-  `ScrollFloat`, `CircularGallery`, `Aurora`/`Silk`, `Noise`, and
-  motion-primitives `TransitionPanel`.
+  Magic UI `PixelImage`, `DiaTextReveal`, `BorderBeam`, `AnimatedBeam`,
+  `Iphone`, `AnimatedGradientText`, `AnimatedGridPattern`, ReactBits
+  `ScrollStack`, `ScrollFloat`, `CircularGallery`, `Aurora`/`Silk`, `Noise`,
+  ReactBits `GradualBlur`, and motion-primitives `TransitionPanel`.
 - Trip motion is mobile-first. Do not rely on hover-only reveals for primary
   information or CTAs. Wrap registry components when needed so actions are
   visible by default on touch devices. Do not use ReactBits `PillNav` for trip
@@ -138,6 +138,8 @@ projection logic.
   reduced-motion preferences.
 - Use a 2-depth schedule explorer for itinerary navigation: sticky map, sticky
   active-state animated date segmented nav, quick rail, and scrollable timeline.
+- Schedule page edge fades should use ReactBits `GradualBlur` as a bottom
+  viewport effect so scrollable content fades out like the upstream demo.
 - Kakao Maps uses `NEXT_PUBLIC_KAKAO_MAP_APP_KEY`; when the key or coordinates
   are missing, show the fallback map card. Static trip places must include
   `lat` and `lng` for SDK rendering.

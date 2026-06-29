@@ -4,9 +4,10 @@ import * as React from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
+import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
+
 import Aurora from "@/components/Aurora";
 import Noise from "@/components/Noise";
-import SplitText from "@/components/SplitText";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { Backlight } from "@/components/magicui/backlight";
@@ -66,13 +67,11 @@ export function TripHero({ trip }: { trip: Trip }) {
             {prefersReducedMotion ? (
               <span className="leading-[0.9]">{trip.title}</span>
             ) : (
-              <SplitText
+              <DiaTextReveal
                 className="leading-[0.9]"
-                delay={42}
-                duration={0.64}
-                ease="power3.out"
-                splitType="chars"
-                tag="span"
+                colors={["#ef4444", "#f97316", "#2563eb", "#111827"]}
+                delay={0.2}
+                duration={1.45}
                 text={trip.title}
               />
             )}

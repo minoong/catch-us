@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 
+import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
+
 import type { Trip } from "../_data/trips";
 
 export function TripIntroHeader({
@@ -26,7 +28,11 @@ export function TripIntroHeader({
                 layoutId="trip-intro-title"
                 transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
               >
-                {trip.title}
+                <DiaTextReveal
+                  colors={["#ef4444", "#f97316", "#2563eb"]}
+                  duration={1.2}
+                  text={trip.title}
+                />
               </motion.p>
             ) : (
               <span className="block h-4" aria-hidden="true" />

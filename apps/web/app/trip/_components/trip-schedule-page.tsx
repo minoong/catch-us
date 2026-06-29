@@ -3,6 +3,9 @@
 import * as React from "react";
 import Link from "next/link";
 
+import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
+
+import GradualBlur from "@/components/GradualBlur";
 import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
 
 import type { Trip, TripDayId } from "../_data/trips";
@@ -56,7 +59,13 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
               <p className="text-muted-foreground text-xs font-semibold tracking-[0.18em] uppercase">
                 Jeonju 2026
               </p>
-              <h1 className="truncate text-lg font-semibold">{trip.title}</h1>
+              <h1 className="truncate text-lg font-semibold">
+                <DiaTextReveal
+                  colors={["#ef4444", "#f97316", "#2563eb"]}
+                  duration={1.2}
+                  text={trip.title}
+                />
+              </h1>
             </div>
           </header>
 
@@ -113,6 +122,19 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
           </TransitionPanel>
         </div>
       </section>
+      <GradualBlur
+        animated="scroll"
+        curve="bezier"
+        divCount={9}
+        height="7rem"
+        mobileHeight="7rem"
+        opacity={0.96}
+        position="bottom"
+        responsive
+        strength={2.8}
+        target="page"
+        zIndex={40}
+      />
     </main>
   );
 }
