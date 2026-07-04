@@ -5,21 +5,20 @@ import Link from "next/link";
 
 import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
 
-import GradualBlur from "@/components/GradualBlur";
+import { MorphingText } from "@/components/magicui/morphing-text";
 import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
 
 import type { Trip, TripDayId } from "../_data/trips";
-import {
-  getItineraryByDay,
-  getQuickLinks,
-  tripDayOptions,
-} from "../_lib/itinerary";
+import { getItineraryByDay, tripDayOptions } from "../_lib/itinerary";
 import { TripDateSegmentedNav } from "./trip-date-segmented-nav";
 import { TripMapPanel } from "./trip-map-panel";
 import { TripTimeline } from "./trip-timeline";
 
 export function TripSchedulePage({ trip }: { trip: Trip }) {
   const [activeDay, setActiveDay] = React.useState<TripDayId>("all");
+  const [swipeDirection, setSwipeDirection] = React.useState(1);
+  const scheduleTopRef = React.useRef<HTMLDivElement>(null);
+  const stickyRef = React.useRef<HTMLDivElement>(null);
   const items = React.useMemo(
     () => getItineraryByDay(trip, activeDay),
     [activeDay, trip],
@@ -27,7 +26,6 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
   const [selectedItemId, setSelectedItemId] = React.useState(
     trip.itinerary[0]?.id ?? "",
   );
-  const quickLinks = getQuickLinks(trip);
   const activeDayIndex = Math.max(
     0,
     tripDayOptions.findIndex((option) => option.id === activeDay),
@@ -36,74 +34,192 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
     ? selectedItemId
     : (items[0]?.id ?? "");
 
-  function scrollToItem(itemId: string) {
-    setSelectedItemId(itemId);
-    document
-      .getElementById(itemId)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+  React.useEffect(() => {
+    let frame: number | undefined;
+    let lastProgress = -1;
+
+    const setProgressVariables = (progress: number) => {
+      const target = stickyRef.current;
+      if (!target || progress === lastProgress) return;
+      lastProgress = progress;
+
+      const lerp = (from: number, to: number) => from + (to - from) * progress;
+
+      target.style.setProperty("--trip-sticky-radius", `${lerp(0, 28)}px`);
+      target.style.setProperty("--trip-sticky-pt", `${lerp(16, 8)}px`);
+      target.style.setProperty("--trip-sticky-pb", `${lerp(12, 8)}px`);
+      target.style.setProperty("--trip-header-gap", `${lerp(12, 8)}px`);
+      target.style.setProperty("--trip-back-size", `${lerp(40, 32)}px`);
+      target.style.setProperty("--trip-back-radius", `${lerp(16, 12)}px`);
+      target.style.setProperty("--trip-eyebrow-size", `${lerp(12, 10)}px`);
+      target.style.setProperty("--trip-title-size", `${lerp(18, 16)}px`);
+      target.style.setProperty("--trip-map-mx", `${lerp(0, -16)}px`);
+      target.style.setProperty("--trip-map-mt", `${lerp(12, 4)}px`);
+      target.style.setProperty("--trip-map-padding", `${lerp(4, 0)}px`);
+      target.style.setProperty("--trip-map-radius", `${lerp(30, 0)}px`);
+      target.style.setProperty("--trip-map-height", `${lerp(220, 178)}px`);
+      target.style.setProperty("--trip-map-inner-radius", `${lerp(28, 0)}px`);
+      target.style.setProperty("--trip-tabs-mt", `${lerp(12, 8)}px`);
+      target.style.setProperty("--trip-tab-radius", `${lerp(14, 10)}px`);
+      target.style.setProperty("--trip-tab-active-radius", `${lerp(12, 8)}px`);
+      target.style.setProperty("--trip-tab-height", `${lerp(40, 28)}px`);
+      target.style.setProperty("--trip-tab-font-size", `${lerp(14, 11)}px`);
+      target.style.setProperty("--trip-tab-px", `${lerp(12, 8)}px`);
+    };
+
+    const updateScrollProgress = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = undefined;
+        const root = document.documentElement;
+        const maxScroll = Math.max(root.scrollHeight - window.innerHeight, 0);
+        const nearPageBottom = maxScroll - window.scrollY < 48;
+        const rawProgress = nearPageBottom
+          ? 1
+          : Math.min(Math.max((window.scrollY - 8) / 136, 0), 1);
+        const progress = Number(rawProgress.toFixed(3));
+
+        setProgressVariables(progress);
+      });
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", updateScrollProgress);
+      window.removeEventListener("resize", updateScrollProgress);
+    };
+  }, []);
+
+  function handleDayChange(day: TripDayId) {
+    const nextItems = getItineraryByDay(trip, day);
+    const nextDayIndex = tripDayOptions.findIndex(
+      (option) => option.id === day,
+    );
+
+    if (nextDayIndex !== -1 && nextDayIndex !== activeDayIndex) {
+      setSwipeDirection(nextDayIndex > activeDayIndex ? 1 : -1);
+    }
+    setSelectedItemId(nextItems[0]?.id ?? "");
+    setActiveDay(day);
+    window.requestAnimationFrame(() => {
+      window.scrollTo({
+        behavior: "smooth",
+        top: 0,
+      });
+    });
   }
 
   return (
     <main className="bg-background text-foreground min-h-screen">
-      <section className="mx-auto min-h-screen w-full max-w-md px-4 pb-24 sm:max-w-lg">
-        <div className="bg-background/95 sticky top-0 z-30 -mx-4 px-4 pt-4 pb-3 backdrop-blur">
-          <header className="flex items-center gap-3">
+      <section className="mx-auto min-h-screen w-full max-w-md px-4 sm:max-w-lg">
+        <div
+          className="bg-background/95 sticky top-0 z-30 -mx-4 rounded-b-[var(--trip-sticky-radius)] px-4 pt-[var(--trip-sticky-pt)] pb-[var(--trip-sticky-pb)] shadow-xl backdrop-blur"
+          ref={stickyRef}
+          style={
+            {
+              "--trip-back-radius": "16px",
+              "--trip-back-size": "40px",
+              "--trip-eyebrow-size": "12px",
+              "--trip-header-gap": "12px",
+              "--trip-map-height": "220px",
+              "--trip-map-inner-radius": "28px",
+              "--trip-map-mt": "12px",
+              "--trip-map-mx": "0px",
+              "--trip-map-padding": "4px",
+              "--trip-map-radius": "30px",
+              "--trip-sticky-pb": "12px",
+              "--trip-sticky-pt": "16px",
+              "--trip-sticky-radius": "0px",
+              "--trip-tab-active-radius": "12px",
+              "--trip-tab-font-size": "14px",
+              "--trip-tab-height": "40px",
+              "--trip-tab-px": "12px",
+              "--trip-tab-radius": "14px",
+              "--trip-tabs-mt": "12px",
+              "--trip-title-size": "18px",
+            } as React.CSSProperties
+          }
+        >
+          <header className="relative flex items-center gap-[var(--trip-header-gap)] pr-10">
             <Link
               aria-label="여행 소개로 돌아가기"
-              className="grid size-10 place-items-center rounded-2xl border"
+              className="grid h-[var(--trip-back-size)] w-[var(--trip-back-size)] place-items-center rounded-[var(--trip-back-radius)] border text-sm"
               href={`/trip/${trip.slug}`}
             >
               ←
             </Link>
             <div className="min-w-0 flex-1">
-              <p className="text-muted-foreground text-xs font-semibold tracking-[0.18em] uppercase">
+              <p
+                className="text-muted-foreground font-semibold tracking-[0.18em] uppercase"
+                style={{ fontSize: "var(--trip-eyebrow-size)" }}
+              >
                 Jeonju 2026
               </p>
-              <h1 className="truncate text-lg font-semibold">
-                <DiaTextReveal
-                  colors={["#ef4444", "#f97316", "#2563eb"]}
-                  duration={1.2}
-                  text={trip.title}
-                />
+              <h1
+                className="grid h-[1.15em] truncate leading-none font-semibold"
+                style={{ fontSize: "var(--trip-title-size)" }}
+              >
+                <span className="trip-title-original col-start-1 row-start-1 min-w-0">
+                  <DiaTextReveal
+                    colors={["#ef4444", "#f97316", "#2563eb"]}
+                    duration={1.2}
+                    text={trip.title}
+                  />
+                </span>
+                <span className="trip-title-morph col-start-1 row-start-1 min-w-0">
+                  <MorphingText
+                    interval={2200}
+                    texts={["가현쨩❤️미누쿤", "🐶♥️🐒 여행을 떠나요"]}
+                  />
+                </span>
               </h1>
             </div>
           </header>
 
-          <TripMapPanel activeItemId={activeItemId} trip={trip} />
+          <TripMapPanel
+            activeDay={activeDay}
+            activeItemId={activeItemId}
+            trip={trip}
+            visibleItems={items}
+          />
 
-          <div className="mt-3">
+          <div className="mt-[var(--trip-tabs-mt)]">
             <TripDateSegmentedNav
               activeDay={activeDay}
-              onChange={setActiveDay}
+              onChange={handleDayChange}
               options={tripDayOptions}
             />
           </div>
-
-          <div className="mt-3 flex [scrollbar-width:none] gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-            {quickLinks.map((item) => (
-              <button
-                className="bg-muted h-9 shrink-0 rounded-full px-3 text-xs font-semibold"
-                key={item.id}
-                onClick={() => {
-                  setActiveDay("all");
-                  requestAnimationFrame(() => scrollToItem(item.id));
-                }}
-                type="button"
-              >
-                {item.train?.number ?? item.title}
-              </button>
-            ))}
-          </div>
         </div>
 
-        <div className="overflow-hidden py-4">
+        <div
+          className="-mx-4 overflow-x-clip overflow-y-visible py-3"
+          ref={scheduleTopRef}
+        >
           <TransitionPanel
             activeIndex={activeDayIndex}
-            transition={{ duration: 0.22, ease: "easeInOut" }}
+            custom={swipeDirection}
+            transition={{
+              bounce: 0.18,
+              duration: 0.34,
+              type: "spring",
+            }}
             variants={{
-              enter: { opacity: 0, y: -28, filter: "blur(4px)" },
-              center: { opacity: 1, y: 0, filter: "blur(0px)" },
-              exit: { opacity: 0, y: 28, filter: "blur(4px)" },
+              enter: (direction) => ({
+                filter: "blur(3px)",
+                opacity: 0,
+                x: `${Number(direction) * 18}%`,
+              }),
+              center: { filter: "blur(0px)", opacity: 1, x: "0%" },
+              exit: (direction) => ({
+                filter: "blur(3px)",
+                opacity: 0,
+                x: `${Number(direction) * -18}%`,
+              }),
             }}
           >
             {tripDayOptions.map((option) => (
@@ -122,19 +238,6 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
           </TransitionPanel>
         </div>
       </section>
-      <GradualBlur
-        animated="scroll"
-        curve="bezier"
-        divCount={9}
-        height="7rem"
-        mobileHeight="7rem"
-        opacity={0.96}
-        position="bottom"
-        responsive
-        strength={2.8}
-        target="page"
-        zIndex={40}
-      />
     </main>
   );
 }

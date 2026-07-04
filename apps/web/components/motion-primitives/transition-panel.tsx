@@ -1,7 +1,7 @@
 "use client";
 
 import type * as React from "react";
-import type { MotionProps, Transition, Variant } from "motion/react";
+import type { MotionProps, Transition, Variants } from "motion/react";
 import { AnimatePresence, motion } from "motion/react";
 
 import { cn } from "@repo/ui/lib/utils";
@@ -11,8 +11,9 @@ export type TransitionPanelProps = {
   className?: string;
   transition?: Transition;
   activeIndex: number;
-  variants?: { enter: Variant; center: Variant; exit: Variant };
-} & MotionProps;
+  custom?: number;
+  variants?: Variants;
+} & Omit<MotionProps, "custom">;
 
 export function TransitionPanel({
   children,
@@ -20,13 +21,15 @@ export function TransitionPanel({
   transition,
   variants,
   activeIndex,
+  custom,
   ...motionProps
 }: TransitionPanelProps) {
   return (
     <div className={cn("relative", className)}>
-      <AnimatePresence initial={false} mode="popLayout">
+      <AnimatePresence custom={custom} initial={false} mode="popLayout">
         <motion.div
           key={activeIndex}
+          custom={custom}
           variants={variants}
           transition={transition}
           initial="enter"

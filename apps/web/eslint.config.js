@@ -4,6 +4,7 @@ import { nextConfig } from "@repo/eslint-config/next";
 
 const registryGeneratedVisualComponents = [
   "{apps/web/,}components/Aurora.tsx",
+  "{apps/web/,}components/AnimatedList.tsx",
   "{apps/web/,}components/CircularGallery.tsx",
   "{apps/web/,}components/Noise.tsx",
   "{apps/web/,}components/PillNav.tsx",

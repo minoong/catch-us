@@ -42,6 +42,124 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-shine: shine var(--duration) infinite linear;
+  --animate-line-shadow-text: line-shadow-text 2s linear infinite alternate;
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  @keyframes line-shadow-text {
+    0% {
+      text-shadow:
+        0 0 transparent,
+        0 0 transparent;
+    }
+    100% {
+      text-shadow:
+        0.04em 0.04em 0 var(--line-shadow-color),
+        0.08em 0.08em 0
+          color-mix(in oklab, var(--line-shadow-color), transparent 45%);
+    }
+  }
+  @keyframes trip-title-out {
+    0% {
+      opacity: 1;
+      filter: blur(0);
+    }
+    100% {
+      opacity: 0;
+      filter: blur(4px);
+    }
+  }
+  @keyframes trip-title-in {
+    0% {
+      opacity: 0;
+      filter: blur(5px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+  @keyframes trip-morphing-text {
+    0%,
+    42% {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+    50%,
+    92% {
+      opacity: 0;
+      filter: blur(10px);
+      transform: scale(0.985);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+}
+
+@layer utilities {
+  .trip-title-original {
+    animation: trip-title-out 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both;
+  }
+
+  .trip-title-morph {
+    animation: trip-title-in 0.46s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both;
+  }
+
+  .trip-morphing-text-item {
+    animation: trip-morphing-text var(--trip-morph-cycle)
+      cubic-bezier(0.16, 1, 0.3, 1) infinite both;
+    transform-origin: left center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trip-title-original {
+      animation: none;
+      opacity: 0;
+      filter: none;
+    }
+
+    .trip-title-morph {
+      animation: none;
+      opacity: 1;
+      filter: none;
+    }
+
+    .trip-morphing-text-item {
+      animation: none;
+      opacity: 0;
+      filter: none;
+      transform: none;
+    }
+
+    .trip-morphing-text-item[data-index="0"] {
+      opacity: 1;
+    }
+  }
 }
 
 :root {

@@ -12,14 +12,17 @@ declare global {
           options: Record<string, unknown>,
         ) => {
           panTo: (latlng: object) => void;
+          relayout: () => void;
           setBounds: (bounds: object) => void;
           setCenter: (latlng: object) => void;
+          setLevel: (level: number) => void;
         };
         Marker: new (options: Record<string, unknown>) => {
           setMap: (map: object | null) => void;
         };
         CustomOverlay: new (options: Record<string, unknown>) => {
           setMap: (map: object | null) => void;
+          setContent: (content: string | HTMLElement) => void;
         };
       };
     };
