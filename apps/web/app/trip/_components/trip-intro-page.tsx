@@ -10,6 +10,7 @@ import { TripIntroHeader } from "./trip-intro-header";
 import { TripIntroTransition } from "./trip-intro-transition";
 import { TripLenisProvider } from "./trip-lenis-provider";
 import { TripStoryStack } from "./trip-story-stack";
+import { TripTimeControlStrip } from "./trip-time-control-strip";
 
 export function TripIntroPage({ trip }: { trip: Trip }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
@@ -30,6 +31,7 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
           <TripIntroTransition introComplete={introComplete} trip={trip} />
           <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-3 sm:max-w-lg">
             <TripIntroHeader compactVisible={introComplete} trip={trip} />
+            <TripTimeControlStrip trip={trip} />
             <TripHero trip={trip} />
             <TripBentoGrid trip={trip} />
             <TripStoryStack trip={trip} />
