@@ -152,11 +152,11 @@ projection logic.
   dotted dividers, and short viewport reveal. Keep timeline animations separate
   from sticky header, map, and tab sizing so scroll-driven compact UI does not
   jitter.
-- Trip schedule header title motion should keep the H1 footprint stable. The
-  current schedule page reveals the original trip title once, then swaps into a
-  CSS-keyframe morphing title in the same line. Do not add extra title rows or
-  unsolicited text colors; use the inherited heading color unless a design spec
-  says otherwise.
+- Trip schedule header title should stay stable on first entry. Use the
+  original trip title in the H1 with only its initial text reveal; do not morph
+  or swap the title into alternate copy after load. Do not add extra title rows
+  or unsolicited text colors; use the inherited heading color unless a design
+  spec says otherwise.
 - Trip schedule Lottie decorations are contextual, not header chrome. The
   current date rail uses a hanging monkey Lottie under the sticky date badge and
   a small love Lottie centered below the monkey so it reads as the monkey

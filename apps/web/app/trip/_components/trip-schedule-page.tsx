@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
 
-import { MorphingText } from "@/components/magicui/morphing-text";
 import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
 
 import type { Trip, TripDayId } from "../_data/trips";
@@ -160,22 +159,14 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
                 Jeonju 2026
               </p>
               <h1
-                className="grid h-[1.15em] truncate leading-none font-semibold"
+                className="truncate leading-none font-semibold"
                 style={{ fontSize: "var(--trip-title-size)" }}
               >
-                <span className="trip-title-original col-start-1 row-start-1 min-w-0">
-                  <DiaTextReveal
-                    colors={["#ef4444", "#f97316", "#2563eb"]}
-                    duration={1.2}
-                    text={trip.title}
-                  />
-                </span>
-                <span className="trip-title-morph col-start-1 row-start-1 min-w-0">
-                  <MorphingText
-                    interval={2200}
-                    texts={["가현쨩❤️미누쿤", "🐶♥️🐒 여행을 떠나요"]}
-                  />
-                </span>
+                <DiaTextReveal
+                  colors={["#ef4444", "#f97316", "#2563eb"]}
+                  duration={1.2}
+                  text={trip.title}
+                />
               </h1>
             </div>
           </header>
