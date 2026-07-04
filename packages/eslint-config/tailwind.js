@@ -12,6 +12,8 @@ export const tailwindConfig = defineConfig([
     },
     rules: {
       "tailwindcss/classnames-order": "off",
+      // The v4 beta still calls removed ESLint APIs in this rule with ESLint 10.
+      "tailwindcss/enforces-shorthand": "off",
       // The v4 beta rejects valid CSS theme tokens such as text-muted-foreground.
       "tailwindcss/no-custom-classname": "off",
     },

@@ -85,6 +85,9 @@ one nested section route. Check that:
 ## Existing Tooling
 
 - ESLint shared configs live in `packages/eslint-config`.
+- `eslint-plugin-tailwindcss` is currently on the Tailwind CSS 4 beta path.
+  Keep beta-incompatible rules disabled in `packages/eslint-config/tailwind.js`
+  until the plugin supports the pinned ESLint/Tailwind versions cleanly.
 - The repo root keeps `eslint` as a dev dependency because lint-staged runs
   from the root and needs a root-level `eslint` binary for staged JS/TS files.
 - Prettier shared config lives in `packages/prettier-config`.

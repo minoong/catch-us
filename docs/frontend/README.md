@@ -36,6 +36,10 @@ This directory is the map for frontend, UI, and design-system decisions.
 - When importing Magic UI components, discover them through the `magicui` MCP or
   configured `@magicui` shadcn registry and review generated shared components
   before use.
+- If a React Bits or Magic UI registry file needs to stay close to generated
+  source, keep any lint exceptions scoped to exact generated filenames in the
+  owning app's ESLint config. Do not loosen shared package or app-authored code
+  rules for generated visual effects.
 - Prefer `motion/react` imports for Motion usage.
 - Respect reduced-motion preferences for continuous animation. If an effect is
   decorative, the page must still read correctly without it.
@@ -121,6 +125,73 @@ overlays. Country badges should behave as compact map labels:
 `DottedMap` passes rendered marker positions to `renderMarkerOverlay` so
 consumers can calculate collision-aware overlays without duplicating map
 projection logic.
+
+## Trip Pages
+
+`apps/web/app/trip` owns static trip intro and schedule pages. The first trip is
+`/trip/jeonju-2026`.
+
+- Keep trip data in route-local `_data/trips.ts`.
+- Do not add user-facing itinerary creation UI for this slice.
+- Use Magic UI and ReactBits effects aggressively on the 1-depth intro page, but
+  preserve reduced-motion access.
+- For this trip slice, "aggressively" means the route should visibly compose
+  registry components, not only keep them installed. The current baseline uses
+  Magic UI `PixelImage`, `DiaTextReveal`, `BorderBeam`, `AnimatedBeam`,
+  `Iphone`, `AnimatedGradientText`, `AnimatedGridPattern`, `TextAnimate`,
+  `AnimatedShinyText`, `LineShadowText`, `WordRotate`, `Highlighter`,
+  `ComicText`, ReactBits `ScrollStack`, `ScrollFloat`, `CircularGallery`,
+  `Aurora`/`Silk`, `Noise`, ReactBits `GradualBlur`, ReactBits
+  `AnimatedList`, and motion-primitives `TransitionPanel`.
+- Trip motion is mobile-first. Do not rely on hover-only reveals for primary
+  information or CTAs. Wrap registry components when needed so actions are
+  visible by default on touch devices. Do not use ReactBits `PillNav` for trip
+  schedule tabs because its generated implementation is mouse-hover oriented.
+- Trip intro photo effects should use optimized public assets, not original
+  camera files. Keep intro photos under `apps/web/public/trips/<slug>/intro/`.
+- Lenis usage on trip pages should stay route-local. Use `autoRaf`, clean up
+  with `destroy()`, and mark nested custom scrollers such as ReactBits
+  `ScrollStack` with `data-lenis-prevent` instead of enabling broad nested
+  scrolling.
+- Parallax should use lightweight transform/opacity motion and must respect
+  reduced-motion preferences.
+- Use a 2-depth schedule explorer for itinerary navigation: sticky map, sticky
+  active-state animated date segmented nav, and scrollable timeline.
+- On mobile schedules, avoid secondary place-chip rails unless the itinerary
+  needs a new interaction model. The sticky map and date tabs should compact
+  together from scroll progress rather than a hard jump while keeping the active
+  place and date visible.
+- Trip schedule date tabs should use a click/touch-driven segmented control
+  with an x-axis-only animated cursor. Do not use shared-layout tab backgrounds
+  that can animate vertically after sticky header resize.
+- Trip schedule timeline should use an app-local Luxury Ticket mobile journey
+  layout: a static time rail, compact kind markers, rounded ticket cards,
+  dotted dividers, and short viewport reveal. Keep timeline animations separate
+  from sticky header, map, and tab sizing so scroll-driven compact UI does not
+  jitter.
+- Trip schedule header title should stay stable on first entry. Use the
+  original trip title in the H1 with only its initial text reveal; do not morph
+  or swap the title into alternate copy after load. Do not add extra title rows
+  or unsolicited text colors; use the inherited heading color unless a design
+  spec says otherwise.
+- Trip schedule Lottie decorations are contextual, not header chrome. The
+  current date rail uses a hanging monkey Lottie under the sticky date badge and
+  a small love Lottie centered below the monkey so it reads as the monkey
+  reaching toward the heart. Keep these canvases pointer-events-free and verify
+  their mobile positions with Playwright because small absolute offsets are easy
+  to misread by eye.
+- Schedule map cards should prioritize the map itself. Put active place/status
+  as map overlays instead of a separate card title block.
+- In the compact sticky state, the schedule map should become edge-to-edge
+  within the mobile viewport and overlays must not intercept map gestures.
+- Kakao Maps uses `NEXT_PUBLIC_KAKAO_MAP_APP_KEY`; when the key or coordinates
+  are missing, show the fallback map card. Static trip places must include
+  `lat` and `lng` for SDK rendering.
+- Schedule date tabs filter Kakao SDK markers to the places in that tab. The
+  first `전체` tab is the exception and keeps all coordinate markers visible.
+  When fitting bounds for `2026-07-10`, exclude `yongsan-station` from the
+  bounds calculation so the map stays framed around Jeonju while still allowing
+  the Yongsan card to focus its marker when selected.
 
 ## Design System
 

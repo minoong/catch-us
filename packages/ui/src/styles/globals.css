@@ -42,6 +42,44 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-shine: shine var(--duration) infinite linear;
+  --animate-line-shadow-text: line-shadow-text 2s linear infinite alternate;
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  @keyframes line-shadow-text {
+    0% {
+      text-shadow:
+        0 0 transparent,
+        0 0 transparent;
+    }
+    100% {
+      text-shadow:
+        0.04em 0.04em 0 var(--line-shadow-color),
+        0.08em 0.08em 0
+          color-mix(in oklab, var(--line-shadow-color), transparent 45%);
+    }
+  }
 }
 
 :root {
