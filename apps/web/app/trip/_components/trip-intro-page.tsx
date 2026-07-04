@@ -4,13 +4,13 @@ import * as React from "react";
 import { LayoutGroup, useReducedMotion } from "motion/react";
 
 import type { Trip } from "../_data/trips";
-import { TripBentoGrid } from "./trip-bento-grid";
+import { TripAutoItineraryStepper } from "./trip-auto-itinerary-stepper";
+import { TripClosingCta } from "./trip-closing-cta";
 import { TripHero } from "./trip-hero";
 import { TripIntroHeader } from "./trip-intro-header";
 import { TripIntroTransition } from "./trip-intro-transition";
 import { TripLenisProvider } from "./trip-lenis-provider";
 import { TripPhotoMarquee } from "./trip-photo-marquee";
-import { TripStoryStack } from "./trip-story-stack";
 import { TripTimeControlStrip } from "./trip-time-control-strip";
 
 export function TripIntroPage({ trip }: { trip: Trip }) {
@@ -35,8 +35,8 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
             <TripTimeControlStrip trip={trip} />
             <TripHero trip={trip} />
             <TripPhotoMarquee trip={trip} />
-            <TripBentoGrid trip={trip} />
-            <TripStoryStack trip={trip} />
+            <TripAutoItineraryStepper trip={trip} />
+            <TripClosingCta trip={trip} />
           </section>
         </main>
       </LayoutGroup>
