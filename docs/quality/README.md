@@ -96,6 +96,11 @@ one nested section route. Check that:
 - Storybook documents shared UI components in `packages/ui`.
 - Playwright MCP may be used for local browser verification, but it is not yet
   an enforced E2E test suite.
+- Codex MCP entries for React Bits and Magic UI are documented in
+  `docs/frontend/README.md`.
+- When adding or changing an MCP, verify both the saved config with
+  `codex mcp get <name>` and the live Codex tool namespace after restart before
+  reporting that the MCP works.
 
 ## Planned Tooling
 
