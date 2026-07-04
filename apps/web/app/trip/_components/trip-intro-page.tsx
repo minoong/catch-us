@@ -9,6 +9,7 @@ import { TripHero } from "./trip-hero";
 import { TripIntroHeader } from "./trip-intro-header";
 import { TripIntroTransition } from "./trip-intro-transition";
 import { TripLenisProvider } from "./trip-lenis-provider";
+import { TripPhotoMarquee } from "./trip-photo-marquee";
 import { TripStoryStack } from "./trip-story-stack";
 import { TripTimeControlStrip } from "./trip-time-control-strip";
 
@@ -33,6 +34,7 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
             <TripIntroHeader compactVisible={introComplete} trip={trip} />
             <TripTimeControlStrip trip={trip} />
             <TripHero trip={trip} />
+            <TripPhotoMarquee trip={trip} />
             <TripBentoGrid trip={trip} />
             <TripStoryStack trip={trip} />
           </section>
