@@ -15,8 +15,9 @@ export function TripClosingCta({ trip }: { trip: Trip }) {
         있어요.
       </p>
       <TripScheduleTransitionLink
-        className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-full bg-white text-sm font-black text-neutral-950"
+        className="mt-5 h-12 w-full shadow-none"
         href={`/trip/${trip.slug}/schedule`}
+        variant="light"
       >
         전체 일정 열기
       </TripScheduleTransitionLink>

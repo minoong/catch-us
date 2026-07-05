@@ -102,8 +102,10 @@ export function TripIntroHeader({
           </AnimatePresence>
         </div>
         <TripScheduleTransitionLink
-          className="bg-primary text-primary-foreground inline-flex h-[var(--trip-intro-cta-height)] shrink-0 items-center justify-center rounded-full px-3 text-xs font-black"
+          className="h-[var(--trip-intro-cta-height)] w-[4.75rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"
           href={`/trip/${trip.slug}/schedule`}
+          size="compact"
+          variant="dark"
         >
           일정
         </TripScheduleTransitionLink>

@@ -1,14 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
+import { InteractiveHoverButton } from "@repo/ui/components/interactive-hover-button";
 import { cn } from "@repo/ui/lib/utils";
 
 const TRANSITION_DELAY_MS = 1000;
+const BUTTON_RELAY_MS = 620;
 
 const LOADING_CUTS = [
   {
@@ -37,15 +38,20 @@ export function TripScheduleTransitionLink({
   children,
   className,
   href,
+  size = "default",
+  variant = "dark",
 }: {
   children: React.ReactNode;
   className?: string;
   href: string;
+  size?: "compact" | "default";
+  variant?: "dark" | "light" | "primary";
 }) {
   const router = useRouter();
   const prefersReducedMotion = useReducedMotion() ?? false;
   const [activeCut, setActiveCut] =
     React.useState<(typeof LOADING_CUTS)[number]>();
+  const [forceHover, setForceHover] = React.useState(false);
   const isNavigatingRef = React.useRef(false);
   const timeoutRef = React.useRef<number | null>(null);
 
@@ -55,27 +61,24 @@ export function TripScheduleTransitionLink({
     };
   }, []);
 
-  function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
-    if (
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey ||
-      event.button !== 0 ||
-      isNavigatingRef.current
-    ) {
+  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    if (event.button !== 0 || isNavigatingRef.current) {
       return;
     }
 
     event.preventDefault();
     isNavigatingRef.current = true;
+    setForceHover(true);
 
     const cut = LOADING_CUTS[Math.floor(Math.random() * LOADING_CUTS.length)];
-    setActiveCut(cut);
 
     timeoutRef.current = window.setTimeout(() => {
-      router.push(href);
-    }, TRANSITION_DELAY_MS);
+      setForceHover(false);
+      setActiveCut(cut);
+      timeoutRef.current = window.setTimeout(() => {
+        router.push(href);
+      }, TRANSITION_DELAY_MS);
+    }, BUTTON_RELAY_MS);
   }
 
   const overlay = (
@@ -90,45 +93,16 @@ export function TripScheduleTransitionLink({
         >
           <motion.div
             animate={prefersReducedMotion ? undefined : { scale: 1, y: 0 }}
-            className="relative w-full max-w-sm overflow-hidden rounded-[2rem] border border-white/20 bg-white p-3 text-neutral-950 shadow-2xl"
+            className="relative w-full max-w-sm overflow-hidden rounded-[2rem] border border-white/20 bg-neutral-950 shadow-2xl"
             initial={prefersReducedMotion ? undefined : { scale: 0.92, y: 18 }}
             transition={{ damping: 18, stiffness: 260, type: "spring" }}
           >
-            <div className="overflow-hidden rounded-[1.45rem] bg-neutral-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                alt=""
-                className="h-44 w-full object-cover"
-                src={activeCut.image}
-              />
-            </div>
-            <div className="p-3">
-              <p className="text-[10px] font-black tracking-[0.22em] text-red-500 uppercase">
-                otaku tour loading
-              </p>
-              <h2 className="mt-1 text-2xl leading-7 font-black tracking-[-0.06em]">
-                {activeCut.label}
-              </h2>
-              <p className="mt-2 text-sm leading-5 font-bold text-neutral-500">
-                {activeCut.line}
-              </p>
-              <div className="mt-4 h-2 overflow-hidden rounded-full bg-neutral-950/10">
-                <motion.div
-                  animate={{ scaleX: 1 }}
-                  className={cn(
-                    "h-full origin-left rounded-full",
-                    "bg-[linear-gradient(90deg,#ef4444,#f97316,#2563eb)]",
-                  )}
-                  initial={{ scaleX: 0 }}
-                  transition={{
-                    duration: prefersReducedMotion
-                      ? 0.1
-                      : TRANSITION_DELAY_MS / 1000,
-                    ease: "linear",
-                  }}
-                />
-              </div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt=""
+              className="h-56 w-full object-cover"
+              src={activeCut.image}
+            />
           </motion.div>
         </motion.div>
       ) : null}
@@ -137,9 +111,29 @@ export function TripScheduleTransitionLink({
 
   return (
     <>
-      <Link className={className} href={href} onClick={handleClick}>
+      <InteractiveHoverButton
+        className={cn(
+          "border-0 font-black",
+          "data-[force-hover=true]:scale-[0.96] data-[force-hover=true]:ring-4 data-[force-hover=true]:ring-red-400/40",
+          "group-active:[&>div:first-child>div]:scale-[100.8] group-active:[&>div:first-child>span]:opacity-0 group-active:[&>div:last-child]:opacity-100",
+          size === "default" &&
+            "h-full w-full px-4 py-0 text-sm group-active:[&>div:first-child>span]:translate-x-12 group-active:[&>div:last-child]:-translate-x-5",
+          size === "compact" &&
+            "h-full w-full px-2 py-0 text-xs [&>div:first-child]:gap-1.5 [&>div:first-child>div]:size-1.5 [&>div:first-child>span]:whitespace-nowrap group-active:[&>div:first-child>span]:translate-x-12 [&>div:last-child]:translate-x-0 [&>div:last-child]:gap-0 group-hover:[&>div:last-child]:translate-x-0 group-active:[&>div:last-child]:translate-x-0 group-data-[force-hover=true]:[&>div:last-child]:translate-x-0 [&>div:last-child>span]:hidden [&>div:last-child>svg]:size-4",
+          variant === "dark" &&
+            "bg-neutral-950 text-white [--primary-foreground:#111111] [--primary:#ffffff]",
+          variant === "light" &&
+            "bg-white text-neutral-950 [--primary-foreground:#ffffff] [--primary:#111111]",
+          variant === "primary" &&
+            "bg-primary text-primary-foreground [--primary-foreground:#111111] [--primary:#ffffff]",
+          className,
+        )}
+        onClick={handleClick}
+        data-force-hover={forceHover}
+        type="button"
+      >
         {children}
-      </Link>
+      </InteractiveHoverButton>
       {activeCut ? createPortal(overlay, document.body) : null}
     </>
   );

@@ -74,7 +74,7 @@ export function TripHero({ trip }: { trip: Trip }) {
 
         <TripParallaxLayer className="relative z-10 mt-4" speed={6}>
           <TripScheduleTransitionLink
-            className="inline-flex h-12 w-full items-center justify-center rounded-full bg-neutral-950 px-5 text-sm font-black text-white shadow-lg shadow-neutral-950/15 transition hover:bg-neutral-800 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:outline-none"
+            className="block h-12 w-full rounded-full shadow-lg shadow-neutral-950/15 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:outline-none"
             href={`/trip/${trip.slug}/schedule`}
           >
             일정 자세히 보기
