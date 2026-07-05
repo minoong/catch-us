@@ -36,11 +36,15 @@ function formatTimeUnit(value: number, padStart = false) {
   return padStart && value < 10 ? `0${text}` : text;
 }
 
-function formatAccessibleDuration(parts: ReturnType<typeof splitDuration>) {
-  return `${parts.days}일 ${formatTimeUnit(parts.hours, true)}시 ${formatTimeUnit(
-    parts.minutes,
-    true,
-  )}분 ${formatTimeUnit(parts.seconds, true)}초`;
+function formatTripStatus({
+  beforeDeparture,
+  parts,
+}: {
+  beforeDeparture: boolean;
+  parts: ReturnType<typeof splitDuration>;
+}) {
+  const prefix = beforeDeparture ? "용산역 출발까지" : "여행 시작 후";
+  return `${prefix} ${parts.days}일 ${formatTimeUnit(parts.hours, true)}시간 ${formatTimeUnit(parts.minutes, true)}분 ${formatTimeUnit(parts.seconds, true)}초`;
 }
 
 export function TripTimeControlStrip({ trip }: { trip: Trip }) {
@@ -59,96 +63,84 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
 
   if (!departure) {
     return (
-      <section className="rounded-[1.4rem] border border-white/70 bg-white/82 px-4 py-3 shadow-sm backdrop-blur">
-        <p className="text-[11px] font-black tracking-[0.2em] text-neutral-500 uppercase">
-          trip clock
-        </p>
-        <p className="mt-1 text-sm font-black text-neutral-950">여행 준비 중</p>
+      <section className="rounded-full border border-white/70 bg-white/86 px-4 py-3 shadow-sm backdrop-blur">
+        <p className="text-xs font-black text-neutral-950">여행 준비 중</p>
       </section>
     );
   }
 
   if (!now) {
     return (
-      <section className="h-[5.5rem] rounded-[1.4rem] border border-white/70 bg-white/70 shadow-sm backdrop-blur" />
+      <section className="h-14 rounded-full border border-white/70 bg-white/70 shadow-sm backdrop-blur" />
     );
   }
 
   const delta = departure.getTime() - now.getTime();
   const beforeDeparture = delta > 0;
   const parts = splitDuration(delta);
-  const accessibleDuration = formatAccessibleDuration(parts);
+  const statusText = formatTripStatus({ beforeDeparture, parts });
 
   return (
-    <section className="rounded-[1.4rem] border border-white/70 bg-white/86 px-4 py-3 shadow-lg backdrop-blur-xl">
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <p className="text-[10px] font-black tracking-[0.22em] text-red-500 uppercase">
-            trip clock
+    <section className="rounded-full border border-white/70 bg-white/88 px-4 py-3 shadow-lg backdrop-blur-xl">
+      <div className="flex items-center justify-between gap-4">
+        <div className="min-w-0">
+          <p className="truncate text-[11px] font-black text-neutral-500">
+            {statusText}
           </p>
-          <h2 className="mt-1 text-sm font-black text-neutral-950">
-            {beforeDeparture ? "용산역 출발까지" : "여행 시작 후"}
-          </h2>
+          <p className="mt-0.5 text-[10px] font-black tracking-[0.18em] text-red-500 uppercase">
+            KTX 521
+          </p>
         </div>
-        <p className="rounded-full bg-neutral-950 px-3 py-1 text-[11px] font-black text-white">
-          KTX 521
-        </p>
-      </div>
-
-      <p className="sr-only">{accessibleDuration}</p>
-      <div
-        aria-hidden="true"
-        className="mt-3 grid grid-cols-4 gap-2 font-mono text-neutral-950"
-      >
-        <TimeUnit
-          label="일"
+        <DurationDigits
+          parts={parts}
           prefersReducedMotion={prefersReducedMotion}
-          value={parts.days}
-        />
-        <TimeUnit
-          label="시"
-          prefersReducedMotion={prefersReducedMotion}
-          value={parts.hours}
-          padStart
-        />
-        <TimeUnit
-          label="분"
-          prefersReducedMotion={prefersReducedMotion}
-          value={parts.minutes}
-          padStart
-        />
-        <TimeUnit
-          label="초"
-          prefersReducedMotion={prefersReducedMotion}
-          value={parts.seconds}
-          padStart
         />
       </div>
     </section>
   );
 }
 
-function TimeUnit({
-  label,
-  padStart = false,
+function DurationDigits({
+  parts,
   prefersReducedMotion,
-  value,
 }: {
-  label: string;
-  padStart?: boolean;
+  parts: ReturnType<typeof splitDuration>;
   prefersReducedMotion: boolean;
-  value: number;
 }) {
-  return (
-    <div className="rounded-2xl bg-neutral-950/[0.04] px-2 py-2 text-center">
-      <div className="flex justify-center text-xl leading-none font-black">
-        {prefersReducedMotion ? (
-          formatTimeUnit(value, padStart)
-        ) : (
-          <SlidingNumber padStart={padStart} value={value} />
-        )}
+  const durationText = `${parts.days}일 ${formatTimeUnit(
+    parts.hours,
+    true,
+  )}:${formatTimeUnit(parts.minutes, true)}:${formatTimeUnit(
+    parts.seconds,
+    true,
+  )}`;
+
+  if (prefersReducedMotion) {
+    return (
+      <div
+        className="font-mono text-xl leading-none font-black text-neutral-950 tabular-nums"
+        role="timer"
+      >
+        {durationText}
       </div>
-      <p className="mt-1 text-[10px] font-black text-neutral-500">{label}</p>
+    );
+  }
+
+  return (
+    <div
+      className="flex shrink-0 items-center gap-0.5 font-mono text-xl leading-none font-black text-neutral-950 tabular-nums"
+      aria-label={durationText}
+      role="timer"
+    >
+      <span aria-hidden="true" className="flex items-center gap-0.5">
+        <SlidingNumber value={parts.days} />
+        <span className="text-xs text-neutral-500">일</span>
+        <SlidingNumber value={parts.hours} padStart />
+        <span className="text-neutral-400">:</span>
+        <SlidingNumber value={parts.minutes} padStart />
+        <span className="text-neutral-400">:</span>
+        <SlidingNumber value={parts.seconds} padStart />
+      </span>
     </div>
   );
 }
