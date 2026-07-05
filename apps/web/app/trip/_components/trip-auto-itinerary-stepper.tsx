@@ -160,9 +160,9 @@ function ItineraryStepCard({
   totalSteps: number;
 }) {
   return (
-    <article className="overflow-hidden rounded-[1.35rem] bg-neutral-950 text-white">
+    <article className="-mx-6 rounded-[1.35rem] bg-white p-3 text-neutral-950 ring-1 ring-neutral-950/8">
       {imageUrl ? (
-        <div className="relative h-36 overflow-hidden">
+        <div className="relative h-32 overflow-hidden rounded-[1rem] bg-neutral-100">
           <Image
             alt=""
             className="object-cover"
@@ -170,33 +170,35 @@ function ItineraryStepCard({
             sizes="(max-width: 640px) 320px, 440px"
             src={imageUrl}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.68))]" />
-          <p className="absolute bottom-3 left-4 rounded-full bg-white/14 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-white uppercase backdrop-blur">
-            {stepNumber}/{totalSteps}
-          </p>
         </div>
       ) : null}
 
-      <div className="p-4">
-        <p className="text-xs font-black text-white/48">
-          {item.startsAt ?? item.day.slice(5)}
-        </p>
-        <h3 className="mt-2 text-xl font-black tracking-[-0.05em]">
+      <div className={imageUrl ? "pt-3" : ""}>
+        <div className="flex items-start justify-between gap-3">
+          <p className="text-xs font-black text-neutral-400">
+            {item.startsAt ?? item.day.slice(5)}
+          </p>
+          <p className="rounded-full bg-neutral-950 px-2.5 py-1 text-[10px] font-black text-white">
+            {stepNumber}/{totalSteps}
+          </p>
+        </div>
+        <h3 className="mt-2 text-[1.35rem] leading-6 font-black tracking-[-0.05em] text-neutral-950">
           {item.title}
         </h3>
-        <p className="mt-2 text-sm leading-6 font-semibold text-white/68">
+        <p className="mt-2 text-sm leading-6 font-semibold text-neutral-500">
           {item.description}
         </p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {item.tags.slice(0, 3).map((tag) => (
-            <span
-              className="rounded-full bg-white/10 px-2 py-1 text-[10px] font-black text-white/58"
-              key={tag}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {item.tags.slice(0, 3).map((tag) => (
+          <span
+            className="rounded-full bg-neutral-950/[0.06] px-2 py-1 text-[10px] font-black text-neutral-500"
+            key={tag}
+          >
+            {tag}
+          </span>
+        ))}
       </div>
     </article>
   );
