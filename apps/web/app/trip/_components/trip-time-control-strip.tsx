@@ -4,8 +4,15 @@ import * as React from "react";
 import { useReducedMotion } from "motion/react";
 
 import { SlidingNumber } from "@/components/core/sliding-number";
+import { MorphingText } from "@repo/ui/components/morphing-text";
 
 import type { Trip } from "../_data/trips";
+
+const TRIP_CLOCK_TEXTS = [
+  "가현쨩과 미누쿤의 전주 여행",
+  "이쿠죠!!!",
+  "여자에게 최고의 화장은 미소!",
+];
 
 const MS_PER_SECOND = 1000;
 const MS_PER_MINUTE = MS_PER_SECOND * 60;
@@ -34,17 +41,6 @@ function splitDuration(value: number) {
 function formatTimeUnit(value: number, padStart = false) {
   const text = value.toString();
   return padStart && value < 10 ? `0${text}` : text;
-}
-
-function formatTripStatus({
-  beforeDeparture,
-  parts,
-}: {
-  beforeDeparture: boolean;
-  parts: ReturnType<typeof splitDuration>;
-}) {
-  const prefix = beforeDeparture ? "용산역 출발까지" : "여행 시작 후";
-  return `${prefix} ${parts.days}일 ${formatTimeUnit(parts.hours, true)}시간 ${formatTimeUnit(parts.minutes, true)}분 ${formatTimeUnit(parts.seconds, true)}초`;
 }
 
 export function TripTimeControlStrip({ trip }: { trip: Trip }) {
@@ -76,20 +72,22 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
   }
 
   const delta = departure.getTime() - now.getTime();
-  const beforeDeparture = delta > 0;
   const parts = splitDuration(delta);
-  const statusText = formatTripStatus({ beforeDeparture, parts });
 
   return (
     <section className="rounded-full border border-white/70 bg-white/88 px-4 py-3 shadow-lg backdrop-blur-xl">
       <div className="flex items-center justify-between gap-4">
-        <div className="min-w-0">
-          <p className="truncate text-[11px] font-black text-neutral-500">
-            {statusText}
-          </p>
-          <p className="mt-0.5 text-[10px] font-black tracking-[0.18em] text-red-500 uppercase">
-            KTX 521
-          </p>
+        <div className="min-w-0 flex-1">
+          {prefersReducedMotion ? (
+            <p className="truncate text-sm leading-none font-black text-neutral-950">
+              {TRIP_CLOCK_TEXTS[0]}
+            </p>
+          ) : (
+            <MorphingText
+              className="mx-0 h-4 max-w-none overflow-hidden text-left text-xs leading-none font-black whitespace-nowrap text-neutral-950 filter-[url(#threshold)_blur(0.2px)]"
+              texts={TRIP_CLOCK_TEXTS}
+            />
+          )}
         </div>
         <DurationDigits
           parts={parts}
