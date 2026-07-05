@@ -32,19 +32,40 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
   const [timerResetKey, setTimerResetKey] = React.useState(0);
 
   React.useEffect(() => {
-    if (prefersReducedMotion) return;
     if (steps.length <= 1) return;
 
     const startedAt = performance.now();
-    let frame: number;
+    let frame: number | undefined;
+    let interval: number | undefined;
+    let timeout: number | undefined;
+
+    const goToNextStep = () => {
+      setActiveIndex((current) => (current + 1) % steps.length);
+      setProgress(0);
+    };
+
+    if (prefersReducedMotion) {
+      interval = window.setInterval(() => {
+        const ratio = Math.min(
+          (performance.now() - startedAt) / STEP_DURATION_MS,
+          1,
+        );
+        setProgress(ratio);
+      }, 250);
+      timeout = window.setTimeout(goToNextStep, STEP_DURATION_MS);
+
+      return () => {
+        if (interval !== undefined) window.clearInterval(interval);
+        if (timeout !== undefined) window.clearTimeout(timeout);
+      };
+    }
 
     const tick = (timestamp: number) => {
       const ratio = Math.min((timestamp - startedAt) / STEP_DURATION_MS, 1);
       setProgress(ratio);
 
       if (ratio >= 1) {
-        setActiveIndex((current) => (current + 1) % steps.length);
-        setProgress(0);
+        goToNextStep();
         return;
       }
 
@@ -52,7 +73,9 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
     };
 
     frame = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(frame);
+    return () => {
+      if (frame !== undefined) window.cancelAnimationFrame(frame);
+    };
   }, [activeIndex, prefersReducedMotion, steps.length, timerResetKey]);
 
   if (steps.length === 0) return null;
@@ -143,7 +166,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         <div
           className="h-full rounded-full bg-[linear-gradient(90deg,#ef4444,#2563eb)]"
           style={{
-            transform: `scaleX(${prefersReducedMotion ? 1 : progress})`,
+            transform: `scaleX(${progress})`,
             transformOrigin: "left",
           }}
         />
