@@ -3,6 +3,8 @@
 import * as React from "react";
 import { AnimatePresence, motion } from "motion/react";
 
+import GlassSurface from "@/components/GlassSurface";
+
 import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
 
 import type { Trip } from "../_data/trips";
@@ -76,40 +78,54 @@ export function TripIntroHeader({
         } as React.CSSProperties
       }
     >
-      <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-[var(--trip-intro-header-radius)] border border-white/70 bg-white/86 px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-lg backdrop-blur-xl">
-        <div className="min-w-0 flex-1 overflow-hidden">
-          <p className="truncate text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
-            Jeonju 2026
-          </p>
-          <AnimatePresence mode="popLayout" initial={false}>
-            {compactVisible ? (
-              <motion.p
-                className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
-                layoutId="trip-intro-title"
-                style={{ fontSize: "var(--trip-intro-title-size)" }}
-                transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <DiaTextReveal
-                  className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
-                  colors={["#ef4444", "#f97316", "#2563eb"]}
-                  duration={1.2}
-                  text={trip.title}
-                />
-              </motion.p>
-            ) : (
-              <span className="block h-4" aria-hidden="true" />
-            )}
-          </AnimatePresence>
+      <GlassSurface
+        backgroundOpacity={0.2}
+        blur={13}
+        borderRadius="var(--trip-intro-header-radius)"
+        borderWidth={0.1}
+        brightness={58}
+        className="w-full shadow-[0_14px_38px_rgba(15,23,42,0.16)] [&>.glass-surface__content]:p-0"
+        displace={0.25}
+        height="auto"
+        opacity={0.88}
+        saturation={1.55}
+        width="100%"
+      >
+        <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)]">
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <p className="truncate text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
+              Jeonju 2026
+            </p>
+            <AnimatePresence mode="popLayout" initial={false}>
+              {compactVisible ? (
+                <motion.p
+                  className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
+                  layoutId="trip-intro-title"
+                  style={{ fontSize: "var(--trip-intro-title-size)" }}
+                  transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <DiaTextReveal
+                    className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
+                    colors={["#ef4444", "#f97316", "#2563eb"]}
+                    duration={1.2}
+                    text={trip.title}
+                  />
+                </motion.p>
+              ) : (
+                <span className="block h-4" aria-hidden="true" />
+              )}
+            </AnimatePresence>
+          </div>
+          <TripScheduleTransitionLink
+            className="h-[var(--trip-intro-cta-height)] w-[4.75rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"
+            href={`/trip/${trip.slug}/schedule`}
+            size="compact"
+            variant="dark"
+          >
+            일정
+          </TripScheduleTransitionLink>
         </div>
-        <TripScheduleTransitionLink
-          className="h-[var(--trip-intro-cta-height)] w-[4.75rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"
-          href={`/trip/${trip.slug}/schedule`}
-          size="compact"
-          variant="dark"
-        >
-          일정
-        </TripScheduleTransitionLink>
-      </div>
+      </GlassSurface>
     </header>
   );
 }
