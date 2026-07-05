@@ -8,8 +8,9 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { InteractiveHoverButton } from "@repo/ui/components/interactive-hover-button";
 import { cn } from "@repo/ui/lib/utils";
 
-const TRANSITION_DELAY_MS = 1000;
 const BUTTON_RELAY_MS = 620;
+const CUT_PREVIEW_MS = 720;
+const CUT_FLY_MS = 460;
 
 const LOADING_CUTS = [
   {
@@ -34,6 +35,8 @@ const LOADING_CUTS = [
   },
 ] as const;
 
+type CutPhase = "fly" | "preview";
+
 export function TripScheduleTransitionLink({
   children,
   className,
@@ -51,15 +54,27 @@ export function TripScheduleTransitionLink({
   const prefersReducedMotion = useReducedMotion() ?? false;
   const [activeCut, setActiveCut] =
     React.useState<(typeof LOADING_CUTS)[number]>();
+  const [cutPhase, setCutPhase] = React.useState<CutPhase>("preview");
   const [forceHover, setForceHover] = React.useState(false);
   const isNavigatingRef = React.useRef(false);
-  const timeoutRef = React.useRef<number | null>(null);
+  const timeoutRefs = React.useRef<number[]>([]);
 
   React.useEffect(() => {
     return () => {
-      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+      timeoutRefs.current.forEach((timeout) => window.clearTimeout(timeout));
     };
   }, []);
+
+  function queueTimeout(callback: () => void, delay: number) {
+    const timeout = window.setTimeout(() => {
+      timeoutRefs.current = timeoutRefs.current.filter(
+        (queuedTimeout) => queuedTimeout !== timeout,
+      );
+      callback();
+    }, delay);
+
+    timeoutRefs.current.push(timeout);
+  }
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     if (event.button !== 0 || isNavigatingRef.current) {
@@ -72,12 +87,24 @@ export function TripScheduleTransitionLink({
 
     const cut = LOADING_CUTS[Math.floor(Math.random() * LOADING_CUTS.length)];
 
-    timeoutRef.current = window.setTimeout(() => {
+    queueTimeout(() => {
       setForceHover(false);
+      setCutPhase("preview");
       setActiveCut(cut);
-      timeoutRef.current = window.setTimeout(() => {
-        router.push(href);
-      }, TRANSITION_DELAY_MS);
+
+      queueTimeout(
+        () => {
+          setCutPhase("fly");
+        },
+        prefersReducedMotion ? 80 : CUT_PREVIEW_MS,
+      );
+
+      queueTimeout(
+        () => {
+          router.push(href);
+        },
+        prefersReducedMotion ? 180 : CUT_PREVIEW_MS + CUT_FLY_MS,
+      );
     }, BUTTON_RELAY_MS);
   }
 
@@ -85,22 +112,62 @@ export function TripScheduleTransitionLink({
     <AnimatePresence>
       {activeCut ? (
         <motion.div
-          animate={{ opacity: 1 }}
-          className="fixed inset-0 z-[90] grid place-items-center bg-neutral-950/72 px-6 backdrop-blur-md"
+          animate={{
+            backdropFilter: cutPhase === "fly" ? "blur(4px)" : "blur(12px)",
+            opacity: 1,
+          }}
+          className="fixed inset-0 z-[90] bg-neutral-950/72 px-4"
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
-          transition={{ duration: prefersReducedMotion ? 0 : 0.16 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.18 }}
         >
           <motion.div
-            animate={prefersReducedMotion ? undefined : { scale: 1, y: 0 }}
-            className="relative w-full max-w-sm overflow-hidden rounded-[2rem] border border-white/20 bg-neutral-950 shadow-2xl"
-            initial={prefersReducedMotion ? undefined : { scale: 0.92, y: 18 }}
-            transition={{ damping: 18, stiffness: 260, type: "spring" }}
+            animate={
+              cutPhase === "fly"
+                ? {
+                    borderRadius: 30,
+                    height: 228,
+                    left: "50%",
+                    top: "4.25rem",
+                    width: "min(calc(100vw - 2rem), 28rem)",
+                    x: "-50%",
+                    y: 0,
+                  }
+                : {
+                    borderRadius: 32,
+                    height: 224,
+                    left: "50%",
+                    top: "50%",
+                    width: "min(calc(100vw - 3rem), 24rem)",
+                    x: "-50%",
+                    y: "-50%",
+                  }
+            }
+            className="absolute overflow-hidden border border-white/20 bg-neutral-950 shadow-2xl"
+            initial={
+              prefersReducedMotion
+                ? false
+                : {
+                    borderRadius: 32,
+                    height: 224,
+                    left: "50%",
+                    scale: 0.92,
+                    top: "50%",
+                    width: "min(calc(100vw - 3rem), 24rem)",
+                    x: "-50%",
+                    y: "calc(-50% + 18px)",
+                  }
+            }
+            transition={{
+              damping: cutPhase === "fly" ? 26 : 20,
+              stiffness: cutPhase === "fly" ? 210 : 260,
+              type: "spring",
+            }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=""
-              className="h-56 w-full object-cover"
+              className="h-full w-full object-cover"
               src={activeCut.image}
             />
           </motion.div>
