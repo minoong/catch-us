@@ -89,7 +89,7 @@ export function TripPhotoMarquee({ trip }: { trip: Trip }) {
     <section className="relative overflow-hidden rounded-3xl bg-gray-950/5 p-2 shadow-2xl ring-1 ring-neutral-700/10">
       <div className="relative overflow-hidden rounded-[1.65rem] bg-neutral-950">
         <ThreeDMarquee
-          className="h-[38rem] min-h-0 rounded-[1.65rem] opacity-100 max-sm:h-[38rem]"
+          className="h-[30rem] min-h-0 rounded-[1.65rem] opacity-100 max-sm:h-[30rem]"
           images={images}
         />
       </div>
