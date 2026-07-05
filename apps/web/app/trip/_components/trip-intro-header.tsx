@@ -76,20 +76,21 @@ export function TripIntroHeader({
         } as React.CSSProperties
       }
     >
-      <div className="flex items-center justify-between rounded-[var(--trip-intro-header-radius)] border border-white/70 bg-white/86 px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-lg backdrop-blur-xl">
-        <div className="min-w-0">
-          <p className="text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
+      <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-[var(--trip-intro-header-radius)] border border-white/70 bg-white/86 px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-lg backdrop-blur-xl">
+        <div className="min-w-0 flex-1 overflow-hidden">
+          <p className="truncate text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
             Jeonju 2026
           </p>
           <AnimatePresence mode="popLayout" initial={false}>
             {compactVisible ? (
               <motion.p
-                className="truncate font-black tracking-[-0.04em] text-neutral-950"
+                className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
                 layoutId="trip-intro-title"
                 style={{ fontSize: "var(--trip-intro-title-size)" }}
                 transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
               >
                 <DiaTextReveal
+                  className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
                   colors={["#ef4444", "#f97316", "#2563eb"]}
                   duration={1.2}
                   text={trip.title}

@@ -35,7 +35,7 @@
   display: flex;
   width: 100%;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem 1rem 1.25rem;
 }
 
 .reactbits-stepper-content-default {
@@ -92,7 +92,7 @@
   justify-content: center;
   border-radius: 9999px;
   background-color: #5227ff;
-  color: #120f17;
+  color: #fff;
   font-weight: 500;
   letter-spacing: -0.025em;
   padding: 0.375rem 0.875rem;
@@ -121,8 +121,8 @@
 
 .reactbits-stepper-indicator-inner {
   display: flex;
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -130,25 +130,26 @@
 }
 
 .reactbits-stepper-active-dot {
-  height: 0.75rem;
-  width: 0.75rem;
+  height: 0.625rem;
+  width: 0.625rem;
   border-radius: 9999px;
-  background-color: #120f17;
+  background-color: #fff;
 }
 
 .reactbits-stepper-step-number {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .reactbits-stepper-connector {
   position: relative;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  height: 0.125rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  height: 0.25rem;
+  min-width: 1rem;
   flex: 1;
   overflow: hidden;
-  border-radius: 0.25rem;
-  background-color: #52525b;
+  border-radius: 9999px;
+  background-color: rgba(82, 39, 255, 0.16);
 }
 
 .reactbits-stepper-connector-inner {
@@ -156,10 +157,11 @@
   left: 0;
   top: 0;
   height: 100%;
+  border-radius: inherit;
 }
 
 .reactbits-stepper-check-icon {
   height: 1rem;
   width: 1rem;
-  color: #000;
+  color: #fff;
 }

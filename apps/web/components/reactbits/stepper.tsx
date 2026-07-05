@@ -19,6 +19,8 @@ import "./stepper.css";
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   initialStep?: number;
+  currentStep?: number;
+  direction?: number;
   onStepChange?: (step: number) => void;
   onFinalStepCompleted?: () => void;
   stepCircleContainerClassName?: string;
@@ -42,6 +44,8 @@ interface RenderStepIndicatorProps {
 export function Stepper({
   children,
   initialStep = 1,
+  currentStep: controlledCurrentStep,
+  direction: controlledDirection,
   onStepChange,
   onFinalStepCompleted,
   stepCircleContainerClassName = "",
@@ -57,15 +61,20 @@ export function Stepper({
   className,
   ...rest
 }: StepperProps) {
-  const [currentStep, setCurrentStep] = useState<number>(initialStep);
-  const [direction, setDirection] = useState<number>(0);
+  const [uncontrolledCurrentStep, setUncontrolledCurrentStep] =
+    useState<number>(initialStep);
+  const [uncontrolledDirection, setUncontrolledDirection] = useState<number>(0);
   const stepsArray = Children.toArray(children);
   const totalSteps = stepsArray.length;
+  const currentStep = controlledCurrentStep ?? uncontrolledCurrentStep;
+  const direction = controlledDirection ?? uncontrolledDirection;
   const isCompleted = currentStep > totalSteps;
   const isLastStep = currentStep === totalSteps;
 
   const updateStep = (newStep: number) => {
-    setCurrentStep(newStep);
+    if (controlledCurrentStep === undefined) {
+      setUncontrolledCurrentStep(newStep);
+    }
     if (newStep > totalSteps) {
       onFinalStepCompleted?.();
     } else {
@@ -75,20 +84,20 @@ export function Stepper({
 
   const handleBack = () => {
     if (currentStep > 1) {
-      setDirection(-1);
+      setUncontrolledDirection(-1);
       updateStep(currentStep - 1);
     }
   };
 
   const handleNext = () => {
     if (!isLastStep) {
-      setDirection(1);
+      setUncontrolledDirection(1);
       updateStep(currentStep + 1);
     }
   };
 
   const handleComplete = () => {
-    setDirection(1);
+    setUncontrolledDirection(1);
     updateStep(totalSteps + 1);
   };
 
@@ -132,7 +141,6 @@ export function Stepper({
           "reactbits-stepper-circle-container",
           stepCircleContainerClassName,
         )}
-        style={{ border: "1px solid #222" }}
       >
         <div
           className={cn(
@@ -150,7 +158,7 @@ export function Stepper({
                     step: stepNumber,
                     currentStep,
                     onStepClick: (clicked) => {
-                      setDirection(clicked > currentStep ? 1 : -1);
+                      setUncontrolledDirection(clicked > currentStep ? 1 : -1);
                       updateStep(clicked);
                     },
                   })
@@ -160,7 +168,7 @@ export function Stepper({
                     disableStepIndicators={disableStepIndicators}
                     currentStep={currentStep}
                     onClickStep={(clicked) => {
-                      setDirection(clicked > currentStep ? 1 : -1);
+                      setUncontrolledDirection(clicked > currentStep ? 1 : -1);
                       updateStep(clicked);
                     }}
                   />
