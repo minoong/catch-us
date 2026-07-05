@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 import { useReducedMotion } from "motion/react";
 
@@ -22,6 +23,13 @@ function getStepperItems(trip: Trip): ItineraryItem[] {
   return STEP_IDS.map((id) =>
     trip.itinerary.find((item) => item.id === id),
   ).filter((item): item is ItineraryItem => Boolean(item));
+}
+
+function getItemImage(trip: Trip, item: ItineraryItem) {
+  if (!item.placeId) return null;
+  return (
+    trip.places.find((place) => place.id === item.placeId)?.imageUrl ?? null
+  );
 }
 
 export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
@@ -80,8 +88,6 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
 
   if (steps.length === 0) return null;
 
-  const active = steps[activeIndex] ?? steps[0];
-
   return (
     <section className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/88 p-4 shadow-xl backdrop-blur">
       <div className="flex items-center justify-between gap-3">
@@ -108,59 +114,26 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
             setTimerResetKey((current) => current + 1);
           }}
           backButtonProps={{ "aria-hidden": true, tabIndex: -1 }}
-          backButtonText=""
+          backButtonText="이전"
           className="min-h-0 p-0"
-          contentClassName="hidden"
+          contentClassName="mt-4"
           footerClassName="hidden"
           nextButtonProps={{ "aria-hidden": true, tabIndex: -1 }}
-          nextButtonText=""
-          renderStepIndicator={({ step, currentStep, onStepClick }) => {
-            const stepIndex = step - 1;
-            const title = steps[stepIndex]?.title ?? `Step ${step}`;
-            const isActive = currentStep === step;
-            const isComplete = currentStep > step;
-
-            return (
-              <button
-                type="button"
-                aria-current={isActive ? "step" : undefined}
-                aria-label={`${title}로 이동`}
-                className={[
-                  "grid size-8 place-items-center rounded-full text-[11px] font-black transition-colors",
-                  isActive
-                    ? "bg-blue-600 text-white"
-                    : isComplete
-                      ? "bg-neutral-950 text-white"
-                      : "bg-neutral-200 text-neutral-500",
-                ].join(" ")}
-                onClick={() => onStepClick(step)}
-              >
-                {step}
-              </button>
-            );
-          }}
-          stepCircleContainerClassName="max-w-none rounded-none shadow-none"
-          stepContainerClassName="px-0 py-0"
+          nextButtonText="다음"
+          stepCircleContainerClassName="max-w-none shadow-none"
         >
-          {steps.map((step) => (
+          {steps.map((step, index) => (
             <Step key={step.id}>
-              <span className="sr-only">{step.title}</span>
+              <ItineraryStepCard
+                imageUrl={getItemImage(trip, step)}
+                item={step}
+                stepNumber={index + 1}
+                totalSteps={steps.length}
+              />
             </Step>
           ))}
         </Stepper>
       </div>
-
-      <article className="mt-4 rounded-[1.5rem] bg-neutral-950 p-4 text-white">
-        <p className="text-xs font-black text-white/48">
-          {active.startsAt ?? active.day.slice(5)}
-        </p>
-        <h3 className="mt-2 text-xl font-black tracking-[-0.05em]">
-          {active.title}
-        </h3>
-        <p className="mt-2 text-sm leading-6 font-semibold text-white/68">
-          {active.description}
-        </p>
-      </article>
 
       <div className="mt-4 h-2 overflow-hidden rounded-full bg-neutral-950/10">
         <div
@@ -172,5 +145,59 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         />
       </div>
     </section>
+  );
+}
+
+function ItineraryStepCard({
+  imageUrl,
+  item,
+  stepNumber,
+  totalSteps,
+}: {
+  imageUrl: string | null;
+  item: ItineraryItem;
+  stepNumber: number;
+  totalSteps: number;
+}) {
+  return (
+    <article className="overflow-hidden rounded-[1.35rem] bg-neutral-950 text-white">
+      {imageUrl ? (
+        <div className="relative h-36 overflow-hidden">
+          <Image
+            alt=""
+            className="object-cover"
+            fill
+            sizes="(max-width: 640px) 320px, 440px"
+            src={imageUrl}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.68))]" />
+          <p className="absolute bottom-3 left-4 rounded-full bg-white/14 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-white uppercase backdrop-blur">
+            {stepNumber}/{totalSteps}
+          </p>
+        </div>
+      ) : null}
+
+      <div className="p-4">
+        <p className="text-xs font-black text-white/48">
+          {item.startsAt ?? item.day.slice(5)}
+        </p>
+        <h3 className="mt-2 text-xl font-black tracking-[-0.05em]">
+          {item.title}
+        </h3>
+        <p className="mt-2 text-sm leading-6 font-semibold text-white/68">
+          {item.description}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {item.tags.slice(0, 3).map((tag) => (
+            <span
+              className="rounded-full bg-white/10 px-2 py-1 text-[10px] font-black text-white/58"
+              key={tag}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }

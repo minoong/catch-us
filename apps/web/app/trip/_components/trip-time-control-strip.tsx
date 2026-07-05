@@ -4,6 +4,7 @@ import * as React from "react";
 import { useReducedMotion } from "motion/react";
 
 import { SlidingNumber } from "@/components/core/sliding-number";
+import { ComicText } from "@repo/ui/components/comic-text";
 import { MorphingText } from "@repo/ui/components/morphing-text";
 
 import type { Trip } from "../_data/trips";
@@ -72,6 +73,7 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
   }
 
   const delta = departure.getTime() - now.getTime();
+  const beforeDeparture = delta > 0;
   const parts = splitDuration(delta);
 
   return (
@@ -79,17 +81,18 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0 flex-1">
           {prefersReducedMotion ? (
-            <p className="truncate text-sm leading-none font-black text-neutral-950">
+            <p className="truncate text-[15px] leading-none font-black text-neutral-950">
               {TRIP_CLOCK_TEXTS[0]}
             </p>
           ) : (
             <MorphingText
-              className="mx-0 h-4 max-w-none overflow-hidden text-left text-xs leading-none font-black whitespace-nowrap text-neutral-950 filter-[url(#threshold)_blur(0.2px)]"
+              className="mx-0 h-5 max-w-none overflow-hidden text-left text-[15px] leading-none font-black whitespace-nowrap text-neutral-950 filter-[url(#threshold)_blur(0.2px)]"
               texts={TRIP_CLOCK_TEXTS}
             />
           )}
         </div>
         <DurationDigits
+          comicLabel={beforeDeparture ? "D-DAY" : "ON TRIP"}
           parts={parts}
           prefersReducedMotion={prefersReducedMotion}
         />
@@ -99,9 +102,11 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
 }
 
 function DurationDigits({
+  comicLabel,
   parts,
   prefersReducedMotion,
 }: {
+  comicLabel: string;
   parts: ReturnType<typeof splitDuration>;
   prefersReducedMotion: boolean;
 }) {
@@ -116,7 +121,7 @@ function DurationDigits({
   if (prefersReducedMotion) {
     return (
       <div
-        className="font-mono text-xl leading-none font-black text-neutral-950 tabular-nums"
+        className="font-mono text-base leading-none font-black text-neutral-950 tabular-nums"
         role="timer"
       >
         {durationText}
@@ -126,13 +131,28 @@ function DurationDigits({
 
   return (
     <div
-      className="flex shrink-0 items-center gap-0.5 font-mono text-xl leading-none font-black text-neutral-950 tabular-nums"
+      className="relative flex shrink-0 items-center gap-0.5 font-mono text-base leading-none font-black text-neutral-950 tabular-nums"
       aria-label={durationText}
       role="timer"
     >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-5 -left-4 z-10 -rotate-12 skew-x-[-8deg]"
+      >
+        <ComicText
+          accentColor="#60a5fa"
+          className="drop-shadow-sm"
+          fillColor="#fff7ed"
+          fontSize={0.62}
+          shadowColor="#fb7185"
+          strokeColor="#171717"
+        >
+          {comicLabel}
+        </ComicText>
+      </span>
       <span aria-hidden="true" className="flex items-center gap-0.5">
         <SlidingNumber value={parts.days} />
-        <span className="text-xs text-neutral-500">일</span>
+        <span className="text-[10px] text-neutral-500">일</span>
         <SlidingNumber value={parts.hours} padStart />
         <span className="text-neutral-400">:</span>
         <SlidingNumber value={parts.minutes} padStart />
