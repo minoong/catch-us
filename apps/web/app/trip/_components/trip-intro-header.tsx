@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 
 import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
 
 import type { Trip } from "../_data/trips";
+import { TripScheduleTransitionLink } from "./trip-schedule-transition-link";
 
 export function TripIntroHeader({
   compactVisible,
@@ -101,12 +101,12 @@ export function TripIntroHeader({
             )}
           </AnimatePresence>
         </div>
-        <Link
+        <TripScheduleTransitionLink
           className="bg-primary text-primary-foreground inline-flex h-[var(--trip-intro-cta-height)] shrink-0 items-center justify-center rounded-full px-3 text-xs font-black"
           href={`/trip/${trip.slug}/schedule`}
         >
           일정
-        </Link>
+        </TripScheduleTransitionLink>
       </div>
     </header>
   );

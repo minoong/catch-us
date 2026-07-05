@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
 import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
@@ -9,6 +8,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 
 import type { ItineraryItem, Trip } from "../_data/trips";
 import { TripParallaxLayer } from "./trip-parallax-layer";
+import { TripScheduleTransitionLink } from "./trip-schedule-transition-link";
 
 export function TripHero({ trip }: { trip: Trip }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
@@ -73,12 +73,12 @@ export function TripHero({ trip }: { trip: Trip }) {
         </TripParallaxLayer>
 
         <TripParallaxLayer className="relative z-10 mt-4" speed={6}>
-          <Link
+          <TripScheduleTransitionLink
             className="inline-flex h-12 w-full items-center justify-center rounded-full bg-neutral-950 px-5 text-sm font-black text-white shadow-lg shadow-neutral-950/15 transition hover:bg-neutral-800 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:outline-none"
             href={`/trip/${trip.slug}/schedule`}
           >
             일정 자세히 보기
-          </Link>
+          </TripScheduleTransitionLink>
         </TripParallaxLayer>
       </motion.div>
     </section>

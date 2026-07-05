@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import type { Trip } from "../_data/trips";
+import { TripScheduleTransitionLink } from "./trip-schedule-transition-link";
 
 export function TripClosingCta({ trip }: { trip: Trip }) {
   return (
@@ -15,12 +14,12 @@ export function TripClosingCta({ trip }: { trip: Trip }) {
         날짜별 동선, 지도, 장소 카드는 전체 일정 화면에서 더 자세히 볼 수
         있어요.
       </p>
-      <Link
+      <TripScheduleTransitionLink
         className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-full bg-white text-sm font-black text-neutral-950"
         href={`/trip/${trip.slug}/schedule`}
       >
         전체 일정 열기
-      </Link>
+      </TripScheduleTransitionLink>
     </section>
   );
 }
