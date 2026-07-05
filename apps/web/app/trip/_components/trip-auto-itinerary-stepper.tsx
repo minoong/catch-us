@@ -108,8 +108,8 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           setProgress(0);
           setTimerResetKey((current) => current + 1);
         }}
-        backButtonText="Previous"
-        nextButtonText="Next"
+        backButtonText="이전"
+        nextButtonText="다음"
         disableStepIndicators={false}
       >
         {steps.map((step) => (
@@ -122,9 +122,12 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         ))}
       </Stepper>
 
-      <div className="mx-auto -mt-3 h-2 w-[calc(100%-4rem)] max-w-md overflow-hidden rounded-full bg-neutral-950/10">
+      <div
+        aria-hidden="true"
+        className="mx-auto mt-2 h-2.5 w-[calc(100%-1rem)] max-w-md overflow-hidden rounded-full bg-neutral-950/12 shadow-inner"
+      >
         <div
-          className="h-full rounded-full bg-[linear-gradient(90deg,#ef4444,#2563eb)]"
+          className="h-full rounded-full bg-[linear-gradient(90deg,#ef4444,#f97316,#2563eb)] transition-transform duration-100 ease-linear"
           style={{
             transform: `scaleX(${progress})`,
             transformOrigin: "left",
