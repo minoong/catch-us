@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 import { SlidingNumber } from "@/components/core/sliding-number";
 import { ComicText } from "@repo/ui/components/comic-text";
 import { MorphingText } from "@repo/ui/components/morphing-text";
+import { cn } from "@repo/ui/lib/utils";
 
 import type { Trip } from "../_data/trips";
 
@@ -44,10 +45,33 @@ function formatTimeUnit(value: number, padStart = false) {
   return padStart && value < 10 ? `0${text}` : text;
 }
 
-export function TripTimeControlStrip({ trip }: { trip: Trip }) {
+export function TripTimeControlStrip({
+  className,
+  trip,
+}: {
+  className?: string;
+  trip: Trip;
+}) {
   const prefersReducedMotion = useReducedMotion() ?? false;
   const [now, setNow] = React.useState<Date | null>(null);
   const departure = React.useMemo(() => parseTripDeparture(trip), [trip]);
+  const shellClassName = cn(
+    "rounded-full border border-white/70 bg-white/88 px-4 py-3 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-xl",
+    className,
+  );
+
+  const motionProps = prefersReducedMotion
+    ? {}
+    : {
+        animate: { opacity: 1, scale: 1, y: 0 },
+        initial: { opacity: 0, scale: 0.96, y: 28 },
+        transition: {
+          damping: 20,
+          delay: 0.18,
+          stiffness: 260,
+          type: "spring" as const,
+        },
+      };
 
   React.useEffect(() => {
     const timeout = window.setTimeout(() => setNow(new Date()), 0);
@@ -60,15 +84,18 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
 
   if (!departure) {
     return (
-      <section className="rounded-full border border-white/70 bg-white/86 px-4 py-3 shadow-sm backdrop-blur">
+      <motion.section className={shellClassName} {...motionProps}>
         <p className="text-xs font-black text-neutral-950">여행 준비 중</p>
-      </section>
+      </motion.section>
     );
   }
 
   if (!now) {
     return (
-      <section className="h-14 rounded-full border border-white/70 bg-white/70 shadow-sm backdrop-blur" />
+      <motion.section
+        className={cn("h-14 bg-white/70", shellClassName)}
+        {...motionProps}
+      />
     );
   }
 
@@ -77,7 +104,7 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
   const parts = splitDuration(delta);
 
   return (
-    <section className="rounded-full border border-white/70 bg-white/88 px-4 py-3 shadow-lg backdrop-blur-xl">
+    <motion.section className={shellClassName} {...motionProps}>
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0 flex-1">
           {prefersReducedMotion ? (
@@ -97,7 +124,7 @@ export function TripTimeControlStrip({ trip }: { trip: Trip }) {
           prefersReducedMotion={prefersReducedMotion}
         />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

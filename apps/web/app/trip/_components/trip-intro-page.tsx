@@ -28,16 +28,19 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
   return (
     <TripLenisProvider>
       <LayoutGroup>
-        <main className="bg-background text-foreground min-h-screen pb-8">
+        <main className="bg-background text-foreground min-h-screen pb-28">
           <TripIntroTransition introComplete={introComplete} trip={trip} />
           <TripIntroHeader compactVisible={introComplete} trip={trip} />
           <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-3 sm:max-w-lg">
-            <TripTimeControlStrip trip={trip} />
             <TripHero trip={trip} />
             <TripPhotoMarquee trip={trip} />
             <TripAutoItineraryStepper trip={trip} />
             <TripClosingCta trip={trip} />
           </section>
+          <TripTimeControlStrip
+            className="fixed right-4 bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 z-50 mx-auto max-w-md sm:max-w-lg"
+            trip={trip}
+          />
         </main>
       </LayoutGroup>
     </TripLenisProvider>

@@ -11,6 +11,7 @@ import type { Trip, TripDayId } from "../_data/trips";
 import { getItineraryByDay, tripDayOptions } from "../_lib/itinerary";
 import { TripDateSegmentedNav } from "./trip-date-segmented-nav";
 import { TripMapPanel } from "./trip-map-panel";
+import { TripTimeControlStrip } from "./trip-time-control-strip";
 import { TripTimeline } from "./trip-timeline";
 
 export function TripSchedulePage({ trip }: { trip: Trip }) {
@@ -113,7 +114,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
   }
 
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-background text-foreground min-h-screen pb-28">
       <section className="mx-auto min-h-screen w-full max-w-md px-4 sm:max-w-lg">
         <div
           className="bg-background/95 sticky top-0 z-30 -mx-4 rounded-b-[var(--trip-sticky-radius)] px-4 pt-[var(--trip-sticky-pt)] pb-[var(--trip-sticky-pb)] shadow-xl backdrop-blur"
@@ -229,6 +230,10 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
           </TransitionPanel>
         </div>
       </section>
+      <TripTimeControlStrip
+        className="fixed right-4 bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 z-50 mx-auto max-w-md"
+        trip={trip}
+      />
     </main>
   );
 }
