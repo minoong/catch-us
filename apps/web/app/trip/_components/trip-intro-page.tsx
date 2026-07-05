@@ -15,23 +15,23 @@ import { TripTimeControlStrip } from "./trip-time-control-strip";
 
 export function TripIntroPage({ trip }: { trip: Trip }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
-  const [introComplete, setIntroComplete] =
-    React.useState(prefersReducedMotion);
+  const [introComplete, setIntroComplete] = React.useState(false);
 
   React.useEffect(() => {
-    if (prefersReducedMotion) return;
-
-    const timer = window.setTimeout(() => setIntroComplete(true), 2150);
+    const timer = window.setTimeout(
+      () => setIntroComplete(true),
+      prefersReducedMotion ? 0 : 2150,
+    );
     return () => window.clearTimeout(timer);
   }, [prefersReducedMotion]);
 
   return (
     <TripLenisProvider>
       <LayoutGroup>
-        <main className="bg-background text-foreground min-h-screen overflow-hidden pb-8">
+        <main className="bg-background text-foreground min-h-screen pb-8">
           <TripIntroTransition introComplete={introComplete} trip={trip} />
+          <TripIntroHeader compactVisible={introComplete} trip={trip} />
           <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-3 sm:max-w-lg">
-            <TripIntroHeader compactVisible={introComplete} trip={trip} />
             <TripTimeControlStrip trip={trip} />
             <TripHero trip={trip} />
             <TripPhotoMarquee trip={trip} />
