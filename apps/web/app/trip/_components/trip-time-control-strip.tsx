@@ -3,9 +3,7 @@
 import * as React from "react";
 import { motion, useReducedMotion } from "motion/react";
 
-import GlassSurface from "@/components/GlassSurface";
 import { SlidingNumber } from "@/components/core/sliding-number";
-
 import { ComicText } from "@repo/ui/components/comic-text";
 import { MorphingText } from "@repo/ui/components/morphing-text";
 import { cn } from "@repo/ui/lib/utils";
@@ -57,25 +55,10 @@ export function TripTimeControlStrip({
   const prefersReducedMotion = useReducedMotion() ?? false;
   const [now, setNow] = React.useState<Date | null>(null);
   const departure = React.useMemo(() => parseTripDeparture(trip), [trip]);
-  const shellClassName = cn("rounded-full", className);
-  const surfaceClassName = cn(
-    "w-full shadow-[0_18px_45px_rgba(15,23,42,0.18)] [&>.glass-surface__content]:p-0",
+  const shellClassName = cn(
+    "rounded-full border border-white/70 bg-white/88 px-4 py-3 shadow-[0_18px_45px_rgba(15,23,42,0.18)] backdrop-blur-xl",
+    className,
   );
-  const surfaceProps = {
-    backgroundOpacity: 0.22,
-    blur: 13,
-    borderRadius: 999,
-    borderWidth: 0.09,
-    brightness: 58,
-    className: surfaceClassName,
-    displace: 0.22,
-    height: "auto",
-    opacity: 0.88,
-    saturation: 1.6,
-    width: "100%",
-  } as const;
-  const innerClassName =
-    "flex min-h-14 items-center justify-between gap-4 px-4 py-3";
 
   const motionProps = prefersReducedMotion
     ? {}
@@ -102,22 +85,17 @@ export function TripTimeControlStrip({
   if (!departure) {
     return (
       <motion.section className={shellClassName} {...motionProps}>
-        <GlassSurface {...surfaceProps}>
-          <div className={innerClassName}>
-            <p className="text-xs font-black text-neutral-950">여행 준비 중</p>
-          </div>
-        </GlassSurface>
+        <p className="text-xs font-black text-neutral-950">여행 준비 중</p>
       </motion.section>
     );
   }
 
   if (!now) {
     return (
-      <motion.section className={shellClassName} {...motionProps}>
-        <GlassSurface {...surfaceProps}>
-          <div className={cn(innerClassName, "bg-white/20")} />
-        </GlassSurface>
-      </motion.section>
+      <motion.section
+        className={cn("h-14 bg-white/70", shellClassName)}
+        {...motionProps}
+      />
     );
   }
 
@@ -127,27 +105,25 @@ export function TripTimeControlStrip({
 
   return (
     <motion.section className={shellClassName} {...motionProps}>
-      <GlassSurface {...surfaceProps}>
-        <div className={innerClassName}>
-          <div className="min-w-0 flex-1">
-            {prefersReducedMotion ? (
-              <p className="truncate text-[15px] leading-none font-black text-neutral-950">
-                {TRIP_CLOCK_TEXTS[0]}
-              </p>
-            ) : (
-              <MorphingText
-                className="mx-0 h-5 max-w-none overflow-hidden text-left text-[15px] leading-none font-black whitespace-nowrap text-neutral-950 filter-[url(#threshold)_blur(0.2px)]"
-                texts={TRIP_CLOCK_TEXTS}
-              />
-            )}
-          </div>
-          <DurationDigits
-            comicLabel={beforeDeparture ? "D-DAY" : "ON TRIP"}
-            parts={parts}
-            prefersReducedMotion={prefersReducedMotion}
-          />
+      <div className="flex items-center justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          {prefersReducedMotion ? (
+            <p className="truncate text-[15px] leading-none font-black text-neutral-950">
+              {TRIP_CLOCK_TEXTS[0]}
+            </p>
+          ) : (
+            <MorphingText
+              className="mx-0 h-5 max-w-none overflow-hidden text-left text-[15px] leading-none font-black whitespace-nowrap text-neutral-950 filter-[url(#threshold)_blur(0.2px)]"
+              texts={TRIP_CLOCK_TEXTS}
+            />
+          )}
         </div>
-      </GlassSurface>
+        <DurationDigits
+          comicLabel={beforeDeparture ? "D-DAY" : "ON TRIP"}
+          parts={parts}
+          prefersReducedMotion={prefersReducedMotion}
+        />
+      </div>
     </motion.section>
   );
 }
