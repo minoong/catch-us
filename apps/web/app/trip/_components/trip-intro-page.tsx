@@ -37,10 +37,12 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
             <TripAutoItineraryStepper trip={trip} />
             <TripClosingCta trip={trip} />
           </section>
-          <TripTimeControlStrip
-            className="fixed right-4 bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 z-50 mx-auto max-w-md sm:max-w-lg"
-            trip={trip}
-          />
+          {introComplete ? (
+            <TripTimeControlStrip
+              className="fixed right-4 bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 z-50 mx-auto max-w-md sm:max-w-lg"
+              trip={trip}
+            />
+          ) : null}
         </main>
       </LayoutGroup>
     </TripLenisProvider>
