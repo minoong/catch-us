@@ -186,7 +186,7 @@ export function TripScheduleTransitionLink({
           size === "default" &&
             "px-4 py-0 text-sm group-active:[&>div:last-child]:-translate-x-5",
           size === "compact" &&
-            "px-2 py-0 text-xs [&>div:first-child]:gap-1.5 [&>div:first-child>div]:size-1.5 [&>div:first-child>span]:whitespace-nowrap [&>div:last-child]:translate-x-0 [&>div:last-child]:gap-0 group-hover:[&>div:last-child]:translate-x-0 group-active:[&>div:last-child]:translate-x-0 group-data-[force-hover=true]:[&>div:last-child]:translate-x-0 [&>div:last-child>span]:hidden [&>div:last-child>svg]:size-4",
+            "px-2 py-0 text-xs [&>div:first-child]:gap-1.5 [&>div:first-child>div]:size-1.5 [&>div:first-child>span]:whitespace-nowrap [&>div:last-child]:translate-x-12 [&>div:last-child]:gap-1 group-hover:[&>div:last-child]:translate-x-0 group-active:[&>div:last-child]:translate-x-0 group-data-[force-hover=true]:[&>div:last-child]:translate-x-0 [&>div:last-child>span]:whitespace-nowrap [&>div:last-child>svg]:size-3.5",
           variant === "dark" &&
             "bg-neutral-950 text-white [--primary-foreground:#111111] [--primary:#ffffff]",
           variant === "light" &&
