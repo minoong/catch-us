@@ -1,26 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "motion/react";
+import { useCallback, useEffect, useRef } from "react";
 import { cn } from "@repo/ui/lib/utils";
 
 const morphTime = 1.5;
 const cooldownTime = 0.5;
 
-interface MorphingTextProps {
-  className?: string;
-  texts: string[];
-}
-
-export const MorphingText: React.FC<MorphingTextProps> = ({
-  texts,
-  className,
-}) => {
-  const prefersReducedMotion = useReducedMotion() ?? false;
-  const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const [textIndex, setTextIndex] = useState(0);
-
+const useMorphingText = (texts: string[]) => {
   const textIndexRef = useRef(0);
   const morphRef = useRef(0);
   const cooldownRef = useRef(0);
@@ -28,21 +14,6 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
 
   const text1Ref = useRef<HTMLSpanElement>(null);
   const text2Ref = useRef<HTMLSpanElement>(null);
-
-  // Detect mobile viewport and mounting
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-    const checkMobile = () => {
-      setIsMobile(
-        window.innerWidth < 768 ||
-          /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent),
-      );
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   const setStyles = useCallback(
     (fraction: number) => {
@@ -80,7 +51,6 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
 
     if (fraction === 1) {
       textIndexRef.current++;
-      setTextIndex(textIndexRef.current);
     }
   }, [setStyles]);
 
@@ -95,12 +65,8 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
     }
   }, []);
 
-  // Animation loop (only for desktop and non-reduced-motion)
   useEffect(() => {
-    if (!mounted || prefersReducedMotion || isMobile) return;
-
     let animationFrameId: number;
-    timeRef.current = new Date(); // reset time on mount/config change
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
@@ -119,79 +85,64 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [mounted, prefersReducedMotion, isMobile, doMorph, doCooldown]);
+  }, [doMorph, doCooldown]);
 
-  // Fallback simple interval animation for mobile / reduced-motion
-  useEffect(() => {
-    if (!mounted || (!prefersReducedMotion && !isMobile)) return;
+  return { text1Ref, text2Ref };
+};
 
-    const interval = setInterval(
-      () => {
-        setTextIndex((prev) => (prev + 1) % texts.length);
-      },
-      (morphTime + cooldownTime) * 1000,
-    );
+interface MorphingTextProps {
+  className?: string;
+  texts: string[];
+}
 
-    return () => clearInterval(interval);
-  }, [mounted, prefersReducedMotion, isMobile, texts.length]);
-
-  const useFallback = !mounted || prefersReducedMotion || isMobile;
-
+const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
+  const { text1Ref, text2Ref } = useMorphingText(texts);
   return (
-    <div
-      className={cn(
-        "relative mx-auto h-16 w-full max-w-3xl text-center font-sans text-[40pt] leading-none font-bold md:h-24 lg:text-[6rem]",
-        !useFallback && "filter-[url(#threshold)_blur(0.6px)]",
-        className,
-      )}
-    >
-      {useFallback ? (
-        // Simple fade cross-over for mobile safety
-        <div className="absolute inset-0 flex items-center justify-center">
-          {texts.map((text, idx) => (
-            <span
-              key={text}
-              className={cn(
-                "absolute inset-x-0 top-0 m-auto inline-block w-full transition-opacity duration-700 ease-in-out",
-                idx === textIndex
-                  ? "pointer-events-auto opacity-100"
-                  : "pointer-events-none opacity-0",
-              )}
-            >
-              {text}
-            </span>
-          ))}
-        </div>
-      ) : (
-        <>
-          <span
-            className="absolute inset-x-0 top-0 m-auto inline-block w-full"
-            ref={text1Ref}
-          />
-          <span
-            className="absolute inset-x-0 top-0 m-auto inline-block w-full"
-            ref={text2Ref}
-          />
-          <svg
-            id="filters"
-            className="fixed h-0 w-0"
-            preserveAspectRatio="xMidYMid slice"
-          >
-            <defs>
-              <filter id="threshold">
-                <feColorMatrix
-                  in="SourceGraphic"
-                  type="matrix"
-                  values="1 0 0 0 0
-                          0 1 0 0 0
-                          0 0 1 0 0
-                          0 0 0 255 -140"
-                />
-              </filter>
-            </defs>
-          </svg>
-        </>
-      )}
-    </div>
+    <>
+      <span
+        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        ref={text1Ref}
+      />
+      <span
+        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        ref={text2Ref}
+      />
+    </>
   );
 };
+
+const SvgFilters: React.FC = () => (
+  <svg
+    id="filters"
+    className="fixed h-0 w-0"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <filter id="threshold">
+        <feColorMatrix
+          in="SourceGraphic"
+          type="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const MorphingText: React.FC<MorphingTextProps> = ({
+  texts,
+  className,
+}) => (
+  <div
+    className={cn(
+      "relative mx-auto h-16 w-full max-w-3xl text-center font-sans text-[40pt] leading-none font-bold filter-[url(#threshold)_blur(0.6px)] md:h-24 lg:text-[6rem]",
+      className,
+    )}
+  >
+    <Texts texts={texts} />
+    <SvgFilters />
+  </div>
+);
