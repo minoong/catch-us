@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 
 import { SlidingNumber } from "@/components/core/sliding-number";
 import { ComicText } from "@repo/ui/components/comic-text";
-import { MorphingText } from "@repo/ui/components/morphing-text";
+import { WordRotate } from "@repo/ui/components/word-rotate";
 import { cn } from "@repo/ui/lib/utils";
 
 import type { Trip } from "../_data/trips";
@@ -112,9 +112,10 @@ export function TripTimeControlStrip({
               {TRIP_CLOCK_TEXTS[0]}
             </p>
           ) : (
-            <MorphingText
-              className="mx-0 !h-5 max-w-none overflow-hidden text-left !text-[15px] leading-none font-black whitespace-nowrap text-neutral-950 md:!h-5 md:!text-[15px] lg:!text-[15px]"
-              texts={TRIP_CLOCK_TEXTS}
+            <WordRotate
+              className="mx-0 !h-5 max-w-none text-left !text-[15px] leading-none font-black text-neutral-950"
+              words={TRIP_CLOCK_TEXTS}
+              duration={2000}
             />
           )}
         </div>
