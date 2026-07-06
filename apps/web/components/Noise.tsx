@@ -29,7 +29,7 @@ const Noise: React.FC<NoiseProps> = ({
     let frame = 0;
     let animationId: number;
 
-    const canvasSize = 1024;
+    const canvasSize = 128;
 
     const resize = () => {
       if (!canvas) return;

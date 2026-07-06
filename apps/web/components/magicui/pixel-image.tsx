@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { useReducedMotion } from "motion/react";
 
 import { cn } from "@repo/ui/lib/utils";
 
@@ -62,11 +63,31 @@ export function PixelImage({
   src,
 }: PixelImageProps) {
   const [isVisible, setIsVisible] = React.useState(false);
+  const prefersReducedMotion = useReducedMotion() ?? false;
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent),
+      );
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const resolvedGrid = customGrid ?? DEFAULT_GRIDS[grid];
-  const pieces = React.useMemo(
-    () => createPieces(resolvedGrid, maxAnimationDelay),
-    [maxAnimationDelay, resolvedGrid],
-  );
+  const useFallback = !mounted || prefersReducedMotion || isMobile;
+
+  const pieces = React.useMemo(() => {
+    if (useFallback) return [];
+    return createPieces(resolvedGrid, maxAnimationDelay);
+  }, [useFallback, resolvedGrid, maxAnimationDelay]);
 
   React.useEffect(() => {
     const frame = window.requestAnimationFrame(() => setIsVisible(true));
