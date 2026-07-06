@@ -54,6 +54,9 @@ export function TripTimeControlStrip({
 }) {
   const prefersReducedMotion = useReducedMotion() ?? false;
   const [now, setNow] = React.useState<Date | null>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
   const departure = React.useMemo(() => parseTripDeparture(trip), [trip]);
   const shellClassName = cn(
     "rounded-full border border-white/50 bg-[linear-gradient(135deg,rgba(255,255,255,0.68),rgba(255,255,255,0.28)_50%,rgba(255,255,255,0.16))] px-4 py-3 shadow-[0_18px_52px_rgba(15,23,42,0.2),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(255,255,255,0.24)] backdrop-blur-[22px] backdrop-saturate-200",
@@ -74,9 +77,22 @@ export function TripTimeControlStrip({
       };
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent),
+      );
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
     const timeout = window.setTimeout(() => setNow(new Date()), 0);
     const interval = window.setInterval(() => setNow(new Date()), 1000);
+
     return () => {
+      window.removeEventListener("resize", checkMobile);
       window.clearTimeout(timeout);
       window.clearInterval(interval);
     };
@@ -103,11 +119,13 @@ export function TripTimeControlStrip({
   const beforeDeparture = delta > 0;
   const parts = splitDuration(delta);
 
+  const useFallback = prefersReducedMotion || isMobile || !mounted;
+
   return (
     <motion.section className={shellClassName} {...motionProps}>
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0 flex-1">
-          {prefersReducedMotion ? (
+          {useFallback ? (
             <p className="truncate text-[15px] leading-none font-black text-neutral-950">
               {TRIP_CLOCK_TEXTS[0]}
             </p>
