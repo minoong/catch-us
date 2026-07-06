@@ -76,7 +76,7 @@ export function TripIntroHeader({
         } as React.CSSProperties
       }
     >
-      <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-[var(--trip-intro-header-radius)] border border-white/45 bg-white/48 px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-[0_14px_40px_rgba(15,23,42,0.16),inset_0_1px_0_rgba(255,255,255,0.62),inset_0_-1px_0_rgba(255,255,255,0.24)] backdrop-blur-2xl backdrop-saturate-150">
+      <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-[var(--trip-intro-header-radius)] border border-white/50 bg-[linear-gradient(135deg,rgba(255,255,255,0.70),rgba(255,255,255,0.30)_48%,rgba(255,255,255,0.18))] px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-[0_16px_42px_rgba(15,23,42,0.18),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(255,255,255,0.28)] backdrop-blur-[22px] backdrop-saturate-200">
         <div className="min-w-0 flex-1 overflow-hidden">
           <p className="truncate text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
             Jeonju 2026

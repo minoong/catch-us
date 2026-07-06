@@ -56,7 +56,7 @@ export function TripTimeControlStrip({
   const [now, setNow] = React.useState<Date | null>(null);
   const departure = React.useMemo(() => parseTripDeparture(trip), [trip]);
   const shellClassName = cn(
-    "rounded-full border border-white/45 bg-white/48 px-4 py-3 shadow-[0_18px_48px_rgba(15,23,42,0.18),inset_0_1px_0_rgba(255,255,255,0.62),inset_0_-1px_0_rgba(255,255,255,0.22)] backdrop-blur-2xl backdrop-saturate-150",
+    "rounded-full border border-white/50 bg-[linear-gradient(135deg,rgba(255,255,255,0.68),rgba(255,255,255,0.28)_50%,rgba(255,255,255,0.16))] px-4 py-3 shadow-[0_18px_52px_rgba(15,23,42,0.2),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(255,255,255,0.24)] backdrop-blur-[22px] backdrop-saturate-200",
     className,
   );
 

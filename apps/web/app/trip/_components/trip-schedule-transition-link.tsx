@@ -178,29 +178,46 @@ export function TripScheduleTransitionLink({
 
   return (
     <>
-      <InteractiveHoverButton
-        className={cn(
-          "border-0 font-black",
-          "data-[force-hover=true]:scale-[0.96] data-[force-hover=true]:ring-4 data-[force-hover=true]:ring-red-400/40",
-          "group-active:[&>div:first-child>div]:scale-[100.8] group-active:[&>div:first-child>span]:opacity-0 group-active:[&>div:last-child]:opacity-100",
-          size === "default" &&
-            "h-full w-full px-4 py-0 text-sm group-active:[&>div:first-child>span]:translate-x-12 group-active:[&>div:last-child]:-translate-x-5",
-          size === "compact" &&
-            "h-full w-full px-2 py-0 text-xs [&>div:first-child]:gap-1.5 [&>div:first-child>div]:size-1.5 [&>div:first-child>span]:whitespace-nowrap group-active:[&>div:first-child>span]:translate-x-12 [&>div:last-child]:translate-x-0 [&>div:last-child]:gap-0 group-hover:[&>div:last-child]:translate-x-0 group-active:[&>div:last-child]:translate-x-0 group-data-[force-hover=true]:[&>div:last-child]:translate-x-0 [&>div:last-child>span]:hidden [&>div:last-child>svg]:size-4",
-          variant === "dark" &&
-            "bg-neutral-950 text-white [--primary-foreground:#111111] [--primary:#ffffff]",
-          variant === "light" &&
-            "bg-white text-neutral-950 [--primary-foreground:#ffffff] [--primary:#111111]",
-          variant === "primary" &&
-            "bg-primary text-primary-foreground [--primary-foreground:#111111] [--primary:#ffffff]",
-          className,
-        )}
-        onClick={handleClick}
-        data-force-hover={forceHover}
-        type="button"
-      >
-        {children}
-      </InteractiveHoverButton>
+      {size === "compact" ? (
+        <motion.button
+          animate={forceHover ? { scale: 0.94 } : { scale: 1 }}
+          className={cn(
+            "grid place-items-center border-0 text-xs font-black transition-shadow",
+            "data-[force-hover=true]:shadow-[0_0_0_4px_rgba(248,113,113,0.28)]",
+            variant === "dark" && "bg-neutral-950 text-white",
+            variant === "light" && "bg-white text-neutral-950",
+            variant === "primary" && "bg-primary text-primary-foreground",
+            className,
+          )}
+          data-force-hover={forceHover}
+          onClick={handleClick}
+          transition={{ damping: 22, stiffness: 360, type: "spring" }}
+          type="button"
+          whileTap={{ scale: 0.92 }}
+        >
+          {children}
+        </motion.button>
+      ) : (
+        <InteractiveHoverButton
+          className={cn(
+            "h-full w-full border-0 px-4 py-0 text-sm font-black",
+            "data-[force-hover=true]:scale-[0.96] data-[force-hover=true]:ring-4 data-[force-hover=true]:ring-red-400/40",
+            "group-active:[&>div:first-child>div]:scale-[100.8] group-active:[&>div:first-child>span]:translate-x-12 group-active:[&>div:first-child>span]:opacity-0 group-active:[&>div:last-child]:-translate-x-5 group-active:[&>div:last-child]:opacity-100",
+            variant === "dark" &&
+              "bg-neutral-950 text-white [--primary-foreground:#111111] [--primary:#ffffff]",
+            variant === "light" &&
+              "bg-white text-neutral-950 [--primary-foreground:#ffffff] [--primary:#111111]",
+            variant === "primary" &&
+              "bg-primary text-primary-foreground [--primary-foreground:#111111] [--primary:#ffffff]",
+            className,
+          )}
+          data-force-hover={forceHover}
+          onClick={handleClick}
+          type="button"
+        >
+          {children}
+        </InteractiveHoverButton>
+      )}
       {activeCut ? createPortal(overlay, document.body) : null}
     </>
   );
