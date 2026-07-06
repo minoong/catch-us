@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
@@ -14,22 +15,22 @@ const CUT_FLY_MS = 460;
 
 const LOADING_CUTS = [
   {
-    image: "/trips/jeonju-2026/loader-gifs/monogatari-purple.gif",
+    image: "/trips/jeonju-2026/loader-gifs/monogatari-purple.webp",
     label: "바케모노가타리 컷신 로딩",
     line: "전주행 괴이 루트, 지금 개방합니다.",
   },
   {
-    image: "/trips/jeonju-2026/loader-gifs/monogatari-gold.gif",
+    image: "/trips/jeonju-2026/loader-gifs/monogatari-gold.webp",
     label: "오타쿠 투어 체크",
     line: "센조가하라식 태세 정돈. 일정으로 갑니다.",
   },
   {
-    image: "/trips/jeonju-2026/loader-gifs/tour-cat.gif",
+    image: "/trips/jeonju-2026/loader-gifs/tour-cat.webp",
     label: "좀비랜드사가 모드",
     line: "사가 말고 전주로 부활 라이브 출발!",
   },
   {
-    image: "/trips/jeonju-2026/loader-gifs/monogatari-purple.gif",
+    image: "/trips/jeonju-2026/loader-gifs/monogatari-purple.webp",
     label: "은혼식 급출발",
     line: "대충 멋있게 외치고 일정 화면으로 돌격.",
   },
@@ -60,6 +61,12 @@ export function TripScheduleTransitionLink({
   const timeoutRefs = React.useRef<number[]>([]);
 
   React.useEffect(() => {
+    // Preload loader WebP images in background
+    LOADING_CUTS.forEach((cut) => {
+      const img = new window.Image();
+      img.src = cut.image;
+    });
+
     return () => {
       timeoutRefs.current.forEach((timeout) => window.clearTimeout(timeout));
     };
@@ -164,11 +171,16 @@ export function TripScheduleTransitionLink({
               type: "spring",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt=""
               className="h-full w-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 384px"
               src={activeCut.image}
+              unoptimized={
+                activeCut.image.endsWith(".webp") ||
+                activeCut.image.endsWith(".gif")
+              }
             />
           </motion.div>
         </motion.div>

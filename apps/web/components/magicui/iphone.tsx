@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { HTMLAttributes, ReactNode } from "react";
 
 const PHONE_WIDTH = 433;
@@ -76,10 +77,12 @@ export function Iphone({
             borderRadius: `${RADIUS_H}% / ${RADIUS_V}%`,
           }}
         >
-          <img
+          <Image
             src={src}
             alt=""
             className="block size-full object-cover object-top"
+            fill
+            sizes="(max-width: 768px) 300px, 433px"
           />
         </div>
       )}

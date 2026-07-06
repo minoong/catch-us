@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { cn } from "@repo/ui/lib/utils";
+
+const MotionImage = motion(Image);
+
 export const ThreeDMarquee = ({
   images,
   className,
@@ -46,7 +50,7 @@ export const ThreeDMarquee = ({
                 {subarray.map((image, imageIndex) => (
                   <div className="relative" key={imageIndex + image}>
                     <GridLineHorizontal className="-top-4" offset="20px" />
-                    <motion.img
+                    <MotionImage
                       whileHover={{
                         y: -10,
                       }}
@@ -61,6 +65,7 @@ export const ThreeDMarquee = ({
                       className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
                       width={970}
                       height={700}
+                      sizes="(max-width: 768px) 300px, 970px"
                     />
                   </div>
                 ))}
