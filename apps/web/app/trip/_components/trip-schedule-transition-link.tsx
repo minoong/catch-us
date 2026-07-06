@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
@@ -164,11 +165,13 @@ export function TripScheduleTransitionLink({
               type: "spring",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt=""
               className="h-full w-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 384px"
               src={activeCut.image}
+              unoptimized={activeCut.image.endsWith(".gif")}
             />
           </motion.div>
         </motion.div>
