@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import * as React from "react";
-import { useReducedMotion } from "motion/react";
 
 import { Step, Stepper } from "@/components/reactbits/stepper";
 
@@ -33,60 +32,21 @@ function getItemImage(trip: Trip, item: ItineraryItem) {
 }
 
 export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
-  const prefersReducedMotion = useReducedMotion() ?? false;
   const steps = React.useMemo(() => getStepperItems(trip), [trip]);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [stepDirection, setStepDirection] = React.useState(0);
-  const [progress, setProgress] = React.useState(0);
   const [timerResetKey, setTimerResetKey] = React.useState(0);
 
   React.useEffect(() => {
     if (steps.length <= 1) return;
 
-    const startedAt = performance.now();
-    let frame: number | undefined;
-    let interval: number | undefined;
-    let timeout: number | undefined;
-
-    const goToNextStep = () => {
+    const timer = window.setInterval(() => {
       setStepDirection(1);
       setActiveIndex((current) => (current + 1) % steps.length);
-      setProgress(0);
-    };
+    }, STEP_DURATION_MS);
 
-    if (prefersReducedMotion) {
-      interval = window.setInterval(() => {
-        const ratio = Math.min(
-          (performance.now() - startedAt) / STEP_DURATION_MS,
-          1,
-        );
-        setProgress(ratio);
-      }, 250);
-      timeout = window.setTimeout(goToNextStep, STEP_DURATION_MS);
-
-      return () => {
-        if (interval !== undefined) window.clearInterval(interval);
-        if (timeout !== undefined) window.clearTimeout(timeout);
-      };
-    }
-
-    const tick = (timestamp: number) => {
-      const ratio = Math.min((timestamp - startedAt) / STEP_DURATION_MS, 1);
-      setProgress(ratio);
-
-      if (ratio >= 1) {
-        goToNextStep();
-        return;
-      }
-
-      frame = window.requestAnimationFrame(tick);
-    };
-
-    frame = window.requestAnimationFrame(tick);
-    return () => {
-      if (frame !== undefined) window.cancelAnimationFrame(frame);
-    };
-  }, [activeIndex, prefersReducedMotion, steps.length, timerResetKey]);
+    return () => window.clearInterval(timer);
+  }, [steps.length, timerResetKey]);
 
   if (steps.length === 0) return null;
 
@@ -100,13 +60,11 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         onFinalStepCompleted={() => {
           setStepDirection(1);
           setActiveIndex(0);
-          setProgress(0);
           setTimerResetKey((current) => current + 1);
         }}
         onStepChange={(step: number) => {
           setStepDirection(step > activeIndex + 1 ? 1 : -1);
           setActiveIndex(step - 1);
-          setProgress(0);
           setTimerResetKey((current) => current + 1);
         }}
         backButtonText="이전"
@@ -122,19 +80,6 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           </Step>
         ))}
       </Stepper>
-
-      <div
-        aria-hidden="true"
-        className="mx-auto mt-2 h-2.5 w-[calc(100%-1rem)] max-w-md overflow-hidden rounded-full bg-neutral-950/12 shadow-inner"
-      >
-        <div
-          className="h-full rounded-full bg-[linear-gradient(90deg,#ef4444,#f97316,#2563eb)] transition-transform duration-100 ease-linear"
-          style={{
-            transform: `scaleX(${progress})`,
-            transformOrigin: "left",
-          }}
-        />
-      </div>
     </section>
   );
 }
