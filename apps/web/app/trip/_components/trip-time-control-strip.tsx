@@ -113,7 +113,7 @@ export function TripTimeControlStrip({
             </p>
           ) : (
             <MorphingText
-              className="mx-0 !h-5 max-w-none overflow-hidden text-left !text-[15px] leading-none font-black whitespace-nowrap text-neutral-950 filter-[url(#threshold)_blur(0.2px)] md:!h-5 md:!text-[15px] lg:!text-[15px]"
+              className="mx-0 !h-5 max-w-none overflow-hidden text-left !text-[15px] leading-none font-black whitespace-nowrap text-neutral-950 md:!h-5 md:!text-[15px] lg:!text-[15px]"
               texts={TRIP_CLOCK_TEXTS}
             />
           )}
