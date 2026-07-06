@@ -42,10 +42,13 @@ export function TripIntroTransition({
     <AnimatePresence mode="popLayout">
       {!introComplete ? (
         <motion.div
-          className="fixed inset-0 z-50 grid place-items-center overflow-hidden bg-neutral-950 text-white"
+          className="fixed inset-0 z-50 grid place-items-center overflow-hidden bg-neutral-950 text-white motion-reduce:hidden"
           exit={{ opacity: 0 }}
           initial={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{
+            duration: prefersReducedMotion ? 0 : 0.3,
+            ease: "easeInOut",
+          }}
         >
           <TripIntroPhotoFlash
             active={!introComplete}
@@ -55,14 +58,21 @@ export function TripIntroTransition({
           <Noise patternAlpha={18} patternRefreshInterval={3} />
           <motion.div
             className="relative z-10 text-center"
-            exit={{
-              opacity: 0.98,
-              scale: 0.28,
-              x: "-33vw",
-              y: "-39vh",
-            }}
+            exit={
+              prefersReducedMotion
+                ? { opacity: 0 }
+                : {
+                    opacity: 0.98,
+                    scale: 0.28,
+                    x: "-33vw",
+                    y: "-39vh",
+                  }
+            }
             layoutId="trip-intro-title"
-            transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: prefersReducedMotion ? 0 : 0.58,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             <p className="text-xs font-bold tracking-[0.42em] text-white/60 uppercase">
               Catch Us Trip

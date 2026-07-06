@@ -1,12 +1,40 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import { TripIntroPage } from "../_components/trip-intro-page";
 import { generateTripStaticParams, getTrip } from "../_lib/itinerary";
 
-export const metadata = {
+const JEONJU_META_IMAGE = "/trips/jeonju-2026/meta/og-image.jpg";
+
+export const metadata: Metadata = {
+  title: "전주로 넘어가는 밤",
+  description: "2026년 7월, 용산에서 KTX를 타고 전주로 내려가는 여행.",
+  icons: {
+    apple: "/trips/jeonju-2026/meta/apple-touch-icon.png",
+    icon: "/trips/jeonju-2026/meta/favicon.png",
+  },
+  openGraph: {
+    description: "2026년 7월, 용산에서 KTX를 타고 전주로 내려가는 여행.",
+    images: [
+      {
+        alt: "전주 여행의 밤 분위기",
+        height: 630,
+        url: JEONJU_META_IMAGE,
+        width: 1200,
+      },
+    ],
+    title: "전주로 넘어가는 밤",
+    type: "website",
+  },
   robots: {
     follow: false,
     index: false,
+  },
+  twitter: {
+    card: "summary_large_image",
+    description: "2026년 7월, 용산에서 KTX를 타고 전주로 내려가는 여행.",
+    images: [JEONJU_META_IMAGE],
+    title: "전주로 넘어가는 밤",
   },
 };
 

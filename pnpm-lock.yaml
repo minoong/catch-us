@@ -144,6 +144,9 @@ importers:
       react-dom:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
+      react-use-measure:
+        specifier: ^2.1.7
+        version: 2.1.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       three:
         specifier: ^0.180.0
         version: 0.180.0
