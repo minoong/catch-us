@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap";
 
 export type PillNavItem = {
@@ -286,11 +287,13 @@ const PillNav: React.FC<PillNavProps> = ({
               background: "var(--base, #000)",
             }}
           >
-            <img
+            <Image
               src={logo}
-              alt={logoAlt}
+              alt={logoAlt || ""}
               ref={logoImgRef}
               className="block h-full w-full object-cover"
+              width={40}
+              height={40}
             />
           </Link>
         ) : (
@@ -308,11 +311,13 @@ const PillNav: React.FC<PillNavProps> = ({
               background: "var(--base, #000)",
             }}
           >
-            <img
+            <Image
               src={logo}
-              alt={logoAlt}
+              alt={logoAlt || ""}
               ref={logoImgRef}
               className="block h-full w-full object-cover"
+              width={40}
+              height={40}
             />
           </a>
         )}
