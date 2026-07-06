@@ -102,7 +102,7 @@ export function TripIntroHeader({
           </AnimatePresence>
         </div>
         <TripScheduleTransitionLink
-          className="h-[var(--trip-intro-cta-height)] w-[4.75rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"
+          className="h-[var(--trip-intro-cta-height)] w-[5.5rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"
           href={`/trip/${trip.slug}/schedule`}
           size="compact"
           variant="dark"
