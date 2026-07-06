@@ -40,6 +40,7 @@ export const ThreeDMarquee = ({
                 }}
                 key={colIndex + "marquee"}
                 className="flex flex-col items-start gap-8"
+                style={{ willChange: "transform" }}
               >
                 <GridLineVertical className="-left-4" offset="80px" />
                 {subarray.map((image, imageIndex) => (

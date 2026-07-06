@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { TripSchedulePage } from "../../_components/trip-schedule-page";
 import { generateTripStaticParams, getTrip } from "../../_lib/itinerary";
 
-const JEONJU_META_IMAGE = "/trips/jeonju-2026/meta/og-image.jpg";
+const JEONJU_META_IMAGE =
+  "https://catch-us-web.vercel.app/trips/jeonju-2026/meta/og-image.jpg";
 
 export const metadata: Metadata = {
   title: "전주 여행 일정",
@@ -25,10 +26,6 @@ export const metadata: Metadata = {
     ],
     title: "전주 여행 일정",
     type: "website",
-  },
-  robots: {
-    follow: false,
-    index: false,
   },
   twitter: {
     card: "summary_large_image",

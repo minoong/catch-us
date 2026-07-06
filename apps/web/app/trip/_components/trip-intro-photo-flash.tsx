@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-
-import { PixelImage } from "@/components/magicui/pixel-image";
 
 export interface TripIntroFlashImage {
   alt: string;
@@ -55,13 +54,11 @@ export function TripIntroPhotoFlash({
           key={image.src}
           transition={{ duration: reducedMotion ? 0 : 0.22, ease: "easeOut" }}
         >
-          <PixelImage
+          <Image
             alt={image.alt}
-            customGrid={{ cols: 6, rows: 8 }}
-            grayscaleAnimation={false}
-            imageClassName="scale-105"
-            maxAnimationDelay={180}
-            pixelFadeInDuration={260}
+            className="scale-105 object-cover"
+            fill
+            sizes="100vw"
             priority={index === 0}
             src={image.src}
           />
