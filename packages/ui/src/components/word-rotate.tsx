@@ -55,13 +55,13 @@ export function WordRotate({
     <span
       aria-label={safeWords.join(", ")}
       className={cn(
-        "relative inline-grid h-[1em] overflow-hidden align-bottom leading-none",
+        "relative inline-grid h-[1.2em] overflow-hidden align-bottom leading-normal",
         className,
       )}
     >
       <motion.span
         aria-hidden
-        animate={reduceMotion ? undefined : { y: `-${index}em` }}
+        animate={reduceMotion ? undefined : { y: `-${index * 1.2}em` }}
         className="col-start-1 row-start-1 flex flex-col will-change-transform"
         initial={false}
         transition={
@@ -76,7 +76,7 @@ export function WordRotate({
       >
         {rollingWords.map((word, wordIndex) => (
           <span
-            className="block h-[1em] overflow-hidden leading-none"
+            className="block h-[1.2em] overflow-hidden leading-normal"
             key={`${word}-${wordIndex}`}
           >
             {word}
