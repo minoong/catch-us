@@ -20,6 +20,11 @@
   }
 }
 
+.reactbits-stepper.trip-mobile-stepper {
+  aspect-ratio: auto;
+  min-height: auto;
+}
+
 .reactbits-stepper-circle-container {
   margin-left: auto;
   margin-right: auto;

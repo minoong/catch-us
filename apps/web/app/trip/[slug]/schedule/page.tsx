@@ -1,12 +1,40 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import { TripSchedulePage } from "../../_components/trip-schedule-page";
 import { generateTripStaticParams, getTrip } from "../../_lib/itinerary";
 
-export const metadata = {
+const JEONJU_META_IMAGE = "/trips/jeonju-2026/meta/og-image.jpg";
+
+export const metadata: Metadata = {
+  title: "전주 여행 일정",
+  description: "2026년 7월 전주 여행 일정표.",
+  icons: {
+    apple: "/trips/jeonju-2026/meta/apple-touch-icon.png",
+    icon: "/trips/jeonju-2026/meta/favicon.png",
+  },
+  openGraph: {
+    description: "2026년 7월 전주 여행 일정표.",
+    images: [
+      {
+        alt: "전주 여행의 밤 분위기",
+        height: 630,
+        url: JEONJU_META_IMAGE,
+        width: 1200,
+      },
+    ],
+    title: "전주 여행 일정",
+    type: "website",
+  },
   robots: {
     follow: false,
     index: false,
+  },
+  twitter: {
+    card: "summary_large_image",
+    description: "2026년 7월 전주 여행 일정표.",
+    images: [JEONJU_META_IMAGE],
+    title: "전주 여행 일정",
   },
 };
 

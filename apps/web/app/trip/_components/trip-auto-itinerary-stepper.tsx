@@ -93,6 +93,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
   return (
     <section>
       <Stepper
+        className="trip-mobile-stepper"
         currentStep={activeIndex + 1}
         direction={stepDirection}
         initialStep={1}

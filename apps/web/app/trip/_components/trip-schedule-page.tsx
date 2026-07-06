@@ -115,7 +115,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
 
   return (
     <main className="bg-background text-foreground min-h-screen pb-28">
-      <section className="mx-auto min-h-screen w-full max-w-md px-4 sm:max-w-lg">
+      <section className="mx-auto min-h-screen w-full max-w-md px-4">
         <div
           className="bg-background/95 sticky top-0 z-30 -mx-4 rounded-b-[var(--trip-sticky-radius)] px-4 pt-[var(--trip-sticky-pt)] pb-[var(--trip-sticky-pb)] shadow-xl backdrop-blur"
           ref={stickyRef}
@@ -231,7 +231,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
         </div>
       </section>
       <TripTimeControlStrip
-        className="fixed right-4 bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 z-50 mx-auto max-w-md"
+        className="fixed bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2"
         trip={trip}
       />
     </main>

@@ -63,7 +63,7 @@ export function TripIntroHeader({
 
   return (
     <header
-      className="sticky top-0 z-40 mx-auto w-full max-w-md px-4 pt-[var(--trip-intro-header-pt)] sm:max-w-lg"
+      className="sticky top-0 z-40 mx-auto w-full max-w-md px-4 pt-[var(--trip-intro-header-pt)]"
       ref={headerRef}
       style={
         {

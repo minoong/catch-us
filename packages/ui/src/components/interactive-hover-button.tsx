@@ -22,7 +22,7 @@ export function InteractiveHoverButton({
           {children}
         </span>
       </div>
-      <div className="text-primary-foreground absolute inset-x-0 top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:-translate-x-5 group-hover:opacity-100 group-data-[force-hover=true]:-translate-x-5 group-data-[force-hover=true]:opacity-100">
+      <div className="text-primary-foreground absolute inset-x-0 top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-data-[force-hover=true]:translate-x-0 group-data-[force-hover=true]:opacity-100">
         <span>{children}</span>
         <ArrowRight />
       </div>
