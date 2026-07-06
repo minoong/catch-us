@@ -61,6 +61,12 @@ export function TripScheduleTransitionLink({
   const timeoutRefs = React.useRef<number[]>([]);
 
   React.useEffect(() => {
+    // Preload loader WebP images in background
+    LOADING_CUTS.forEach((cut) => {
+      const img = new window.Image();
+      img.src = cut.image;
+    });
+
     return () => {
       timeoutRefs.current.forEach((timeout) => window.clearTimeout(timeout));
     };
