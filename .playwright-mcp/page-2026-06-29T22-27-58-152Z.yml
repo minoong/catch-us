@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - img "성산일출봉과 바다가 내려다보이는 여행 풍경" [ref=e7]
+      - generic [ref=e10]:
+        - paragraph [ref=e11]: Catch Us Trip
+        - paragraph [ref=e12]: Jeonju
+        - paragraph [ref=e13]: 전주로 넘어가는 밤
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - paragraph [ref=e18]: Jeonju 2026
+        - link "일정" [ref=e20] [cursor=pointer]:
+          - /url: /trip/jeonju-2026/schedule
+      - generic [ref=e22]:
+        - generic [ref=e25]:
+          - paragraph [ref=e26]: Jeonju 2026
+          - heading "전주로 넘어가는 밤" [level=1] [ref=e27]:
+            - generic [ref=e28]: 전주로 넘어가는 밤
+          - paragraph [ref=e29]: 2026년 7월 10일, 용산에서 KTX를 타고 전주로 내려가는 2박 3일 여행.
+          - generic [ref=e30]:
+            - generic [ref=e31]: Private trip board
+            - generic [ref=e32]: KTX · 전주 · 2박 3일
+          - generic [ref=e33]:
+            - link "일정 탐색 열기" [ref=e34] [cursor=pointer]:
+              - /url: /trip/jeonju-2026/schedule
+            - generic [ref=e35]: 용산 → 전주
+        - generic [ref=e37]:
+          - generic [ref=e39]: 용산
+          - generic [ref=e40]: 전주
+          - img
+          - generic [ref=e41]: KTX 521
+        - generic [ref=e44]:
+          - generic [ref=e46]:
+            - paragraph [ref=e48]: trip pass
+            - heading "전주행" [level=2] [ref=e49]
+            - article [ref=e51]:
+              - generic [ref=e52]:
+                - generic [ref=e53]:
+                  - paragraph [ref=e54]: train
+                  - heading "KTX 521" [level=2] [ref=e55]
+                - generic [ref=e56]:
+                  - paragraph [ref=e57]: seat
+                  - paragraph [ref=e58]: 1A · 1B
+              - generic [ref=e59]:
+                - generic [ref=e60]:
+                  - paragraph [ref=e61]: 용산
+                  - paragraph [ref=e62]: 20:09
+                - paragraph [ref=e63]: →
+                - generic [ref=e64]:
+                  - paragraph [ref=e65]: 전주
+                  - paragraph [ref=e66]: 21:47
+              - paragraph [ref=e67]: 14호차 · 2026-07-10
+            - generic [ref=e68]:
+              - text: 전주관광호텔호텔
+              - text: 07.10 체크인 · 07.12 체크아웃
+          - img [ref=e69]
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - img
+            - generic [ref=e89]: 용산
+            - generic [ref=e90]: 전주
+            - img
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - generic [ref=e94]: KTX 521 · 20:09 → 21:47
+                - generic [ref=e95]: KTX 510 · 13:18 → 15:03
+              - generic [ref=e96]:
+                - generic [ref=e97]: KTX 521 · 20:09 → 21:47
+                - generic [ref=e98]: KTX 510 · 13:18 → 15:03
+              - generic [ref=e99]:
+                - generic [ref=e100]: KTX 521 · 20:09 → 21:47
+                - generic [ref=e101]: KTX 510 · 13:18 → 15:03
+              - generic [ref=e102]:
+                - generic [ref=e103]: KTX 521 · 20:09 → 21:47
+                - generic [ref=e104]: KTX 510 · 13:18 → 15:03
+          - img [ref=e106]
+          - generic [ref=e108]:
+            - heading "서울에서 전주까지" [level=2] [ref=e109]
+            - paragraph [ref=e110]: 용산에서 전주까지, KTX 이동을 하나의 여행 앱 카드처럼 본다.
+            - link "일정 보기" [ref=e111] [cursor=pointer]:
+              - /url: /trip/jeonju-2026/schedule
+        - generic [ref=e112]:
+          - img [ref=e115]
+          - generic [ref=e117]:
+            - heading "전주 베이스캠프" [level=2] [ref=e118]
+            - paragraph [ref=e119]: 체크인 07.10 15:00 · 체크아웃 07.12 11:00 · 전주관광호텔호텔
+            - link "숙소 보기" [ref=e120] [cursor=pointer]:
+              - /url: https://place.map.kakao.com/2126483278
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e127]: 20:09
+                - text: 20:09
+              - text: · 용산역 출발 · KTX 521
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - generic [ref=e130]: 21:47
+                - text: 21:47
+              - text: · 전주역 도착
+            - generic [ref=e131]:
+              - generic [ref=e132]:
+                - generic [ref=e133]: 15:00
+                - text: 15:00
+              - text: · 전주관광호텔호텔
+          - img [ref=e135]
+          - generic [ref=e137]:
+            - heading "날짜별 일정" [level=2] [ref=e138]
+            - paragraph [ref=e139]: 전체, 날짜별 탭으로 KTX와 장소 동선을 훑어본다.
+            - link "타임라인 열기" [ref=e140] [cursor=pointer]:
+              - /url: /trip/jeonju-2026/schedule
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - region "Circular image gallery. Use Left and Right Arrow keys to navigate." [ref=e144]
+            - img [ref=e146]
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - generic [ref=e150]: 한옥마을
+                - generic [ref=e151]: 야경
+                - generic [ref=e152]: 숙소
+                - generic [ref=e153]: KTX
+                - generic [ref=e154]: 카페
+                - generic [ref=e155]: 맛집
+              - generic [ref=e156]:
+                - generic [ref=e157]: 한옥마을
+                - generic [ref=e158]: 야경
+                - generic [ref=e159]: 숙소
+                - generic [ref=e160]: KTX
+                - generic [ref=e161]: 카페
+                - generic [ref=e162]: 맛집
+              - generic [ref=e163]:
+                - generic [ref=e164]: 한옥마을
+                - generic [ref=e165]: 야경
+                - generic [ref=e166]: 숙소
+                - generic [ref=e167]: KTX
+                - generic [ref=e168]: 카페
+                - generic [ref=e169]: 맛집
+          - img [ref=e171]
+          - generic [ref=e173]:
+            - heading "여행 무드보드" [level=2] [ref=e174]
+            - paragraph [ref=e175]: 한옥마을, 야경, 숙소, KTX를 여행 무드보드로 묶는다.
+            - link "무드 보기" [ref=e176] [cursor=pointer]:
+              - /url: /trip/jeonju-2026/schedule
+      - generic [ref=e177]:
+        - generic [ref=e179]:
+          - paragraph [ref=e180]: scroll story
+          - heading "K T X 에 서 숙 소 까 지" [level=2] [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: K
+              - generic [ref=e184]: T
+              - generic [ref=e185]: X
+              - generic [ref=e186]: 에
+              - generic [ref=e187]: 서
+              - generic [ref=e189]: 숙
+              - generic [ref=e190]: 소
+              - generic [ref=e191]: 까
+              - generic [ref=e192]: 지
+          - paragraph [ref=e193]: 이동, 도착, 숙소, 귀가를 카드가 겹쳐지는 모바일 스토리로 훑어본다.
+        - generic [ref=e196]:
+          - generic [ref=e197]:
+            - paragraph [ref=e198]: outbound
+            - heading "KTX 521" [level=3] [ref=e199]
+            - paragraph [ref=e200]: 용산 20:09 출발 · 전주 21:47 도착
+          - generic [ref=e201]:
+            - paragraph [ref=e202]: stay
+            - heading "전주관광호텔호텔" [level=3] [ref=e203]
+            - paragraph [ref=e204]: 07.10 체크인 · 07.12 체크아웃
+          - generic [ref=e205]:
+            - paragraph [ref=e206]: return
+            - heading "KTX 510" [level=3] [ref=e207]
+            - paragraph [ref=e208]: 전주 13:18 출발 · 용산 15:03 도착
+        - link "날짜별 일정으로 이동" [ref=e210] [cursor=pointer]:
+          - /url: /trip/jeonju-2026/schedule
+          - generic [ref=e211]: 날짜별 일정으로 이동
+  - button "Open Next.js Dev Tools" [ref=e217] [cursor=pointer]:
+    - img [ref=e218]

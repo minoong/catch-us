@@ -1,0 +1,96 @@
+<h2>전주 여행 인트로 페이지 방향</h2>
+<p class="subtitle">
+  /trip/[slug] 첫 페이지를 어떤 경험으로 시작할지 고르는 단계입니다. 클릭해서 마음에 드는 방향을 골라도 되고,
+  터미널에 말로 피드백을 줘도 됩니다.
+</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 300px; border-radius: 24px; padding: 22px; background: radial-gradient(circle at 18% 10%, #fef3c7 0, transparent 34%), radial-gradient(circle at 82% 22%, #fca5a5 0, transparent 28%), linear-gradient(145deg, #111827, #3f2f2f 52%, #fff7ed); color: white; overflow: hidden; position: relative;">
+        <div style="position:absolute; inset:16px; border:1px solid rgba(255,255,255,.24); border-radius:28px;"></div>
+        <div style="font-size:12px; letter-spacing:.28em; text-transform:uppercase; opacity:.72;">Mobile intro</div>
+        <div style="margin-top:46px; font-size:34px; font-weight:800; line-height:1.02;">전주로<br/>넘어가는 밤</div>
+        <div style="margin-top:16px; display:inline-flex; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.16); backdrop-filter: blur(12px); font-size:13px;">KTX 521 · 20:09 용산</div>
+        <div style="position:absolute; right:28px; bottom:28px; width:128px; height:178px; border-radius:28px; background:rgba(255,255,255,.86); color:#111827; box-shadow:0 24px 60px rgba(0,0,0,.28); transform:rotate(5deg); padding:18px;">
+          <div style="font-size:11px; color:#6b7280;">boarding pass</div>
+          <div style="margin-top:12px; font-weight:800; font-size:24px;">1A · 1B</div>
+          <div style="margin-top:38px; font-size:12px; color:#6b7280;">Yongsan → Jeonju</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 시네마틱 앱 전환형</h3>
+      <p>
+        추천안. 모바일 앱처럼 첫 화면은 여행 포스터/티켓이 꽉 차고, 스크롤 또는 진입 후 앱 UI로 접히며
+        타임라인과 지도로 전환됩니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 300px; border-radius: 24px; padding: 22px; background:linear-gradient(160deg,#f8fafc,#eef2ff); color:#111827; overflow:hidden; position:relative;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-size:12px; letter-spacing:.22em; color:#64748b; text-transform:uppercase;">timeline first</div>
+            <div style="margin-top:8px; font-size:30px; font-weight:800;">2박 3일 전주</div>
+          </div>
+          <div style="border-radius:999px; padding:8px 12px; background:white; box-shadow:0 10px 30px rgba(15,23,42,.12);">2026.07.10</div>
+        </div>
+        <div style="margin-top:26px; display:grid; gap:12px;">
+          <div style="display:flex; gap:12px; align-items:center; padding:14px; border-radius:20px; background:white; box-shadow:0 12px 28px rgba(15,23,42,.08);">
+            <div style="width:42px; height:42px; border-radius:14px; background:#111827; color:white; display:grid; place-items:center; font-weight:800;">1</div>
+            <div><b>KTX 521</b><br/><span style="color:#64748b;font-size:13px;">20:09 용산 → 21:47 전주</span></div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center; padding:14px; border-radius:20px; background:white; box-shadow:0 12px 28px rgba(15,23,42,.08);">
+            <div style="width:42px; height:42px; border-radius:14px; background:#dc2626; color:white; display:grid; place-items:center; font-weight:800;">2</div>
+            <div><b>전주관광호텔호텔</b><br/><span style="color:#64748b;font-size:13px;">체크인 · 일정 베이스캠프</span></div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center; padding:14px; border-radius:20px; background:white; box-shadow:0 12px 28px rgba(15,23,42,.08);">
+            <div style="width:42px; height:42px; border-radius:14px; background:#f97316; color:white; display:grid; place-items:center; font-weight:800;">+</div>
+            <div><b>추가 일정 슬롯</b><br/><span style="color:#64748b;font-size:13px;">교통 · 경유 · 식당 · 산책 추가 가능</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 타임라인 우선형</h3>
+      <p>
+        정보 전달이 가장 빠릅니다. KTX, 숙소, 장소를 카드 스택으로 보여주고 스크롤에 따라 지도와 상세가
+        따라옵니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 300px; border-radius: 24px; padding: 22px; background:linear-gradient(145deg,#082f49,#0f172a); color:white; overflow:hidden; position:relative;">
+        <div style="font-size:12px; letter-spacing:.22em; color:#bae6fd; text-transform:uppercase;">map journey</div>
+        <div style="margin-top:8px; font-size:30px; font-weight:800;">서울에서 전주까지</div>
+        <div style="position:absolute; left:22px; right:22px; bottom:26px; height:150px; border-radius:28px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); backdrop-filter:blur(14px);">
+          <div style="position:absolute; left:32px; top:72px; width:18px; height:18px; border-radius:50%; background:#38bdf8;"></div>
+          <div style="position:absolute; left:49px; top:80px; right:56px; border-top:3px dashed rgba(255,255,255,.58);"></div>
+          <div style="position:absolute; right:38px; top:64px; width:28px; height:28px; border-radius:50%; background:#fb7185; box-shadow:0 0 0 8px rgba(251,113,133,.18);"></div>
+          <div style="position:absolute; left:22px; top:22px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.14);">용산역</div>
+          <div style="position:absolute; right:22px; top:22px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.14);">전주역</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 지도 여정 중심형</h3>
+      <p>
+        카카오맵과 이동 경로가 주인공입니다. 서울→전주, 숙소, 추후 장소 마커를 지도 위에서 먼저 보여주고
+        아래로 타임라인을 풉니다.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>내 추천</h3>
+  <p>
+    A를 기본으로 설계하고, B의 카드형 타임라인과 C의 지도 섹션을 아래에 결합하는 방식이 가장 좋아 보입니다.
+    “앱으로 전환되는 첫 인상”을 살리면서도 여행 정보가 묻히지 않습니다.
+  </p>
+</div>

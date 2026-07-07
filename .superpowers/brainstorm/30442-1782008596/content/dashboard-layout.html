@@ -1,0 +1,91 @@
+<h2>Catch Us 관리자 대시보드 레이아웃</h2>
+<p class="subtitle">세 안 모두 shadcn dashboard-01의 Sidebar, Card, Chart, Data Table 조합을 사용합니다. 차이는 첫 화면의 우선순위입니다.</p>
+
+<div class="cards">
+  <div class="card" data-choice="balanced" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:14px;background:#f7f7f8">
+      <div style="display:grid;grid-template-columns:88px 1fr;min-height:300px;border:1px solid #ddd;border-radius:10px;overflow:hidden;background:white">
+        <div style="padding:14px 9px;border-right:1px solid #e5e5e5;font-size:9px;line-height:2.3">
+          <strong>Catch Us</strong><br>Overview<br>Photos<br>People<br>Search<br>Settings
+        </div>
+        <div style="padding:14px">
+          <div style="display:flex;justify-content:space-between;font-size:12px"><strong>Overview</strong><span>Upload photo</span></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px">
+            <div class="placeholder" style="height:48px;font-size:8px">Total<br><b>12,486</b></div>
+            <div class="placeholder" style="height:48px;font-size:8px">Public<br><b>8,942</b></div>
+            <div class="placeholder" style="height:48px;font-size:8px">Private<br><b>3,544</b></div>
+            <div class="placeholder" style="height:48px;font-size:8px">Processing<br><b>18</b></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:7px;margin-top:7px">
+            <div class="placeholder" style="height:78px;font-size:9px">Upload activity chart</div>
+            <div class="placeholder" style="height:78px;font-size:9px">Public / private chart</div>
+          </div>
+          <div class="placeholder" style="height:90px;margin-top:7px;font-size:9px">Recent photos data table · thumbnail · owner · visibility · location · status</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 균형형 (추천)</h3>
+      <p>지표, 차트, 최근 사진 검수를 한 화면에서 균형 있게 확인합니다. 운영 홈으로 가장 범용적입니다.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="media-first" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:14px;background:#f7f7f8">
+      <div style="display:grid;grid-template-columns:88px 1fr;min-height:300px;border:1px solid #ddd;border-radius:10px;overflow:hidden;background:white">
+        <div style="padding:14px 9px;border-right:1px solid #e5e5e5;font-size:9px;line-height:2.3">
+          <strong>Catch Us</strong><br>Overview<br><b>Photos</b><br>People<br>Search<br>Settings
+        </div>
+        <div style="padding:14px">
+          <div style="display:flex;justify-content:space-between;font-size:12px"><strong>Photo review</strong><span>Filter · Search</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px">
+            <div class="placeholder" style="height:82px;font-size:8px">Photo 01<br>Public</div>
+            <div class="placeholder" style="height:82px;font-size:8px">Photo 02<br>Private</div>
+            <div class="placeholder" style="height:82px;font-size:8px">Photo 03<br>Review</div>
+            <div class="placeholder" style="height:82px;font-size:8px">Photo 04<br>Public</div>
+            <div class="placeholder" style="height:82px;font-size:8px">Photo 05<br>Private</div>
+            <div class="placeholder" style="height:82px;font-size:8px">Photo 06<br>Public</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:7px">
+            <div class="placeholder" style="height:35px;font-size:8px">Public 8,942</div>
+            <div class="placeholder" style="height:35px;font-size:8px">Private 3,544</div>
+            <div class="placeholder" style="height:35px;font-size:8px">Review 18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 사진 검수형</h3>
+      <p>사진 그리드와 공개 상태 변경을 전면에 둡니다. 검수는 빠르지만 통계 확인은 한 단계 밀립니다.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="analytics-first" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:14px;background:#f7f7f8">
+      <div style="display:grid;grid-template-columns:88px 1fr;min-height:300px;border:1px solid #ddd;border-radius:10px;overflow:hidden;background:white">
+        <div style="padding:14px 9px;border-right:1px solid #e5e5e5;font-size:9px;line-height:2.3">
+          <strong>Catch Us</strong><br><b>Analytics</b><br>Photos<br>People<br>Search<br>Settings
+        </div>
+        <div style="padding:14px">
+          <div style="display:flex;justify-content:space-between;font-size:12px"><strong>Analytics</strong><span>Last 30 days</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px">
+            <div class="placeholder" style="height:48px;font-size:8px">Uploads<br><b>+18.2%</b></div>
+            <div class="placeholder" style="height:48px;font-size:8px">Searches<br><b>+31.4%</b></div>
+            <div class="placeholder" style="height:48px;font-size:8px">Guests<br><b>+9.8%</b></div>
+          </div>
+          <div class="placeholder" style="height:104px;margin-top:7px;font-size:9px">Uploads · searches · guest activity chart</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px">
+            <div class="placeholder" style="height:64px;font-size:8px">Popular keywords</div>
+            <div class="placeholder" style="height:64px;font-size:8px">Recent photos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 통계형</h3>
+      <p>업로드·검색·게스트 지표의 추세를 먼저 보여줍니다. 분석에는 좋지만 일상적인 사진 관리는 덜 직접적입니다.</p>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:18px">카드를 클릭해 하나를 선택하거나, 터미널에서 A/B/C로 답해주세요.</p>

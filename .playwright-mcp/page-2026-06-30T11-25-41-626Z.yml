@@ -1,0 +1,81 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - link "여행 소개로 돌아가기" [ref=e6] [cursor=pointer]:
+            - /url: /trip/jeonju-2026
+            - text: ←
+          - generic [ref=e7]:
+            - paragraph [ref=e8]: Jeonju 2026
+            - heading "전주로 넘어가는 밤" [level=1] [ref=e9]
+        - generic [ref=e11]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: 현재 선택된 장소 없음
+            - generic [ref=e19]: SDK
+          - img [ref=e140]
+          - generic [ref=e143]:
+            - generic [ref=e146]: 128km
+            - generic [ref=e147]:
+              - link "Kakao 맵으로 이동(새창열림)" [ref=e148] [cursor=pointer]:
+                - /url: http://map.kakao.com/
+                - img "Kakao 맵으로 이동(새창열림)" [ref=e149]
+              - generic [ref=e150]: ", NGII"
+          - generic [ref=e152]:
+            - generic:
+              - img [ref=e154]
+              - generic:
+                - generic:
+                  - generic:
+                    - link:
+                      - /url: javascript:void(0)
+                - generic:
+                  - generic:
+                    - link:
+                      - /url: javascript:void(0)
+                - generic:
+                  - generic:
+                    - link:
+                      - /url: javascript:void(0)
+                - generic [ref=e156]: 용산역
+                - generic [ref=e158]: 전주역
+                - generic [ref=e160]: 전주관광호텔호텔
+          - generic [ref=e161]:
+            - generic [ref=e164]: 128km
+            - link "Kakao 맵으로 이동(새창열림)" [ref=e166] [cursor=pointer]:
+              - /url: http://map.kakao.com/
+              - img "Kakao 맵으로 이동(새창열림)" [ref=e167]
+        - navigation "여행 날짜 필터" [ref=e21]:
+          - button "전체" [ref=e22]:
+            - generic [ref=e24]: 전체
+          - button "07.10" [ref=e25]:
+            - generic [ref=e26]: "07.10"
+          - button "07.11" [active] [pressed] [ref=e27]:
+            - generic [ref=e28]: "07.11"
+          - button "07.12" [ref=e29]:
+            - generic [ref=e30]: "07.12"
+      - generic [ref=e170]:
+        - heading "날 짜 별 일 정" [level=2] [ref=e171]:
+          - generic [ref=e172]:
+            - generic [ref=e173]: 날
+            - generic [ref=e174]: 짜
+            - generic [ref=e175]: 별
+            - generic [ref=e177]: 일
+            - generic [ref=e178]: 정
+        - article [ref=e179]:
+          - button "07-11 place 전주에서 보내는 하루 7월 11일의 장소, 교통, 식사 동선은 정리되는 대로 이 일정 데이터에 직접 반영한다. 전주 동선 정리" [ref=e181]:
+            - generic [ref=e182]:
+              - paragraph [ref=e183]:
+                - generic [ref=e184]:
+                  - generic [ref=e185]: 07-11
+                  - text: 07-11
+              - paragraph [ref=e186]: place
+            - generic [ref=e187]:
+              - heading "전주에서 보내는 하루" [level=2] [ref=e188]
+              - paragraph [ref=e189]: 7월 11일의 장소, 교통, 식사 동선은 정리되는 대로 이 일정 데이터에 직접 반영한다.
+              - generic [ref=e190]:
+                - generic [ref=e191]: 전주
+                - generic [ref=e192]: 동선 정리
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e151]

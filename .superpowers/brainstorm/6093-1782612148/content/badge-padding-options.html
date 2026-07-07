@@ -1,0 +1,181 @@
+<style>
+  .padding-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .padding-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 22px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.12), transparent 28%),
+      linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.01));
+    cursor: pointer;
+  }
+
+  .padding-preview {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    padding: 26px;
+  }
+
+  .map-window {
+    width: min(100%, 300px);
+    height: 138px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.72)),
+      repeating-radial-gradient(circle, rgba(71, 85, 105, 0.45) 0 1px, transparent 1px 7px);
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.2);
+  }
+
+  .cluster {
+    position: absolute;
+    top: 58px;
+    left: 142px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .flag {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: white;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+    z-index: 1;
+  }
+
+  .badge {
+    display: grid;
+    gap: 2px;
+    min-width: 82px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.76);
+    color: white;
+    line-height: 1.05;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+  }
+
+  .padding-small .badge {
+    padding: 4px 8px;
+  }
+
+  .padding-balanced .badge {
+    padding: 6px 11px;
+  }
+
+  .padding-airy .badge {
+    padding: 8px 14px;
+  }
+
+  .badge strong {
+    font-size: 10px;
+  }
+
+  .badge span {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 8px;
+    white-space: nowrap;
+  }
+
+  .mobile-strip {
+    position: absolute;
+    inset: auto 18px 18px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(15, 23, 42, 0.52);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .padding-body {
+    padding: 0 20px 20px;
+  }
+
+  .padding-body h3 {
+    margin: 0 0 6px;
+  }
+
+  .padding-body p {
+    margin: 0;
+  }
+</style>
+
+<h2>B 간격 + 배지 내부 패딩 비교</h2>
+<p class="subtitle">
+  아이콘과 배지는 B처럼 거의 붙인 상태로 고정했어. 이번엔 배지 안쪽 여백이 어느 정도가 자연스러운지 봐줘.
+</p>
+
+<div class="padding-grid">
+  <div class="padding-card padding-small" data-choice="b-small" onclick="toggleSelect(this)">
+    <div class="padding-preview">
+      <div class="map-window">
+        <div class="cluster">
+          <div class="flag">🇰🇷</div>
+          <div class="badge">
+            <strong>한국</strong>
+            <span>서울 · 강릉 · 부산</span>
+          </div>
+        </div>
+        <div class="mobile-strip">조밀함: 작고 깔끔하지만 조금 답답함</div>
+      </div>
+    </div>
+    <div class="padding-body">
+      <h3>B-1. 작은 패딩</h3>
+      <p>배지가 가장 작아 지도 공간을 덜 먹지만, 텍스트가 캡슐에 살짝 붙어 보일 수 있다.</p>
+    </div>
+  </div>
+
+  <div class="padding-card padding-balanced" data-choice="b-balanced" onclick="toggleSelect(this)">
+    <div class="padding-preview">
+      <div class="map-window">
+        <div class="cluster">
+          <div class="flag">🇰🇷</div>
+          <div class="badge">
+            <strong>한국</strong>
+            <span>서울 · 강릉 · 부산</span>
+          </div>
+        </div>
+        <div class="mobile-strip">추천: 텍스트 숨과 지도 공간 균형</div>
+      </div>
+    </div>
+    <div class="padding-body">
+      <h3>B-2. 균형 패딩</h3>
+      <p>텍스트가 안정적으로 읽히고, 아이콘과 한 덩어리처럼 붙어 보이는 균형안.</p>
+    </div>
+  </div>
+
+  <div class="padding-card padding-airy" data-choice="b-airy" onclick="toggleSelect(this)">
+    <div class="padding-preview">
+      <div class="map-window">
+        <div class="cluster">
+          <div class="flag">🇰🇷</div>
+          <div class="badge">
+            <strong>한국</strong>
+            <span>서울 · 강릉 · 부산</span>
+          </div>
+        </div>
+        <div class="mobile-strip">넉넉함: 예쁘지만 배지가 커짐</div>
+      </div>
+    </div>
+    <div class="padding-body">
+      <h3>B-3. 넉넉한 패딩</h3>
+      <p>프리미엄 느낌은 좋아지지만 모바일에서는 배지가 더 쉽게 가장자리에 닿을 수 있다.</p>
+    </div>
+  </div>
+</div>

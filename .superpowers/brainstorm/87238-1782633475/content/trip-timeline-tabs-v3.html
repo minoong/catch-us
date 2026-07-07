@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전주 여행 타임라인 탭 구체안</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #07070a;
+        --panel: rgba(255, 255, 255, 0.08);
+        --panel2: rgba(255, 255, 255, 0.13);
+        --line: rgba(255, 255, 255, 0.15);
+        --muted: rgba(255, 255, 255, 0.62);
+        --text: rgba(255, 255, 255, 0.94);
+        --warm: #ffb86b;
+        --rose: #fb7185;
+        --sky: #67e8f9;
+        --mint: #86efac;
+        --violet: #c4b5fd;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 10%, rgba(251, 113, 133, 0.3), transparent 28rem),
+          radial-gradient(circle at 86% 14%, rgba(103, 232, 249, 0.22), transparent 30rem),
+          radial-gradient(circle at 50% 94%, rgba(255, 184, 107, 0.16), transparent 34rem),
+          #07070a;
+        color: var(--text);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      main {
+        width: min(1180px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 36px 0 90px;
+      }
+
+      .eyebrow {
+        margin: 0 0 9px;
+        color: var(--warm);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 900px;
+        font-size: clamp(36px, 6vw, 76px);
+        line-height: 0.95;
+        letter-spacing: -0.075em;
+      }
+
+      h2 {
+        font-size: clamp(26px, 4vw, 46px);
+        line-height: 1.02;
+        letter-spacing: -0.055em;
+      }
+
+      h3 {
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .sub {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .hero {
+        display: grid;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .note-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 8px 12px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 12px;
+        font-weight: 800;
+        backdrop-filter: blur(18px);
+      }
+
+      .shell {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 42px;
+        background:
+          radial-gradient(circle at 20% 0%, rgba(255, 184, 107, 0.22), transparent 24rem),
+          radial-gradient(circle at 76% 8%, rgba(196, 181, 253, 0.18), transparent 26rem),
+          rgba(255, 255, 255, 0.055);
+        box-shadow: 0 34px 120px rgba(0, 0, 0, 0.44);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: end;
+        padding: 30px 30px 20px;
+      }
+
+      .tab-shell {
+        position: sticky;
+        top: 12px;
+        z-index: 20;
+        margin: 0 30px 22px;
+        overflow: auto hidden;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 24px;
+        background: rgba(7, 7, 10, 0.72);
+        padding: 7px;
+        backdrop-filter: blur(24px);
+        scrollbar-width: none;
+      }
+
+      .tab-shell::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tabs {
+        display: grid;
+        min-width: 680px;
+        grid-template-columns: 1.2fr repeat(3, 1fr);
+        gap: 7px;
+      }
+
+      .tab {
+        position: relative;
+        overflow: hidden;
+        min-height: 66px;
+        border: 0;
+        border-radius: 19px;
+        background: rgba(255, 255, 255, 0.055);
+        color: rgba(255, 255, 255, 0.72);
+        padding: 11px 14px;
+        text-align: left;
+      }
+
+      .tab.active {
+        background:
+          linear-gradient(135deg, rgba(255, 184, 107, 0.38), rgba(251, 113, 133, 0.22)),
+          rgba(255, 255, 255, 0.12);
+        color: white;
+        box-shadow: 0 14px 44px rgba(251, 113, 133, 0.18);
+      }
+
+      .tab.active::after {
+        position: absolute;
+        inset: auto 14px 8px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #fff7ed, #fb7185, #67e8f9);
+        content: "";
+      }
+
+      .tab small {
+        display: block;
+        color: currentColor;
+        opacity: 0.68;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .tab b {
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+      }
+
+      .tab span {
+        display: block;
+        margin-top: 3px;
+        overflow: hidden;
+        color: currentColor;
+        opacity: 0.66;
+        font-size: 11px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 420px;
+        gap: 22px;
+        padding: 0 30px 30px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+      }
+
+      .day-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 16px 18px;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.075);
+        padding: 18px;
+      }
+
+      .card.featured {
+        background:
+          linear-gradient(135deg, rgba(255, 184, 107, 0.16), rgba(255, 255, 255, 0.075)),
+          rgba(255, 255, 255, 0.075);
+      }
+
+      .date {
+        color: var(--warm);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .clock {
+        margin-top: 6px;
+        font-size: 23px;
+        font-weight: 950;
+        letter-spacing: -0.06em;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 11px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.11);
+        padding: 5px 8px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .ticket-inline {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 10px;
+        align-items: center;
+        margin-top: 14px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #111827;
+        padding: 14px;
+      }
+
+      .station {
+        font-size: 20px;
+        font-weight: 950;
+        letter-spacing: -0.05em;
+      }
+
+      .train-arrow {
+        color: #ef4444;
+        font-weight: 950;
+      }
+
+      .map {
+        position: sticky;
+        top: 108px;
+        overflow: hidden;
+        min-height: 620px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 34px;
+        background:
+          radial-gradient(circle at 34% 30%, rgba(103, 232, 249, 0.22), transparent 14rem),
+          linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+          #08111d;
+      }
+
+      .map-head {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 18px 0;
+      }
+
+      .map-canvas {
+        position: relative;
+        height: 360px;
+        margin: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          radial-gradient(circle at 74% 32%, rgba(251, 113, 133, 0.22), transparent 10rem),
+          radial-gradient(circle at 28% 54%, rgba(103, 232, 249, 0.18), transparent 12rem);
+        background-size:
+          34px 34px,
+          34px 34px,
+          auto,
+          auto;
+      }
+
+      .route-line {
+        position: absolute;
+        left: 56px;
+        right: 82px;
+        top: 166px;
+        border-top: 3px dashed rgba(255, 255, 255, 0.56);
+        transform: rotate(-10deg);
+        transform-origin: left center;
+      }
+
+      .marker {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 43px;
+        height: 43px;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        background: var(--rose);
+        box-shadow: 0 0 0 10px rgba(251, 113, 133, 0.15);
+      }
+
+      .marker.yongsan {
+        left: 40px;
+        top: 148px;
+        background: var(--sky);
+      }
+
+      .marker.jeonju {
+        right: 58px;
+        top: 104px;
+      }
+
+      .marker.hotel {
+        right: 112px;
+        bottom: 54px;
+        background: var(--warm);
+      }
+
+      .map-tooltip {
+        position: absolute;
+        min-width: 124px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 16px;
+        background: rgba(7, 7, 10, 0.76);
+        padding: 9px 10px;
+        font-size: 12px;
+        backdrop-filter: blur(14px);
+      }
+
+      .map-tooltip.yongsan {
+        left: 18px;
+        top: 58px;
+      }
+
+      .map-tooltip.jeonju {
+        right: 18px;
+        top: 36px;
+      }
+
+      .map-tooltip.hotel {
+        right: 18px;
+        bottom: 24px;
+      }
+
+      .active-place {
+        margin: 0 18px 18px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 15px;
+      }
+
+      .place-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+        margin-top: 12px;
+      }
+
+      .action {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.07);
+        padding: 10px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 12px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .component-note {
+        margin: 0 30px 30px;
+        border: 1px solid rgba(134, 239, 172, 0.22);
+        border-radius: 26px;
+        background: rgba(134, 239, 172, 0.075);
+        padding: 16px;
+      }
+
+      @media (max-width: 920px) {
+        main {
+          width: min(100vw - 20px, 720px);
+          padding-top: 18px;
+        }
+
+        .shell {
+          border-radius: 30px;
+        }
+
+        .section-head,
+        .grid {
+          grid-template-columns: 1fr;
+          padding-inline: 18px;
+        }
+
+        .tab-shell,
+        .component-note {
+          margin-inline: 18px;
+        }
+
+        .grid {
+          padding-bottom: 18px;
+        }
+
+        .map {
+          position: relative;
+          top: auto;
+          min-height: 560px;
+        }
+
+        .card {
+          grid-template-columns: 74px minmax(0, 1fr);
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <p class="eyebrow">02 / Timeline + Kakao map v3</p>
+        <h1>탭으로 전체 여정과 날짜별 여정을 전환한다.</h1>
+        <p class="sub" style="max-width: 760px;">
+          Magic UI/ReactBits에 탭 전용 컴포넌트는 없어서, 실제 구현은 shadcn Tabs를 기본으로 둡니다.
+          대신 탭 배경/active indicator/scroll card에는 Magic UI와 ReactBits 효과를 얹습니다.
+        </p>
+        <div class="note-row">
+          <span class="pill">전체</span>
+          <span class="pill">07.10 금</span>
+          <span class="pill">07.11 토</span>
+          <span class="pill">07.12 일</span>
+          <span class="pill">Kakao Map sync</span>
+        </div>
+      </div>
+
+      <section class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Trip schedule</p>
+            <h2>탭은 필터, 지도는 현재 탭의 장소만 강조</h2>
+          </div>
+          <span class="pill">static itinerary data</span>
+        </div>
+
+        <nav class="tab-shell" aria-label="여행 일정 탭">
+          <div class="tabs">
+            <button class="tab active">
+              <small>All</small>
+              <b>전체 여정</b>
+              <span>KTX · 숙소 · 날짜별 장소 전체</span>
+            </button>
+            <button class="tab">
+              <small>Day 1</small>
+              <b>07.10 금</b>
+              <span>용산 출발 · 전주 도착 · 숙소</span>
+            </button>
+            <button class="tab">
+              <small>Day 2</small>
+              <b>07.11 토</b>
+              <span>네가 말해줄 전주 일정</span>
+            </button>
+            <button class="tab">
+              <small>Day 3</small>
+              <b>07.12 일</b>
+              <span>체크아웃 · 전주 출발 · 용산 도착</span>
+            </button>
+          </div>
+        </nav>
+
+        <div class="grid">
+          <div class="timeline">
+            <div class="day-title">
+              <div>
+                <h3>전체 여정</h3>
+                <p class="sub">탭을 누르면 해당 날짜 카드만 남고, 지도 marker도 같은 날짜 기준으로 필터링</p>
+              </div>
+              <span class="pill">5 anchors</span>
+            </div>
+
+            <article class="card featured">
+              <div>
+                <div class="date">07.10</div>
+                <div class="clock">20:09</div>
+              </div>
+              <div>
+                <h3>용산역 출발 · KTX 521</h3>
+                <p class="sub">용산 → 전주 / 14호차 1A, 1B / Kakao Place 8014275</p>
+                <div class="ticket-inline">
+                  <div>
+                    <div class="station">용산</div>
+                    <p class="sub" style="color: #6b7280;">20:09</p>
+                  </div>
+                  <div class="train-arrow">KTX 521 →</div>
+                  <div style="text-align: right;">
+                    <div class="station">전주</div>
+                    <p class="sub" style="color: #6b7280;">21:47</p>
+                  </div>
+                </div>
+                <div class="tags">
+                  <span class="tag">교통</span>
+                  <span class="tag">KTX</span>
+                  <span class="tag">출발</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div>
+                <div class="date">07.10</div>
+                <div class="clock">21:47</div>
+              </div>
+              <div>
+                <h3>전주역 도착</h3>
+                <p class="sub">첫 전주 marker. 이후 숙소 이동이나 야식 일정이 생기면 이 사이에 정적 카드로 삽입.</p>
+                <div class="tags">
+                  <span class="tag">도착</span>
+                  <span class="tag">지도</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div>
+                <div class="date">07.10-12</div>
+                <div class="clock">숙소</div>
+              </div>
+              <div>
+                <h3>전주관광호텔호텔</h3>
+                <p class="sub">체크인 07.10 15:00 / 체크아웃 07.12 11:00 / Kakao Place 2126483278</p>
+                <div class="tags">
+                  <span class="tag">숙소</span>
+                  <span class="tag">베이스</span>
+                  <span class="tag">Kakao Place</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div>
+                <div class="date">07.12</div>
+                <div class="clock">13:18</div>
+              </div>
+              <div>
+                <h3>전주역 출발 · KTX 510</h3>
+                <p class="sub">전주 → 용산 / 15호차 1A, 1B / 15:03 용산 도착 / Kakao Place 8508642</p>
+                <div class="tags">
+                  <span class="tag">교통</span>
+                  <span class="tag">귀가</span>
+                  <span class="tag">KTX</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="map">
+            <div class="map-head">
+              <div>
+                <h3>Kakao Map</h3>
+                <p class="sub">현재 탭: 전체 여정</p>
+              </div>
+              <span class="pill">SDK / fallback</span>
+            </div>
+            <div class="map-canvas">
+              <div class="route-line"></div>
+              <div class="marker yongsan">🚄</div>
+              <div class="marker jeonju">📍</div>
+              <div class="marker hotel">🏨</div>
+              <div class="map-tooltip yongsan"><b>용산역</b><br /><span class="sub">Day 1 출발</span></div>
+              <div class="map-tooltip jeonju"><b>전주역</b><br /><span class="sub">Day 1/3</span></div>
+              <div class="map-tooltip hotel"><b>전주관광호텔호텔</b><br /><span class="sub">숙소</span></div>
+            </div>
+            <div class="active-place">
+              <p class="eyebrow">active place</p>
+              <h3>용산역 · KTX 521</h3>
+              <p class="sub" style="margin-top: 7px;">
+                타임라인 카드를 hover/click하거나 탭을 바꾸면 이 카드와 지도 marker가 같이 바뀝니다.
+              </p>
+              <div class="place-actions">
+                <div class="action">Kakao Place 열기</div>
+                <div class="action">해당 날짜 보기</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="component-note">
+          <h3>실제 컴포넌트 조합</h3>
+          <p class="sub" style="margin-top: 8px;">
+            탭 자체는 shadcn Tabs로 구현합니다. Magic UI는 Scroll Progress, Particles, Animated Gradient Text,
+            Marquee 같은 주변 효과에 쓰고, ReactBits는 ScrollStack/ScrollFloat로 타임라인 카드와 큰 카피에
+            씁니다. 즉 “탭 전용 라이브러리”를 억지로 찾지 않고, 안정적인 탭 상호작용 위에 화려한 효과를 얹는
+            구조입니다.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

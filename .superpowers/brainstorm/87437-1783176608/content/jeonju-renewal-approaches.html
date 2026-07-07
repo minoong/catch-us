@@ -1,0 +1,50 @@
+<h2>Jeonju intro renewal: layout direction</h2>
+<p class="subtitle">Recommendation: A+B as the emotional spine, with C visible as the trip control layer.</p>
+
+<div class="cards">
+  <div class="card" data-choice="recommended" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(160deg,#fff7ed,#fee2e2 45%,#dbeafe); padding: 18px;">
+      <div style="height: 26px; width: 78%; border-radius: 999px; background: rgba(255,255,255,.86); box-shadow: 0 8px 24px rgba(15,23,42,.12);"></div>
+      <div style="margin-top: 26px; font-size: 12px; font-weight: 800; letter-spacing: .18em; color: #ef4444;">INVITATION</div>
+      <div style="margin-top: 8px; font-size: 34px; line-height: .92; font-weight: 950; color: #111827;">전주로<br>넘어가는 밤</div>
+      <div style="margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div style="height: 70px; border-radius: 18px; background: rgba(17,24,39,.92);"></div>
+        <div style="height: 70px; border-radius: 18px; background: rgba(255,255,255,.8);"></div>
+      </div>
+      <div style="margin-top: 12px; height: 44px; border-radius: 16px; background: rgba(255,255,255,.88);"></div>
+    </div>
+    <div class="card-body">
+      <h3>Recommended: Invitation Hero + Control Strip</h3>
+      <p>Keep the intro flash. Then show a date invitation hero, live countdown/trip elapsed strip, 3D Marquee photo field, and an automatic Stepper below.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="cinematic" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #111827; padding: 18px; color: white;">
+      <div style="height: 190px; border-radius: 24px; background: repeating-linear-gradient(115deg,rgba(248,113,113,.82) 0 34px,rgba(59,130,246,.82) 34px 68px,rgba(255,255,255,.2) 68px 102px); transform: perspective(260px) rotateX(12deg) rotateY(-10deg);"></div>
+      <div style="margin-top: -78px; padding: 16px;">
+        <div style="font-size: 32px; line-height: .9; font-weight: 950;">PHOTO<br>FIRST</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Cinematic Marquee First</h3>
+      <p>Lead with full-bleed 3D Marquee and overlay title. Strongest visual impact, but the date invitation and utility layer may feel secondary.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="dashboard" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #f8fafc; padding: 18px;">
+      <div style="height: 52px; border-radius: 18px; background: #111827;"></div>
+      <div style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        <div style="height: 72px; border-radius: 16px; background: #fee2e2;"></div>
+        <div style="height: 72px; border-radius: 16px; background: #dbeafe;"></div>
+        <div style="height: 72px; border-radius: 16px; background: #ffedd5;"></div>
+      </div>
+      <div style="margin-top: 12px; height: 118px; border-radius: 20px; background: linear-gradient(180deg,#fff,#e5e7eb);"></div>
+    </div>
+    <div class="card-body">
+      <h3>Dashboard Forward</h3>
+      <p>Countdown and Stepper are immediately dominant. Most functional, but less like a date invitation and less magical as a first impression.</p>
+    </div>
+  </div>
+</div>

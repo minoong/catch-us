@@ -1,0 +1,79 @@
+[    2600ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[    2631ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[    7653ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[    7663ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[   11122ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[   11127ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[   11135ms] [WARNING] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[   11186ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="jeonju-2026/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/trip/jeon..." tree={[...]} params={{slug:"jeon..."}} ...>
+                  <SegmentViewNode type="page" pagePath="trip/[slug...">
+                    <SegmentTrieNode>
+                    <Page>
+                      <TripIntroPage trip={{slug:"jeon...", ...}}>
+                        <TripLenisProvider>
+                          <LayoutGroup>
+                            <main className="bg-backgro...">
+                              <TripIntroTransition>
++                             <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-3 sm:max-w-lg">
+-                             <div
+-                               className="fixed inset-0 z-50 grid place-items-center overflow-hidden bg-neutral-950 t..."
+-                               style={{opacity:"1"}}
+-                             >
+                  ...
+                ...
+      ...
+
+    at throwOnHydrationMismatch (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:3318:56)
+    at beginWork (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6758:918)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9555:97)
+    at workLoopConcurrentByScheduler (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:2647:64)
+[  131570ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  131613ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  131642ms] [WARNING] Image with src "/trips/jeonju-2026/intro/01-sea.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  214361ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  214390ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  219477ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  219506ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  275681ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  275711ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  630868ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  630895ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  642063ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  642091ms] [LOG] [Fast Refresh] done in 46ms @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  739378ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  740380ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  741383ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  742394ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  743398ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  748406ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  753415ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  758433ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  763464ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  768555ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  773625ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  778912ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=3_sjqj8aCb4p3dIt9rTlZ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422

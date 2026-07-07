@@ -1,0 +1,40 @@
+[     104ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[     111ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[   52136ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[   52140ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <div> p 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/trip/jeon..." tree={[...]} params={{slug:"jeon..."}} cacheNode={{rsc:{...}, ...}} ...>
+        <SegmentViewNode type="page" pagePath="trip/[slug...">
+          <SegmentTrieNode>
+          <Page>
+            <TripIntroPage trip={{slug:"jeon...", ...}}>
+              <TripLenisProvider>
+                <LayoutGroup>
+                  <main className="bg-backgro...">
+                    <TripIntroTransition>
+                    <TripIntroHeader>
+                    <section className="mx-auto fl...">
+                      <TripTimeControlStrip trip={{slug:"jeon...", ...}}>
+                        <section className="rounded-fu...">
+                          <div className="flex items...">
+                            <div>
+                            <DurationDigits parts={{days:4,hours:20, ...}} prefersReducedMotion={false}>
+>                             <p
+>                               className="flex shrink-0 items-center gap-0.5 font-mono text-xl leading-none font-blac..."
+>                               aria-label="4일 20:49:51"
+>                             >
+                                ...
+                                  <Digit value={4} place={1}>
+                                    <div className="relative i...">
+>                                     <div className="invisible">
+                                      ...
+                      ...
+        ...
+      ...
+ @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[   52140ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <div> @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[   52181ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477

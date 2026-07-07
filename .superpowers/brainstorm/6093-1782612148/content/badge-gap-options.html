@@ -1,0 +1,173 @@
+<style>
+  .gap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .gap-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 22px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.12), transparent 28%),
+      linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.01));
+  }
+
+  .gap-card[data-choice] {
+    cursor: pointer;
+  }
+
+  .gap-preview {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    padding: 26px;
+  }
+
+  .map-window {
+    width: min(100%, 300px);
+    height: 138px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7)),
+      repeating-radial-gradient(circle, rgba(71, 85, 105, 0.45) 0 1px, transparent 1px 7px);
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.2);
+  }
+
+  .flag {
+    position: absolute;
+    top: 62px;
+    left: 142px;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: white;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  }
+
+  .badge {
+    position: absolute;
+    top: 58px;
+    display: grid;
+    gap: 1px;
+    min-width: 82px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.76);
+    color: white;
+    line-height: 1.05;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+  }
+
+  .badge strong {
+    font-size: 10px;
+  }
+
+  .badge span {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 8px;
+    white-space: nowrap;
+  }
+
+  .gap-loose .badge {
+    left: 184px;
+  }
+
+  .gap-tight .badge {
+    left: 168px;
+  }
+
+  .gap-kissing .badge {
+    left: 163px;
+  }
+
+  .mobile-strip {
+    position: absolute;
+    inset: auto 18px 18px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(15, 23, 42, 0.52);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .gap-body {
+    padding: 0 20px 20px;
+  }
+
+  .gap-body h3 {
+    margin: 0 0 6px;
+  }
+
+  .gap-body p {
+    margin: 0;
+  }
+</style>
+
+<h2>국가 아이콘과 배지 간격 선택</h2>
+<p class="subtitle">
+  지금 문제는 충돌 회피 점수 때문에 배지가 너무 멀리 밀리는 느낌이야. 아래에서 원하는 밀착감을 골라줘.
+</p>
+
+<div class="gap-grid">
+  <div class="gap-card gap-loose" data-choice="a" onclick="toggleSelect(this)">
+    <div class="gap-preview">
+      <div class="map-window">
+        <div class="flag">🇰🇷</div>
+        <div class="badge">
+          <strong>한국</strong>
+          <span>서울 · 강릉 · 부산</span>
+        </div>
+        <div class="mobile-strip">현재 느낌: 안전하지만 떨어져 보임</div>
+      </div>
+    </div>
+    <div class="gap-body">
+      <h3>A. 안전 간격</h3>
+      <p>겹침 방지는 강하지만 아이콘과 배지가 한 덩어리로 보이지 않는다.</p>
+    </div>
+  </div>
+
+  <div class="gap-card gap-tight" data-choice="b" onclick="toggleSelect(this)">
+    <div class="gap-preview">
+      <div class="map-window">
+        <div class="flag">🇰🇷</div>
+        <div class="badge">
+          <strong>한국</strong>
+          <span>서울 · 강릉 · 부산</span>
+        </div>
+        <div class="mobile-strip">추천: 아주 얇은 숨만 남김</div>
+      </div>
+    </div>
+    <div class="gap-body">
+      <h3>B. 밀착 간격</h3>
+      <p>아이콘과 배지가 거의 붙어 보이되, 시각적으로 답답하지 않게 1-2px만 남긴다.</p>
+    </div>
+  </div>
+
+  <div class="gap-card gap-kissing" data-choice="c" onclick="toggleSelect(this)">
+    <div class="gap-preview">
+      <div class="map-window">
+        <div class="flag">🇰🇷</div>
+        <div class="badge">
+          <strong>한국</strong>
+          <span>서울 · 강릉 · 부산</span>
+        </div>
+        <div class="mobile-strip">최대 밀착: 거의 접촉</div>
+      </div>
+    </div>
+    <div class="gap-body">
+      <h3>C. 접촉 간격</h3>
+      <p>아이콘과 배지를 한 컴포넌트처럼 붙인다. 모바일에서 가장 안정적이지만 조금 답답할 수 있다.</p>
+    </div>
+  </div>
+</div>

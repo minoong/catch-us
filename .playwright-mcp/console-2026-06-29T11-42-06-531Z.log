@@ -1,0 +1,2745 @@
+[      43ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[      70ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[     193ms] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="page.tsx">
+      <SegmentTrieNode>
+      <Home>
+        <LandingPage>
+          <main className="bg-backgro...">
+            <section className="relative i...">
+              <div>
+              <div>
+              <div>
+              <div className="mx-auto fl...">
+                <TravelDottedMap>
+                  <section aria-labelledby="travel-map..." className="border-bor...">
+                    <div>
+                    <div className="relative f...">
+                      <div>
+                      <div ref={{current:null}} className="text-muted...">
+                        <DottedMap aria-hidden={true} className="absolute i..." dotColor="var(--mute..." dotRadius={0.14} ...>
+                          <svg viewBox="0 0 150 75" className="text-gray-..." style={{width:"100%", ...}} ...>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <circle>
+                            <g>
+                              <circle>
+                              <g pointerEvents="none">
+                                <clipPath>
+                                <image>
+                                <rect
+                                  fill="rgba(15, 23, 42, 0.72)"
+                                  height={4.300128000000001}
+                                  rx={2.1500640000000004}
++                                 width={12.24}
+-                                 width="15.750000000000002"
++                                 x={114.43393939393938}
+-                                 x="110.92393939393938"
+                                  y={20.684302844081632}
+                                >
+                                <text
+                                  dominantBaseline="middle"
+                                  fill="white"
+                                  fontSize={1.395}
+                                  fontWeight={700}
++                                 x={116.18893939393938}
+-                                 x="112.67893939393937"
+                                  y={22.23234892408163}
+                                >
++                                 한국
+-                                 대한민국
+                                ...
+                            ...
+                        ...
+                ...
+    ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:3318:56)
+    at prepareToHydrateHostInstance (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:3372:23)
+    at completeWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6922:60)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:965:74)
+    at completeUnitOfWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9622:23)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9557:28)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:2647:64)
+[  293222ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  293252ms] [LOG] [Fast Refresh] done in 96ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  379112ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  379267ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  379368ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  379514ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  379615ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  379737ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  379738ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  379754ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  379792ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  379875ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  379934ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  379960ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  379960ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  379962ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  379995ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  395613ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  395642ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  464389ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  464515ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  464515ms] [ERROR] ./apps/web/app/trip/_components/trip-bento-grid.tsx:16:10
+the name `BentoGrid` is defined multiple times
+  14 | import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+  15 | import { BorderBeam } from "@/components/magicui/border-beam";
+> 16 | import { BentoGrid } from "@/components/magicui/bento-grid";
+     |          ^^^^^^^^^
+  17 | import { Marquee } from "@/components/magicui/marquee";
+  18 |
+  19 | import type { Trip } from "../_data/trips";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-bento-grid.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  464623ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  464643ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  464648ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  464650ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  464651ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  464652ms] [ERROR] ./apps/web/app/trip/_components/trip-bento-grid.tsx:16:10
+the name `BentoGrid` is defined multiple times
+  14 | import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+  15 | import { BorderBeam } from "@/components/magicui/border-beam";
+> 16 | import { BentoGrid } from "@/components/magicui/bento-grid";
+     |          ^^^^^^^^^
+  17 | import { Marquee } from "@/components/magicui/marquee";
+  18 |
+  19 | import type { Trip } from "../_data/trips";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-bento-grid.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  464727ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  464727ms] [ERROR] ./apps/web/app/trip/_components/trip-bento-grid.tsx:16:10
+the name `BentoGrid` is defined multiple times
+  14 | import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+  15 | import { BorderBeam } from "@/components/magicui/border-beam";
+> 16 | import { BentoGrid } from "@/components/magicui/bento-grid";
+     |          ^^^^^^^^^
+  17 | import { Marquee } from "@/components/magicui/marquee";
+  18 |
+  19 | import type { Trip } from "../_data/trips";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-bento-grid.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  464753ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  482610ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  482675ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  482693ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  482725ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  482708ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  482710ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  482744ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  502707ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  502807ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  502820ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  502834ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  502862ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  502865ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  502865ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  502897ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  535648ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  535705ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  535721ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  535725ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  535727ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  535732ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  535732ms] [ERROR] ./apps/web/app/trip/_components/trip-intro-page.tsx:4:1
+Module not found: Can't resolve './trip-story-stack'
+  2 | import { TripBentoGrid } from "./trip-bento-grid";
+  3 | import { TripHero } from "./trip-hero";
+> 4 | import { TripStoryStack } from "./trip-story-stack";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function TripIntroPage({ trip }: { trip: Trip }) {
+  7 |   return (
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  535904ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  536046ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  536056ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  536060ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  536061ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  536065ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  536127ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  536166ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  557186ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  557297ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  557362ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  557379ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  557382ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  557395ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  557396ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  557427ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  578936ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  579054ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  579109ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  579121ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  579125ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  579128ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  579131ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  579188ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  579231ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  601941ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  602041ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  602055ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  602067ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  602069ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  602071ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  602076ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  602133ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  602176ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  614147ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  614183ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  649667ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  649879ms] [LOG] [Fast Refresh] done in 247ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  650175ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  650185ms] [LOG] [Fast Refresh] done in 112ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  650300ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  650325ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  674634ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  674672ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  683524ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  683550ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  696949ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  696978ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  743942ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  743971ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  944883ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  944911ms] [LOG] [Fast Refresh] done in 55ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  970347ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  970376ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1580635ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1580665ms] [LOG] [Fast Refresh] done in 45ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1580732ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1580762ms] [LOG] [Fast Refresh] done in 40ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1601190ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1601368ms] [LOG] [Fast Refresh] done in 216ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1601540ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1601842ms] [LOG] [Fast Refresh] done in 402ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1652196ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1652269ms] [LOG] [Fast Refresh] done in 110ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1652455ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1652524ms] [LOG] [Fast Refresh] done in 180ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1686997ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1687093ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1698536ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1698565ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1741530ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1741610ms] [LOG] [Fast Refresh] done in 182ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1745526ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1745555ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1770971ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1770999ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1879760ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1879927ms] [LOG] [Fast Refresh] done in 21ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1898311ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1898321ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1956746ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1956835ms] [LOG] [Fast Refresh] done in 190ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2681716ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2681750ms] [LOG] [Fast Refresh] done in 70ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2681851ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2681883ms] [LOG] [Fast Refresh] done in 89ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2711739ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2711829ms] [LOG] [Fast Refresh] done in 74ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2712024ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2712171ms] [LOG] [Fast Refresh] done in 247ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2725156ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2725186ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2743740ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2743770ms] [LOG] [Fast Refresh] done in 48ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2743894ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2743963ms] [LOG] [Fast Refresh] done in 56ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2744371ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2744406ms] [LOG] [Fast Refresh] done in 137ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2772863ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2772974ms] [LOG] [Fast Refresh] done in 34ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2794172ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2794201ms] [LOG] [Fast Refresh] done in 43ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2937165ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2937194ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2977319ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2977347ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2987734ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2987872ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2988072ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2988102ms] [LOG] [Fast Refresh] done in 163ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2996587ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2996640ms] [LOG] [Fast Refresh] done in 50ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4419446ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4419474ms] [LOG] [Fast Refresh] done in 35ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4431443ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4431473ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4432722ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4432750ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4441683ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4441711ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4514142ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4514170ms] [LOG] [Fast Refresh] done in 33ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4525071ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 4525100ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6315344ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=ulvzFEh4R7YX1w_ONu4v3' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6316479ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6317116ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6317151ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6420293ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6420321ms] [LOG] [Fast Refresh] done in 95ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6436999ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6437027ms] [LOG] [Fast Refresh] done in 34ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6440918ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6440948ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6448757ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6448786ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6473794ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6473823ms] [LOG] [Fast Refresh] done in 21ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6481543ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6481571ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6499087ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6499115ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6513682ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6513711ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6523336ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6523364ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6535388ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6535417ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6537235ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6537263ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6573298ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6574300ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6575301ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6576304ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6577307ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6582312ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6587325ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6592344ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=fyodGUqeASap40j0Bdy6Y' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 6597376ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6597651ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6597688ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6672342ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6672473ms] [LOG] [Fast Refresh] done in 204ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6674613ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6675121ms] [LOG] [Fast Refresh] done in 610ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6684558ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6684586ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6699895ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6699923ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6708604ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6708633ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6786010ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6786045ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6788418ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6788444ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 6788712ms] [WARNING] Image with src "/trips/jeonju-2026/intro/01-sea.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전주 여행 v4 - PillNav + Effects</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050509;
+        --ink: #0b0d14;
+        --text: rgba(255, 255, 255, 0.94);
+        --muted: rgba(255, 255, 255, 0.62);
+        --line: rgba(255, 255, 255, 0.16);
+        --panel: rgba(255, 255, 255, 0.075);
+        --panel-strong: rgba(255, 255, 255, 0.13);
+        --jeonju: #ffb86b;
+        --rose: #fb7185;
+        --cyan: #67e8f9;
+        --violet: #c4b5fd;
+        --green: #86efac;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 14% 8%, rgba(251, 113, 133, 0.28), transparent 27rem),
+          radial-gradient(circle at 88% 4%, rgba(103, 232, 249, 0.2), transparent 30rem),
+          radial-gradient(circle at 52% 86%, rgba(255, 184, 107, 0.18), transparent 33rem),
+          var(--bg);
+        color: var(--text);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(to bottom, black 0%, transparent 78%);
+        content: "";
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.18;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+        content: "";
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        width: min(1220px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 28px 0 90px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .eyebrow {
+        margin-bottom: 10px;
+        color: var(--jeonju);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .hero-shell {
+        position: relative;
+        overflow: hidden;
+        min-height: 820px;
+        border: 1px solid var(--line);
+        border-radius: 46px;
+        background:
+          radial-gradient(circle at 26% 18%, rgba(255, 184, 107, 0.32), transparent 20rem),
+          radial-gradient(circle at 74% 20%, rgba(196, 181, 253, 0.24), transparent 24rem),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035)),
+          #090a10;
+        box-shadow: 0 34px 130px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-shell::before {
+        position: absolute;
+        inset: -30%;
+        background:
+          conic-gradient(from 120deg, transparent, rgba(103, 232, 249, 0.16), transparent 28%),
+          conic-gradient(from 280deg, transparent, rgba(251, 113, 133, 0.18), transparent 34%);
+        animation: auroraSpin 22s linear infinite;
+        content: "";
+      }
+
+      .hero-shell::after {
+        position: absolute;
+        inset: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 34px;
+        pointer-events: none;
+        content: "";
+      }
+
+      @keyframes auroraSpin {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      .top-nav {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+        padding: 26px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 950;
+        letter-spacing: -0.04em;
+      }
+
+      .logo-mark {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--jeonju), var(--rose));
+        box-shadow: 0 10px 34px rgba(251, 113, 133, 0.24);
+      }
+
+      .pill-nav {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        max-width: 650px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(7, 7, 10, 0.58);
+        padding: 6px;
+        backdrop-filter: blur(22px);
+      }
+
+      .pill-nav::before {
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        width: 92px;
+        height: calc(100% - 12px);
+        border-radius: 999px;
+        background:
+          linear-gradient(135deg, rgba(255, 184, 107, 0.95), rgba(251, 113, 133, 0.9)),
+          #fff;
+        box-shadow: 0 12px 34px rgba(251, 113, 133, 0.34);
+        content: "";
+      }
+
+      .pill-nav button {
+        position: relative;
+        z-index: 1;
+        min-height: 42px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.76);
+        padding: 0 16px;
+        font-weight: 850;
+      }
+
+      .pill-nav button:first-child {
+        color: #111827;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 410px;
+        gap: 32px;
+        padding: 40px 42px 48px;
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 660px;
+      }
+
+      h1 {
+        max-width: 780px;
+        font-size: clamp(54px, 9vw, 112px);
+        line-height: 0.86;
+        letter-spacing: -0.09em;
+      }
+
+      .gradient-title {
+        display: inline-block;
+        background: linear-gradient(90deg, #fff, #fed7aa 32%, #fb7185 62%, #67e8f9);
+        background-size: 220% 100%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: shineText 5s ease-in-out infinite alternate;
+      }
+
+      @keyframes shineText {
+        to {
+          background-position: 100% 0;
+        }
+      }
+
+      .split-text {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(26px);
+        animation: splitIn 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+      }
+
+      .split-text:nth-child(2) {
+        animation-delay: 0.08s;
+      }
+
+      .split-text:nth-child(3) {
+        animation-delay: 0.16s;
+      }
+
+      @keyframes splitIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-sub {
+        max-width: 650px;
+        margin-top: 22px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .ticker {
+        display: flex;
+        gap: 10px;
+        overflow: hidden;
+        max-width: 720px;
+        margin-top: 34px;
+        mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+      }
+
+      .ticker-track {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 10px;
+        animation: marquee 24s linear infinite;
+      }
+
+      .ticker span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 8px 14px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .effect-legend {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .legend-card {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.07);
+        padding: 14px;
+      }
+
+      .legend-card b {
+        display: block;
+        margin-bottom: 7px;
+      }
+
+      .phone {
+        position: relative;
+        overflow: hidden;
+        min-height: 650px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 48px;
+        background: #111827;
+        box-shadow:
+          inset 0 0 0 10px rgba(255, 255, 255, 0.055),
+          0 28px 90px rgba(0, 0, 0, 0.48);
+      }
+
+      .phone::before {
+        position: absolute;
+        inset: -80px;
+        background:
+          radial-gradient(circle at 50% 20%, rgba(255, 184, 107, 0.3), transparent 13rem),
+          radial-gradient(circle at 80% 48%, rgba(103, 232, 249, 0.22), transparent 12rem);
+        animation: silkFloat 7s ease-in-out infinite alternate;
+        content: "";
+      }
+
+      @keyframes silkFloat {
+        to {
+          transform: translate3d(-20px, 26px, 0) rotate(4deg);
+        }
+      }
+
+      .phone-inner {
+        position: relative;
+        z-index: 1;
+        padding: 22px;
+      }
+
+      .status {
+        display: flex;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .ticket {
+        position: relative;
+        margin-top: 28px;
+        overflow: hidden;
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.92);
+        color: #111827;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+        animation: ticketFloat 4.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes ticketFloat {
+        to {
+          transform: translateY(-10px) rotate(1.2deg);
+        }
+      }
+
+      .ticket::after {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+        transform: translateX(-120%);
+        animation: glare 4.4s ease-in-out infinite;
+        content: "";
+      }
+
+      @keyframes glare {
+        55%,
+        100% {
+          transform: translateX(120%);
+        }
+      }
+
+      .ticket-head {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px;
+        border-bottom: 1px dashed rgba(17, 24, 39, 0.24);
+      }
+
+      .route {
+        display: grid;
+        grid-template-columns: 1fr 44px 1fr;
+        gap: 10px;
+        align-items: center;
+        padding: 22px;
+      }
+
+      .station {
+        font-size: 34px;
+        font-weight: 950;
+        letter-spacing: -0.08em;
+      }
+
+      .time {
+        margin-top: 3px;
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .arrow {
+        color: #ef4444;
+        font-weight: 950;
+        text-align: center;
+      }
+
+      .ticket-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 0 22px 22px;
+      }
+
+      .ticket-box {
+        border-radius: 18px;
+        background: #f3f4f6;
+        padding: 12px;
+      }
+
+      .label {
+        color: #6b7280;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 950;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .photo {
+        position: relative;
+        overflow: hidden;
+        height: 110px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 22px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 50%),
+          radial-gradient(circle at 40% 20%, rgba(255, 184, 107, 0.7), transparent 50%),
+          #334155;
+      }
+
+      .photo:nth-child(2) {
+        transform: translateY(18px);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 50%),
+          radial-gradient(circle at 50% 30%, rgba(103, 232, 249, 0.65), transparent 50%),
+          #312e81;
+      }
+
+      .photo:nth-child(3) {
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 50%),
+          radial-gradient(circle at 50% 30%, rgba(251, 113, 133, 0.65), transparent 50%),
+          #7f1d1d;
+      }
+
+      .section {
+        margin-top: 24px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: end;
+        padding: 30px;
+      }
+
+      .section h2 {
+        font-size: clamp(30px, 5vw, 58px);
+        line-height: 0.96;
+        letter-spacing: -0.07em;
+      }
+
+      .pill-tabs {
+        display: flex;
+        gap: 6px;
+        overflow: auto hidden;
+        margin: 0 30px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(7, 7, 10, 0.66);
+        padding: 7px;
+        scrollbar-width: none;
+        backdrop-filter: blur(24px);
+      }
+
+      .pill-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pill-tabs button {
+        flex: 0 0 auto;
+        min-width: 104px;
+        min-height: 48px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 16px;
+        font-weight: 900;
+      }
+
+      .pill-tabs .active {
+        background: linear-gradient(135deg, var(--jeonju), var(--rose));
+        color: #111827;
+        box-shadow: 0 14px 36px rgba(251, 113, 133, 0.24);
+      }
+
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 420px;
+        gap: 22px;
+        padding: 0 30px 30px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+      }
+
+      .timeline-card {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.075);
+        padding: 18px;
+        transform-origin: center;
+      }
+
+      .timeline-card:nth-child(1) {
+        background:
+          linear-gradient(135deg, rgba(255, 184, 107, 0.16), transparent),
+          rgba(255, 255, 255, 0.075);
+      }
+
+      .date {
+        color: var(--jeonju);
+        font-size: 12px;
+        font-weight: 950;
+      }
+
+      .clock {
+        margin-top: 5px;
+        font-size: 23px;
+        font-weight: 950;
+        letter-spacing: -0.06em;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 11px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.11);
+        padding: 5px 8px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 11px;
+        font-weight: 850;
+      }
+
+      .map-card {
+        position: sticky;
+        top: 22px;
+        overflow: hidden;
+        min-height: 620px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 34px;
+        background:
+          radial-gradient(circle at 34% 30%, rgba(103, 232, 249, 0.22), transparent 14rem),
+          linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+          #08111d;
+      }
+
+      .map-card::before {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.8), transparent);
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        animation: borderBeam 3.8s linear infinite;
+        content: "";
+      }
+
+      @keyframes borderBeam {
+        to {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      .map-head {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 18px 0;
+      }
+
+      .map-canvas {
+        position: relative;
+        height: 360px;
+        margin: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          radial-gradient(circle at 72% 34%, rgba(251, 113, 133, 0.25), transparent 10rem),
+          radial-gradient(circle at 28% 56%, rgba(103, 232, 249, 0.2), transparent 12rem);
+        background-size:
+          34px 34px,
+          34px 34px,
+          auto,
+          auto;
+      }
+
+      .route-line {
+        position: absolute;
+        left: 54px;
+        right: 76px;
+        top: 166px;
+        border-top: 3px dashed rgba(255, 255, 255, 0.58);
+        transform: rotate(-10deg);
+        transform-origin: left center;
+      }
+
+      .marker {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        background: var(--rose);
+        box-shadow: 0 0 0 10px rgba(251, 113, 133, 0.15);
+      }
+
+      .marker.yongsan {
+        left: 40px;
+        top: 148px;
+        background: var(--cyan);
+      }
+
+      .marker.jeonju {
+        right: 58px;
+        top: 104px;
+      }
+
+      .marker.hotel {
+        right: 112px;
+        bottom: 54px;
+        background: var(--jeonju);
+      }
+
+      .tooltip {
+        position: absolute;
+        min-width: 126px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 16px;
+        background: rgba(7, 7, 10, 0.74);
+        padding: 9px 10px;
+        font-size: 12px;
+        backdrop-filter: blur(14px);
+      }
+
+      .tooltip.yongsan {
+        left: 18px;
+        top: 58px;
+      }
+
+      .tooltip.jeonju {
+        right: 18px;
+        top: 36px;
+      }
+
+      .tooltip.hotel {
+        right: 18px;
+        bottom: 24px;
+      }
+
+      .place-card {
+        position: relative;
+        z-index: 1;
+        margin: 0 18px 18px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 15px;
+      }
+
+      .matrix {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        padding: 0 30px 30px;
+      }
+
+      .matrix-card {
+        min-height: 160px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.065);
+        padding: 16px;
+      }
+
+      .matrix-card b {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      @media (max-width: 960px) {
+        main {
+          width: min(100vw - 18px, 720px);
+          padding-top: 14px;
+        }
+
+        .hero-shell,
+        .section {
+          border-radius: 30px;
+        }
+
+        .top-nav {
+          align-items: stretch;
+          flex-direction: column;
+          padding: 18px;
+        }
+
+        .pill-nav {
+          border-radius: 24px;
+        }
+
+        .pill-nav::before {
+          display: none;
+        }
+
+        .pill-nav button:first-child,
+        .pill-nav button {
+          color: rgba(255, 255, 255, 0.78);
+        }
+
+        .hero-grid,
+        .schedule-grid,
+        .matrix,
+        .effect-legend {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid {
+          padding: 22px;
+        }
+
+        .hero-copy {
+          min-height: auto;
+          gap: 30px;
+        }
+
+        .phone {
+          min-height: 560px;
+        }
+
+        .section-head,
+        .schedule-grid,
+        .matrix {
+          padding-inline: 18px;
+        }
+
+        .pill-tabs {
+          margin-inline: 18px;
+        }
+
+        .map-card {
+          position: relative;
+          top: auto;
+          min-height: 560px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero-shell">
+        <header class="top-nav">
+          <div class="logo">
+            <span class="logo-mark">전</span>
+            <span>Jeonju 2026</span>
+          </div>
+          <nav class="pill-nav" aria-label="ReactBits PillNav mock">
+            <button>Intro</button>
+            <button>Timeline</button>
+            <button>Map</button>
+            <button>KTX</button>
+            <button>Hotel</button>
+          </nav>
+        </header>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <p class="eyebrow">ReactBits PillNav / Magic UI effects</p>
+              <h1>
+                <span class="split-text gradient-title">전주로</span><br />
+                <span class="split-text gradient-title">넘어가는</span><br />
+                <span class="split-text gradient-title">밤</span>
+              </h1>
+              <p class="hero-sub">
+                2026년 7월 10일, 용산에서 KTX 521을 타고 전주로 내려가는 2박 3일 여행.
+                이 페이지는 여행 포스터처럼 시작해서, 앱 같은 일정 화면으로 자연스럽게 접힙니다.
+              </p>
+
+              <div class="ticker" aria-label="Magic UI marquee mock">
+                <div class="ticker-track">
+                  <span>Yongsan 20:09</span>
+                  <span>KTX 521</span>
+                  <span>Car 14 · 1A 1B</span>
+                  <span>Jeonju 21:47</span>
+                  <span>전주관광호텔호텔</span>
+                  <span>Yongsan 20:09</span>
+                  <span>KTX 521</span>
+                  <span>Car 14 · 1A 1B</span>
+                  <span>Jeonju 21:47</span>
+                  <span>전주관광호텔호텔</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="effect-legend">
+              <div class="legend-card">
+                <b>Hero text</b>
+                <p class="muted">ReactBits SplitText + Magic UI Aurora/Gradient Text</p>
+              </div>
+              <div class="legend-card">
+                <b>Hero background</b>
+                <p class="muted">ReactBits Silk/Dither + Magic UI Particles 느낌</p>
+              </div>
+              <div class="legend-card">
+                <b>Nav</b>
+                <p class="muted">ReactBits PillNav sliding active highlight</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="phone">
+            <div class="phone-inner">
+              <div class="status"><span>20:09</span><span>TRIP MODE</span></div>
+              <div class="ticket">
+                <div class="ticket-head">
+                  <div>
+                    <div class="label">train</div>
+                    <div class="value">KTX 521</div>
+                  </div>
+                  <div>
+                    <div class="label">date</div>
+                    <div class="value">07.10 Fri</div>
+                  </div>
+                </div>
+                <div class="route">
+                  <div>
+                    <div class="station">용산</div>
+                    <div class="time">20:09 출발</div>
+                  </div>
+                  <div class="arrow">→</div>
+                  <div style="text-align: right;">
+                    <div class="station">전주</div>
+                    <div class="time">21:47 도착</div>
+                  </div>
+                </div>
+                <div class="ticket-grid">
+                  <div class="ticket-box">
+                    <div class="label">car</div>
+                    <div class="value">14호차</div>
+                  </div>
+                  <div class="ticket-box">
+                    <div class="label">seat</div>
+                    <div class="value">1A</div>
+                  </div>
+                  <div class="ticket-box">
+                    <div class="label">seat</div>
+                    <div class="value">1B</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery" aria-label="ReactBits gallery mock">
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">02 / Timeline + Kakao map</p>
+            <h2>날짜 탭은 PillNav, 일정 카드는 ScrollStack</h2>
+            <p class="muted" style="margin-top: 12px; max-width: 720px;">
+              전체/날짜별 필터는 ReactBits PillNav 스타일로 갑니다. 탭이 바뀌면 타임라인 카드와 지도 marker가
+              같이 바뀌고, 카드들은 ReactBits ScrollStack처럼 겹치며 등장합니다.
+            </p>
+          </div>
+          <span class="tag">static itinerary</span>
+        </div>
+
+        <nav class="pill-tabs" aria-label="여행 날짜 필터">
+          <button class="active">전체</button>
+          <button>07.10 금</button>
+          <button>07.11 토</button>
+          <button>07.12 일</button>
+        </nav>
+
+        <div class="schedule-grid">
+          <div class="timeline">
+            <article class="timeline-card">
+              <div>
+                <div class="date">07.10</div>
+                <div class="clock">20:09</div>
+              </div>
+              <div>
+                <h3>용산역 출발 · KTX 521</h3>
+                <p class="muted">용산 → 전주 / 14호차 1A, 1B / Kakao Place 8014275</p>
+                <div class="tags">
+                  <span class="tag">KTX</span>
+                  <span class="tag">교통</span>
+                  <span class="tag">출발</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div>
+                <div class="date">07.10</div>
+                <div class="clock">21:47</div>
+              </div>
+              <div>
+                <h3>전주역 도착</h3>
+                <p class="muted">첫 전주 marker. 이후 네가 말하는 경유/식사/산책 일정은 정적 카드로 삽입.</p>
+                <div class="tags">
+                  <span class="tag">도착</span>
+                  <span class="tag">지도</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div>
+                <div class="date">07.10-12</div>
+                <div class="clock">숙소</div>
+              </div>
+              <div>
+                <h3>전주관광호텔호텔</h3>
+                <p class="muted">체크인 07.10 15:00 / 체크아웃 07.12 11:00 / Kakao Place 2126483278</p>
+                <div class="tags">
+                  <span class="tag">숙소</span>
+                  <span class="tag">베이스캠프</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div>
+                <div class="date">07.12</div>
+                <div class="clock">13:18</div>
+              </div>
+              <div>
+                <h3>전주역 출발 · KTX 510</h3>
+                <p class="muted">전주 → 용산 / 15호차 1A, 1B / 15:03 용산 도착 / Kakao Place 8508642</p>
+                <div class="tags">
+                  <span class="tag">KTX</span>
+                  <span class="tag">귀가</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="map-card">
+            <div class="map-head">
+              <div>
+                <h3>Kakao Map</h3>
+                <p class="muted">탭과 카드 active state에 동기화</p>
+              </div>
+              <span class="tag">BorderBeam</span>
+            </div>
+            <div class="map-canvas">
+              <div class="route-line"></div>
+              <div class="marker yongsan">🚄</div>
+              <div class="marker jeonju">📍</div>
+              <div class="marker hotel">🏨</div>
+              <div class="tooltip yongsan"><b>용산역</b><br /><span class="muted">20:09 출발</span></div>
+              <div class="tooltip jeonju"><b>전주역</b><br /><span class="muted">21:47 도착</span></div>
+              <div class="tooltip hotel"><b>전주관광호텔호텔</b><br /><span class="muted">숙소</span></div>
+            </div>
+            <div class="place-card">
+              <p class="eyebrow">active place</p>
+              <h3>용산역 · KTX 521</h3>
+              <p class="muted" style="margin-top: 8px;">
+                실제 구현은 Kakao SDK가 있으면 지도와 마커, 없으면 이 fallback visual을 보여줍니다.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Effect coverage</p>
+            <h2>페이지 전체에 효과를 배치하는 방식</h2>
+          </div>
+        </div>
+
+        <div class="matrix">
+          <div class="matrix-card">
+            <b>ReactBits PillNav</b>
+            <p class="muted">상단 섹션 이동 + 날짜 필터 탭</p>
+          </div>
+          <div class="matrix-card">
+            <b>ReactBits SplitText / ScrollFloat</b>
+            <p class="muted">히어로 제목, 큰 섹션 타이틀, 날짜 헤더</p>
+          </div>
+          <div class="matrix-card">
+            <b>ReactBits ScrollStack</b>
+            <p class="muted">타임라인 카드 스택 등장</p>
+          </div>
+          <div class="matrix-card">
+            <b>ReactBits CircularGallery</b>
+            <p class="muted">여행 이미지 프리뷰. 사진 없으면 추상 gradient 카드</p>
+          </div>
+          <div class="matrix-card">
+            <b>ReactBits Silk / Noise</b>
+            <p class="muted">히어로 배경, 앱 전환 배경 텍스처</p>
+          </div>
+          <div class="matrix-card">
+            <b>Magic UI Animated Gradient / Aurora Text</b>
+            <p class="muted">메인 카피, 날짜/도시 강조 텍스트</p>
+          </div>
+          <div class="matrix-card">
+            <b>Magic UI Marquee / Particles</b>
+            <p class="muted">KTX 정보 띠, 배경 입자, 여행 키워드 흐름</p>
+          </div>
+          <div class="matrix-card">
+            <b>Magic UI BorderBeam / AnimatedBeam</b>
+            <p class="muted">지도 카드 테두리, KTX 이동 라인, place 연결</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

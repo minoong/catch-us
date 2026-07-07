@@ -1,0 +1,209 @@
+- generic [active] [ref=f5e1]:
+  - main [ref=f5e2]:
+    - generic [ref=f5e15]:
+      - generic [ref=f5e16]:
+        - paragraph [ref=f5e17]: Jeonju 2026
+        - paragraph [ref=f5e238]: 전주로 넘어가는 밤
+      - button "일정 일정" [ref=f5e19] [cursor=pointer]:
+        - generic [ref=f5e22]: 일정
+        - generic [ref=f5e23]:
+          - generic [ref=f5e24]: 일정
+          - img [ref=f5e25]
+    - generic [ref=f5e27]:
+      - generic [ref=f5e29]:
+        - generic [ref=f5e30]:
+          - generic [ref=f5e31]:
+            - paragraph [ref=f5e32]: date invitation
+            - generic [ref=f5e33]: 07.10 - 07.12
+          - heading "전주로 넘어가는 밤" [level=1] [ref=f5e34]
+          - paragraph [ref=f5e35]: 2026년 7월 10일, 용산에서 KTX를 타고 전주로 내려가는 2박 3일 여행.
+        - article [ref=f5e37]:
+          - generic [ref=f5e38]:
+            - generic [ref=f5e39]:
+              - paragraph [ref=f5e40]: boarding pass
+              - heading "용산 → 전주" [level=2] [ref=f5e41]
+            - generic [ref=f5e42]: KTX 521
+          - generic [ref=f5e44]:
+            - generic [ref=f5e45]:
+              - paragraph [ref=f5e46]: from
+              - paragraph [ref=f5e47]: 용산
+              - paragraph [ref=f5e48]: 20:09
+            - generic [ref=f5e49]: →
+            - generic [ref=f5e50]:
+              - paragraph [ref=f5e51]: to
+              - paragraph [ref=f5e52]: 전주
+              - paragraph [ref=f5e53]: 21:47
+          - generic [ref=f5e54]:
+            - paragraph [ref=f5e55]: 14호차
+            - paragraph [ref=f5e56]: 1A · 1B
+        - button "일정 자세히 보기 일정 자세히 보기" [ref=f5e58] [cursor=pointer]:
+          - generic [ref=f5e61]: 일정 자세히 보기
+          - generic [ref=f5e62]:
+            - generic [ref=f5e63]: 일정 자세히 보기
+            - img [ref=f5e64]
+      - generic [ref=f5e66]:
+        - generic [ref=f5e71]:
+          - generic [ref=f5e72]:
+            - img [ref=f5e76]
+            - img [ref=f5e79]
+            - img [ref=f5e82]
+            - img [ref=f5e85]
+            - img [ref=f5e88]
+            - img [ref=f5e91]
+            - img [ref=f5e94]
+            - img [ref=f5e97]
+          - generic [ref=f5e98]:
+            - img [ref=f5e102]
+            - img [ref=f5e105]
+            - img [ref=f5e108]
+            - img [ref=f5e111]
+            - img [ref=f5e114]
+            - img [ref=f5e117]
+            - img [ref=f5e120]
+            - img [ref=f5e123]
+          - generic [ref=f5e124]:
+            - img [ref=f5e128]
+            - img [ref=f5e131]
+            - img [ref=f5e134]
+            - img [ref=f5e137]
+            - img [ref=f5e140]
+            - img [ref=f5e143]
+            - img [ref=f5e146]
+            - img [ref=f5e149]
+          - generic [ref=f5e150]:
+            - img [ref=f5e154]
+            - img [ref=f5e157]
+            - img [ref=f5e160]
+            - img [ref=f5e163]
+            - img [ref=f5e166]
+            - img [ref=f5e169]
+            - img [ref=f5e172]
+            - img [ref=f5e175]
+        - generic:
+          - paragraph: photo field
+          - heading "우리가 지나갈 장면들" [level=2]
+      - generic [ref=f5e178]:
+        - generic [ref=f5e179]:
+          - 'button "Step 1: complete" [ref=f5e334] [cursor=pointer]':
+            - img [ref=f5e335]
+          - 'button "Step 2: complete" [ref=f5e338] [cursor=pointer]':
+            - img [ref=f5e339]
+          - 'button "Step 3: active" [ref=f5e342] [cursor=pointer]'
+          - 'button "Step 4: inactive" [ref=f5e192] [cursor=pointer]':
+            - generic [ref=f5e194]: "4"
+          - 'button "Step 5: inactive" [ref=f5e196] [cursor=pointer]':
+            - generic [ref=f5e198]: "5"
+          - 'button "Step 6: inactive" [ref=f5e200] [cursor=pointer]':
+            - generic [ref=f5e202]: "6"
+          - 'button "Step 7: inactive" [ref=f5e204] [cursor=pointer]':
+            - generic [ref=f5e206]: "7"
+        - generic [ref=f5e346]:
+          - heading "전주관광호텔" [level=2] [ref=f5e347]
+          - paragraph [ref=f5e349]: 2026년 7월 10일 체크인, 7월 12일 체크아웃.
+        - generic [ref=f5e214]:
+          - button "이전" [ref=f5e350] [cursor=pointer]
+          - button "다음" [ref=f5e215] [cursor=pointer]
+      - generic [ref=f5e217]:
+        - paragraph [ref=f5e218]: full schedule
+        - heading "지도와 일정은 다음 화면에서" [level=2] [ref=f5e219]
+        - paragraph [ref=f5e220]: 날짜별 동선, 지도, 장소 카드는 전체 일정 화면에서 더 자세히 볼 수 있어요.
+        - button "전체 일정 열기 전체 일정 열기" [ref=f5e221] [cursor=pointer]:
+          - generic [ref=f5e224]: 전체 일정 열기
+          - generic [ref=f5e225]:
+            - generic [ref=f5e226]: 전체 일정 열기
+            - img [ref=f5e227]
+    - generic [ref=f5e242]:
+      - generic [ref=f5e244]:
+        - generic [ref=f5e245]: 여자에게 최고의 화장은 미소!
+        - generic [ref=f5e246]: 가현쨩과 미누쿤의 전주 여행
+        - img
+      - timer "4일 00:35:34" [ref=f5e351]:
+        - generic:
+          - generic: D-DAY
+        - generic [ref=f5e248]:
+          - generic [ref=f5e250]:
+            - generic [ref=f5e251]: "0"
+            - generic [ref=f5e252]: "1"
+            - generic [ref=f5e253]: "2"
+            - generic [ref=f5e254]: "3"
+            - generic [ref=f5e255]: "4"
+            - generic [ref=f5e256]: "5"
+            - generic [ref=f5e257]: "6"
+            - generic [ref=f5e258]: "7"
+            - generic [ref=f5e259]: "8"
+            - generic [ref=f5e260]: "9"
+          - generic [ref=f5e261]: 일
+          - generic [ref=f5e262]:
+            - generic [ref=f5e263]:
+              - generic [ref=f5e264]: "0"
+              - generic [ref=f5e265]: "1"
+              - generic [ref=f5e266]: "2"
+              - generic [ref=f5e267]: "3"
+              - generic [ref=f5e268]: "4"
+              - generic [ref=f5e269]: "5"
+              - generic [ref=f5e270]: "6"
+              - generic [ref=f5e271]: "7"
+              - generic [ref=f5e272]: "8"
+              - generic [ref=f5e273]: "9"
+            - generic [ref=f5e274]:
+              - generic [ref=f5e275]: "0"
+              - generic [ref=f5e276]: "1"
+              - generic [ref=f5e277]: "2"
+              - generic [ref=f5e278]: "3"
+              - generic [ref=f5e279]: "4"
+              - generic [ref=f5e280]: "5"
+              - generic [ref=f5e281]: "6"
+              - generic [ref=f5e282]: "7"
+              - generic [ref=f5e283]: "8"
+              - generic [ref=f5e284]: "9"
+          - generic [ref=f5e285]: ":"
+          - generic [ref=f5e286]:
+            - generic [ref=f5e287]:
+              - generic [ref=f5e288]: "0"
+              - generic [ref=f5e289]: "1"
+              - generic [ref=f5e290]: "2"
+              - generic [ref=f5e291]: "3"
+              - generic [ref=f5e292]: "4"
+              - generic [ref=f5e293]: "5"
+              - generic [ref=f5e294]: "6"
+              - generic [ref=f5e295]: "7"
+              - generic [ref=f5e296]: "8"
+              - generic [ref=f5e297]: "9"
+            - generic [ref=f5e298]:
+              - generic [ref=f5e299]: "0"
+              - generic [ref=f5e300]: "1"
+              - generic [ref=f5e301]: "2"
+              - generic [ref=f5e302]: "3"
+              - generic [ref=f5e303]: "4"
+              - generic [ref=f5e304]: "5"
+              - generic [ref=f5e305]: "6"
+              - generic [ref=f5e306]: "7"
+              - generic [ref=f5e307]: "8"
+              - generic [ref=f5e308]: "9"
+          - generic [ref=f5e309]: ":"
+          - generic [ref=f5e310]:
+            - generic [ref=f5e311]:
+              - generic [ref=f5e312]: "0"
+              - generic [ref=f5e313]: "1"
+              - generic [ref=f5e314]: "2"
+              - generic [ref=f5e315]: "3"
+              - generic [ref=f5e316]: "4"
+              - generic [ref=f5e317]: "5"
+              - generic [ref=f5e318]: "6"
+              - generic [ref=f5e319]: "7"
+              - generic [ref=f5e320]: "8"
+              - generic [ref=f5e321]: "9"
+            - generic [ref=f5e322]:
+              - generic [ref=f5e323]: "0"
+              - generic [ref=f5e324]: "1"
+              - generic [ref=f5e325]: "2"
+              - generic [ref=f5e326]: "3"
+              - generic [ref=f5e327]: "4"
+              - generic [ref=f5e328]: "5"
+              - generic [ref=f5e329]: "6"
+              - generic [ref=f5e330]: "7"
+              - generic [ref=f5e331]: "8"
+              - generic [ref=f5e332]: "9"
+  - button "Open Next.js Dev Tools" [ref=f5e234] [cursor=pointer]:
+    - img [ref=f5e235]
+  - alert [ref=f5e333]

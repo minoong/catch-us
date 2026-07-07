@@ -1,0 +1,325 @@
+<style>
+  .overflow-section {
+    display: grid;
+    gap: 22px;
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+  }
+
+  .compare-card {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 22px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.12), transparent 28%),
+      linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.01));
+  }
+
+  .compare-card[data-choice] {
+    cursor: pointer;
+  }
+
+  .preview {
+    padding: 22px;
+  }
+
+  .map-window {
+    height: 210px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 52% 43%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.72)),
+      repeating-radial-gradient(circle, rgba(71, 85, 105, 0.4) 0 1px, transparent 1px 7px);
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.2);
+  }
+
+  .map-window.mobile {
+    width: 220px;
+    margin: 0 auto;
+  }
+
+  .cluster {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .cluster.kr {
+    top: 56px;
+    left: 116px;
+  }
+
+  .cluster.jp {
+    top: 90px;
+    left: 148px;
+  }
+
+  .cluster.th {
+    top: 126px;
+    left: 132px;
+  }
+
+  .mobile .cluster.kr {
+    left: 74px;
+  }
+
+  .mobile .cluster.jp {
+    left: 80px;
+  }
+
+  .mobile .cluster.th {
+    left: 72px;
+  }
+
+  .flag {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: white;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+    z-index: 2;
+  }
+
+  .badge {
+    display: grid;
+    gap: 2px;
+    max-width: 170px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.76);
+    color: white;
+    line-height: 1.05;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+  }
+
+  .mobile .badge {
+    max-width: 122px;
+  }
+
+  .badge strong {
+    font-size: 10px;
+  }
+
+  .badge span {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .raw .badge {
+    max-width: none;
+  }
+
+  .raw .mobile .badge {
+    max-width: none;
+  }
+
+  .status-pill {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    border-radius: 999px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.68);
+    color: rgba(15, 23, 42, 0.58);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .body {
+    padding: 0 20px 20px;
+  }
+
+  .body h3 {
+    margin: 0 0 6px;
+  }
+
+  .body p {
+    margin: 0;
+  }
+
+  .rules {
+    display: grid;
+    gap: 10px;
+    padding: 18px 20px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.52);
+  }
+
+  .rule-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .rule-row code {
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.08);
+  }
+</style>
+
+<h2>도시가 계속 추가될 때 배지 처리</h2>
+<p class="subtitle">
+  B-2 간격/패딩을 유지한 상태에서 도시가 3개, 5개, 8개 이상으로 늘어나는 상황을 비교했어.
+</p>
+
+<div class="overflow-section">
+  <div class="compare-grid">
+    <div class="compare-card raw" data-choice="raw" onclick="toggleSelect(this)">
+      <div class="preview">
+        <div class="map-window">
+          <div class="cluster kr">
+            <div class="flag">🇰🇷</div>
+            <div class="badge">
+              <strong>한국</strong>
+              <span>서울 · 강릉 · 부산 · 제주 · 속초 · 여수</span>
+            </div>
+          </div>
+          <div class="cluster jp">
+            <div class="flag">🇯🇵</div>
+            <div class="badge">
+              <strong>일본</strong>
+              <span>후쿠오카 · 이토시마 · 오사카 · 교토</span>
+            </div>
+          </div>
+          <div class="cluster th">
+            <div class="flag">🇹🇭</div>
+            <div class="badge">
+              <strong>태국</strong>
+              <span>방콕 · 파타야 · 치앙마이 · 푸켓</span>
+            </div>
+          </div>
+          <div class="status-pill">문제: 길어지면 지도 밖으로 밀림</div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>전부 노출</h3>
+        <p>도시가 4개만 넘어가도 배지가 급격히 길어지고, 모바일에서는 잘리거나 서로 겹치기 쉽다.</p>
+      </div>
+    </div>
+
+    <div class="compare-card" data-choice="summary" onclick="toggleSelect(this)">
+      <div class="preview">
+        <div class="map-window">
+          <div class="cluster kr">
+            <div class="flag">🇰🇷</div>
+            <div class="badge">
+              <strong>한국</strong>
+              <span>서울 · 강릉 · 부산 외 3곳</span>
+            </div>
+          </div>
+          <div class="cluster jp">
+            <div class="flag">🇯🇵</div>
+            <div class="badge">
+              <strong>일본</strong>
+              <span>후쿠오카 · 이토시마 · 오사카 외 1곳</span>
+            </div>
+          </div>
+          <div class="cluster th">
+            <div class="flag">🇹🇭</div>
+            <div class="badge">
+              <strong>태국</strong>
+              <span>방콕 · 파타야 · 치앙마이 외 1곳</span>
+            </div>
+          </div>
+          <div class="status-pill">추천: 정보량과 안정성 균형</div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>대표 도시 + 외 N곳</h3>
+        <p>데스크톱에서는 3개까지 보여주고 나머지는 개수로 접는다. 지도 위 밀도와 정보량이 균형 잡힌다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card raw" data-choice="mobile-raw" onclick="toggleSelect(this)">
+      <div class="preview">
+        <div class="map-window mobile">
+          <div class="cluster kr">
+            <div class="flag">🇰🇷</div>
+            <div class="badge">
+              <strong>한국</strong>
+              <span>서울 · 강릉 · 부산 · 제주 · 속초 · 여수</span>
+            </div>
+          </div>
+          <div class="cluster jp">
+            <div class="flag">🇯🇵</div>
+            <div class="badge">
+              <strong>일본</strong>
+              <span>후쿠오카 · 이토시마 · 오사카 · 교토</span>
+            </div>
+          </div>
+          <div class="status-pill">모바일 문제</div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>모바일 전부 노출</h3>
+        <p>폭이 좁아지면 배지가 바로 잘리고, 위치 계산이 아무리 좋아도 해결이 어렵다.</p>
+      </div>
+    </div>
+
+    <div class="compare-card" data-choice="mobile-summary" onclick="toggleSelect(this)">
+      <div class="preview">
+        <div class="map-window mobile">
+          <div class="cluster kr">
+            <div class="flag">🇰🇷</div>
+            <div class="badge">
+              <strong>한국</strong>
+              <span>서울 · 강릉 외 4곳</span>
+            </div>
+          </div>
+          <div class="cluster jp">
+            <div class="flag">🇯🇵</div>
+            <div class="badge">
+              <strong>일본</strong>
+              <span>후쿠오카 · 이토시마 외 2곳</span>
+            </div>
+          </div>
+          <div class="cluster th">
+            <div class="flag">🇹🇭</div>
+            <div class="badge">
+              <strong>태국</strong>
+              <span>방콕 · 파타야 외 2곳</span>
+            </div>
+          </div>
+          <div class="status-pill">모바일 추천</div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>모바일 대표 2개 + 외 N곳</h3>
+        <p>모바일에서는 2개까지만 보여주고 배지 폭을 제한한다. 전체 목록은 나중에 클릭/툴팁에서 보여준다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div class="rule-row">
+      <code>desktop</code>
+      <span>도시 3개까지 노출, 4개 이상이면 <strong>대표 3개 + 외 N곳</strong></span>
+    </div>
+    <div class="rule-row">
+      <code>mobile</code>
+      <span>도시 2개까지 노출, 3개 이상이면 <strong>대표 2개 + 외 N곳</strong></span>
+    </div>
+    <div class="rule-row">
+      <code>future</code>
+      <span>전체 도시는 데이터에 유지하고, 나중에 클릭/호버 상세 목록으로 확장</span>
+    </div>
+  </div>
+</div>

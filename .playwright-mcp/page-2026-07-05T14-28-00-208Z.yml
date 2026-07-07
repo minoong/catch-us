@@ -1,0 +1,110 @@
+- generic [active] [ref=f8e1]:
+  - main [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - img "성산일출봉과 바다가 내려다보이는 여행 풍경" [ref=f8e7]
+      - generic [ref=f8e10]:
+        - paragraph [ref=f8e11]: Catch Us Trip
+        - paragraph [ref=f8e12]: Jeonju
+        - paragraph [ref=f8e13]: 전주로 넘어가는 밤
+    - generic [ref=f8e15]:
+      - paragraph [ref=f8e17]: Jeonju 2026
+      - link "일정" [ref=f8e19] [cursor=pointer]:
+        - /url: /trip/jeonju-2026/schedule
+    - generic [ref=f8e20]:
+      - generic [ref=f8e23]:
+        - generic [ref=f8e24]:
+          - paragraph [ref=f8e25]: date invitation
+          - heading "전주로 넘어가는 밤" [level=1] [ref=f8e26]
+          - paragraph [ref=f8e27]: 2026년 7월 10일, 용산에서 KTX를 타고 전주로 내려가는 2박 3일 여행.
+        - generic [ref=f8e29]:
+          - generic [ref=f8e30]:
+            - generic [ref=f8e31]:
+              - paragraph [ref=f8e32]: boarding pass
+              - heading "용산에서 전주까지" [level=2] [ref=f8e33]
+            - generic [ref=f8e34]: KTX 521
+          - article [ref=f8e35]:
+            - generic [ref=f8e36]:
+              - generic [ref=f8e37]:
+                - paragraph [ref=f8e38]: train
+                - heading "KTX 521" [level=2] [ref=f8e39]
+              - generic [ref=f8e40]:
+                - paragraph [ref=f8e41]: seat
+                - paragraph [ref=f8e42]: 1A · 1B
+            - generic [ref=f8e43]:
+              - generic [ref=f8e44]:
+                - paragraph [ref=f8e45]: 용산
+                - paragraph [ref=f8e46]: 20:09
+              - paragraph [ref=f8e47]: →
+              - generic [ref=f8e48]:
+                - paragraph [ref=f8e49]: 전주
+                - paragraph [ref=f8e50]: 21:47
+            - paragraph [ref=f8e51]: 14호차 · 2026-07-10
+        - link "일정 자세히 보기" [ref=f8e53] [cursor=pointer]:
+          - /url: /trip/jeonju-2026/schedule
+      - generic [ref=f8e54]:
+        - generic [ref=f8e59]:
+          - generic [ref=f8e60]:
+            - img [ref=f8e64]
+            - img [ref=f8e67]
+            - img [ref=f8e70]
+            - img [ref=f8e73]
+            - img [ref=f8e76]
+            - img [ref=f8e79]
+            - img [ref=f8e82]
+            - img [ref=f8e85]
+          - generic [ref=f8e86]:
+            - img [ref=f8e90]
+            - img [ref=f8e93]
+            - img [ref=f8e96]
+            - img [ref=f8e99]
+            - img [ref=f8e102]
+            - img [ref=f8e105]
+            - img [ref=f8e108]
+            - img [ref=f8e111]
+          - generic [ref=f8e112]:
+            - img [ref=f8e116]
+            - img [ref=f8e119]
+            - img [ref=f8e122]
+            - img [ref=f8e125]
+            - img [ref=f8e128]
+            - img [ref=f8e131]
+            - img [ref=f8e134]
+            - img [ref=f8e137]
+          - generic [ref=f8e138]:
+            - img [ref=f8e142]
+            - img [ref=f8e145]
+            - img [ref=f8e148]
+            - img [ref=f8e151]
+            - img [ref=f8e154]
+            - img [ref=f8e157]
+            - img [ref=f8e160]
+            - img [ref=f8e163]
+        - generic:
+          - paragraph: photo field
+          - heading "우리가 지나갈 장면들" [level=2]
+      - generic [ref=f8e164]:
+        - generic [ref=f8e165]:
+          - generic [ref=f8e166]:
+            - paragraph [ref=f8e167]: auto itinerary
+            - heading "다음 장면 미리보기" [level=2] [ref=f8e168]
+          - generic [ref=f8e169]: 1/7
+        - generic [ref=f8e173]:
+          - button "용산역 출발 · KTX 521로 이동" [ref=f8e174]: "1"
+          - button "전주역 도착로 이동" [ref=f8e175]: "2"
+          - button "전주관광호텔로 이동" [ref=f8e176]: "3"
+          - button "전동성당로 이동" [ref=f8e177]: "4"
+          - button "전주덕진공원로 이동" [ref=f8e178]: "5"
+          - button "진미집 본점로 이동" [ref=f8e179]: "6"
+          - button "전주역 출발 · KTX 510로 이동" [ref=f8e180]: "7"
+        - article [ref=f8e181]:
+          - paragraph [ref=f8e182]: 20:09
+          - heading "용산역 출발 · KTX 521" [level=3] [ref=f8e183]
+          - paragraph [ref=f8e184]: 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석.
+      - generic [ref=f8e186]:
+        - paragraph [ref=f8e187]: full schedule
+        - heading "지도와 일정은 다음 화면에서" [level=2] [ref=f8e188]
+        - paragraph [ref=f8e189]: 날짜별 동선, 지도, 장소 카드는 전체 일정 화면에서 더 자세히 볼 수 있어요.
+        - link "전체 일정 열기" [ref=f8e190] [cursor=pointer]:
+          - /url: /trip/jeonju-2026/schedule
+  - button "Open Next.js Dev Tools" [ref=f8e196] [cursor=pointer]:
+    - img [ref=f8e197]

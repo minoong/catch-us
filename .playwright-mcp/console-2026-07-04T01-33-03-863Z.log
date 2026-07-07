@@ -1,0 +1,76 @@
+[     101ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[    1992ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[    7018ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   12403ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   16946ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   22444ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   26910ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   36868ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   46277ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   55062ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   61729ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   68444ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   76850ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   85310ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=DxQSiTwFbMNKGiKGCiHfA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[   85365ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/trip/jeonju-2026/schedule?luxury-ticket=2:0
+[   85406ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[   85430ms] Error: ./apps/web/app/trip/_components/trip-timeline.tsx:149:9
+Unterminated regexp literal
+  147 |   );
+  148 | }
+> 149 |         />
+      |         ^^
+  150 |       </TicketReveal>
+  151 |     </li>
+  152 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-timeline.tsx:149:9)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[   85431ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/favicon.ico:0
+[   85446ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:3000/__nextjs_original-stack-frames:0
+[   88320ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[   90726ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[   94233ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[   97344ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  100745ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  102816ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  110850ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  117684ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  122688ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  127692ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  132699ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  137702ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  142705ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_11ziw6w._.js:2343
+[  142773ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  142780ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  143787ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  144804ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  145825ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  146852ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  147924ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  153164ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  158667ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  164317ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  170986ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  179316ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[  187787ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=5NN51Q1Y81b2B6NkLg4tL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE @ http://127.0.0.1:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422

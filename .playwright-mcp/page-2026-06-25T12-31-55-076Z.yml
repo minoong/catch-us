@@ -1,0 +1,87 @@
+- main [ref=e2]:
+  - generic [ref=e8]:
+    - region "우리가 남긴 도시들" [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - paragraph [ref=e12]: Memory map
+          - heading "우리가 남긴 도시들" [level=2] [ref=e13]
+        - img [ref=e15]:
+          - generic [ref=e1728]:
+            - generic:
+              - generic: 서울
+          - generic [ref=e1730]:
+            - generic:
+              - generic: 강릉
+          - generic [ref=e1732]:
+            - generic:
+              - generic: 부산
+          - generic [ref=e1734]:
+            - generic:
+              - generic: 후쿠오카
+          - generic [ref=e1736]:
+            - generic:
+              - generic: 방콕
+          - generic [ref=e1738]:
+            - generic:
+              - generic: 파타야
+    - generic [ref=e1740]:
+      - generic [ref=e1741]:
+        - generic [ref=e1742]:
+          - generic [ref=e1743]: Private photo memory engine
+          - generic [ref=e1744]: 위치, 사람, 분위기로 다시 찾는 일상
+        - generic [ref=e1745]:
+          - heading "흩어진 사진을 기억의 지도처럼." [level=1] [ref=e1746]:
+            - text: 흩어진 사진을
+            - generic [ref=e1747]: 기억의 지도처럼.
+          - paragraph [ref=e1748]: Catch Us는 너와 여자친구의 일상 사진을 위치, 날짜, 키워드, 인물 단서로 정리해서 나중에 “그날 거기”를 자연스럽게 다시 찾게 해주는 개인 사진 서비스입니다.
+        - generic [ref=e1749]:
+          - button "사진 둘러보기 준비 중" [ref=e1750]
+          - button "지도 보기 프리뷰" [ref=e1751]
+        - generic [ref=e1752]:
+          - generic [ref=e1753]:
+            - generic [ref=e1754]:
+              - generic [ref=e1755]: 위치
+              - generic [ref=e1756]: 37.5665, 126.9780
+            - paragraph [ref=e1758]: 사진의 좌표를 주소와 지도 마커로 연결
+          - generic [ref=e1759]:
+            - generic [ref=e1760]:
+              - generic [ref=e1761]: 키워드
+              - generic [ref=e1762]: 밤 산책 · 노을 · 카페
+            - paragraph [ref=e1764]: 이미지 분석으로 추억을 검색 가능한 단서로 변환
+          - generic [ref=e1765]:
+            - generic [ref=e1766]:
+              - generic [ref=e1767]: 사람
+              - generic [ref=e1768]: 우리 둘 · 친구 · 게스트
+            - paragraph [ref=e1770]: 인물과 유사 이미지로 다시 찾는 개인 사진 아카이브
+      - generic [ref=e1774]:
+        - generic [ref=e1775]:
+          - generic [ref=e1776]:
+            - paragraph [ref=e1777]: 오늘의 기억
+            - heading "Seoul, 21:42" [level=2] [ref=e1778]
+          - generic [ref=e1779]: 공개
+        - generic [ref=e1780]:
+          - generic [ref=e1781]:
+            - paragraph [ref=e1783]: 서울 저녁
+            - paragraph [ref=e1784]: 위치와 키워드 분석 대기
+          - generic [ref=e1785]:
+            - paragraph [ref=e1787]: 도쿄 횡단보도
+            - paragraph [ref=e1788]: 위치와 키워드 분석 대기
+          - generic [ref=e1789]:
+            - paragraph [ref=e1791]: 파리 골목
+            - paragraph [ref=e1792]: 위치와 키워드 분석 대기
+          - generic [ref=e1793]:
+            - paragraph [ref=e1795]: 바다 산책
+            - paragraph [ref=e1796]: 위치와 키워드 분석 대기
+          - generic [ref=e1797]:
+            - paragraph [ref=e1799]: 캡처 제외
+            - paragraph [ref=e1800]: 위치와 키워드 분석 대기
+        - generic [ref=e1801]:
+          - generic [ref=e1802]:
+            - paragraph [ref=e1803]: "128"
+            - paragraph [ref=e1804]: 이번 달 사진
+          - generic [ref=e1805]:
+            - paragraph [ref=e1806]: "34"
+            - paragraph [ref=e1807]: 지도 마커
+          - generic [ref=e1808]:
+            - paragraph [ref=e1809]: "9"
+            - paragraph [ref=e1810]: 인물 그룹

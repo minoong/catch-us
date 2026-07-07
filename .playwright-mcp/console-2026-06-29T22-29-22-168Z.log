@@ -1,0 +1,151 @@
+[     129ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[     139ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  446583ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  446634ms] [LOG] [Fast Refresh] done in 153ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  447378ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  447406ms] [LOG] [Fast Refresh] done in 49ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  460737ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  460768ms] [LOG] [Fast Refresh] done in 43ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  632585ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  632838ms] [LOG] [Fast Refresh] done in 271ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  632972ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  632989ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  633139ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  633194ms] [LOG] [Fast Refresh] done in 156ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  633309ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  633317ms] [LOG] [Fast Refresh] done in 109ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  655082ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  655109ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  679052ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  679179ms] [LOG] [Fast Refresh] done in 88ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  679391ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  679479ms] [LOG] [Fast Refresh] done in 189ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  693577ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  693588ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  699979ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  700006ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  783169ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  783199ms] [LOG] [Fast Refresh] done in 48ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  903281ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  903307ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  919585ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  919613ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  998568ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  998597ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1670000ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1670030ms] [LOG] [Fast Refresh] done in 52ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1711678ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1711705ms] [LOG] [Fast Refresh] done in 54ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1747510ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1747744ms] [LOG] [Fast Refresh] done in 127ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1748091ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1748283ms] [LOG] [Fast Refresh] done in 292ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1794748ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1794769ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1921683ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1921691ms] TypeError: values[i].get is not a function
+    at useListTransform.useCombineMotionValues (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-transform.mjs+%255Bapp-client%255D+%2528ecmascript%2529:58:39)
+    at useCombineMotionValues (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-combine-values.mjs+%255Bapp-client%255D+%2528ecmascript%2529:18:368)
+    at useListTransform (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-transform.mjs+%255Bapp-client%255D+%2528ecmascript%2529:53:366)
+    at useTransform (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-transform.mjs+%255Bapp-client%255D+%2528ecmascript%2529:30:82)
+    at TripDateSegmentedNav (http://localhost:3000/_next/static/chunks/_04sq7ef._.js?id=%255Bproject%255D%252Fapps%252Fweb%252Fapp%252Ftrip%252F_components%252Ftrip-date-segmented-nav.tsx+%255Bapp-client%255D+%2528ecmascript%2529:21:360)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9098:47)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10179:316)
+    at flushSyncWork$1 (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9230:86)
+    at Object.scheduleRefresh (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:299:13)
+    at http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:384:38)
+    at applyUpdate (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:878:31)
+    at http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:886:13
+[ 1921713ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1978806ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1978807ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1978893ms] TypeError: values[i].get is not a function
+    at useListTransform.useCombineMotionValues (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-transform.mjs+%255Bapp-client%255D+%2528ecmascript%2529:58:39)
+    at useCombineMotionValues (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-combine-values.mjs+%255Bapp-client%255D+%2528ecmascript%2529:18:368)
+    at useListTransform (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-transform.mjs+%255Bapp-client%255D+%2528ecmascript%2529:53:366)
+    at useTransform (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_1wq8-ul._.js?id=%255Bproject%255D%252Fnode_modules%252F.pnpm%252Fframer-motion%254012.41.0_react-dom%254019.2.7_react%254019.2.7__react%254019.2.7%252Fnode_modules%252Fframer-motion%252Fdist%252Fes%252Fvalue%252Fuse-transform.mjs+%255Bapp-client%255D+%2528ecmascript%2529:30:82)
+    at TripDateSegmentedNav (http://localhost:3000/_next/static/chunks/_04sq7ef._.js?id=%255Bproject%255D%252Fapps%252Fweb%252Fapp%252Ftrip%252F_components%252Ftrip-date-segmented-nav.tsx+%255Bapp-client%255D+%2528ecmascript%2529:21:360)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9098:47)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10179:316)
+    at flushSyncWork$1 (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9230:86)
+    at Object.scheduleRefresh (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:299:13)
+    at http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:384:38)
+    at applyUpdate (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:878:31)
+    at http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:886:13
+[ 1978928ms] [LOG] [Fast Refresh] done in 36ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1978936ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026/schedule:0
+[ 1979040ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1979052ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1979145ms] TypeError: values[i].get is not a function
+    at useListTransform.useCombineMotionValues (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_0ib7ioq._.js:4237:39)
+    at useCombineMotionValues (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_0ib7ioq._.js:4118:368)
+    at useListTransform (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_0ib7ioq._.js:4232:366)
+    at useTransform (http://localhost:3000/_next/static/chunks/1ana_framer-motion_dist_es_0ib7ioq._.js:4209:82)
+    at TripDateSegmentedNav (http://localhost:3000/_next/static/chunks/_04sq7ef._.js:923:360)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_react-dom_168vud3._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/0ly8_next_dist_compiled_05os3x9._.js:2647:64)
+[ 1979115ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[ 1999462ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1999463ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1999583ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 1999589ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2052555ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2052623ms] [LOG] [Fast Refresh] done in 109ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2053001ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2053095ms] [LOG] [Fast Refresh] done in 197ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2072218ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2072242ms] [LOG] [Fast Refresh] done in 33ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2167493ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=E6bBEX6cA3MY23EAfUMGB' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2168496ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=E6bBEX6cA3MY23EAfUMGB' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2169505ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=E6bBEX6cA3MY23EAfUMGB' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2170509ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=E6bBEX6cA3MY23EAfUMGB' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2171513ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=E6bBEX6cA3MY23EAfUMGB' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2176514ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=E6bBEX6cA3MY23EAfUMGB' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2181590ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2182192ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2182226ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2182357ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2182379ms] [LOG] [Fast Refresh] done in 123ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[ 2391282ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2392292ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2393298ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2394313ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2395318ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2400329ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2405337ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2410355ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2415403ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2420453ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2425588ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422
+[ 2430761ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=zaOssW_woM7tSaYZnzuGa' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_client_1ri-qb-._.js:13422

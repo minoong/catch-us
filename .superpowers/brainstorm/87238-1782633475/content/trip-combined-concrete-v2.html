@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전주 여행 페이지 구체안</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #07070a;
+        --panel: rgba(255, 255, 255, 0.08);
+        --panel-strong: rgba(255, 255, 255, 0.14);
+        --line: rgba(255, 255, 255, 0.16);
+        --muted: rgba(255, 255, 255, 0.62);
+        --text: rgba(255, 255, 255, 0.94);
+        --warm: #ffb86b;
+        --rose: #fb7185;
+        --sky: #67e8f9;
+        --mint: #86efac;
+        --ink: #111827;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 18% 8%, rgba(251, 113, 133, 0.36), transparent 32rem),
+          radial-gradient(circle at 82% 12%, rgba(103, 232, 249, 0.24), transparent 34rem),
+          radial-gradient(circle at 50% 100%, rgba(255, 184, 107, 0.18), transparent 32rem),
+          var(--bg);
+        color: var(--text);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      main {
+        width: min(1180px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 32px 0 80px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--warm);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: clamp(42px, 8vw, 92px);
+        line-height: 0.92;
+        letter-spacing: -0.08em;
+      }
+
+      h2 {
+        font-size: clamp(26px, 4vw, 48px);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      h3 {
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .sub {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 34px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 13px;
+        backdrop-filter: blur(18px);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 720px;
+        border: 1px solid var(--line);
+        border-radius: 44px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
+          radial-gradient(circle at 24% 18%, rgba(255, 184, 107, 0.4), transparent 22rem),
+          radial-gradient(circle at 74% 18%, rgba(103, 232, 249, 0.24), transparent 20rem);
+        box-shadow: 0 32px 120px rgba(0, 0, 0, 0.46);
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 390px;
+        gap: 32px;
+        min-height: 720px;
+        padding: 42px;
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 36px;
+      }
+
+      .gradient-text {
+        background: linear-gradient(92deg, #fff, #fed7aa 42%, #fda4af 70%, #a5f3fc);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .motion-note {
+        display: grid;
+        max-width: 680px;
+        grid-template-columns: 160px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+      }
+
+      .motion-chip {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .phone {
+        align-self: center;
+        overflow: hidden;
+        min-height: 650px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 46px;
+        background: #0b1020;
+        box-shadow:
+          inset 0 0 0 10px rgba(255, 255, 255, 0.05),
+          0 28px 90px rgba(0, 0, 0, 0.5);
+      }
+
+      .phone-screen {
+        position: relative;
+        overflow: hidden;
+        min-height: 650px;
+        padding: 20px;
+        background:
+          radial-gradient(circle at 60% 0%, rgba(251, 113, 133, 0.34), transparent 18rem),
+          linear-gradient(180deg, #111827, #0b1020 56%, #07070a);
+      }
+
+      .status {
+        display: flex;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .app-intro-card {
+        margin-top: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 34px;
+        padding: 22px;
+        background:
+          radial-gradient(circle at 30% 10%, rgba(254, 215, 170, 0.34), transparent 12rem),
+          rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(18px);
+      }
+
+      .ticket {
+        position: relative;
+        margin-top: 18px;
+        overflow: hidden;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--ink);
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.26);
+      }
+
+      .ticket::before,
+      .ticket::after {
+        position: absolute;
+        top: 92px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #111827;
+        content: "";
+      }
+
+      .ticket::before {
+        left: -13px;
+      }
+
+      .ticket::after {
+        right: -13px;
+      }
+
+      .ticket-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 20px 20px 16px;
+        border-bottom: 1px dashed rgba(17, 24, 39, 0.24);
+      }
+
+      .route {
+        display: grid;
+        grid-template-columns: 1fr 54px 1fr;
+        gap: 8px;
+        align-items: center;
+        padding: 18px 20px;
+      }
+
+      .station {
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -0.06em;
+      }
+
+      .time {
+        margin-top: 2px;
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .rail {
+        display: grid;
+        place-items: center;
+        color: #ef4444;
+        font-weight: 900;
+      }
+
+      .ticket-meta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 0 20px 20px;
+      }
+
+      .meta-box {
+        border-radius: 18px;
+        padding: 12px;
+        background: #f3f4f6;
+      }
+
+      .label {
+        color: #6b7280;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .screen-transition {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .transition-step {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 12px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--warm);
+        box-shadow: 0 0 0 7px rgba(255, 184, 107, 0.12);
+      }
+
+      .section {
+        margin-top: 26px;
+        border: 1px solid var(--line);
+        border-radius: 36px;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 28px;
+        backdrop-filter: blur(18px);
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: end;
+        margin-bottom: 20px;
+      }
+
+      .layout-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 420px;
+        gap: 22px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+      }
+
+      .timeline-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 82px minmax(0, 1fr);
+        gap: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 18px;
+      }
+
+      .timeline-card::before {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(90deg, rgba(255, 184, 107, 0.12), transparent 34%);
+        content: "";
+      }
+
+      .time-block {
+        position: relative;
+        z-index: 1;
+      }
+
+      .date {
+        color: var(--warm);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .clock {
+        margin-top: 6px;
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+      }
+
+      .timeline-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        padding: 5px 8px;
+        background: rgba(255, 255, 255, 0.11);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .map-panel {
+        position: sticky;
+        top: 24px;
+        overflow: hidden;
+        min-height: 520px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 32px;
+        background:
+          linear-gradient(145deg, rgba(14, 165, 233, 0.18), rgba(255, 255, 255, 0.05)),
+          #09111f;
+      }
+
+      .map-canvas {
+        position: relative;
+        height: 350px;
+        background:
+          radial-gradient(circle at 35% 35%, rgba(103, 232, 249, 0.28), transparent 16rem),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      }
+
+      .map-line {
+        position: absolute;
+        left: 74px;
+        right: 72px;
+        top: 170px;
+        border-top: 3px dashed rgba(255, 255, 255, 0.54);
+        transform: rotate(-8deg);
+        transform-origin: left center;
+      }
+
+      .marker {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        background: var(--rose);
+        box-shadow: 0 0 0 10px rgba(251, 113, 133, 0.16);
+        font-size: 18px;
+      }
+
+      .marker.start {
+        left: 54px;
+        top: 144px;
+        background: var(--sky);
+      }
+
+      .marker.end {
+        right: 56px;
+        top: 118px;
+      }
+
+      .marker.hotel {
+        right: 116px;
+        bottom: 52px;
+        background: var(--warm);
+      }
+
+      .map-label {
+        position: absolute;
+        min-width: 112px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 16px;
+        padding: 9px 10px;
+        background: rgba(7, 7, 10, 0.72);
+        font-size: 12px;
+        backdrop-filter: blur(14px);
+      }
+
+      .map-label.start {
+        left: 22px;
+        top: 54px;
+      }
+
+      .map-label.end {
+        right: 18px;
+        top: 44px;
+      }
+
+      .map-label.hotel {
+        right: 18px;
+        bottom: 18px;
+      }
+
+      .map-bottom {
+        padding: 18px;
+      }
+
+      .address-card {
+        margin-top: 12px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 14px;
+      }
+
+      .component-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .component-card {
+        min-height: 176px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.07);
+        padding: 18px;
+      }
+
+      .component-card b {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .component-card small {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .marquee {
+        display: flex;
+        gap: 10px;
+        overflow: hidden;
+        margin-top: 14px;
+      }
+
+      .mini-photo {
+        flex: 0 0 118px;
+        height: 78px;
+        border-radius: 18px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.36), transparent),
+          radial-gradient(circle at 40% 30%, rgba(255, 184, 107, 0.7), transparent 50%),
+          #334155;
+      }
+
+      .static-note {
+        border: 1px solid rgba(134, 239, 172, 0.24);
+        border-radius: 28px;
+        background: rgba(134, 239, 172, 0.08);
+        padding: 18px;
+      }
+
+      @media (max-width: 940px) {
+        main {
+          width: min(100vw - 20px, 720px);
+          padding-top: 12px;
+        }
+
+        .hero,
+        .section {
+          border-radius: 30px;
+        }
+
+        .hero-grid,
+        .layout-grid,
+        .component-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid {
+          padding: 22px;
+        }
+
+        .motion-note {
+          grid-template-columns: 1fr;
+        }
+
+        .phone {
+          min-height: auto;
+        }
+
+        .phone-screen {
+          min-height: 560px;
+        }
+
+        .map-panel {
+          position: relative;
+          top: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Catch Us Trip /trip/jeonju-2026</p>
+          <h1><span class="gradient-text">전주로 넘어가는 밤</span></h1>
+        </div>
+        <div class="pill-row">
+          <span class="pill">2026.07.10 - 07.12</span>
+          <span class="pill">용산 → 전주</span>
+          <span class="pill">KTX + Kakao Map</span>
+        </div>
+      </div>
+
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <p class="eyebrow">01 / Intro transition</p>
+              <h2>처음엔 여행 포스터처럼 보이고, 스크롤하면 앱 화면으로 접힌다.</h2>
+              <p class="sub" style="margin-top: 18px; max-width: 650px;">
+                모바일 앱 같은 첫 인트로를 full-screen으로 보여준 뒤, 티켓 카드가 축소되며 아래의 일정 앱 UI로
+                전환됩니다. 구현은 Motion의 entrance/scroll transform, GSAP의 미세 floating, Magic UI의
+                Particles/Animated Gradient Text 계열을 조합합니다.
+              </p>
+            </div>
+
+            <div class="motion-note">
+              <div class="motion-chip">
+                화면 전환<br />
+                splash → ticket → app shell
+              </div>
+              <div class="sub">
+                reduced-motion이면 전환 애니메이션은 fade/slide 정도로 줄이고, 정보 구조는 그대로 유지합니다.
+                “화려함”은 첫 인상에 집중하고, 타임라인/지도는 읽기 좋게 고정합니다.
+              </div>
+            </div>
+          </div>
+
+          <aside class="phone" aria-label="mobile mockup">
+            <div class="phone-screen">
+              <div class="status"><span>20:09</span><span>JEONJU TRIP</span></div>
+              <div class="app-intro-card">
+                <p class="eyebrow">boarding</p>
+                <h2 style="font-size: 42px;">전주행 KTX</h2>
+                <p class="sub" style="margin-top: 10px;">둘이서 떠나는 2박 3일 여행 일정</p>
+              </div>
+
+              <div class="ticket">
+                <div class="ticket-head">
+                  <div>
+                    <div class="label">train</div>
+                    <div class="value">KTX 521</div>
+                  </div>
+                  <div>
+                    <div class="label">date</div>
+                    <div class="value">07.10 Fri</div>
+                  </div>
+                </div>
+                <div class="route">
+                  <div>
+                    <div class="station">용산</div>
+                    <div class="time">20:09 출발</div>
+                  </div>
+                  <div class="rail">→</div>
+                  <div style="text-align: right;">
+                    <div class="station">전주</div>
+                    <div class="time">21:47 도착</div>
+                  </div>
+                </div>
+                <div class="ticket-meta">
+                  <div class="meta-box">
+                    <div class="label">car</div>
+                    <div class="value">14호차</div>
+                  </div>
+                  <div class="meta-box">
+                    <div class="label">seat</div>
+                    <div class="value">1A</div>
+                  </div>
+                  <div class="meta-box">
+                    <div class="label">seat</div>
+                    <div class="value">1B</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="screen-transition">
+                <div class="transition-step"><span class="dot"></span>인트로 배경이 위로 밀리며 앱 바 생성</div>
+                <div class="transition-step"><span class="dot"></span>티켓 카드가 오늘 일정 첫 카드로 축소</div>
+                <div class="transition-step"><span class="dot"></span>지도/타임라인 탭이 아래에서 등장</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">02 / Timeline + Kakao map</p>
+            <h2>일정은 정적 데이터로 쌓고, 지도는 현재 일정의 장소를 따라간다.</h2>
+          </div>
+          <span class="pill">사용자 입력 폼 없음</span>
+        </div>
+
+        <div class="layout-grid">
+          <div class="timeline">
+            <article class="timeline-card">
+              <div class="time-block">
+                <div class="date">07.10</div>
+                <div class="clock">20:09</div>
+              </div>
+              <div class="timeline-content">
+                <h3>용산역 출발 · KTX 521</h3>
+                <p class="sub">용산 → 전주 / 14호차 1A, 1B / Kakao Place: 8014275</p>
+                <div class="tag-row">
+                  <span class="tag">교통</span>
+                  <span class="tag">KTX</span>
+                  <span class="tag">서울 출발</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div class="time-block">
+                <div class="date">07.10</div>
+                <div class="clock">21:47</div>
+              </div>
+              <div class="timeline-content">
+                <h3>전주역 도착</h3>
+                <p class="sub">전주 여행의 첫 마커. 이후 숙소 이동/야식/산책 같은 항목은 네가 말하면 정적 카드로 추가.</p>
+                <div class="tag-row">
+                  <span class="tag">교통</span>
+                  <span class="tag">전주 도착</span>
+                  <span class="tag">지도 마커</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div class="time-block">
+                <div class="date">07.10</div>
+                <div class="clock">체크인</div>
+              </div>
+              <div class="timeline-content">
+                <h3>전주관광호텔호텔</h3>
+                <p class="sub">체크인 07.10 15:00 / 체크아웃 07.12 11:00 / Kakao Place: 2126483278</p>
+                <div class="tag-row">
+                  <span class="tag">숙소</span>
+                  <span class="tag">베이스캠프</span>
+                  <span class="tag">체크아웃 11:00</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div class="time-block">
+                <div class="date">07.12</div>
+                <div class="clock">13:18</div>
+              </div>
+              <div class="timeline-content">
+                <h3>전주역 출발 · KTX 510</h3>
+                <p class="sub">전주 → 용산 / 15호차 1A, 1B / 15:03 용산 도착 / Kakao Place: 8508642</p>
+                <div class="tag-row">
+                  <span class="tag">교통</span>
+                  <span class="tag">귀가</span>
+                  <span class="tag">KTX</span>
+                </div>
+              </div>
+            </article>
+
+            <div class="static-note">
+              <h3>“추가 일정 슬롯” 대신 이렇게 처리</h3>
+              <p class="sub" style="margin-top: 8px;">
+                네가 “7월 11일 오전 경기전, 점심 베테랑 칼국수, 오후 한옥마을 산책”처럼 말하면,
+                앱에서 추가하는 UI가 아니라 코드의 정적 여행 데이터에 itinerary item으로 넣고 이 카드/지도/마커에
+                반영합니다.
+              </p>
+            </div>
+          </div>
+
+          <aside class="map-panel">
+            <div class="map-canvas">
+              <div class="map-line"></div>
+              <div class="marker start">🚄</div>
+              <div class="marker end">📍</div>
+              <div class="marker hotel">🏨</div>
+              <div class="map-label start"><b>용산역</b><br /><span class="sub">20:09 출발</span></div>
+              <div class="map-label end"><b>전주역</b><br /><span class="sub">21:47 도착</span></div>
+              <div class="map-label hotel"><b>전주관광호텔호텔</b><br /><span class="sub">숙소</span></div>
+            </div>
+            <div class="map-bottom">
+              <h3>Kakao Map 영역</h3>
+              <p class="sub" style="margin-top: 8px;">
+                실제 구현은 NEXT_PUBLIC_KAKAO_MAP_APP_KEY가 있으면 SDK 로드 후 marker/polyline을 표시합니다.
+                키가 없으면 이 스타일의 fallback map card를 보여줍니다.
+              </p>
+              <div class="address-card">
+                <div class="label">place links</div>
+                <p class="sub" style="margin-top: 8px;">
+                  용산역 · 전주역 · 전주관광호텔호텔 링크를 카드 액션으로 연결
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">03 / Component plan</p>
+            <h2>Magic UI + ReactBits는 과하게 넣되, 역할을 나눈다.</h2>
+          </div>
+        </div>
+
+        <div class="component-grid">
+          <div class="component-card">
+            <b>Magic UI: Particles / Animated Gradient Text</b>
+            <small>
+              첫 인트로 배경과 제목에 사용. 여행 포스터 같은 첫 인상을 만들고, reduced-motion에서는 정적
+              gradient로 축소.
+            </small>
+          </div>
+          <div class="component-card">
+            <b>ReactBits: ScrollStack / ScrollFloat</b>
+            <small>
+              타임라인 카드를 스크롤 카드 스택처럼 보여주고, 큰 카피는 살짝 parallax float 처리.
+            </small>
+          </div>
+          <div class="component-card">
+            <b>Motion + GSAP</b>
+            <small>
+              splash → app 전환은 Motion layout/scroll 기반, 배경/티켓의 미세 움직임은 GSAP timeline로 처리.
+            </small>
+          </div>
+          <div class="component-card">
+            <b>KTX Ticket UI</b>
+            <small>
+              출발/도착/열차번호/호차/좌석을 boarding pass처럼 표시. 왕복 티켓은 swipe 또는 stacked card로
+              전환.
+            </small>
+          </div>
+          <div class="component-card">
+            <b>Kakao Place Card</b>
+            <small>
+              각 일정 카드 하단에 Kakao Place 링크 액션. 카카오맵은 active itinerary와 동기화되는 마커를
+              표시.
+            </small>
+          </div>
+          <div class="component-card">
+            <b>Photo Marquee 준비</b>
+            <small>
+              나중에 여행 사진이 생기면 Magic UI Marquee/ReactBits effect로 사진 띠를 추가. 지금은 일정 인트로만.
+            </small>
+            <div class="marquee">
+              <div class="mini-photo"></div>
+              <div class="mini-photo"></div>
+              <div class="mini-photo"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

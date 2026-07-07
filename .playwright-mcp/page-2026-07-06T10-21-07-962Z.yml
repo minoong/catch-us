@@ -1,0 +1,114 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - img "성산일출봉과 바다가 내려다보이는 여행 풍경" [ref=e7]
+      - generic [ref=e10]:
+        - paragraph [ref=e11]: Catch Us Trip
+        - paragraph [ref=e12]: Jeonju
+        - paragraph [ref=e13]: 전주로 넘어가는 밤
+    - generic [ref=e15]:
+      - paragraph [ref=e17]: Jeonju 2026
+      - button "일정" [ref=e19]
+    - generic [ref=e20]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - paragraph [ref=e25]: date invitation
+            - generic [ref=e26]: 07.10 - 07.12
+          - heading "전주로 넘어가는 밤" [level=1] [ref=e27]
+          - paragraph [ref=e28]: 2026년 7월 10일, 용산에서 KTX를 타고 전주로 내려가는 2박 3일 여행.
+        - article [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - paragraph [ref=e33]: boarding pass
+              - heading "용산 → 전주" [level=2] [ref=e34]
+            - generic [ref=e35]: KTX 521
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - paragraph [ref=e39]: from
+              - paragraph [ref=e40]: 용산
+              - paragraph [ref=e41]: 20:09
+            - generic [ref=e42]: →
+            - generic [ref=e43]:
+              - paragraph [ref=e44]: to
+              - paragraph [ref=e45]: 전주
+              - paragraph [ref=e46]: 21:47
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: 14호차
+            - paragraph [ref=e49]: 1A · 1B
+        - button "일정 자세히 보기 일정 자세히 보기" [ref=e51] [cursor=pointer]:
+          - generic [ref=e54]: 일정 자세히 보기
+          - generic [ref=e55]:
+            - generic [ref=e56]: 일정 자세히 보기
+            - img [ref=e57]
+      - generic [ref=e59]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - img [ref=e69]
+            - img [ref=e72]
+            - img [ref=e75]
+            - img [ref=e78]
+            - img [ref=e81]
+            - img [ref=e84]
+            - img [ref=e87]
+            - img [ref=e90]
+          - generic [ref=e91]:
+            - img [ref=e95]
+            - img [ref=e98]
+            - img [ref=e101]
+            - img [ref=e104]
+            - img [ref=e107]
+            - img [ref=e110]
+            - img [ref=e113]
+            - img [ref=e116]
+          - generic [ref=e117]:
+            - img [ref=e121]
+            - img [ref=e124]
+            - img [ref=e127]
+            - img [ref=e130]
+            - img [ref=e133]
+            - img [ref=e136]
+            - img [ref=e139]
+            - img [ref=e142]
+          - generic [ref=e143]:
+            - img [ref=e147]
+            - img [ref=e150]
+            - img [ref=e153]
+            - img [ref=e156]
+            - img [ref=e159]
+            - img [ref=e162]
+            - img [ref=e165]
+            - img [ref=e168]
+        - generic:
+          - paragraph: photo field
+          - heading "우리가 지나갈 장면들" [level=2]
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - 'button "Step 1: active" [ref=e173] [cursor=pointer]'
+          - 'button "Step 2: inactive" [ref=e177] [cursor=pointer]':
+            - generic [ref=e179]: "2"
+          - 'button "Step 3: inactive" [ref=e181] [cursor=pointer]':
+            - generic [ref=e183]: "3"
+          - 'button "Step 4: inactive" [ref=e185] [cursor=pointer]':
+            - generic [ref=e187]: "4"
+          - 'button "Step 5: inactive" [ref=e189] [cursor=pointer]':
+            - generic [ref=e191]: "5"
+          - 'button "Step 6: inactive" [ref=e193] [cursor=pointer]':
+            - generic [ref=e195]: "6"
+          - 'button "Step 7: inactive" [ref=e197] [cursor=pointer]':
+            - generic [ref=e199]: "7"
+        - generic [ref=e202]:
+          - heading "용산역 출발 · KTX 521" [level=2] [ref=e203]
+          - paragraph [ref=e205]: 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석.
+        - button "다음" [ref=e208] [cursor=pointer]
+      - generic [ref=e210]:
+        - paragraph [ref=e211]: full schedule
+        - heading "지도와 일정은 다음 화면에서" [level=2] [ref=e212]
+        - paragraph [ref=e213]: 날짜별 동선, 지도, 장소 카드는 전체 일정 화면에서 더 자세히 볼 수 있어요.
+        - button "전체 일정 열기 전체 일정 열기" [ref=e214] [cursor=pointer]:
+          - generic [ref=e217]: 전체 일정 열기
+          - generic [ref=e218]:
+            - generic [ref=e219]: 전체 일정 열기
+            - img [ref=e220]
+  - button "Open Next.js Dev Tools" [ref=e227] [cursor=pointer]:
+    - img [ref=e228]

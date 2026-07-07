@@ -1,0 +1,114 @@
+[      99ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[     107ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  267057ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  267088ms] [LOG] [Fast Refresh] done in 69ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  267175ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  267204ms] [LOG] [Fast Refresh] done in 55ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  267313ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  267342ms] [LOG] [Fast Refresh] done in 56ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  345966ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  346004ms] [ERROR] ./apps/web/app/trip/_components/trip-timeline.tsx:543:9
+Expression expected
+  541 |   );
+  542 | }
+> 543 |         </span>
+      |         ^
+  544 |       </div>
+  545 |     </motion.div>
+  546 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  346004ms] [ERROR] ./apps/web/app/trip/_components/trip-timeline.tsx:543:10
+Unterminated regexp literal
+  541 |   );
+  542 | }
+> 543 |         </span>
+      |          ^^^^^^
+  544 |       </div>
+  545 |     </motion.div>
+  546 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  346060ms] [ERROR] ./apps/web/app/trip/_components/trip-timeline.tsx:543:9
+Expression expected
+  541 |   );
+  542 | }
+> 543 |         </span>
+      |         ^
+  544 |       </div>
+  545 |     </motion.div>
+  546 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  346060ms] [ERROR] ./apps/web/app/trip/_components/trip-timeline.tsx:543:10
+Unterminated regexp literal
+  541 |   );
+  542 | }
+> 543 |         </span>
+      |          ^^^^^^
+  544 |       </div>
+  545 |     </motion.div>
+  546 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component Browser]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/trip/_components/trip-timeline.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Client Component SSR]
+    ./apps/web/app/trip/_components/trip-schedule-page.tsx [Server Component]
+    ./apps/web/app/trip/[slug]/schedule/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  346126ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  378954ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  379058ms] [LOG] [Fast Refresh] done in 166ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  394100ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  394128ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  401273ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  401299ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  401667ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  401696ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477

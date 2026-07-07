@@ -1,0 +1,492 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "여행 소개로 돌아가기" [ref=e6] [cursor=pointer]:
+          - /url: /trip/jeonju-2026
+          - text: ←
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: Jeonju 2026
+          - heading "전주로 넘어가는 밤" [level=1] [ref=e9]
+      - generic [ref=e12]:
+        - generic:
+          - generic: 용산역
+      - navigation "여행 날짜 필터" [ref=e15]:
+        - button "전체 일정 보기" [pressed] [ref=e16]:
+          - generic [ref=e19]: 전체
+        - button "07.10 일정 보기" [ref=e22]:
+          - generic [ref=e24]: "07.10"
+        - button "07.11 일정 보기" [ref=e25]:
+          - generic [ref=e27]: "07.11"
+        - button "07.12 일정 보기" [ref=e28]:
+          - generic [ref=e30]: "07.12"
+    - region "날짜별 여행 일정" [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: "07"
+            - generic [ref=e40]: "10"
+          - generic [ref=e42]:
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - generic [ref=e49]: TX
+                - paragraph [ref=e50]: 20:09
+              - article [ref=e51]:
+                - 'button "KTX, KTX 521, 14호차 용산역 출발 · KTX 521 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석. 용산역 #KTX #교통 #출발" [ref=e52]':
+                  - generic [ref=e53]:
+                    - generic [ref=e54]:
+                      - generic "KTX, KTX 521, 14호차" [ref=e57]:
+                        - generic [ref=e58]:
+                          - generic [ref=e59]: KTX
+                          - generic [ref=e60]: KTX 521
+                          - generic [ref=e61]: 14호차
+                          - generic [ref=e62]: KTX
+                      - heading "용산역 출발 · KTX 521" [level=3] [ref=e63]:
+                        - generic [ref=e64]:
+                          - generic [ref=e65]: 용산역
+                          - generic [ref=e67]: 출발
+                          - generic [ref=e69]: ·
+                        - text: KTX 521
+                      - paragraph [ref=e71]:
+                        - generic [ref=e72]: 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석.
+                        - generic [ref=e73]: 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석.
+                    - img "용산역" [ref=e75]
+                  - generic [ref=e76]:
+                    - generic [ref=e78]: "#KTX"
+                    - generic [ref=e80]: "#교통"
+                    - generic [ref=e82]: "#출발"
+                  - article [ref=e84]:
+                    - generic [ref=e85]:
+                      - generic [ref=e86]:
+                        - paragraph [ref=e87]: train
+                        - heading "KTX 521" [level=2] [ref=e88]
+                      - generic [ref=e89]:
+                        - paragraph [ref=e90]: seat
+                        - paragraph [ref=e91]: 1A · 1B
+                    - generic [ref=e92]:
+                      - generic [ref=e93]:
+                        - paragraph [ref=e94]: 용산
+                        - paragraph [ref=e95]: 20:09
+                      - paragraph [ref=e96]: →
+                      - generic [ref=e97]:
+                        - paragraph [ref=e98]: 전주
+                        - paragraph [ref=e99]: 21:47
+                    - paragraph [ref=e100]: 14호차 · 2026-07-10
+                - link "용산역 카카오맵 열기" [ref=e102] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/8014275
+                  - img [ref=e103]
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - generic [ref=e110]: AR
+                - paragraph [ref=e111]: 21:47
+              - article [ref=e112]:
+                - 'button "Station, 21:47 전주역 도착 전주 여행의 첫 도착 지점. 전주역 #도착 #지도" [ref=e113]':
+                  - generic [ref=e114]:
+                    - generic [ref=e115]:
+                      - generic "Station, 21:47" [ref=e118]:
+                        - generic [ref=e119]:
+                          - generic [ref=e120]: Station
+                          - generic [ref=e121]: 21:47
+                          - generic [ref=e122]: Station
+                      - heading "전주역 도착" [level=3] [ref=e123]:
+                        - generic [ref=e125]: 전주역
+                        - text: 도착
+                      - paragraph [ref=e127]:
+                        - generic [ref=e128]: 전주 여행의 첫 도착 지점.
+                        - generic [ref=e129]: 전주 여행의 첫 도착 지점.
+                    - img "전주역" [ref=e131]
+                  - generic [ref=e132]:
+                    - generic [ref=e134]: "#도착"
+                    - generic [ref=e136]: "#지도"
+                - link "전주역 카카오맵 열기" [ref=e138] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/8508642
+                  - img [ref=e139]
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e146]: ST
+                - paragraph [ref=e147]: 15:00
+              - article [ref=e148]:
+                - 'button "Stay, 15:00 전주관광호텔 2026년 7월 10일 체크인, 7월 12일 체크아웃. 전주관광호텔 체크인 7.10 금 · 15:00 체크아웃 7.12 일 · 11:00 STAY 2박 #숙소 #베이스캠프 #Kakao Place" [ref=e149]':
+                  - generic [ref=e150]:
+                    - generic [ref=e151]:
+                      - generic "Stay, 15:00" [ref=e154]:
+                        - generic [ref=e155]:
+                          - generic [ref=e156]: Stay
+                          - generic [ref=e157]: 15:00
+                          - generic [ref=e158]: Stay
+                      - heading "전주관광호텔" [level=3] [ref=e159]
+                      - paragraph [ref=e160]:
+                        - generic [ref=e161]: 2026년 7월 10일 체크인, 7월 12일 체크아웃.
+                        - generic [ref=e162]: 2026년 7월 10일 체크인, 7월 12일 체크아웃.
+                    - img "전주관광호텔" [ref=e164]
+                  - generic [ref=e165]:
+                    - generic [ref=e166]:
+                      - generic [ref=e167]:
+                        - paragraph [ref=e168]: 체크인
+                        - paragraph [ref=e169]: "7.10"
+                        - paragraph [ref=e170]: 금 · 15:00
+                      - generic [ref=e171]:
+                        - paragraph [ref=e172]: 체크아웃
+                        - paragraph [ref=e173]: "7.12"
+                        - paragraph [ref=e174]: 일 · 11:00
+                    - generic [ref=e175]:
+                      - generic [ref=e176]: STAY
+                      - generic [ref=e177]: 2박
+                  - generic [ref=e178]:
+                    - generic [ref=e180]: "#숙소"
+                    - generic [ref=e182]: "#베이스캠프"
+                    - generic [ref=e184]: "#Kakao Place"
+                - link "전주관광호텔 카카오맵 열기" [ref=e186] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/2126483278
+                  - img [ref=e187]
+        - generic [ref=e188]:
+          - generic [ref=e190]:
+            - generic [ref=e191]: "07"
+            - generic [ref=e192]: "11"
+          - generic [ref=e194]:
+            - generic [ref=e196]:
+              - generic [ref=e197]:
+                - generic [ref=e201]: ME
+                - paragraph [ref=e202]: 09:00
+              - article [ref=e203]:
+                - 'button "Meal, 09:00 아침밥 후보 · 전주현대옥 전주현대옥 남부시장점에서 콩나물국밥으로 아침 시작. 전주현대옥 남부시장점 #아침 #콩나물국밥 #후보1" [ref=e204]':
+                  - generic [ref=e205]:
+                    - generic [ref=e206]:
+                      - generic "Meal, 09:00" [ref=e209]:
+                        - generic [ref=e210]:
+                          - generic [ref=e211]: Meal
+                          - generic [ref=e212]: 09:00
+                          - generic [ref=e213]: Meal
+                      - heading "아침밥 후보 · 전주현대옥" [level=3] [ref=e214]:
+                        - generic [ref=e215]:
+                          - generic [ref=e216]: 아침밥
+                          - generic [ref=e218]: 후보
+                          - generic [ref=e220]: ·
+                        - text: 전주현대옥
+                      - paragraph [ref=e222]:
+                        - generic [ref=e223]: 전주현대옥 남부시장점에서 콩나물국밥으로 아침 시작.
+                        - generic [ref=e224]: 전주현대옥 남부시장점에서 콩나물국밥으로 아침 시작.
+                    - img "전주현대옥 남부시장점" [ref=e226]
+                  - generic [ref=e227]:
+                    - generic [ref=e229]: "#아침"
+                    - generic [ref=e231]: "#콩나물국밥"
+                    - generic [ref=e233]: "#후보1"
+                - link "전주현대옥 남부시장점 카카오맵 열기" [ref=e235] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/14594702
+                  - img [ref=e236]
+            - generic [ref=e238]:
+              - generic [ref=e239]:
+                - generic [ref=e243]: ME
+                - paragraph [ref=e244]: 09:00
+              - article [ref=e245]:
+                - 'button "Meal, 09:00 아침밥 후보 · 조점례남문피순대 현대옥 대신 선택할 수 있는 남부시장 피순대 아침 후보. 조점례남문피순대 #아침 #피순대 #후보2" [ref=e246]':
+                  - generic [ref=e247]:
+                    - generic [ref=e248]:
+                      - generic "Meal, 09:00" [ref=e251]:
+                        - generic [ref=e252]:
+                          - generic [ref=e253]: Meal
+                          - generic [ref=e254]: 09:00
+                          - generic [ref=e255]: Meal
+                      - heading "아침밥 후보 · 조점례남문피순대" [level=3] [ref=e256]:
+                        - generic [ref=e257]:
+                          - generic [ref=e258]: 아침밥
+                          - generic [ref=e260]: 후보
+                          - generic [ref=e262]: ·
+                        - text: 조점례남문피순대
+                      - paragraph [ref=e264]:
+                        - generic [ref=e265]: 현대옥 대신 선택할 수 있는 남부시장 피순대 아침 후보.
+                        - generic [ref=e266]: 현대옥 대신 선택할 수 있는 남부시장 피순대 아침 후보.
+                    - img "조점례남문피순대" [ref=e268]
+                  - generic [ref=e269]:
+                    - generic [ref=e271]: "#아침"
+                    - generic [ref=e273]: "#피순대"
+                    - generic [ref=e275]: "#후보2"
+                - link "조점례남문피순대 카카오맵 열기" [ref=e277] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/10186580
+                  - img [ref=e278]
+            - generic [ref=e280]:
+              - generic [ref=e281]:
+                - generic [ref=e285]: SP
+                - paragraph [ref=e286]: 10:00
+              - article [ref=e287]:
+                - 'button "Plan, 10:00 풍남문 남부시장 근처에서 풍남문을 보며 한옥마을 동선으로 진입. 풍남문 #풍남문 #산책 #동선" [ref=e288]':
+                  - generic [ref=e289]:
+                    - generic [ref=e290]:
+                      - generic "Plan, 10:00" [ref=e293]:
+                        - generic [ref=e294]:
+                          - generic [ref=e295]: Plan
+                          - generic [ref=e296]: 10:00
+                          - generic [ref=e297]: Plan
+                      - heading "풍남문" [level=3] [ref=e298]
+                      - paragraph [ref=e299]:
+                        - generic [ref=e300]: 남부시장 근처에서 풍남문을 보며 한옥마을 동선으로 진입.
+                        - generic [ref=e301]: 남부시장 근처에서 풍남문을 보며 한옥마을 동선으로 진입.
+                    - img "풍남문" [ref=e303]
+                  - generic [ref=e304]:
+                    - generic [ref=e306]: "#풍남문"
+                    - generic [ref=e308]: "#산책"
+                    - generic [ref=e310]: "#동선"
+                - link "풍남문 카카오맵 열기" [ref=e312] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/8138264
+                  - img [ref=e313]
+            - generic [ref=e315]:
+              - generic [ref=e316]:
+                - generic [ref=e320]: SP
+                - paragraph [ref=e321]: 10:30
+              - article [ref=e322]:
+                - 'button "Plan, 10:30 전동성당 전동성당 앞에서 잠깐 머물며 사진과 주변 골목을 둘러본다. 전동성당 #전동성당 #사진 #한옥마을" [ref=e323]':
+                  - generic [ref=e324]:
+                    - generic [ref=e325]:
+                      - generic "Plan, 10:30" [ref=e328]:
+                        - generic [ref=e329]:
+                          - generic [ref=e330]: Plan
+                          - generic [ref=e331]: 10:30
+                          - generic [ref=e332]: Plan
+                      - heading "전동성당" [level=3] [ref=e333]
+                      - paragraph [ref=e334]:
+                        - generic [ref=e335]: 전동성당 앞에서 잠깐 머물며 사진과 주변 골목을 둘러본다.
+                        - generic [ref=e336]: 전동성당 앞에서 잠깐 머물며 사진과 주변 골목을 둘러본다.
+                    - img "전동성당" [ref=e338]
+                  - generic [ref=e339]:
+                    - generic [ref=e341]: "#전동성당"
+                    - generic [ref=e343]: "#사진"
+                    - generic [ref=e345]: "#한옥마을"
+                - link "전동성당 카카오맵 열기" [ref=e347] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/12760599
+                  - img [ref=e348]
+            - generic [ref=e350]:
+              - generic [ref=e351]:
+                - generic [ref=e355]: SP
+                - paragraph [ref=e356]: 11:30
+              - article [ref=e357]:
+                - 'button "Plan, 11:30 경기전 한옥마을 중심에서 경기전 관람. 점심 전 여유 있게 걷는 구간. 경기전 #경기전 #관람 #산책" [ref=e358]':
+                  - generic [ref=e359]:
+                    - generic [ref=e360]:
+                      - generic "Plan, 11:30" [ref=e363]:
+                        - generic [ref=e364]:
+                          - generic [ref=e365]: Plan
+                          - generic [ref=e366]: 11:30
+                          - generic [ref=e367]: Plan
+                      - heading "경기전" [level=3] [ref=e368]
+                      - paragraph [ref=e369]:
+                        - generic [ref=e370]: 한옥마을 중심에서 경기전 관람. 점심 전 여유 있게 걷는 구간.
+                        - generic [ref=e371]: 한옥마을 중심에서 경기전 관람. 점심 전 여유 있게 걷는 구간.
+                    - img "경기전" [ref=e373]
+                  - generic [ref=e374]:
+                    - generic [ref=e376]: "#경기전"
+                    - generic [ref=e378]: "#관람"
+                    - generic [ref=e380]: "#산책"
+                - link "경기전 카카오맵 열기" [ref=e382] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/10170551
+                  - img [ref=e383]
+            - generic [ref=e385]:
+              - generic [ref=e386]:
+                - generic [ref=e390]: SP
+                - paragraph [ref=e391]: 12:30
+              - article [ref=e392]:
+                - 'button "Plan, 12:30 전주한옥마을 점심 시간대 한옥마을을 중심으로 식사, 카페, 골목 구경을 묶는다. 전주한옥마을 #한옥마을 #점심 #골목" [ref=e393]':
+                  - generic [ref=e394]:
+                    - generic [ref=e395]:
+                      - generic "Plan, 12:30" [ref=e398]:
+                        - generic [ref=e399]:
+                          - generic [ref=e400]: Plan
+                          - generic [ref=e401]: 12:30
+                          - generic [ref=e402]: Plan
+                      - heading "전주한옥마을" [level=3] [ref=e403]
+                      - paragraph [ref=e404]:
+                        - generic [ref=e405]: 점심 시간대 한옥마을을 중심으로 식사, 카페, 골목 구경을 묶는다.
+                        - generic [ref=e406]: 점심 시간대 한옥마을을 중심으로 식사, 카페, 골목 구경을 묶는다.
+                    - img "전주한옥마을" [ref=e408]
+                  - generic [ref=e409]:
+                    - generic [ref=e411]: "#한옥마을"
+                    - generic [ref=e413]: "#점심"
+                    - generic [ref=e415]: "#골목"
+                - link "전주한옥마을 카카오맵 열기" [ref=e417] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/10731896
+                  - img [ref=e418]
+            - generic [ref=e420]:
+              - generic [ref=e421]:
+                - generic [ref=e425]: SP
+                - paragraph [ref=e426]: 15:30
+              - article [ref=e427]:
+                - 'button "Plan, 15:30 오목대 오후에는 오목대로 올라 전주한옥마을을 내려다보는 산책 코스. 오목대 #오목대 #전망 #산책" [ref=e428]':
+                  - generic [ref=e429]:
+                    - generic [ref=e430]:
+                      - generic "Plan, 15:30" [ref=e433]:
+                        - generic [ref=e434]:
+                          - generic [ref=e435]: Plan
+                          - generic [ref=e436]: 15:30
+                          - generic [ref=e437]: Plan
+                      - heading "오목대" [level=3] [ref=e438]
+                      - paragraph [ref=e439]:
+                        - generic [ref=e440]: 오후에는 오목대로 올라 전주한옥마을을 내려다보는 산책 코스.
+                        - generic [ref=e441]: 오후에는 오목대로 올라 전주한옥마을을 내려다보는 산책 코스.
+                    - img "오목대" [ref=e443]
+                  - generic [ref=e444]:
+                    - generic [ref=e446]: "#오목대"
+                    - generic [ref=e448]: "#전망"
+                    - generic [ref=e450]: "#산책"
+                - link "오목대 카카오맵 열기" [ref=e452] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/8458699
+                  - img [ref=e453]
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - generic [ref=e460]: SP
+                - paragraph [ref=e461]: 17:30
+              - article [ref=e462]:
+                - 'button "Plan, 17:30 전주덕진공원 해질 무렵 덕진공원으로 이동해 연못 주변을 걷고 쉬어간다. 전주덕진공원 #덕진공원 #산책 #휴식" [ref=e463]':
+                  - generic [ref=e464]:
+                    - generic [ref=e465]:
+                      - generic "Plan, 17:30" [ref=e468]:
+                        - generic [ref=e469]:
+                          - generic [ref=e470]: Plan
+                          - generic [ref=e471]: 17:30
+                          - generic [ref=e472]: Plan
+                      - heading "전주덕진공원" [level=3] [ref=e473]
+                      - paragraph [ref=e474]:
+                        - generic [ref=e475]: 해질 무렵 덕진공원으로 이동해 연못 주변을 걷고 쉬어간다.
+                        - generic [ref=e476]: 해질 무렵 덕진공원으로 이동해 연못 주변을 걷고 쉬어간다.
+                    - img "전주덕진공원" [ref=e478]
+                  - generic [ref=e479]:
+                    - generic [ref=e481]: "#덕진공원"
+                    - generic [ref=e483]: "#산책"
+                    - generic [ref=e485]: "#휴식"
+                - link "전주덕진공원 카카오맵 열기" [ref=e487] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/27603721
+                  - img [ref=e488]
+            - generic [ref=e490]:
+              - generic [ref=e491]:
+                - generic [ref=e495]: ME
+                - paragraph [ref=e496]: 19:00
+              - article [ref=e497]:
+                - 'button "Meal, 19:00 진미집 본점 저녁은 진미집 본점. 연탄불고기와 김밥쌈으로 하루를 마무리. 진미집 본점 #저녁 #노포 #연탄불고기" [ref=e498]':
+                  - generic [ref=e499]:
+                    - generic [ref=e500]:
+                      - generic "Meal, 19:00" [ref=e503]:
+                        - generic [ref=e504]:
+                          - generic [ref=e505]: Meal
+                          - generic [ref=e506]: 19:00
+                          - generic [ref=e507]: Meal
+                      - heading "진미집 본점" [level=3] [ref=e508]:
+                        - generic [ref=e510]: 진미집
+                        - text: 본점
+                      - paragraph [ref=e512]:
+                        - generic [ref=e513]: 저녁은 진미집 본점. 연탄불고기와 김밥쌈으로 하루를 마무리.
+                        - generic [ref=e514]: 저녁은 진미집 본점. 연탄불고기와 김밥쌈으로 하루를 마무리.
+                    - img "진미집 본점" [ref=e516]
+                  - generic [ref=e517]:
+                    - generic [ref=e519]: "#저녁"
+                    - generic [ref=e521]: "#노포"
+                    - generic [ref=e523]: "#연탄불고기"
+                - link "진미집 본점 카카오맵 열기" [ref=e525] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/10082639
+                  - img [ref=e526]
+            - generic [ref=e528]:
+              - generic [ref=e529]:
+                - generic [ref=e533]: ST
+                - paragraph [ref=e534]: 21:00
+              - article [ref=e535]:
+                - 'button "Stay, 21:00 숙소 복귀 또는 더 먹기 컨디션에 따라 전주관광호텔로 복귀하거나 근처에서 야식을 더한다. 전주관광호텔 #숙소 #야식 #선택" [ref=e536]':
+                  - generic [ref=e537]:
+                    - generic [ref=e538]:
+                      - generic "Stay, 21:00" [ref=e541]:
+                        - generic [ref=e542]:
+                          - generic [ref=e543]: Stay
+                          - generic [ref=e544]: 21:00
+                          - generic [ref=e545]: Stay
+                      - heading "숙소 복귀 또는 더 먹기" [level=3] [ref=e546]:
+                        - generic [ref=e547]:
+                          - generic [ref=e548]: 숙소
+                          - generic [ref=e550]: 복귀
+                          - generic [ref=e552]: 또는
+                          - generic [ref=e554]: 더
+                        - text: 먹기
+                      - paragraph [ref=e556]:
+                        - generic [ref=e557]: 컨디션에 따라 전주관광호텔로 복귀하거나 근처에서 야식을 더한다.
+                        - generic [ref=e558]: 컨디션에 따라 전주관광호텔로 복귀하거나 근처에서 야식을 더한다.
+                    - img "전주관광호텔" [ref=e560]
+                  - generic [ref=e561]:
+                    - generic [ref=e563]: "#숙소"
+                    - generic [ref=e565]: "#야식"
+                    - generic [ref=e567]: "#선택"
+                - link "전주관광호텔 카카오맵 열기" [ref=e569] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/2126483278
+                  - img [ref=e570]
+        - generic [ref=e571]:
+          - generic [ref=e573]:
+            - generic [ref=e574]: "07"
+            - generic [ref=e575]: "12"
+          - generic [ref=e577]:
+            - generic [ref=e579]:
+              - generic [ref=e580]:
+                - generic [ref=e584]: ME
+                - paragraph [ref=e585]: 10:30
+              - article [ref=e586]:
+                - 'button "Meal, 10:30 자매갈비전골 전주 마지막 날 오전에는 자매갈비전골에서 든든하게 시작. 자매갈비전골 #오전 #갈비전골 #식사" [ref=e587]':
+                  - generic [ref=e588]:
+                    - generic [ref=e589]:
+                      - generic "Meal, 10:30" [ref=e592]:
+                        - generic [ref=e593]:
+                          - generic [ref=e594]: Meal
+                          - generic [ref=e595]: 10:30
+                          - generic [ref=e596]: Meal
+                      - heading "자매갈비전골" [level=3] [ref=e597]
+                      - paragraph [ref=e598]:
+                        - generic [ref=e599]: 전주 마지막 날 오전에는 자매갈비전골에서 든든하게 시작.
+                        - generic [ref=e600]: 전주 마지막 날 오전에는 자매갈비전골에서 든든하게 시작.
+                    - img "자매갈비전골" [ref=e602]
+                  - generic [ref=e603]:
+                    - generic [ref=e605]: "#오전"
+                    - generic [ref=e607]: "#갈비전골"
+                    - generic [ref=e609]: "#식사"
+                - link "자매갈비전골 카카오맵 열기" [ref=e611] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/11171115
+                  - img [ref=e612]
+            - generic [ref=e614]:
+              - generic [ref=e615]:
+                - generic [ref=e619]: TX
+                - paragraph [ref=e620]: 13:18
+              - article [ref=e621]:
+                - 'button "KTX, KTX 510, 15호차 전주역 출발 · KTX 510 전주에서 용산으로 돌아오는 이동. 15호차 1A, 1B 좌석. 전주역 #KTX #교통 #귀가" [ref=e622]':
+                  - generic [ref=e623]:
+                    - generic [ref=e624]:
+                      - generic "KTX, KTX 510, 15호차" [ref=e627]:
+                        - generic [ref=e628]:
+                          - generic [ref=e629]: KTX
+                          - generic [ref=e630]: KTX 510
+                          - generic [ref=e631]: 15호차
+                          - generic [ref=e632]: KTX
+                      - heading "전주역 출발 · KTX 510" [level=3] [ref=e633]:
+                        - generic [ref=e634]:
+                          - generic [ref=e635]: 전주역
+                          - generic [ref=e637]: 출발
+                          - generic [ref=e639]: ·
+                        - text: KTX 510
+                      - paragraph [ref=e641]:
+                        - generic [ref=e642]: 전주에서 용산으로 돌아오는 이동. 15호차 1A, 1B 좌석.
+                        - generic [ref=e643]: 전주에서 용산으로 돌아오는 이동. 15호차 1A, 1B 좌석.
+                    - img "전주역" [ref=e645]
+                  - generic [ref=e646]:
+                    - generic [ref=e648]: "#KTX"
+                    - generic [ref=e650]: "#교통"
+                    - generic [ref=e652]: "#귀가"
+                  - article [ref=e654]:
+                    - generic [ref=e655]:
+                      - generic [ref=e656]:
+                        - paragraph [ref=e657]: train
+                        - heading "KTX 510" [level=2] [ref=e658]
+                      - generic [ref=e659]:
+                        - paragraph [ref=e660]: seat
+                        - paragraph [ref=e661]: 1A · 1B
+                    - generic [ref=e662]:
+                      - generic [ref=e663]:
+                        - paragraph [ref=e664]: 전주
+                        - paragraph [ref=e665]: 13:18
+                      - paragraph [ref=e666]: →
+                      - generic [ref=e667]:
+                        - paragraph [ref=e668]: 용산
+                        - paragraph [ref=e669]: 15:03
+                    - paragraph [ref=e670]: 15호차 · 2026-07-12
+                - link "전주역 카카오맵 열기" [ref=e672] [cursor=pointer]:
+                  - /url: https://place.map.kakao.com/8508642
+                  - img [ref=e673]

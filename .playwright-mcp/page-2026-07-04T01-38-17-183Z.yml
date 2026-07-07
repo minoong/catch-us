@@ -1,0 +1,193 @@
+- main [ref=f10e2]:
+  - generic [ref=f10e3]:
+    - generic [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - link "여행 소개로 돌아가기" [ref=f10e6] [cursor=pointer]:
+          - /url: /trip/jeonju-2026
+          - text: ←
+        - generic [ref=f10e7]:
+          - paragraph [ref=f10e8]: Jeonju 2026
+          - heading "전주로 넘어가는 밤" [level=1] [ref=f10e9]
+      - generic [ref=f10e11]:
+        - generic [ref=f10e12]:
+          - img
+          - generic "용산역" [ref=f10e14]: KTX
+          - generic "전주역" [ref=f10e15]: KTX
+          - generic "전주관광호텔호텔" [ref=f10e16]: STAY
+        - generic:
+          - generic: 용산역
+          - generic: fallback
+      - navigation "여행 날짜 필터" [ref=f10e19]:
+        - button "전체 일정 보기" [pressed] [ref=f10e20]:
+          - generic [ref=f10e21]: 전체
+        - button "07.10 일정 보기" [ref=f10e22]:
+          - generic [ref=f10e23]: "07.10"
+        - button "07.11 일정 보기" [ref=f10e24]:
+          - generic [ref=f10e25]: "07.11"
+        - button "07.12 일정 보기" [ref=f10e26]:
+          - generic [ref=f10e27]: "07.12"
+    - region "날짜별 여행 일정" [ref=f10e31]:
+      - heading "날 짜 별 일 정" [level=2] [ref=f10e32]:
+        - generic [ref=f10e33]:
+          - generic [ref=f10e34]: 날
+          - generic [ref=f10e35]: 짜
+          - generic [ref=f10e36]: 별
+          - generic [ref=f10e38]: 일
+          - generic [ref=f10e39]: 정
+      - list [ref=f10e40]:
+        - listitem [ref=f10e41]:
+          - generic [ref=f10e42]:
+            - generic [ref=f10e43]: 20:09
+            - generic [ref=f10e44]: TX
+          - article [ref=f10e46]:
+            - button "KTX 용산역 출발 · KTX 521 20:09-21:47 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석." [ref=f10e50]:
+              - generic [ref=f10e51]:
+                - generic [ref=f10e52]:
+                  - paragraph [ref=f10e53]:
+                    - generic [ref=f10e54]: KTX
+                  - heading "용산역 출발 · KTX 521" [level=2] [ref=f10e55]:
+                    - generic [ref=f10e56]: 용산역 출발 · KTX 521
+                - generic [ref=f10e57]: 20:09-21:47
+              - paragraph [ref=f10e58]:
+                - generic [ref=f10e59]: 용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석.
+            - generic [ref=f10e63]:
+              - generic [ref=f10e64]:
+                - generic [ref=f10e65]:
+                  - paragraph [ref=f10e66]: Train
+                  - paragraph [ref=f10e67]: KTX 521
+                - generic [ref=f10e68]:
+                  - paragraph [ref=f10e69]: Seat
+                  - paragraph [ref=f10e70]: 14호차 · 1A · 1B
+              - generic [ref=f10e71]:
+                - generic [ref=f10e72]:
+                  - paragraph [ref=f10e73]: From
+                  - paragraph [ref=f10e74]: 용산
+                - generic [ref=f10e79]:
+                  - paragraph [ref=f10e80]: To
+                  - paragraph [ref=f10e81]: 전주
+            - generic [ref=f10e85]:
+              - generic [ref=f10e86]:
+                - generic [ref=f10e87]: KTX
+                - generic [ref=f10e88]: 교통
+                - generic [ref=f10e89]: 출발
+              - link "Kakao Place 열기" [ref=f10e90] [cursor=pointer]:
+                - /url: https://place.map.kakao.com/8014275
+        - listitem [ref=f10e91]:
+          - generic [ref=f10e92]:
+            - generic [ref=f10e93]: 21:47
+            - generic [ref=f10e94]: AR
+          - article [ref=f10e96]:
+            - button "역 전주역 도착 21:47 전주 여행의 첫 도착 지점." [ref=f10e100]:
+              - generic [ref=f10e101]:
+                - generic [ref=f10e102]:
+                  - paragraph [ref=f10e103]:
+                    - generic [ref=f10e104]: 역
+                  - heading "전주역 도착" [level=2] [ref=f10e105]:
+                    - generic [ref=f10e106]: 전주역 도착
+                - generic [ref=f10e107]: 21:47
+              - paragraph [ref=f10e108]:
+                - generic [ref=f10e109]: 전주 여행의 첫 도착 지점.
+            - generic [ref=f10e113]:
+              - generic [ref=f10e114]:
+                - paragraph [ref=f10e115]: 역
+                - paragraph [ref=f10e116]: 전주역
+              - generic [ref=f10e117]:
+                - paragraph [ref=f10e118]: Time
+                - paragraph [ref=f10e119]: 21:47
+            - generic [ref=f10e123]:
+              - generic [ref=f10e124]:
+                - generic [ref=f10e125]: 도착
+                - generic [ref=f10e126]: 지도
+              - link "Kakao Place 열기" [ref=f10e127] [cursor=pointer]:
+                - /url: https://place.map.kakao.com/8508642
+        - listitem [ref=f10e128]:
+          - generic [ref=f10e129]:
+            - generic [ref=f10e130]: 15:00
+            - generic [ref=f10e131]: ST
+          - article [ref=f10e133]:
+            - button "숙소 전주관광호텔호텔 15:00-2026-07-12 11:00 2026년 7월 10일 체크인, 7월 12일 체크아웃." [ref=f10e137]:
+              - generic [ref=f10e138]:
+                - generic [ref=f10e139]:
+                  - paragraph [ref=f10e140]:
+                    - generic [ref=f10e141]: 숙소
+                  - heading "전주관광호텔호텔" [level=2] [ref=f10e142]:
+                    - generic [ref=f10e143]: 전주관광호텔호텔
+                - generic [ref=f10e144]: 15:00-2026-07-12 11:00
+              - paragraph [ref=f10e145]:
+                - generic [ref=f10e146]: 2026년 7월 10일 체크인, 7월 12일 체크아웃.
+            - generic [ref=f10e150]:
+              - generic [ref=f10e151]:
+                - paragraph [ref=f10e152]: 숙소
+                - paragraph [ref=f10e153]: 전주관광호텔호텔
+              - generic [ref=f10e154]:
+                - paragraph [ref=f10e155]: Time
+                - paragraph [ref=f10e156]: 15:00 - 2026-07-12 11:00
+            - generic [ref=f10e160]:
+              - generic [ref=f10e161]:
+                - generic [ref=f10e162]: 숙소
+                - generic [ref=f10e163]: 베이스캠프
+                - generic [ref=f10e164]: Kakao Place
+              - link "Kakao Place 열기" [ref=f10e165] [cursor=pointer]:
+                - /url: https://place.map.kakao.com/2126483278
+        - listitem [ref=f10e166]:
+          - generic [ref=f10e167]:
+            - generic [ref=f10e168]: 미정
+            - generic [ref=f10e169]: SP
+          - article [ref=f10e171]:
+            - button "장소 전주에서 보내는 하루 미정 7월 11일의 장소, 교통, 식사 동선은 정리되는 대로 이 일정 데이터에 직접 반영한다." [ref=f10e175]:
+              - generic [ref=f10e176]:
+                - generic [ref=f10e177]:
+                  - paragraph [ref=f10e178]:
+                    - generic [ref=f10e179]: 장소
+                  - heading "전주에서 보내는 하루" [level=2] [ref=f10e180]:
+                    - generic [ref=f10e181]: 전주에서 보내는 하루
+                - generic [ref=f10e182]: 미정
+              - paragraph [ref=f10e183]:
+                - generic [ref=f10e184]: 7월 11일의 장소, 교통, 식사 동선은 정리되는 대로 이 일정 데이터에 직접 반영한다.
+            - generic [ref=f10e188]:
+              - generic [ref=f10e189]:
+                - paragraph [ref=f10e190]: 장소
+                - paragraph [ref=f10e191]: 장소 정리중
+              - generic [ref=f10e192]:
+                - paragraph [ref=f10e193]: Time
+                - paragraph [ref=f10e194]: 미정
+            - generic [ref=f10e199]:
+              - generic [ref=f10e200]: 전주
+              - generic [ref=f10e201]: 동선 정리
+        - listitem [ref=f10e202]:
+          - generic [ref=f10e203]:
+            - generic [ref=f10e204]: 13:18
+            - generic [ref=f10e205]: TX
+          - article [ref=f10e207]:
+            - button "KTX 전주역 출발 · KTX 510 13:18-15:03 전주에서 용산으로 돌아오는 이동. 15호차 1A, 1B 좌석." [ref=f10e211]:
+              - generic [ref=f10e212]:
+                - generic [ref=f10e213]:
+                  - paragraph [ref=f10e214]:
+                    - generic [ref=f10e215]: KTX
+                  - heading "전주역 출발 · KTX 510" [level=2] [ref=f10e216]:
+                    - generic [ref=f10e217]: 전주역 출발 · KTX 510
+                - generic [ref=f10e218]: 13:18-15:03
+              - paragraph [ref=f10e219]:
+                - generic [ref=f10e220]: 전주에서 용산으로 돌아오는 이동. 15호차 1A, 1B 좌석.
+            - generic [ref=f10e224]:
+              - generic [ref=f10e225]:
+                - generic [ref=f10e226]:
+                  - paragraph [ref=f10e227]: Train
+                  - paragraph [ref=f10e228]: KTX 510
+                - generic [ref=f10e229]:
+                  - paragraph [ref=f10e230]: Seat
+                  - paragraph [ref=f10e231]: 15호차 · 1A · 1B
+              - generic [ref=f10e232]:
+                - generic [ref=f10e233]:
+                  - paragraph [ref=f10e234]: From
+                  - paragraph [ref=f10e235]: 전주
+                - generic [ref=f10e240]:
+                  - paragraph [ref=f10e241]: To
+                  - paragraph [ref=f10e242]: 용산
+            - generic [ref=f10e246]:
+              - generic [ref=f10e247]:
+                - generic [ref=f10e248]: KTX
+                - generic [ref=f10e249]: 교통
+                - generic [ref=f10e250]: 귀가
+              - link "Kakao Place 열기" [ref=f10e251] [cursor=pointer]:
+                - /url: https://place.map.kakao.com/8508642

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전주 여행 1뎁스 Apple Bento v7</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050508;
+        --card: rgba(255, 255, 255, 0.075);
+        --card2: rgba(255, 255, 255, 0.12);
+        --line: rgba(255, 255, 255, 0.15);
+        --text: rgba(255, 255, 255, 0.96);
+        --muted: rgba(255, 255, 255, 0.62);
+        --warm: #ffb86b;
+        --rose: #fb7185;
+        --cyan: #67e8f9;
+        --violet: #c4b5fd;
+        --green: #86efac;
+        --ink: #10131c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: #161616;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 0%, rgba(251, 113, 133, 0.28), transparent 24rem),
+          radial-gradient(circle at 84% 8%, rgba(103, 232, 249, 0.2), transparent 24rem),
+          #161616;
+        color: var(--text);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      .stage {
+        display: grid;
+        min-height: 100vh;
+        place-items: start center;
+        padding: 18px 10px 60px;
+      }
+
+      .phone {
+        position: relative;
+        overflow: hidden;
+        width: min(100%, 412px);
+        min-height: 1160px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 42px;
+        background:
+          radial-gradient(circle at 50% -4%, rgba(255, 184, 107, 0.22), transparent 18rem),
+          linear-gradient(180deg, #090a12, var(--bg) 72%);
+        box-shadow:
+          0 34px 120px rgba(0, 0, 0, 0.58),
+          inset 0 0 0 8px rgba(255, 255, 255, 0.035);
+      }
+
+      .phone::before {
+        position: absolute;
+        inset: -130px;
+        background:
+          conic-gradient(from 120deg, transparent, rgba(103, 232, 249, 0.12), transparent 30%),
+          conic-gradient(from 280deg, transparent, rgba(251, 113, 133, 0.16), transparent 32%);
+        animation: aurora 22s linear infinite;
+        content: "";
+      }
+
+      .phone::after {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.13;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+        content: "";
+      }
+
+      @keyframes aurora {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      .screen {
+        position: relative;
+        z-index: 1;
+        min-height: 1160px;
+        padding: 14px 14px 96px;
+      }
+
+      .status {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 4px 12px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .eyebrow {
+        margin-bottom: 10px;
+        color: var(--warm);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.58;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 650px;
+        border: 1px solid var(--line);
+        border-radius: 36px;
+        background:
+          radial-gradient(circle at 50% 14%, rgba(255, 184, 107, 0.22), transparent 15rem),
+          radial-gradient(circle at 82% 26%, rgba(103, 232, 249, 0.16), transparent 13rem),
+          rgba(255, 255, 255, 0.06);
+        padding: 20px;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        background-size: 38px 38px;
+        mask-image: radial-gradient(circle at top, black, transparent 72%);
+        content: "";
+      }
+
+      .pill-top {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        margin: -2px -2px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        background: rgba(7, 7, 10, 0.6);
+        padding: 6px;
+        scrollbar-width: none;
+        backdrop-filter: blur(24px);
+      }
+
+      .pill-top::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pill-top button {
+        flex: 0 0 auto;
+        min-height: 38px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.68);
+        padding: 0 13px;
+        font-weight: 950;
+      }
+
+      .pill-top .active {
+        background: linear-gradient(135deg, var(--warm), var(--rose));
+        color: #10131c;
+      }
+
+      h1 {
+        position: relative;
+        z-index: 2;
+        max-width: 330px;
+        font-size: 62px;
+        line-height: 0.86;
+        letter-spacing: -0.095em;
+      }
+
+      .gradient {
+        display: inline-block;
+        background: linear-gradient(95deg, #fff, #fed7aa 32%, #fb7185 62%, #67e8f9);
+        background-size: 240% 100%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: shine 4.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 100% 0;
+        }
+      }
+
+      .hero-sub {
+        position: relative;
+        z-index: 2;
+        max-width: 292px;
+        margin-top: 14px;
+      }
+
+      .iphone-stage {
+        position: absolute;
+        left: 50%;
+        bottom: -82px;
+        width: 252px;
+        height: 430px;
+        transform: translateX(-50%) rotate(-3deg);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 42px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03)),
+          #10131c;
+        box-shadow:
+          0 40px 100px rgba(0, 0, 0, 0.48),
+          0 0 80px rgba(251, 113, 133, 0.18);
+      }
+
+      .iphone-stage::before {
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        width: 74px;
+        height: 22px;
+        border-radius: 999px;
+        background: #050508;
+        transform: translateX(-50%);
+        content: "";
+      }
+
+      .iphone-screen {
+        position: absolute;
+        inset: 18px 14px;
+        overflow: hidden;
+        border-radius: 30px;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 184, 107, 0.26), transparent 9rem),
+          #080b12;
+        padding: 28px 14px 14px;
+      }
+
+      .mini-ticket {
+        overflow: hidden;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.94);
+        color: #111827;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+        animation: floatTicket 4.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes floatTicket {
+        to {
+          transform: translateY(-8px) rotate(1deg);
+        }
+      }
+
+      .ticket-head {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 14px 10px;
+        border-bottom: 1px dashed rgba(17, 24, 39, 0.24);
+      }
+
+      .label {
+        color: #6b7280;
+        font-size: 9px;
+        font-weight: 950;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        margin-top: 4px;
+        font-size: 12px;
+        font-weight: 950;
+      }
+
+      .route {
+        display: grid;
+        grid-template-columns: 1fr 24px 1fr;
+        gap: 6px;
+        align-items: center;
+        padding: 13px 14px 14px;
+      }
+
+      .station {
+        font-size: 22px;
+        font-weight: 950;
+        letter-spacing: -0.08em;
+      }
+
+      .time {
+        color: #6b7280;
+        font-size: 11px;
+        font-weight: 850;
+      }
+
+      .arrow {
+        color: #ef4444;
+        font-weight: 950;
+      }
+
+      .mini-stack {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .mini-row {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 10px;
+      }
+
+      .marquee {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        gap: 8px;
+        overflow: hidden;
+        margin: 22px -20px 0;
+        mask-image: linear-gradient(90deg, transparent, black 13%, black 87%, transparent);
+      }
+
+      .marquee-track {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 8px;
+        animation: marquee 22s linear infinite;
+      }
+
+      .marquee span,
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 31px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(7, 7, 10, 0.45);
+        padding: 7px 11px;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 11px;
+        font-weight: 850;
+        white-space: nowrap;
+        backdrop-filter: blur(18px);
+      }
+
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .bento-section {
+        margin-top: 14px;
+      }
+
+      .section-title {
+        padding: 18px 4px 12px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+        line-height: 0.96;
+        letter-spacing: -0.075em;
+      }
+
+      .bento {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .bento-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 156px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+          var(--card);
+        padding: 14px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      .bento-card.large {
+        grid-column: span 2;
+        min-height: 224px;
+      }
+
+      .bento-card.tall {
+        min-height: 232px;
+      }
+
+      .bento-card::before {
+        position: absolute;
+        inset: 0;
+        opacity: 0.7;
+        background:
+          radial-gradient(circle at 76% 16%, rgba(103, 232, 249, 0.16), transparent 9rem),
+          radial-gradient(circle at 18% 86%, rgba(251, 113, 133, 0.14), transparent 9rem);
+        content: "";
+      }
+
+      .bento-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .bento-title {
+        font-size: 17px;
+        font-weight: 950;
+        letter-spacing: -0.035em;
+      }
+
+      .map-mini {
+        position: absolute;
+        inset: auto 12px 12px 12px;
+        height: 126px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 22px;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          #09111f;
+        background-size: 24px 24px;
+      }
+
+      .route-line {
+        position: absolute;
+        left: 26px;
+        right: 38px;
+        top: 64px;
+        border-top: 2px dashed rgba(255, 255, 255, 0.6);
+        transform: rotate(-10deg);
+      }
+
+      .marker {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 50%;
+        background: var(--rose);
+        font-size: 13px;
+      }
+
+      .marker.a {
+        left: 18px;
+        top: 52px;
+        background: var(--cyan);
+      }
+
+      .marker.b {
+        right: 28px;
+        top: 34px;
+      }
+
+      .marker.c {
+        right: 78px;
+        bottom: 18px;
+        background: var(--warm);
+      }
+
+      .beam {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        bottom: 52px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--cyan), var(--rose), transparent);
+        filter: blur(0.4px);
+        animation: beam 2.6s ease-in-out infinite;
+      }
+
+      @keyframes beam {
+        50% {
+          transform: translateY(-16px);
+          opacity: 0.55;
+        }
+      }
+
+      .photo-orbit {
+        position: absolute;
+        inset: auto 14px 14px 14px;
+        height: 134px;
+      }
+
+      .photo {
+        position: absolute;
+        width: 96px;
+        height: 116px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 22px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent),
+          radial-gradient(circle at 44% 28%, rgba(255, 184, 107, 0.68), transparent 52%),
+          #334155;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+      }
+
+      .photo:nth-child(1) {
+        left: 0;
+        bottom: 0;
+        transform: rotate(-8deg);
+      }
+
+      .photo:nth-child(2) {
+        left: 50%;
+        bottom: 14px;
+        transform: translateX(-50%) rotate(4deg);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent),
+          radial-gradient(circle at 44% 28%, rgba(103, 232, 249, 0.68), transparent 52%),
+          #312e81;
+      }
+
+      .photo:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        transform: rotate(9deg);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent),
+          radial-gradient(circle at 44% 28%, rgba(251, 113, 133, 0.68), transparent 52%),
+          #7f1d1d;
+      }
+
+      .progress-ring {
+        position: absolute;
+        right: 16px;
+        bottom: 18px;
+        display: grid;
+        place-items: center;
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        background:
+          conic-gradient(var(--warm) 0 72%, rgba(255, 255, 255, 0.11) 72%),
+          rgba(255, 255, 255, 0.08);
+        font-weight: 950;
+      }
+
+      .progress-ring::before {
+        position: absolute;
+        inset: 9px;
+        border-radius: 50%;
+        background: #10131c;
+        content: "";
+      }
+
+      .progress-ring span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hotel-card {
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 20px;
+        background: rgba(7, 7, 10, 0.42);
+        padding: 12px;
+        backdrop-filter: blur(18px);
+      }
+
+      .cta {
+        position: sticky;
+        bottom: 14px;
+        z-index: 50;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .cta button {
+        min-height: 54px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        background: rgba(7, 7, 10, 0.72);
+        color: white;
+        padding: 0 16px;
+        font-weight: 950;
+        backdrop-filter: blur(24px);
+      }
+
+      .cta .primary {
+        background: linear-gradient(135deg, var(--warm), var(--rose));
+        color: #10131c;
+      }
+
+      .effect-note {
+        margin-top: 10px;
+        border: 1px solid rgba(134, 239, 172, 0.22);
+        border-radius: 24px;
+        background: rgba(134, 239, 172, 0.075);
+        padding: 13px;
+      }
+
+      @media (max-width: 430px) {
+        .stage {
+          padding: 0;
+        }
+
+        .phone {
+          width: 100%;
+          min-height: 100vh;
+          border: 0;
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <main class="phone">
+        <div class="screen">
+          <div class="status"><span>20:09</span><span>Jeonju / Intro</span></div>
+
+          <section class="hero">
+            <nav class="pill-top" aria-label="ReactBits PillNav">
+              <button class="active">Intro</button>
+              <button>Ticket</button>
+              <button>Map</button>
+              <button>Stay</button>
+            </nav>
+
+            <p class="eyebrow">Apple-like mobile story</p>
+            <h1>
+              <span class="gradient">전주로</span><br />
+              <span class="gradient">넘어가는</span><br />
+              <span class="gradient">밤</span>
+            </h1>
+            <p class="hero-sub muted">
+              KTX 티켓, 지도, 숙소, 일정이 하나의 모바일 여행 제품처럼 접히고 펼쳐지는 인트로.
+            </p>
+
+            <div class="marquee">
+              <div class="marquee-track">
+                <span>KTX 521</span>
+                <span>용산 20:09</span>
+                <span>전주 21:47</span>
+                <span>14호차 1A · 1B</span>
+                <span>전주관광호텔호텔</span>
+                <span>KTX 521</span>
+                <span>용산 20:09</span>
+                <span>전주 21:47</span>
+              </div>
+            </div>
+
+            <div class="iphone-stage">
+              <div class="iphone-screen">
+                <article class="mini-ticket">
+                  <div class="ticket-head">
+                    <div>
+                      <div class="label">train</div>
+                      <div class="value">KTX 521</div>
+                    </div>
+                    <div>
+                      <div class="label">seat</div>
+                      <div class="value">1A · 1B</div>
+                    </div>
+                  </div>
+                  <div class="route">
+                    <div>
+                      <div class="station">용산</div>
+                      <div class="time">20:09</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div style="text-align: right;">
+                      <div class="station">전주</div>
+                      <div class="time">21:47</div>
+                    </div>
+                  </div>
+                </article>
+                <div class="mini-stack">
+                  <div class="mini-row">
+                    <b>전주관광호텔호텔</b>
+                    <p class="muted">체크인 15:00</p>
+                  </div>
+                  <div class="mini-row">
+                    <b>2박 3일 일정</b>
+                    <p class="muted">날짜별 탐색 준비</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bento-section">
+            <div class="section-title">
+              <p class="eyebrow">Magic UI Bento Grid</p>
+              <h2>여행 정보를 살아있는 카드로</h2>
+              <p class="muted" style="margin-top: 8px;">
+                Bento Grid는 1뎁스의 핵심. 각 카드는 단순 정보가 아니라 움직이는 미니 장면이어야 함.
+              </p>
+            </div>
+
+            <div class="bento">
+              <article class="bento-card large">
+                <p class="eyebrow">route</p>
+                <div class="bento-title">서울에서 전주까지</div>
+                <p class="muted" style="margin-top: 6px;">AnimatedBeam + 지도 미리보기</p>
+                <div class="map-mini">
+                  <div class="route-line"></div>
+                  <div class="beam"></div>
+                  <div class="marker a">🚄</div>
+                  <div class="marker b">📍</div>
+                  <div class="marker c">🏨</div>
+                </div>
+              </article>
+
+              <article class="bento-card tall">
+                <p class="eyebrow">ticket</p>
+                <div class="bento-title">KTX 521</div>
+                <p class="muted" style="margin-top: 6px;">20:09 → 21:47</p>
+                <div class="progress-ring"><span>72%</span></div>
+              </article>
+
+              <article class="bento-card tall">
+                <p class="eyebrow">stay</p>
+                <div class="bento-title">전주관광호텔호텔</div>
+                <p class="muted" style="margin-top: 6px;">07.10 - 07.12</p>
+                <div class="hotel-card">
+                  <b>체크인 15:00</b>
+                  <p class="muted">체크아웃 11:00 · Kakao Place</p>
+                </div>
+              </article>
+
+              <article class="bento-card large">
+                <p class="eyebrow">photos</p>
+                <div class="bento-title">사진이 생기면 갤러리로 전환</div>
+                <p class="muted" style="margin-top: 6px;">ReactBits CircularGallery / Magic UI Marquee 후보</p>
+                <div class="photo-orbit">
+                  <div class="photo"></div>
+                  <div class="photo"></div>
+                  <div class="photo"></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="effect-note">
+              <h3>1뎁스 효과 매핑</h3>
+              <p class="muted" style="margin-top: 8px;">
+                Magic UI: Bento Grid, iPhone, Animated Grid Pattern, Marquee, Animated Beam, Backlight.
+                ReactBits: PillNav, SplitText, Silk/Noise, ScrollFloat. 2뎁스는 배민/쿠팡이츠식 고정 지도 + 일정 탐색.
+              </p>
+            </div>
+          </section>
+
+          <div class="cta">
+            <button class="primary">일정 탐색 열기</button>
+            <button>지도</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

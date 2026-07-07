@@ -1,0 +1,834 @@
+[     147ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[     172ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  294375ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  294405ms] [LOG] [Fast Refresh] done in 96ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  380264ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  380420ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  380535ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  380667ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  380768ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  380890ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:3318
+[  380891ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026?_rsc=_W0krzHJCjCssafb:0
+[  380918ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026?_rsc=_W0krzHJCjCssafb:0
+[  380955ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026?_rsc=_W0krzHJCjCssafb:0
+[  380959ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  381020ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  381050ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  381063ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  381071ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  381087ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[  381148ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  396767ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  396796ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  465542ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  465667ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  465667ms] [ERROR] ./apps/web/app/trip/_components/trip-bento-grid.tsx:16:10
+the name `BentoGrid` is defined multiple times
+  14 | import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+  15 | import { BorderBeam } from "@/components/magicui/border-beam";
+> 16 | import { BentoGrid } from "@/components/magicui/bento-grid";
+     |          ^^^^^^^^^
+  17 | import { Marquee } from "@/components/magicui/marquee";
+  18 |
+  19 | import type { Trip } from "../_data/trips";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-bento-grid.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  465775ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  465801ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  465846ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  465848ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  465849ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  465849ms] [ERROR] ./apps/web/app/trip/_components/trip-bento-grid.tsx:16:10
+the name `BentoGrid` is defined multiple times
+  14 | import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+  15 | import { BorderBeam } from "@/components/magicui/border-beam";
+> 16 | import { BentoGrid } from "@/components/magicui/bento-grid";
+     |          ^^^^^^^^^
+  17 | import { Marquee } from "@/components/magicui/marquee";
+  18 |
+  19 | import type { Trip } from "../_data/trips";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-bento-grid.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  465880ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  465880ms] [ERROR] ./apps/web/app/trip/_components/trip-bento-grid.tsx:16:10
+the name `BentoGrid` is defined multiple times
+  14 | import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+  15 | import { BorderBeam } from "@/components/magicui/border-beam";
+> 16 | import { BentoGrid } from "@/components/magicui/bento-grid";
+     |          ^^^^^^^^^
+  17 | import { Marquee } from "@/components/magicui/marquee";
+  18 |
+  19 | import type { Trip } from "../_data/trips";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-bento-grid.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  483763ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  483828ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  483844ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  483848ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  483849ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  483853ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  483897ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  483952ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  503860ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  503960ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  503972ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  503983ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  503988ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  503989ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  503992ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  504050ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  504092ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  536801ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  536858ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  536875ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  536880ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  536892ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  536896ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  536896ms] [ERROR] ./apps/web/app/trip/_components/trip-intro-page.tsx:4:1
+Module not found: Can't resolve './trip-story-stack'
+  2 | import { TripBentoGrid } from "./trip-bento-grid";
+  3 | import { TripHero } from "./trip-hero";
+> 4 | import { TripStoryStack } from "./trip-story-stack";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function TripIntroPage({ trip }: { trip: Trip }) {
+  7 |   return (
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  537057ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  537199ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  537215ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  537244ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  537246ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  537247ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  537280ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  558339ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  558450ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  558515ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  558529ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  558533ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  558535ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  558537ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  558580ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  558638ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  580089ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  580207ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  580262ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  580278ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  580307ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  580309ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  580310ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  580341ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  603094ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  603194ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  603208ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/trip/jeonju-2026:0
+[  603222ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/02ca_react-dom_0ntjfa7._.js:15305
+[  603252ms] Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx
+
+
+    at <unknown> (Error: ./apps/web/app/trip/_components/trip-hero.tsx:213:7)
+    at Object.getCompilationErrors (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/minwoo/workspaces/catch-us/node_modules/.pnpm/next@16.2.9_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/next/dist/server/base-server.js:1753:26)
+[  603253ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  603254ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  603286ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  615300ms] [ERROR] ./apps/web/app/trip/_components/trip-hero.tsx:213:7
+Expected corresponding JSX closing tag for <section>
+  211 |         </div>
+  212 |       </motion.div>
+> 213 |     </motion.section>
+      |       ^^^^^^^^^^^^^^
+  214 |   );
+  215 | }
+  216 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./apps/web/app/trip/_components/trip-hero.tsx
+    ./apps/web/app/trip/_components/trip-intro-page.tsx
+    ./apps/web/app/trip/[slug]/page.tsx @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1945
+[  615336ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  650820ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  651032ms] [LOG] [Fast Refresh] done in 247ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  651328ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  651338ms] [LOG] [Fast Refresh] done in 112ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_11z_9bq._.js:1226
+[  651457ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  651487ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  653283ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  675787ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  675825ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  684677ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  684722ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  686336ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  698102ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  698134ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  745095ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
+[  745124ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/0ly8_next_dist_1tgaskt._.js:2477
