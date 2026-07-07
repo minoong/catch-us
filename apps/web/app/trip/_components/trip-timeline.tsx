@@ -8,6 +8,12 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import Image from "next/image";
 
 import AnimatedList from "@/components/AnimatedList";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselIndicator,
+  CarouselItem,
+} from "@/components/motion-primitives/carousel";
 
 import { AnimatedShinyText } from "@repo/ui/components/animated-shiny-text";
 import { ComicText } from "@repo/ui/components/comic-text";
@@ -132,7 +138,15 @@ const timelineCardViewport = { amount: 0.28, once: true };
 
 interface ItineraryDayGroup {
   day: ItineraryItem["day"];
+  entries: TimelineEntry[];
   items: ItineraryItem[];
+}
+
+interface TimelineEntry {
+  day: ItineraryItem["day"];
+  id: string;
+  items: ItineraryItem[];
+  startsAt?: string;
 }
 
 export function TripTimeline({
@@ -263,7 +277,9 @@ function TimelineDaySection({
 }) {
   const activeIndex = Math.max(
     0,
-    group.items.findIndex((item) => item.id === activeItemId),
+    group.entries.findIndex((entry) =>
+      entry.items.some((item) => item.id === activeItemId),
+    ),
   );
 
   return (
@@ -282,20 +298,23 @@ function TimelineDaySection({
         displayScrollbar={false}
         disableItemScale
         enableArrowNavigation={false}
-        getItemKey={(item) => item.id}
+        getItemKey={(entry) => entry.id}
         initialSelectedIndex={activeIndex}
         itemClassName="timeline-row"
         itemViewportAmount={0.18}
-        items={group.items}
+        items={group.entries}
         listClassName="overflow-visible"
-        onItemSelect={(item) => onActiveItemChange(item.id)}
-        renderItem={(item, index, selected) => (
+        onItemSelect={(entry) => onActiveItemChange(entry.items[0]?.id ?? "")}
+        renderItem={(entry, index, selected) => (
           <TimelineRow
-            active={activeItemId === item.id || selected}
+            active={
+              entry.items.some((item) => item.id === activeItemId) || selected
+            }
+            activeItemId={activeItemId}
+            entry={entry}
             index={index}
-            item={item}
             onActiveItemChange={onActiveItemChange}
-            place={getPlace(trip, item.placeId)}
+            trip={trip}
           />
         )}
         showGradients={false}
@@ -372,30 +391,98 @@ function StickyDateRail({
 
 function TimelineRow({
   active,
+  activeItemId,
+  entry,
   index,
-  item,
   onActiveItemChange,
-  place,
+  trip,
 }: {
   active: boolean;
+  activeItemId: string;
+  entry: TimelineEntry;
   index: number;
-  item: ItineraryItem;
   onActiveItemChange: (itemId: string) => void;
-  place?: ReturnType<typeof getPlace>;
+  trip: Trip;
 }) {
+  const item = entry.items[0];
+  if (!item) return null;
+
   const meta = kindMeta[item.kind];
 
   return (
     <div className="grid grid-cols-[0.875rem_minmax(0,1fr)] gap-1.5 py-3">
       <EventRail active={active} index={index} item={item} meta={meta} />
-      <ScheduleCard
-        active={active}
-        item={item}
-        meta={meta}
+      <ScheduleEntryCards
+        activeItemId={activeItemId}
+        entry={entry}
+        groupActive={active}
         onActiveItemChange={onActiveItemChange}
-        place={place}
+        trip={trip}
       />
     </div>
+  );
+}
+
+function ScheduleEntryCards({
+  activeItemId,
+  entry,
+  groupActive,
+  onActiveItemChange,
+  trip,
+}: {
+  activeItemId: string;
+  entry: TimelineEntry;
+  groupActive: boolean;
+  onActiveItemChange: (itemId: string) => void;
+  trip: Trip;
+}) {
+  const activeIndex = Math.max(
+    0,
+    entry.items.findIndex((item) => item.id === activeItemId),
+  );
+
+  if (entry.items.length === 1) {
+    const item = entry.items[0];
+    if (!item) return null;
+
+    return (
+      <ScheduleCard
+        active={groupActive}
+        item={item}
+        meta={kindMeta[item.kind]}
+        onActiveItemChange={onActiveItemChange}
+        place={getPlace(trip, item.placeId)}
+      />
+    );
+  }
+
+  return (
+    <Carousel
+      className="min-w-0"
+      index={activeIndex}
+      onIndexChange={(nextIndex) => {
+        const nextItem = entry.items[nextIndex];
+        if (nextItem) onActiveItemChange(nextItem.id);
+      }}
+    >
+      <CarouselContent className="items-stretch">
+        {entry.items.map((item) => (
+          <CarouselItem className="pr-0" key={item.id}>
+            <ScheduleCard
+              active={groupActive || activeItemId === item.id}
+              item={item}
+              meta={kindMeta[item.kind]}
+              onActiveItemChange={onActiveItemChange}
+              place={getPlace(trip, item.placeId)}
+            />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselIndicator
+        className="pointer-events-none bottom-2"
+        classNameButton="pointer-events-auto h-1.5 w-5 rounded-full bg-slate-300 data-[active=true]:bg-rose-500"
+      />
+    </Carousel>
   );
 }
 
@@ -715,11 +802,39 @@ function groupItemsByDay(items: ItineraryItem[]) {
     const latestGroup = groups.at(-1);
     if (latestGroup?.day === item.day) {
       latestGroup.items.push(item);
+      latestGroup.entries = groupItemsByTime(latestGroup.items);
     } else {
-      groups.push({ day: item.day, items: [item] });
+      groups.push({
+        day: item.day,
+        entries: groupItemsByTime([item]),
+        items: [item],
+      });
     }
 
     return groups;
+  }, []);
+}
+
+function groupItemsByTime(items: ItineraryItem[]) {
+  return items.reduce<TimelineEntry[]>((entries, item) => {
+    const latestEntry = entries.at(-1);
+    const startsAt = item.startsAt ?? item.id;
+
+    if (latestEntry?.day === item.day && latestEntry.startsAt === startsAt) {
+      latestEntry.items.push(item);
+      latestEntry.id = latestEntry.items
+        .map((entryItem) => entryItem.id)
+        .join("--");
+    } else {
+      entries.push({
+        day: item.day,
+        id: item.id,
+        items: [item],
+        startsAt,
+      });
+    }
+
+    return entries;
   }, []);
 }
 
