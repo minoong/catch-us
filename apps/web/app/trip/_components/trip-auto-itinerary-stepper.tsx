@@ -208,7 +208,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
                       : "right-0 translate-x-1/2",
                   )}
                 />
-                <ItineraryStepContent item={step} isTextRight={!isLeft} />
+                <ItineraryStepContent item={step} />
               </div>
             );
           })}
@@ -218,36 +218,12 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
   );
 }
 
-function ItineraryStepContent({
-  item,
-  isTextRight,
-}: {
-  item: ItineraryItem;
-  isTextRight: boolean;
-}) {
+function ItineraryStepContent({ item }: { item: ItineraryItem }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
     <div ref={ref} className="flex h-full w-full flex-col text-neutral-950">
-      <div
-        className={cn(
-          "mb-1.5 flex items-center gap-2",
-          isTextRight ? "justify-start" : "justify-end",
-        )}
-      >
-        <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-black tracking-wider text-blue-600 uppercase">
-          {item.kind === "train"
-            ? "교통"
-            : item.kind === "hotel"
-              ? "숙박"
-              : item.kind === "meal"
-                ? "식사"
-                : item.kind === "station"
-                  ? "도착"
-                  : "관광"}
-        </span>
-      </div>
       <h3 className="text-[17px] leading-tight font-black tracking-tight text-neutral-900 drop-shadow-sm">
         {item.title}
       </h3>
