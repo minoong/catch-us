@@ -51,7 +51,10 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
 
       if (!movingBox || !pathSvg || !pathLine) return;
 
-      const drawPath = () => {
+      let scrollTl: gsap.core.Timeline | null = null;
+
+      const buildAnimation = () => {
+        // 1. Calculate exact coordinates of the dots relative to the SVG container
         const svgRect = pathSvg.getBoundingClientRect();
         const points = containers.map((container) => {
           const marker = container.querySelector(".step-dot") ?? container;
@@ -62,6 +65,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           };
         });
 
+        // 2. Draw a smooth bezier curve through the points
         let d = `M ${points[0]?.x ?? 0} ${points[0]?.y ?? 0}`;
         for (let i = 1; i < points.length; i++) {
           const p = points[i];
@@ -70,34 +74,41 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           d += ` C ${cX} ${prev?.y ?? 0}, ${cX} ${p?.y ?? 0}, ${p?.x ?? 0} ${p?.y ?? 0}`;
         }
         pathLine.setAttribute("d", d);
+
+        // 3. Kill old timeline if exists to force motionPath recalculation
+        if (scrollTl) {
+          scrollTl.kill();
+        }
+
+        // 4. Recreate timeline with the fresh path geometry
+        scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        scrollTl.to(movingBox, {
+          motionPath: {
+            path: pathLine,
+            align: pathLine,
+            alignOrigin: [0.5, 0.5],
+          },
+          ease: "none",
+          duration: 1,
+        });
       };
 
-      // 1. 초기 그리기 및 리프레시 시 재계산 등록
-      drawPath();
-      ScrollTrigger.addEventListener("refreshInit", drawPath);
+      // Initial build
+      buildAnimation();
 
-      // 2. 모션패스 애니메이션 (invalidateOnRefresh로 갱신 지원)
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+      // Update path on scroll trigger refresh
+      ScrollTrigger.addEventListener("refreshInit", buildAnimation);
 
-      tl.to(movingBox, {
-        motionPath: {
-          path: pathLine,
-          align: pathLine,
-          alignOrigin: [0.5, 0.5],
-        },
-        ease: "none",
-        duration: 1,
-      });
-
-      // 3. 각 스텝 도트 애니메이션
+      // Dot animations (only created once)
       containers.forEach((container) => {
         const dot = container.querySelector(".step-dot");
         if (dot) {
@@ -118,7 +129,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         }
       });
 
-      // 4. 컨테이너 크기 변경 감지 (텍스트 줄바꿈 등으로 높이 변경 시 리프레시)
+      // ResizeObserver to trigger refresh when layout changes
       let resizeTimer: ReturnType<typeof setTimeout>;
       const ro = new ResizeObserver(() => {
         clearTimeout(resizeTimer);
@@ -131,9 +142,10 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
       }
 
       return () => {
-        ScrollTrigger.removeEventListener("refreshInit", drawPath);
+        ScrollTrigger.removeEventListener("refreshInit", buildAnimation);
         ro.disconnect();
         clearTimeout(resizeTimer);
+        if (scrollTl) scrollTl.kill();
       };
     },
     { scope: containerRef, dependencies: [steps] },

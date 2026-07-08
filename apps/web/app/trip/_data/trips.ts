@@ -202,7 +202,7 @@ export const trips = [
         startsAt: "20:09",
         endsAt: "21:47",
         description:
-          "어이, 시작부터 KTX라니 우리 예산 괜찮은 거냐고! 아무튼 14호차 1A, 1B로 간다. 늦으면 두고 갈 테니까 알아서 기어와라.",
+          "어이, 시작부터 KTX라니 우리 예산 괜찮은 거냐고! 아무튼 14호차 1A, 1B로 간다!!!",
         tags: ["KTX", "교통", "출발"],
         placeId: "yongsan-station",
         quickLink: true,
@@ -221,7 +221,7 @@ export const trips = [
         title: "전주역 도착",
         startsAt: "21:47",
         description:
-          "어이어이, 진짜로 와버렸잖아 전주역! 기차 타고 왔더니 멀미 난다 해... 당분, 당분을 다오!",
+          "어이어이, 진짜로 와버렸잖아 전주역! 기차 타고 왔더니 멀미 난다 해... 딸기우유, 당분을 달라해!",
         tags: ["도착", "지도"],
         placeId: "jeonju-station",
         quickLink: true,
@@ -234,7 +234,7 @@ export const trips = [
         startsAt: "15:00",
         endsAt: "2026-07-12 11:00",
         description:
-          "해결사 3인방이 묵기엔 너무 고급진 거 아니냐고! 10일부터 12일까지 여기가 우리 아지트다. 룸서비스는 전부 긴상 앞으로 달아두라고!",
+          "긴쨩이 묵기엔 너무 고급진 거 아니냐고! 10일부터 12일까지 여기가 우리 아지트다. 룸서비스는 전부 긴토키 앞으로 달아두라고!",
         tags: ["숙소", "베이스캠프", "Kakao Place"],
         placeId: "jeonju-tourist-hotel",
         quickLink: true,
@@ -257,8 +257,7 @@ export const trips = [
         kind: "meal",
         title: "아침밥 후보 · 조점례남문피순대",
         startsAt: "09:00",
-        description:
-          "콩나물로 부족하다면 피순대다 해! 아침부터 짐승의 피가 낭자하는 붉은 국물로 위장을 채워주겠다 해!",
+        description: "콩나물로 부족하다면 피순대다 해!",
         tags: ["아침", "피순대", "후보2"],
         placeId: "jojeomrye-nammun-pisundae",
         quickLink: true,
@@ -270,7 +269,7 @@ export const trips = [
         title: "풍남문",
         startsAt: "10:00",
         description:
-          "이게 그 유명한 풍남문인가 뭔가 하는 건가? 어이 신파치, 안경 벗고 제대로 보라고. 역사적인 순간이잖아.",
+          "이게 그 유명한 풍남문인가 뭔가 하는 건가? 어이 신파치, 안경 벗고 제대로 보라고.",
         tags: ["풍남문", "산책", "동선"],
         placeId: "pungnammun-gate",
         quickLink: true,
@@ -293,8 +292,7 @@ export const trips = [
         kind: "place",
         title: "경기전",
         startsAt: "11:30",
-        description:
-          "태조 이성계의 어진이 있다고? 뭐, 우리 세계의 쇼군보단 멀쩡하게 생겼겠지. 얌전히 관람이나 하자고.",
+        description: "안경은 마음의 일부입니다.",
         tags: ["경기전", "관람", "산책"],
         placeId: "gyeonggijeon-shrine",
         quickLink: true,
@@ -330,7 +328,7 @@ export const trips = [
         title: "전주덕진공원",
         startsAt: "17:30",
         description:
-          "어이어이, 연못 퀄리티가 장난 아니잖아. 분위기 잡기 딱 좋은 곳이네. 사다하루 산책시키기에도 제격이겠어.",
+          "어이어이, 연못 퀄리티가 장난 아니잖아. 사다하루 산책시키기에도 제격이겠어.",
         tags: ["덕진공원", "산책", "휴식"],
         placeId: "deokjin-park",
         quickLink: true,
@@ -341,8 +339,7 @@ export const trips = [
         kind: "meal",
         title: "진미집 본점",
         startsAt: "19:00",
-        description:
-          "이거라고 이거!! 연탄불고기에 김밥이라니, 천재냐 넌! 오늘 밤은 마요네즈 듬뿍 얹어서... 아 여긴 마요네즈 없나?",
+        description: "마요네즈 듬뿍 얹어서...",
         tags: ["저녁", "노포", "연탄불고기"],
         placeId: "jinmijip-main",
         quickLink: true,
@@ -365,8 +362,7 @@ export const trips = [
         kind: "meal",
         title: "자매갈비전골",
         startsAt: "10:30",
-        description:
-          "마지막 날까지 고기냐! 너희들 위장은 블랙홀이냐고! ...뭐, 기왕 온 거 냄비째 비워주지. 다 덤벼라 요녀석들아!",
+        description: "마지막 날까지 고기냐! 식사는 밸런스를 생각해라!!!",
         tags: ["오전", "갈비전골", "식사"],
         placeId: "day-3-morning-place",
         quickLink: true,
@@ -379,7 +375,7 @@ export const trips = [
         startsAt: "13:18",
         endsAt: "15:03",
         description:
-          "하아... 드디어 에도로 돌아가는구만. 15호차 1A, 1B 좌석이니까 내 자리에 딴 놈 앉아있으면 동야호로 날려버린다.",
+          "드디어 한양으로 돌아가는구만. 15호차 1A, 1B 좌석이니까 내 자리에 딴 놈 앉아있으면 동야호로 날려버린다.",
         tags: ["KTX", "교통", "귀가"],
         placeId: "jeonju-station",
         quickLink: true,
