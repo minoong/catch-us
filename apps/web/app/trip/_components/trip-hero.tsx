@@ -157,8 +157,11 @@ function HeroBoardingPass({
   const train = item?.train;
   const isOutbound = type === "outbound";
 
-  // 임시로 화면 확인을 위해 true로 강제 설정
-  const isUsed = true;
+  const time = item?.endsAt ?? item?.startsAt;
+  const isUsed =
+    item?.day && time
+      ? new Date() > new Date(`${item.day}T${time}:00+09:00`)
+      : false;
 
   return (
     <article

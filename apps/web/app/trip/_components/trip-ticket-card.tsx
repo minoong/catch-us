@@ -1,3 +1,6 @@
+"use client";
+
+import * as React from "react";
 import { cn } from "@repo/ui/lib/utils";
 import type { ItineraryItem } from "../_data/trips";
 
@@ -8,10 +11,13 @@ export function TripTicketCard({
   compact?: boolean;
   item: ItineraryItem;
 }) {
-  if (!item.train) return null;
+  const time = item.endsAt ?? item.startsAt;
+  const isUsed =
+    item.day && time
+      ? new Date() > new Date(`${item.day}T${time}:00+09:00`)
+      : false;
 
-  // 임시로 화면 확인을 위해 true로 강제 설정 (실제 로직 연동 시 오늘 날짜와 비교)
-  const isUsed = true;
+  if (!item.train) return null;
 
   if (compact) {
     return (
