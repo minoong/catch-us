@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { LayoutGroup, useReducedMotion } from "motion/react";
+import { LayoutGroup } from "motion/react";
 
 import type { Trip } from "../_data/trips";
 import { TripAutoItineraryStepper } from "./trip-auto-itinerary-stepper";
@@ -14,22 +14,18 @@ import { TripPhotoMarquee } from "./trip-photo-marquee";
 import { TripTimeControlStrip } from "./trip-time-control-strip";
 
 export function TripIntroPage({ trip }: { trip: Trip }) {
-  const prefersReducedMotion = useReducedMotion() ?? false;
   const [introComplete, setIntroComplete] = React.useState(false);
-
-  React.useEffect(() => {
-    const timer = window.setTimeout(
-      () => setIntroComplete(true),
-      prefersReducedMotion ? 0 : 2150,
-    );
-    return () => window.clearTimeout(timer);
-  }, [prefersReducedMotion]);
+  const completeIntro = React.useCallback(() => setIntroComplete(true), []);
 
   return (
     <TripLenisProvider>
       <LayoutGroup>
         <main className="bg-background text-foreground min-h-screen pb-28">
-          <TripIntroTransition introComplete={introComplete} trip={trip} />
+          <TripIntroTransition
+            introComplete={introComplete}
+            onIntroComplete={completeIntro}
+            trip={trip}
+          />
           <TripIntroHeader compactVisible={introComplete} trip={trip} />
           <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-3">
             <TripHero trip={trip} />
