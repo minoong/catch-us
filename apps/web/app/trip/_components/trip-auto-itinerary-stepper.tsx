@@ -45,25 +45,23 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
       if (prefersReducedMotion || steps.length === 0) return;
 
       const movingBox = containerRef.current?.querySelector(".moving-marker");
-      if (!movingBox) return;
-
-      const svgRect = pathSvgRef.current?.getBoundingClientRect();
-      if (!svgRect) return;
-
+      const pathSvg = pathSvgRef.current;
+      const pathLine = pathLineRef.current;
       const containers = gsap.utils.toArray<HTMLElement>(".step-item");
 
-      // 1. Calculate exact coordinates of the dots relative to the SVG container
-      const points = containers.map((container) => {
-        const marker = container.querySelector(".step-dot") ?? container;
-        const r = marker.getBoundingClientRect();
-        return {
-          x: r.left + r.width / 2 - svgRect.left,
-          y: r.top + r.height / 2 - svgRect.top,
-        };
-      });
+      if (!movingBox || !pathSvg || !pathLine) return;
 
-      // 2. Draw a smooth bezier curve through the points
-      if (pathLineRef.current) {
+      const drawPath = () => {
+        const svgRect = pathSvg.getBoundingClientRect();
+        const points = containers.map((container) => {
+          const marker = container.querySelector(".step-dot") ?? container;
+          const r = marker.getBoundingClientRect();
+          return {
+            x: r.left + r.width / 2 - svgRect.left,
+            y: r.top + r.height / 2 - svgRect.top,
+          };
+        });
+
         let d = `M ${points[0]?.x ?? 0} ${points[0]?.y ?? 0}`;
         for (let i = 1; i < points.length; i++) {
           const p = points[i];
@@ -71,30 +69,35 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           const cX = ((prev?.x ?? 0) + (p?.x ?? 0)) / 2;
           d += ` C ${cX} ${prev?.y ?? 0}, ${cX} ${p?.y ?? 0}, ${p?.x ?? 0} ${p?.y ?? 0}`;
         }
-        pathLineRef.current.setAttribute("d", d);
+        pathLine.setAttribute("d", d);
+      };
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top center",
-            end: "bottom center",
-            scrub: 1, // smooth scrubbing
-          },
-        });
+      // 1. 초기 그리기 및 리프레시 시 재계산 등록
+      drawPath();
+      ScrollTrigger.addEventListener("refreshInit", drawPath);
 
-        // 3. Move the marker exactly along the drawn SVG path
-        tl.to(movingBox, {
-          motionPath: {
-            path: pathLineRef.current,
-            align: pathLineRef.current,
-            alignOrigin: [0.5, 0.5],
-          },
-          ease: "none",
-          duration: 1,
-        });
-      }
+      // 2. 모션패스 애니메이션 (invalidateOnRefresh로 갱신 지원)
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
 
-      // Also scale up step dots as we pass them
+      tl.to(movingBox, {
+        motionPath: {
+          path: pathLine,
+          align: pathLine,
+          alignOrigin: [0.5, 0.5],
+        },
+        ease: "none",
+        duration: 1,
+      });
+
+      // 3. 각 스텝 도트 애니메이션
       containers.forEach((container) => {
         const dot = container.querySelector(".step-dot");
         if (dot) {
@@ -114,8 +117,26 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           );
         }
       });
+
+      // 4. 컨테이너 크기 변경 감지 (텍스트 줄바꿈 등으로 높이 변경 시 리프레시)
+      let resizeTimer: ReturnType<typeof setTimeout>;
+      const ro = new ResizeObserver(() => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 100);
+      });
+      if (containerRef.current) {
+        ro.observe(containerRef.current);
+      }
+
+      return () => {
+        ScrollTrigger.removeEventListener("refreshInit", drawPath);
+        ro.disconnect();
+        clearTimeout(resizeTimer);
+      };
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [steps] },
   );
 
   if (steps.length === 0) return null;
