@@ -1,0 +1,20 @@
+.worktrees/
+node_modules
+.next
+**/next-env.d.ts
+.turbo
+dist
+storybook-static
+coverage
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Agent & Local IDE files
+.pnpm-store/
+.superpowers/
+.vscode/
+skills-lock.json
+*.png
