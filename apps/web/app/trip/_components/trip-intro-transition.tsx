@@ -142,10 +142,10 @@ export function TripIntroTransition({
             <p className="mt-5 text-lg font-black tracking-[-0.04em] text-white/80">
               {trip.title}
             </p>
+            <div className="pointer-events-none absolute top-5 left-1/2 z-10 size-24 -translate-x-1/2">
+              <DotLottieReact autoplay loop src={loveBubbleLottieSrc} />
+            </div>
           </motion.div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-[calc(env(safe-area-inset-bottom)-1.5rem)] z-10 mx-auto size-60">
-            <DotLottieReact autoplay loop src={loveBubbleLottieSrc} />
-          </div>
         </motion.div>
       ) : null}
     </AnimatePresence>
