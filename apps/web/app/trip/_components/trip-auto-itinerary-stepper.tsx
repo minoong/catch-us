@@ -15,20 +15,8 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, useGSAP);
 }
 
-const STEP_IDS = [
-  "ktx-521-yongsan-to-jeonju",
-  "jeonju-arrival",
-  "jeonju-tourist-hotel",
-  "day-2-jeondong-cathedral",
-  "day-2-deokjin-park",
-  "day-2-jinmijip",
-  "ktx-510-jeonju-to-yongsan",
-] as const;
-
 function getStepperItems(trip: Trip): ItineraryItem[] {
-  return STEP_IDS.map((id) =>
-    trip.itinerary.find((item) => item.id === id),
-  ).filter((item): item is ItineraryItem => Boolean(item));
+  return trip.itinerary;
 }
 
 export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
