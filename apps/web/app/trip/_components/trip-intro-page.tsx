@@ -28,7 +28,7 @@ export function TripIntroPage({ trip }: { trip: Trip }) {
           />
           <TripIntroHeader compactVisible={introComplete} trip={trip} />
           <section className="mx-auto flex w-full max-w-md flex-col gap-4 px-4 py-3">
-            <TripHero trip={trip} />
+            <TripHero introComplete={introComplete} trip={trip} />
             <TripAutoItineraryStepper trip={trip} />
             <TripPhotoMarquee trip={trip} />
             <TripClosingCta trip={trip} />

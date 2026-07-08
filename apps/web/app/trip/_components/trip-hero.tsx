@@ -13,8 +13,15 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
 }
 
-export function TripHero({ trip }: { trip: Trip }) {
+export function TripHero({
+  trip,
+  introComplete = true,
+}: {
+  trip: Trip;
+  introComplete?: boolean;
+}) {
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const tlRef = React.useRef<gsap.core.Timeline | null>(null);
 
   const outbound = trip.itinerary.find(
     (item) => item.id === "ktx-521-yongsan-to-jeonju",
@@ -30,7 +37,8 @@ export function TripHero({ trip }: { trip: Trip }) {
       ).matches;
       if (prefersReducedMotion) return;
 
-      const tl = gsap.timeline({ delay: 0.1 });
+      const tl = gsap.timeline({ paused: true, delay: 0.1 });
+      tlRef.current = tl;
 
       // Ticket cards spring up
       tl.from(".ticket-card", {
@@ -83,6 +91,12 @@ export function TripHero({ trip }: { trip: Trip }) {
     },
     { scope: containerRef },
   );
+
+  React.useEffect(() => {
+    if (introComplete && tlRef.current) {
+      tlRef.current.play();
+    }
+  }, [introComplete]);
 
   return (
     <section
