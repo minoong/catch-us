@@ -148,7 +148,7 @@ export function TripIntroTransition({
             <p className="mt-5 text-lg font-black tracking-[-0.04em] text-white/80">
               {trip.title}
             </p>
-            <div className="pointer-events-none absolute top-5 left-1/2 z-10 size-24 -translate-x-1/2">
+            <div className="pointer-events-none absolute top-4 left-1/2 z-10 size-28 -translate-x-1/2">
               <DotLottieReact autoplay loop src={loveBubbleLottieSrc} />
             </div>
           </motion.div>

@@ -154,10 +154,10 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
             </Link>
             <div className="min-w-0 flex-1">
               <p
-                className="text-muted-foreground font-semibold tracking-[0.18em] uppercase"
+                className="text-muted-foreground font-semibold tracking-[0.12em]"
                 style={{ fontSize: "var(--trip-eyebrow-size)" }}
               >
-                Jeonju 2026
+                가현쨩 ❤️ 미누쿤
               </p>
               <h1
                 className="truncate leading-none font-semibold"
