@@ -157,11 +157,27 @@ function HeroBoardingPass({
   const train = item?.train;
   const isOutbound = type === "outbound";
 
+  // 임시로 화면 확인을 위해 true로 강제 설정
+  const isUsed = true;
+
   return (
-    <article className="relative overflow-hidden rounded-[1.5rem] border border-neutral-950/10 bg-white p-5 text-neutral-950 shadow-[0_24px_50px_rgba(15,23,42,0.12)]">
+    <article
+      className={cn(
+        "relative overflow-hidden rounded-[1.5rem] border border-neutral-950/10 bg-white p-5 text-neutral-950 shadow-[0_24px_50px_rgba(15,23,42,0.12)]",
+        isUsed && "opacity-80 grayscale-[0.5]",
+      )}
+    >
       {/* Hole punches */}
       <div className="pointer-events-none absolute top-[62%] -left-3 size-6 -translate-y-1/2 rounded-full bg-[rgb(244,244,243)] shadow-inner" />
       <div className="pointer-events-none absolute top-[62%] -right-3 size-6 -translate-y-1/2 rounded-full bg-[rgb(244,244,243)] shadow-inner" />
+
+      {isUsed && (
+        <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-[0.5px]">
+          <div className="rotate-[-15deg] rounded-md border-4 border-red-500/80 px-6 py-2 text-3xl font-black tracking-widest text-red-500/80 mix-blend-multiply shadow-sm">
+            탑승완료
+          </div>
+        </div>
+      )}
 
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
