@@ -108,7 +108,6 @@ export function TripIntroTransition({
                     y: "-39vh",
                   }
             }
-            layoutId="trip-intro-title"
             transition={{
               duration: prefersReducedMotion ? 0 : 0.58,
               ease: [0.16, 1, 0.3, 1],
@@ -117,9 +116,16 @@ export function TripIntroTransition({
             <p className="text-xs font-bold tracking-[0.42em] text-white/60 uppercase">
               Catch Us Trip
             </p>
-            <p className="mt-4 text-sm font-black tracking-[0.18em] text-white/70 uppercase">
-              Gahyun & Minwoo
-            </p>
+            <motion.p
+              className="mt-4 text-sm font-black tracking-[0.14em] text-white/70"
+              layoutId="trip-couple-heading"
+              transition={{
+                duration: prefersReducedMotion ? 0 : 0.7,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              가현쨩 ❤️ 미누쿤
+            </motion.p>
             <p
               aria-label={`사귄 지 ${datingDayCount}일`}
               className="mt-5 flex items-end justify-center gap-2 font-black text-white"

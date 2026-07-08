@@ -78,16 +78,31 @@ export function TripIntroHeader({
     >
       <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-[var(--trip-intro-header-radius)] border border-white/50 bg-[linear-gradient(135deg,rgba(255,255,255,0.70),rgba(255,255,255,0.30)_48%,rgba(255,255,255,0.18))] px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-[0_16px_42px_rgba(15,23,42,0.18),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(255,255,255,0.28)] backdrop-blur-[22px] backdrop-saturate-200">
         <div className="min-w-0 flex-1 overflow-hidden">
-          <p className="truncate text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
-            Jeonju 2026
-          </p>
+          <AnimatePresence mode="popLayout" initial={false}>
+            {compactVisible ? (
+              <motion.p
+                className="truncate text-[10px] font-black tracking-[0.12em] text-neutral-500"
+                layoutId="trip-couple-heading"
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
+                가현쨩 ❤️ 미누쿤
+              </motion.p>
+            ) : (
+              <span className="block h-3" aria-hidden="true" />
+            )}
+          </AnimatePresence>
           <AnimatePresence mode="popLayout" initial={false}>
             {compactVisible ? (
               <motion.p
                 className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
-                layoutId="trip-intro-title"
                 style={{ fontSize: "var(--trip-intro-title-size)" }}
-                transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.08,
+                  duration: 0.5,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
                 <DiaTextReveal
                   className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
