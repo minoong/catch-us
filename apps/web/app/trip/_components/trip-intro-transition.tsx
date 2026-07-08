@@ -6,6 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 import Noise from "@/components/Noise";
 import { AnimatedNumber } from "@/components/core/animated-number";
+import { TextEffect } from "@/components/core/text-effect";
 
 import type { Trip } from "../_data/trips";
 import {
@@ -37,6 +38,37 @@ const loveBubbleLottieSrc = "/trips/jeonju-2026/love-bubble.lottie";
 const countUpDurationMs = 2000;
 const reducedMotionCountUpDurationMs = 150;
 const countCompletePauseMs = 650;
+const createTextEffectVariants = ({
+  delayChildren,
+  prefersReducedMotion,
+}: {
+  delayChildren: number;
+  prefersReducedMotion: boolean;
+}) => ({
+  container: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: prefersReducedMotion ? 0 : delayChildren,
+        staggerChildren: prefersReducedMotion ? 0 : 0.16,
+      },
+    },
+  },
+  item: {
+    hidden: {
+      opacity: 0,
+      y: prefersReducedMotion ? 0 : 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.42,
+      },
+    },
+  },
+});
 
 export function TripIntroTransition({
   introComplete,
@@ -51,6 +83,30 @@ export function TripIntroTransition({
   const durationMs = prefersReducedMotion
     ? reducedMotionCountUpDurationMs
     : countUpDurationMs;
+  const coupleTextEffectVariants = React.useMemo(
+    () =>
+      createTextEffectVariants({
+        delayChildren: 0,
+        prefersReducedMotion,
+      }),
+    [prefersReducedMotion],
+  );
+  const sinceTextEffectVariants = React.useMemo(
+    () =>
+      createTextEffectVariants({
+        delayChildren: 0.42,
+        prefersReducedMotion,
+      }),
+    [prefersReducedMotion],
+  );
+  const titleTextEffectVariants = React.useMemo(
+    () =>
+      createTextEffectVariants({
+        delayChildren: 0.78,
+        prefersReducedMotion,
+      }),
+    [prefersReducedMotion],
+  );
   const datingDayCount = React.useMemo(() => getDatingDayCount(), []);
   const [displayedDayCount, setDisplayedDayCount] = React.useState(0);
 
@@ -113,19 +169,20 @@ export function TripIntroTransition({
               ease: [0.16, 1, 0.3, 1],
             }}
           >
-            <p className="text-xs font-bold tracking-[0.42em] text-white/60 uppercase">
-              Catch Us Trip
-            </p>
-            <motion.p
-              className="mt-4 text-sm font-black tracking-[0.14em] text-white/70"
+            <TextEffect
+              as="p"
+              className="text-sm font-black tracking-[0.14em] text-white/70"
               layoutId="trip-couple-heading"
+              per="line"
+              segmentWrapperClassName="block overflow-hidden"
               transition={{
                 duration: prefersReducedMotion ? 0 : 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
+              variants={coupleTextEffectVariants}
             >
               가현쨩 ❤️ 미누쿤
-            </motion.p>
+            </TextEffect>
             <p
               aria-label={`사귄 지 ${datingDayCount}일`}
               className="mt-5 flex items-end justify-center gap-2 font-black text-white"
@@ -142,12 +199,29 @@ export function TripIntroTransition({
                 일
               </span>
             </p>
-            <p className="mt-3 text-sm font-bold tracking-[0.16em] text-white/55 uppercase">
+            <TextEffect
+              as="p"
+              className="mt-3 text-sm font-bold tracking-[0.16em] text-white/55 uppercase"
+              per="line"
+              segmentWrapperClassName="block overflow-hidden"
+              variants={sinceTextEffectVariants}
+            >
               since 2025.08.31
-            </p>
-            <p className="mt-5 text-lg font-black tracking-[-0.04em] text-white/80">
+            </TextEffect>
+            <TextEffect
+              as="p"
+              className="mt-5 text-lg font-black tracking-[-0.04em] text-white/80"
+              layoutId="trip-title-heading"
+              per="line"
+              segmentWrapperClassName="block overflow-hidden"
+              transition={{
+                duration: prefersReducedMotion ? 0 : 0.7,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              variants={titleTextEffectVariants}
+            >
               {trip.title}
-            </p>
+            </TextEffect>
             <div className="pointer-events-none absolute top-4 left-1/2 z-10 size-28 -translate-x-1/2">
               <DotLottieReact autoplay loop src={loveBubbleLottieSrc} />
             </div>

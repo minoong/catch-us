@@ -3,8 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
-
 import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
 
 import type { Trip, TripDayId } from "../_data/trips";
@@ -163,11 +161,7 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
                 className="truncate leading-none font-semibold"
                 style={{ fontSize: "var(--trip-title-size)" }}
               >
-                <DiaTextReveal
-                  colors={["#ef4444", "#f97316", "#2563eb"]}
-                  duration={1.2}
-                  text={trip.title}
-                />
+                {trip.title}
               </h1>
             </div>
           </header>

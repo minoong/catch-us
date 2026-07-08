@@ -3,8 +3,6 @@
 import * as React from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
-
 import type { Trip } from "../_data/trips";
 import { TripScheduleTransitionLink } from "./trip-schedule-transition-link";
 
@@ -91,30 +89,18 @@ export function TripIntroHeader({
               <span className="block h-3" aria-hidden="true" />
             )}
           </AnimatePresence>
-          <AnimatePresence mode="popLayout" initial={false}>
-            {compactVisible ? (
-              <motion.p
-                className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
-                style={{ fontSize: "var(--trip-intro-title-size)" }}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 0.08,
-                  duration: 0.5,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                <DiaTextReveal
-                  className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
-                  colors={["#ef4444", "#f97316", "#2563eb"]}
-                  duration={1.2}
-                  text={trip.title}
-                />
-              </motion.p>
-            ) : (
-              <span className="block h-4" aria-hidden="true" />
-            )}
-          </AnimatePresence>
+          {compactVisible ? (
+            <motion.p
+              className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
+              layoutId="trip-title-heading"
+              style={{ fontSize: "var(--trip-intro-title-size)" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {trip.title}
+            </motion.p>
+          ) : (
+            <span className="block h-4" aria-hidden="true" />
+          )}
         </div>
         <TripScheduleTransitionLink
           className="h-[var(--trip-intro-cta-height)] w-[7rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"
