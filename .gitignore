@@ -11,3 +11,10 @@ coverage
 .env.*
 !.env.example
 .DS_Store
+
+# Agent & Local IDE files
+.pnpm-store/
+.superpowers/
+.vscode/
+skills-lock.json
+*.png

@@ -1,3 +1,7 @@
+"use client";
+
+import * as React from "react";
+import { cn } from "@repo/ui/lib/utils";
 import type { ItineraryItem } from "../_data/trips";
 
 export function TripTicketCard({
@@ -7,11 +11,29 @@ export function TripTicketCard({
   compact?: boolean;
   item: ItineraryItem;
 }) {
+  const time = item.endsAt ?? item.startsAt;
+  const isUsed =
+    item.day && time
+      ? new Date() > new Date(`${item.day}T${time}:00+09:00`)
+      : false;
+
   if (!item.train) return null;
 
   if (compact) {
     return (
-      <article className="relative overflow-hidden rounded-[1.4rem] text-neutral-950">
+      <article
+        className={cn(
+          "relative overflow-hidden rounded-[1.4rem] text-neutral-950",
+          isUsed && "opacity-80 grayscale-[0.5]",
+        )}
+      >
+        {isUsed && (
+          <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-[0.5px]">
+            <div className="rotate-[-15deg] rounded-md border-4 border-red-500/80 px-4 py-1 text-2xl font-black tracking-widest text-red-500/80 mix-blend-multiply shadow-sm">
+              탑승완료
+            </div>
+          </div>
+        )}
         <div className="flex items-start justify-between border-b border-dashed border-neutral-300 pb-3">
           <div>
             <p className="text-[9px] font-black tracking-[0.18em] text-neutral-500 uppercase">
@@ -55,9 +77,23 @@ export function TripTicketCard({
   }
 
   return (
-    <article className="relative overflow-hidden rounded-[2rem] bg-white p-5 text-neutral-950 shadow-2xl">
+    <article
+      className={cn(
+        "relative overflow-hidden rounded-[2rem] bg-white p-5 text-neutral-950 shadow-2xl",
+        isUsed && "opacity-80 grayscale-[0.5]",
+      )}
+    >
       <div className="absolute top-1/2 -left-4 size-8 -translate-y-1/2 rounded-full bg-[var(--card)]" />
       <div className="absolute top-1/2 -right-4 size-8 -translate-y-1/2 rounded-full bg-[var(--card)]" />
+
+      {isUsed && (
+        <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-[0.5px]">
+          <div className="rotate-[-15deg] rounded-md border-4 border-red-500/80 px-6 py-2 text-3xl font-black tracking-widest text-red-500/80 mix-blend-multiply shadow-sm">
+            탑승완료
+          </div>
+        </div>
+      )}
+
       <div className="flex items-start justify-between border-b border-dashed border-neutral-300 pb-4">
         <div>
           <p className="text-xs font-bold tracking-[0.18em] text-neutral-500 uppercase">
