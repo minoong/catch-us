@@ -193,9 +193,7 @@ function HeroBoardingPass({
               isOutbound ? "text-blue-500" : "text-red-500",
             )}
           >
-            {isOutbound
-              ? "어이 긴상, 지각이다 해! (가는 표)"
-              : "당분 섭취 끝! 에도 복귀 (오는 표)"}
+            {isOutbound ? "어이 긴상, 지각이다 해!" : "당분 섭취 끝! 서울 복귀"}
           </p>
           <h2 className="ticket-reveal mt-1 truncate text-xl font-black tracking-normal">
             {train?.from ?? "용산"} → {train?.to ?? "전주"}

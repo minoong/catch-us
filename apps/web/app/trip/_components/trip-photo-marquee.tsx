@@ -55,14 +55,11 @@ export function TripPhotoMarquee({ trip }: { trip: Trip }) {
         className="overflow-hidden rounded-3xl bg-gray-950/5 p-2 shadow-sm ring-1 ring-neutral-700/10"
       >
         <div className="rounded-[1.4rem] bg-white p-4 pb-3">
-          <p className="text-xs font-black tracking-[0.22em] text-neutral-500 uppercase">
-            photo field
-          </p>
           <h2
             className="mt-2 text-3xl font-black tracking-normal text-neutral-950"
             id="trip-photo-marquee-title"
           >
-            우리가 지나갈 장면들
+            긴짱 여길 정말 다 가는거냐 해
           </h2>
         </div>
         <div className="mt-2 grid max-h-[34rem] grid-cols-3 gap-1.5 overflow-y-auto">
@@ -94,11 +91,8 @@ export function TripPhotoMarquee({ trip }: { trip: Trip }) {
         />
       </div>
       <div className="pointer-events-none absolute inset-x-2 bottom-2 rounded-b-[1.65rem] bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.78))] p-5 pt-28">
-        <p className="text-xs font-black tracking-[0.22em] text-white/60 uppercase">
-          photo field
-        </p>
         <h2 className="mt-2 text-3xl font-black tracking-normal text-white">
-          우리가 지나갈 장면들
+          긴짱 여길 정말 다 가는거냐 해
         </h2>
       </div>
     </section>

@@ -280,8 +280,7 @@ export const trips = [
         kind: "place",
         title: "전동성당",
         startsAt: "10:30",
-        description:
-          "어이어이, 성당 앞에서 그런 썩은 동태눈깔을 하고 있으면 신성모독으로 잡혀간다고! 대충 기념사진이나 찍고 가자고.",
+        description: "어이어이, 대충 기념사진이나 찍고 가자고.",
         tags: ["전동성당", "사진", "한옥마을"],
         placeId: "jeondong-cathedral",
         quickLink: true,

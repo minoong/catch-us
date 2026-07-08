@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 
 import { cn } from "@repo/ui/lib/utils";
 import { useInView } from "motion/react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { TextEffect } from "../../../components/core/text-effect";
 
 import type { ItineraryItem, Trip } from "../_data/trips";
@@ -174,15 +175,24 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         </svg>
 
         {/* The Moving Marker */}
-        <div className="moving-marker absolute top-0 left-0 z-30 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-          <Image
-            src="/trips/jeonju-2026/meta/favicon.png"
-            alt=""
-            fill
-            className="rounded-full object-cover"
-            sizes="40px"
-          />
-          <div className="absolute -right-3 -bottom-1 z-40 flex h-6 w-6 items-center justify-center rounded-full border border-neutral-100 bg-white text-[13px] shadow-sm">
+        <div className="moving-marker absolute top-0 left-0 z-30 flex -translate-x-1/2 -translate-y-1/2 items-center gap-0.5 rounded-full bg-white p-1 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+          <div className="relative size-10 shrink-0 overflow-hidden rounded-full">
+            <Image
+              src="/trips/jeonju-2026/meta/favicon.png"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="40px"
+            />
+          </div>
+          <div className="relative -mx-1 size-8 shrink-0 opacity-90">
+            <DotLottieReact
+              autoplay
+              loop
+              src="/trips/jeonju-2026/love-bubble.lottie"
+            />
+          </div>
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-neutral-100 bg-white text-[22px] shadow-sm">
             🐶
           </div>
         </div>
