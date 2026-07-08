@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -46,60 +47,52 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
       const movingBox = containerRef.current?.querySelector(".moving-marker");
       if (!movingBox) return;
 
-      const boxStartRect = movingBox.getBoundingClientRect();
+      const svgRect = pathSvgRef.current?.getBoundingClientRect();
+      if (!svgRect) return;
+
       const containers = gsap.utils.toArray<HTMLElement>(".step-item");
 
-      // GSAP MotionPath requires points relative to the moving object's starting position
-      // or absolute viewport coordinates if it's position:fixed, but here it's absolute within the container.
-      // Wait, if it's absolute within the container, we need to calculate offset relative to its initial absolute position.
-      // Easiest is to place the movingBox at top: 0, left: 0 of the container.
+      // 1. Calculate exact coordinates of the dots relative to the SVG container
       const points = containers.map((container) => {
         const marker = container.querySelector(".step-dot") ?? container;
         const r = marker.getBoundingClientRect();
         return {
-          x:
-            r.left + r.width / 2 - (boxStartRect.left + boxStartRect.width / 2),
-          y:
-            r.top + r.height / 2 - (boxStartRect.top + boxStartRect.height / 2),
+          x: r.left + r.width / 2 - svgRect.left,
+          y: r.top + r.height / 2 - svgRect.top,
         };
       });
 
-      // Draw the SVG path to visualize the curvy route
-      if (pathSvgRef.current && pathLineRef.current) {
-        // We can generate an SVG path string from these points using a simple bezier or just let GSAP do it?
-        // Actually, GSAP MotionPathPlugin can't easily spit out the SVG string if we don't have an existing path.
-        // But we can approximate it or just leave it without a drawn line, the moving marker itself is the focus.
-        // Let's draw a simple polyline or cubic bezier through the points.
+      // 2. Draw a smooth bezier curve through the points
+      if (pathLineRef.current) {
         let d = `M ${points[0]?.x ?? 0} ${points[0]?.y ?? 0}`;
         for (let i = 1; i < points.length; i++) {
           const p = points[i];
           const prev = points[i - 1];
-          // simple curvy path: control points halfway horizontally
           const cX = ((prev?.x ?? 0) + (p?.x ?? 0)) / 2;
           d += ` C ${cX} ${prev?.y ?? 0}, ${cX} ${p?.y ?? 0}, ${p?.x ?? 0} ${p?.y ?? 0}`;
         }
         pathLineRef.current.setAttribute("d", d);
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1, // smooth scrubbing
+          },
+        });
+
+        // 3. Move the marker exactly along the drawn SVG path
+        tl.to(movingBox, {
+          motionPath: {
+            path: pathLineRef.current,
+            align: pathLineRef.current,
+            alignOrigin: [0.5, 0.5],
+          },
+          ease: "none",
+          duration: 1,
+        });
       }
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1, // smooth scrubbing
-        },
-      });
-
-      // The motion path animation
-      tl.to(movingBox, {
-        motionPath: {
-          path: points,
-          curviness: 1.5,
-          alignOrigin: [0.5, 0.5],
-        },
-        ease: "none",
-        duration: 1,
-      });
 
       // Also scale up step dots as we pass them
       containers.forEach((container) => {
@@ -158,8 +151,14 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         </svg>
 
         {/* The Moving Marker */}
-        <div className="moving-marker absolute top-0 left-0 z-30 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-blue-500 text-lg font-black text-white shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-          🚄
+        <div className="moving-marker absolute top-0 left-0 z-30 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+          <Image
+            src="/trips/jeonju-2026/meta/favicon.png"
+            alt=""
+            fill
+            className="rounded-full object-cover"
+            sizes="40px"
+          />
         </div>
 
         {/* The Steps */}
