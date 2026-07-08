@@ -138,7 +138,9 @@ export function TripHero({
               className="block h-14 w-full rounded-full shadow-lg shadow-neutral-950/15 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:outline-none"
               href={`/trip/${trip.slug}/schedule`}
             >
-              <span className="text-lg font-black">일정 자세히 보기</span>
+              <span className="text-lg font-black tracking-tight">
+                어이 신파치, 일정표 가져와!
+              </span>
             </TripScheduleTransitionLink>
           </TripParallaxLayer>
         </div>
@@ -187,11 +189,13 @@ function HeroBoardingPass({
         <div className="min-w-0">
           <p
             className={cn(
-              "ticket-reveal text-[10px] font-black tracking-[0.28em] uppercase",
+              "ticket-reveal text-[10px] font-black tracking-[0.1em] uppercase",
               isOutbound ? "text-blue-500" : "text-red-500",
             )}
           >
-            {isOutbound ? "가는 표 / outbound" : "오는 표 / inbound"}
+            {isOutbound
+              ? "어이 긴상, 지각이다 해! (가는 표)"
+              : "당분 섭취 끝! 에도 복귀 (오는 표)"}
           </p>
           <h2 className="ticket-reveal mt-1 truncate text-xl font-black tracking-normal">
             {train?.from ?? "용산"} → {train?.to ?? "전주"}

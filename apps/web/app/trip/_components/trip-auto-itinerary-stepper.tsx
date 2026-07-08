@@ -149,11 +149,11 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
       className="relative overflow-hidden rounded-[1.75rem] border border-neutral-100 bg-white p-5 pb-20 shadow-xl"
     >
       <div className="mb-8 text-center">
-        <p className="text-xs font-black tracking-[0.22em] text-neutral-400 uppercase">
-          route preview
+        <p className="text-xs font-black tracking-[0.1em] text-neutral-400 uppercase">
+          kabukicho route preview
         </p>
         <h2 className="mt-2 text-2xl font-black tracking-[-0.04em] text-neutral-950">
-          우리의 동선
+          해결사 전주 지부 출장 루트
         </h2>
       </div>
 
