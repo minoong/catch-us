@@ -59,7 +59,7 @@ export interface Trip {
 export const trips = [
   {
     slug: "jeonju-2026",
-    title: "전주로 넘어가는 밤",
+    title: "하나보다 둘, 한 명보다 두명",
     subtitle:
       "2026년 7월 10일, 용산에서 KTX를 타고 전주로 내려가는 2박 3일 여행.",
     startsOn: "2026-07-10",

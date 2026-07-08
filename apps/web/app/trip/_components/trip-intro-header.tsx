@@ -3,8 +3,6 @@
 import * as React from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
-
 import type { Trip } from "../_data/trips";
 import { TripScheduleTransitionLink } from "./trip-schedule-transition-link";
 
@@ -78,28 +76,31 @@ export function TripIntroHeader({
     >
       <div className="flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-[var(--trip-intro-header-radius)] border border-white/50 bg-[linear-gradient(135deg,rgba(255,255,255,0.70),rgba(255,255,255,0.30)_48%,rgba(255,255,255,0.18))] px-[var(--trip-intro-header-px)] py-[var(--trip-intro-header-py)] shadow-[0_16px_42px_rgba(15,23,42,0.18),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(255,255,255,0.28)] backdrop-blur-[22px] backdrop-saturate-200">
         <div className="min-w-0 flex-1 overflow-hidden">
-          <p className="truncate text-[10px] font-black tracking-[0.28em] text-neutral-500 uppercase">
-            Jeonju 2026
-          </p>
           <AnimatePresence mode="popLayout" initial={false}>
             {compactVisible ? (
               <motion.p
-                className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
-                layoutId="trip-intro-title"
-                style={{ fontSize: "var(--trip-intro-title-size)" }}
-                transition={{ duration: 0.58, ease: [0.16, 1, 0.3, 1] }}
+                className="truncate text-[10px] font-black tracking-[0.12em] text-neutral-500"
+                layoutId="trip-couple-heading"
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               >
-                <DiaTextReveal
-                  className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
-                  colors={["#ef4444", "#f97316", "#2563eb"]}
-                  duration={1.2}
-                  text={trip.title}
-                />
+                가현쨩 ❤️ 미누쿤
               </motion.p>
             ) : (
-              <span className="block h-4" aria-hidden="true" />
+              <span className="block h-3" aria-hidden="true" />
             )}
           </AnimatePresence>
+          {compactVisible ? (
+            <motion.p
+              className="block max-w-full truncate overflow-hidden font-black tracking-[-0.04em] text-neutral-950"
+              layoutId="trip-title-heading"
+              style={{ fontSize: "var(--trip-intro-title-size)" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {trip.title}
+            </motion.p>
+          ) : (
+            <span className="block h-4" aria-hidden="true" />
+          )}
         </div>
         <TripScheduleTransitionLink
           className="h-[var(--trip-intro-cta-height)] w-[7rem] shrink-0 rounded-full bg-neutral-950 text-white shadow-sm shadow-neutral-950/20"

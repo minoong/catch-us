@@ -3,8 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { DiaTextReveal } from "@repo/ui/components/dia-text-reveal";
-
 import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
 
 import type { Trip, TripDayId } from "../_data/trips";
@@ -154,20 +152,16 @@ export function TripSchedulePage({ trip }: { trip: Trip }) {
             </Link>
             <div className="min-w-0 flex-1">
               <p
-                className="text-muted-foreground font-semibold tracking-[0.18em] uppercase"
+                className="text-muted-foreground font-semibold tracking-[0.12em]"
                 style={{ fontSize: "var(--trip-eyebrow-size)" }}
               >
-                Jeonju 2026
+                가현쨩 ❤️ 미누쿤
               </p>
               <h1
                 className="truncate leading-none font-semibold"
                 style={{ fontSize: "var(--trip-title-size)" }}
               >
-                <DiaTextReveal
-                  colors={["#ef4444", "#f97316", "#2563eb"]}
-                  duration={1.2}
-                  text={trip.title}
-                />
+                {trip.title}
               </h1>
             </div>
           </header>
