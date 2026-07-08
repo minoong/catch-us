@@ -201,7 +201,8 @@ export const trips = [
         title: "용산역 출발 · KTX 521",
         startsAt: "20:09",
         endsAt: "21:47",
-        description: "용산에서 전주로 내려가는 첫 이동. 14호차 1A, 1B 좌석.",
+        description:
+          "어이, 시작부터 KTX라니 우리 예산 괜찮은 거냐고! 아무튼 14호차 1A, 1B로 간다. 늦으면 두고 갈 테니까 알아서 기어와라.",
         tags: ["KTX", "교통", "출발"],
         placeId: "yongsan-station",
         quickLink: true,
@@ -219,7 +220,8 @@ export const trips = [
         kind: "station",
         title: "전주역 도착",
         startsAt: "21:47",
-        description: "전주 여행의 첫 도착 지점.",
+        description:
+          "어이어이, 진짜로 와버렸잖아 전주역! 기차 타고 왔더니 멀미 난다 해... 당분, 당분을 다오!",
         tags: ["도착", "지도"],
         placeId: "jeonju-station",
         quickLink: true,
@@ -231,7 +233,8 @@ export const trips = [
         title: "전주관광호텔",
         startsAt: "15:00",
         endsAt: "2026-07-12 11:00",
-        description: "2026년 7월 10일 체크인, 7월 12일 체크아웃.",
+        description:
+          "해결사 3인방이 묵기엔 너무 고급진 거 아니냐고! 10일부터 12일까지 여기가 우리 아지트다. 룸서비스는 전부 긴상 앞으로 달아두라고!",
         tags: ["숙소", "베이스캠프", "Kakao Place"],
         placeId: "jeonju-tourist-hotel",
         quickLink: true,
@@ -242,7 +245,8 @@ export const trips = [
         kind: "meal",
         title: "아침밥 후보 · 전주현대옥",
         startsAt: "09:00",
-        description: "전주현대옥 남부시장점에서 콩나물국밥으로 아침 시작.",
+        description:
+          "아침부터 콩나물국밥이라니 아저씨냐! ...라곤 해도 역시 해장엔 국밥만 한 게 없지. 뚝배기 바닥까지 핥아먹어주마!",
         tags: ["아침", "콩나물국밥", "후보1"],
         placeId: "hyundaiok-nambu-market",
         quickLink: true,
@@ -253,7 +257,8 @@ export const trips = [
         kind: "meal",
         title: "아침밥 후보 · 조점례남문피순대",
         startsAt: "09:00",
-        description: "현대옥 대신 선택할 수 있는 남부시장 피순대 아침 후보.",
+        description:
+          "콩나물로 부족하다면 피순대다 해! 아침부터 짐승의 피가 낭자하는 붉은 국물로 위장을 채워주겠다 해!",
         tags: ["아침", "피순대", "후보2"],
         placeId: "jojeomrye-nammun-pisundae",
         quickLink: true,
@@ -264,7 +269,8 @@ export const trips = [
         kind: "place",
         title: "풍남문",
         startsAt: "10:00",
-        description: "남부시장 근처에서 풍남문을 보며 한옥마을 동선으로 진입.",
+        description:
+          "이게 그 유명한 풍남문인가 뭔가 하는 건가? 어이 신파치, 안경 벗고 제대로 보라고. 역사적인 순간이잖아.",
         tags: ["풍남문", "산책", "동선"],
         placeId: "pungnammun-gate",
         quickLink: true,
@@ -275,7 +281,8 @@ export const trips = [
         kind: "place",
         title: "전동성당",
         startsAt: "10:30",
-        description: "전동성당 앞에서 잠깐 머물며 사진과 주변 골목을 둘러본다.",
+        description:
+          "어이어이, 성당 앞에서 그런 썩은 동태눈깔을 하고 있으면 신성모독으로 잡혀간다고! 대충 기념사진이나 찍고 가자고.",
         tags: ["전동성당", "사진", "한옥마을"],
         placeId: "jeondong-cathedral",
         quickLink: true,
@@ -287,7 +294,7 @@ export const trips = [
         title: "경기전",
         startsAt: "11:30",
         description:
-          "한옥마을 중심에서 경기전 관람. 점심 전 여유 있게 걷는 구간.",
+          "태조 이성계의 어진이 있다고? 뭐, 우리 세계의 쇼군보단 멀쩡하게 생겼겠지. 얌전히 관람이나 하자고.",
         tags: ["경기전", "관람", "산책"],
         placeId: "gyeonggijeon-shrine",
         quickLink: true,
@@ -299,7 +306,7 @@ export const trips = [
         title: "전주한옥마을",
         startsAt: "12:30",
         description:
-          "점심 시간대 한옥마을을 중심으로 식사, 카페, 골목 구경을 묶는다.",
+          "드디어 한옥마을이다 해! 길거리 음식 다 내놓으라 해! 긴짱 지갑 오늘 다 털어버릴 거다 해!!",
         tags: ["한옥마을", "점심", "골목"],
         placeId: "jeonju-hanok-village",
         quickLink: true,
@@ -311,7 +318,7 @@ export const trips = [
         title: "오목대",
         startsAt: "15:30",
         description:
-          "오후에는 오목대로 올라 전주한옥마을을 내려다보는 산책 코스.",
+          "헥헥... 어이, 밥 먹고 바로 등산시키는 악덕 사장이 어딨냐고! 당분 부족하다고, 당분!! 네 녀석 피는 무슨 색이냐!",
         tags: ["오목대", "전망", "산책"],
         placeId: "omokdae",
         quickLink: true,
@@ -322,7 +329,8 @@ export const trips = [
         kind: "place",
         title: "전주덕진공원",
         startsAt: "17:30",
-        description: "해질 무렵 덕진공원으로 이동해 연못 주변을 걷고 쉬어간다.",
+        description:
+          "어이어이, 연못 퀄리티가 장난 아니잖아. 분위기 잡기 딱 좋은 곳이네. 사다하루 산책시키기에도 제격이겠어.",
         tags: ["덕진공원", "산책", "휴식"],
         placeId: "deokjin-park",
         quickLink: true,
@@ -334,7 +342,7 @@ export const trips = [
         title: "진미집 본점",
         startsAt: "19:00",
         description:
-          "저녁은 진미집 본점. 연탄불고기와 김밥쌈으로 하루를 마무리.",
+          "이거라고 이거!! 연탄불고기에 김밥이라니, 천재냐 넌! 오늘 밤은 마요네즈 듬뿍 얹어서... 아 여긴 마요네즈 없나?",
         tags: ["저녁", "노포", "연탄불고기"],
         placeId: "jinmijip-main",
         quickLink: true,
@@ -346,7 +354,7 @@ export const trips = [
         title: "숙소 복귀 또는 더 먹기",
         startsAt: "21:00",
         description:
-          "컨디션에 따라 전주관광호텔로 복귀하거나 근처에서 야식을 더한다.",
+          "아직 위장에 공간 남았다 해! 야식 안 사주면 호텔 로비에서 다시마 초절임이나 씹으면서 날뛸 거다 해!!",
         tags: ["숙소", "야식", "선택"],
         placeId: "jeonju-tourist-hotel",
         quickLink: true,
@@ -357,7 +365,8 @@ export const trips = [
         kind: "meal",
         title: "자매갈비전골",
         startsAt: "10:30",
-        description: "전주 마지막 날 오전에는 자매갈비전골에서 든든하게 시작.",
+        description:
+          "마지막 날까지 고기냐! 너희들 위장은 블랙홀이냐고! ...뭐, 기왕 온 거 냄비째 비워주지. 다 덤벼라 요녀석들아!",
         tags: ["오전", "갈비전골", "식사"],
         placeId: "day-3-morning-place",
         quickLink: true,
@@ -369,7 +378,8 @@ export const trips = [
         title: "전주역 출발 · KTX 510",
         startsAt: "13:18",
         endsAt: "15:03",
-        description: "전주에서 용산으로 돌아오는 이동. 15호차 1A, 1B 좌석.",
+        description:
+          "하아... 드디어 에도로 돌아가는구만. 15호차 1A, 1B 좌석이니까 내 자리에 딴 놈 앉아있으면 동야호로 날려버린다.",
         tags: ["KTX", "교통", "귀가"],
         placeId: "jeonju-station",
         quickLink: true,
