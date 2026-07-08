@@ -150,10 +150,10 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
     >
       <div className="mb-8 text-center">
         <p className="text-xs font-black tracking-[0.1em] text-neutral-400 uppercase">
-          kabukicho route preview
+          불을 키고 멀리 떨어져서 보라 해.
         </p>
         <h2 className="mt-2 text-2xl font-black tracking-[-0.04em] text-neutral-950">
-          해결사 전주 지부 출장 루트
+          전주 지부 출장 루트
         </h2>
       </div>
 
@@ -246,9 +246,6 @@ function ItineraryStepContent({
                 : item.kind === "station"
                   ? "도착"
                   : "관광"}
-        </span>
-        <span className="text-xs font-bold text-neutral-400">
-          {item.startsAt}
         </span>
       </div>
       <h3 className="text-[17px] leading-tight font-black tracking-tight text-neutral-900 drop-shadow-sm">
