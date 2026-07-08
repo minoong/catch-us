@@ -175,9 +175,9 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
         </svg>
 
         {/* The Moving Marker */}
-        <div className="moving-marker absolute top-0 left-0 z-30 flex -translate-x-1/2 -translate-y-1/2 items-center rounded-full bg-white p-1 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+        <div className="moving-marker absolute top-0 left-0 z-30 flex -translate-x-1/2 -translate-y-1/2 items-center">
           {/* Heart Lottie centered above */}
-          <div className="absolute -top-6 left-1/2 z-50 size-8 -translate-x-1/2 opacity-90">
+          <div className="absolute -top-10 left-1/2 z-50 size-14 -translate-x-1/2 opacity-95">
             <DotLottieReact
               autoplay
               loop
@@ -186,7 +186,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
           </div>
 
           {/* Avatar Stack */}
-          <div className="relative z-40 size-10 shrink-0 overflow-hidden rounded-full border border-white shadow-sm">
+          <div className="relative z-30 size-10 shrink-0 overflow-hidden rounded-full border-[1.5px] border-white bg-white shadow-[0_0_15px_rgba(59,130,246,0.3)]">
             <Image
               src="/trips/jeonju-2026/meta/favicon.png"
               alt=""
@@ -195,7 +195,7 @@ export function TripAutoItineraryStepper({ trip }: { trip: Trip }) {
               sizes="40px"
             />
           </div>
-          <div className="relative z-30 -ml-3 flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-neutral-100 text-[22px] shadow-sm">
+          <div className="relative z-40 -ml-3 flex size-10 shrink-0 items-center justify-center rounded-full border-[1.5px] border-white bg-neutral-100 text-[22px] shadow-[0_0_15px_rgba(59,130,246,0.3)]">
             🐶
           </div>
         </div>
